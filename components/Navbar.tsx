@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRightIcon, MenuIcon, XIcon } from "@/components/Icons";
 import { languageStorageKey, type Language } from "@/lib/i18n";
 import type { SectionId } from "@/lib/copy";
@@ -23,31 +23,41 @@ type NavbarProps = {
 };
 
 export function Navbar({ lang, copy }: NavbarProps) {
-  const [activeId, setActiveId] = useState<SectionId>("examples");
+  const [activeId, setActiveId] = useState<SectionId>("voorbeelden");
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const sectionIds = copy.items.map((item) => item.id);
 
+    function getScrollOffset() {
+      const navbarHeight = headerRef.current?.offsetHeight ?? 88;
+      document.documentElement.style.setProperty("--navbar-height", `${navbarHeight}px`);
+
+      return navbarHeight + 80;
+    }
+
     function updateActiveSection() {
+      const scrollOffset = getScrollOffset();
+      const triggerLine = window.scrollY + scrollOffset;
+
       let current = sectionIds[0];
 
       for (const id of sectionIds) {
         const section = document.getElementById(id);
 
-        if (section && section.getBoundingClientRect().top <= 156) {
-          current = id;
+        if (!section) {
+          continue;
         }
-      }
 
-      const nearPageEnd =
-        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 160;
-      const lastSection = document.getElementById(sectionIds[sectionIds.length - 1]);
-      const lastSectionIsVisible =
-        !!lastSection && lastSection.getBoundingClientRect().top <= window.innerHeight * 0.78;
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
 
-      if (nearPageEnd || lastSectionIsVisible) {
-        current = sectionIds[sectionIds.length - 1];
+        if (sectionTop <= triggerLine) {
+          current = id;
+          continue;
+        }
+
+        break;
       }
 
       setActiveId(current);
@@ -81,10 +91,10 @@ export function Navbar({ lang, copy }: NavbarProps) {
   }
 
   return (
-    <header className="sticky top-3 z-50 px-3 sm:top-4 sm:px-4 lg:px-5">
+    <header ref={headerRef} className="sticky top-3 z-[70] px-3 sm:top-4 sm:px-4 lg:px-6">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-[1440px] items-center justify-between rounded-[16px] border border-white/10 bg-[linear-gradient(135deg,#161851,#14243A)] px-4 py-3 shadow-[0_18px_50px_rgba(15,23,54,0.18)] sm:px-6 lg:px-8"
+        className="mx-auto flex max-w-[1520px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/18 bg-[linear-gradient(135deg,rgba(22,24,81,0.96),rgba(20,36,58,0.98))] px-4 py-3 shadow-[0_22px_56px_rgba(15,23,54,0.24),0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md sm:px-6 lg:px-7 lg:py-[0.82rem]"
       >
         <a
           aria-label="Philoo"
@@ -94,12 +104,12 @@ export function Navbar({ lang, copy }: NavbarProps) {
           Philoo
         </a>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <div className="flex items-center gap-4">
+        <div className="hidden items-center gap-5 lg:flex">
+          <div className="flex items-center gap-2 xl:gap-3">
             {copy.items.map((item) => (
               <a
                 aria-current={activeId === item.id ? "location" : undefined}
-                className={`rounded-full border px-5 py-3 text-sm font-extrabold leading-none transition-colors ${
+                className={`rounded-full border px-4 py-[0.82rem] text-sm font-extrabold leading-none transition-colors xl:px-5 ${
                   activeId === item.id
                     ? "border-[#D6C48A]/80 bg-[#D6C48A]/12 text-[#D6C48A]"
                     : "border-transparent text-white hover:border-white/10 hover:bg-white/5"
@@ -119,7 +129,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
           />
 
           <a
-            className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#D6C48A] px-5 py-4 text-sm font-extrabold text-[#0F1736] shadow-[0_12px_26px_rgba(214,196,138,0.26)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#161851]"
+            className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#D6C48A] px-5 py-4 text-sm font-extrabold text-[#0F1736] shadow-[0_12px_26px_rgba(214,196,138,0.26)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#161851] xl:px-6"
             href="mailto:hello@philoo.nl"
           >
             {copy.cta}

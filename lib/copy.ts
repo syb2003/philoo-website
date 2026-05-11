@@ -1,6 +1,6 @@
 import type { Language } from "./i18n";
 
-export type SectionId = "examples" | "process" | "audience" | "contact";
+export type SectionId = "voorbeelden" | "werkwijze" | "voor-wie" | "contact";
 
 export type SiteCopy = {
   metadata: {
@@ -70,9 +70,9 @@ export const siteCopy = {
     },
     nav: {
       items: [
-        { id: "examples", label: "Voorbeelden" },
-        { id: "process", label: "Werkwijze" },
-        { id: "audience", label: "Voor wie" },
+        { id: "voorbeelden", label: "Voorbeelden" },
+        { id: "werkwijze", label: "Werkwijze" },
+        { id: "voor-wie", label: "Voor wie" },
         { id: "contact", label: "Contact" },
       ],
       cta: "Plan een gratis kennismaking",
@@ -190,9 +190,9 @@ export const siteCopy = {
     },
     nav: {
       items: [
-        { id: "examples", label: "Examples" },
-        { id: "process", label: "How it works" },
-        { id: "audience", label: "Who it’s for" },
+        { id: "voorbeelden", label: "Examples" },
+        { id: "werkwijze", label: "How it works" },
+        { id: "voor-wie", label: "Who it’s for" },
         { id: "contact", label: "Contact" },
       ],
       cta: "Book a free intro call",

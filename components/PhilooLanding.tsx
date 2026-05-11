@@ -37,7 +37,7 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
     <div className="page-background">
       <Navbar copy={copy.nav} lang={lang} />
 
-      <main className="mx-auto max-w-[1440px] px-3 pb-5 pt-5 sm:px-4 lg:px-5">
+      <main className="mx-auto max-w-[1520px] px-3 pb-6 pt-5 sm:px-5 lg:px-8 xl:px-10">
         <section className="overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 shadow-[0_24px_70px_rgba(15,23,54,0.06)]">
           <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-9 lg:pt-16">
             <div className="grid items-center gap-9 min-[1180px]:grid-cols-[minmax(600px,0.95fr)_minmax(0,1fr)] min-[1180px]:gap-4">
@@ -128,7 +128,7 @@ function HeroWorkflowVisual({ labels, visualAria }: { labels: string[]; visualAr
 
 function Benefits({ copy }: { copy: SiteCopy }) {
   return (
-    <section aria-label="Benefits" className="px-5 pb-6 sm:px-8 lg:px-12">
+    <section aria-label="Benefits" className="px-5 pb-7 sm:px-8 lg:px-12">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {copy.benefits.map((benefit, index) => {
           const Icon = benefitIcons[index];
@@ -158,7 +158,7 @@ function Benefits({ copy }: { copy: SiteCopy }) {
 
 function Examples({ copy }: { copy: SiteCopy }) {
   return (
-    <section className="px-0 pb-0" id="examples">
+    <section className="anchor-section px-0 pb-0 pt-2 lg:pt-3" id="voorbeelden">
       <div className="bg-[linear-gradient(180deg,rgba(255,255,255,0.42),rgba(239,243,249,0.72))] px-5 py-9 sm:px-8 lg:px-12">
         <Reveal className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="max-w-[760px] text-[clamp(1.75rem,4vw,2.38rem)] font-black leading-tight tracking-[0] text-[#161851]">
@@ -202,8 +202,8 @@ function Examples({ copy }: { copy: SiteCopy }) {
 function Process({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="relative overflow-hidden rounded-[10px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 py-8 shadow-[0_20px_50px_rgba(15,23,54,0.14)] sm:px-8 lg:px-12"
-      id="process"
+      className="anchor-section relative mt-4 overflow-hidden rounded-[10px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 py-8 shadow-[0_20px_50px_rgba(15,23,54,0.14)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      id="werkwijze"
     >
       <Reveal>
         <h2 className="text-[clamp(1.6rem,3vw,2rem)] font-black leading-tight text-white">{copy.process.title}</h2>
@@ -242,8 +242,8 @@ function Process({ copy }: { copy: SiteCopy }) {
 function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="grid gap-7 px-5 py-8 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:px-12"
-      id="audience"
+      className="anchor-section grid gap-7 px-5 py-10 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:px-12"
+      id="voor-wie"
     >
       <Reveal>
         <h2 className="text-[clamp(1.6rem,3vw,2.05rem)] font-black leading-tight text-[#161851]">
@@ -292,7 +292,7 @@ function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
 
 function BottomCta({ copy }: { copy: SiteCopy }) {
   return (
-    <section className="px-5 pb-8 sm:px-8 lg:px-12" id="contact">
+    <section className="anchor-section px-5 pb-8 pt-2 sm:px-8 lg:px-12 lg:pt-3" id="contact">
       <Reveal className="relative overflow-hidden rounded-[12px] bg-[linear-gradient(135deg,#161851,#14243A)] px-6 py-7 shadow-[0_22px_52px_rgba(15,23,54,0.18)] sm:px-10 lg:px-16">
         <div aria-hidden="true" className="cta-dot-pattern absolute inset-y-0 right-0 w-[40%] opacity-80" />
         <div className="relative grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">

@@ -10,6 +10,7 @@
   --philoo-gold: #d6c48a;
   --background: #f7f8fa;
   --foreground: #0f1736;
+  --navbar-height: 88px;
 }
 
 @theme inline {
@@ -25,7 +26,7 @@
 html {
   background: var(--philoo-soft);
   scroll-behavior: smooth;
-  scroll-padding-top: 116px;
+  scroll-padding-top: calc(var(--navbar-height) + 24px);
 }
 
 body {
@@ -56,6 +57,10 @@ a {
     radial-gradient(circle at 75% 8%, rgba(214, 196, 138, 0.16), transparent 28%),
     radial-gradient(circle at 20% 0%, rgba(22, 24, 81, 0.06), transparent 26%),
     var(--philoo-soft);
+}
+
+.anchor-section {
+  scroll-margin-top: calc(var(--navbar-height) + 28px);
 }
 
 .reveal {
