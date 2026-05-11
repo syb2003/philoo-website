@@ -37,11 +37,11 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
     <div className="page-background">
       <Navbar copy={copy.nav} lang={lang} />
 
-      <main className="mx-auto max-w-[1600px] px-3 pb-6 pt-5 sm:px-5 lg:px-10 xl:px-12 2xl:px-14">
+      <main className="mx-auto max-w-[1620px] px-3 pb-6 pt-5 sm:px-5 lg:px-10 xl:px-12 2xl:px-14">
         <section className="overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 shadow-[0_24px_70px_rgba(15,23,54,0.06)]">
           <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-9 lg:pt-16">
-            <div className="grid items-center gap-9 min-[1180px]:grid-cols-[minmax(0,580px)_minmax(620px,1fr)] min-[1180px]:gap-16 xl:gap-20">
-              <Reveal className="max-w-[580px] min-[1180px]:pr-4">
+            <div className="grid items-center gap-9 min-[1180px]:grid-cols-[minmax(0,540px)_minmax(700px,1fr)] min-[1180px]:gap-20 xl:gap-24">
+              <Reveal className="max-w-[540px] min-[1180px]:pr-6">
                 <h1 className="text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851]">
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[0]}</span>
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[1]}</span>
@@ -59,7 +59,7 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
                 </a>
               </Reveal>
 
-              <Reveal className="mx-auto w-full max-w-[820px] min-[1180px]:justify-self-end min-[1180px]:pl-8" delay={100}>
+              <Reveal className="mx-auto w-full max-w-[860px] min-[1180px]:justify-self-end min-[1180px]:pl-12" delay={100}>
                 <HeroWorkflowVisual labels={copy.hero.workflow} visualAria={copy.hero.visualAria} />
               </Reveal>
             </div>
