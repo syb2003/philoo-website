@@ -140,9 +140,9 @@ export function Navbar({ lang, copy }: NavbarProps) {
     const sectionIndex = navItems.findIndex((item) => item.id === sectionId);
     const nextSectionId = navItems[sectionIndex + 1]?.id;
     const nextSectionTop = nextSectionId ? getSectionTop(nextSectionId) : null;
-    const desiredTop = sectionTop - navbarHeight - 40;
+    const desiredTop = sectionTop - navbarHeight - 56;
     const maxTopBeforeNext =
-      nextSectionTop !== null ? nextSectionTop - navbarHeight - 92 : desiredTop;
+      nextSectionTop !== null ? nextSectionTop - navbarHeight - 108 : desiredTop;
     const top = Math.min(desiredTop, maxTopBeforeNext);
 
     pendingActiveRef.current = sectionId;
@@ -160,7 +160,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
     <header ref={headerRef} className="sticky top-3 z-[70] px-3 sm:top-4 sm:px-4 lg:px-6">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-[1620px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/18 bg-[linear-gradient(135deg,rgba(22,24,81,0.96),rgba(20,36,58,0.98))] px-4 py-3 shadow-[0_22px_56px_rgba(15,23,54,0.24),0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-6 lg:px-7 lg:py-[0.82rem] xl:gap-8"
+        className="mx-auto flex max-w-[1620px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/28 bg-[linear-gradient(135deg,rgba(22,24,81,0.96),rgba(20,36,58,0.98))] px-4 py-3 shadow-[0_28px_72px_rgba(15,23,54,0.3),0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-lg sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-6 lg:px-7 lg:py-[0.82rem] xl:gap-8"
       >
         <a
           aria-label="Philoo"

@@ -174,7 +174,7 @@ function Benefits({ copy }: { copy: SiteCopy }) {
 function Examples({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 py-9 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-9 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="voorbeelden"
     >
       <Reveal className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -307,7 +307,7 @@ function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
 function Pricing({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 py-9 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-9 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="pricing"
     >
       <Reveal className="mb-6 max-w-[680px]">
@@ -368,7 +368,7 @@ function Pricing({ copy }: { copy: SiteCopy }) {
 function BottomCta({ copy }: { copy: SiteCopy }) {
   return (
     <section className="anchor-section mt-4 sm:mt-5 lg:mt-6" id="contact">
-      <Reveal className="relative overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-6 py-7 shadow-[0_22px_52px_rgba(15,23,54,0.18)] sm:px-10 lg:px-16">
+      <Reveal className="relative overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-6 py-8 shadow-[0_22px_52px_rgba(15,23,54,0.18)] sm:px-10 sm:py-9 lg:px-16">
         <div aria-hidden="true" className="cta-dot-pattern absolute inset-y-0 right-0 w-[40%] opacity-80" />
         <div className="relative grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
