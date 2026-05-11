@@ -26,32 +26,46 @@ export function Navbar({ lang, copy }: NavbarProps) {
   const [activeId, setActiveId] = useState<SectionId>("voorbeelden");
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement | null>(null);
+  const pendingActiveRef = useRef<SectionId | null>(null);
+  const pendingUntilRef = useRef(0);
   const navItems = copy.items;
+
+  function getNavbarHeight() {
+    return headerRef.current?.offsetHeight ?? 88;
+  }
+
+  function syncNavbarHeight() {
+    const navbarHeight = getNavbarHeight();
+    document.documentElement.style.setProperty("--navbar-height", `${navbarHeight}px`);
+
+    return navbarHeight;
+  }
+
+  function getSectionTop(sectionId: SectionId) {
+    const section = document.getElementById(sectionId);
+
+    if (!section) {
+      return null;
+    }
+
+    return section.getBoundingClientRect().top + window.scrollY;
+  }
 
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.id);
 
-    function getScrollOffset() {
-      const navbarHeight = headerRef.current?.offsetHeight ?? 88;
-      document.documentElement.style.setProperty("--navbar-height", `${navbarHeight}px`);
-
-      return navbarHeight + 80;
-    }
-
     function updateActiveSection() {
-      const scrollOffset = getScrollOffset();
-      const triggerLine = window.scrollY + scrollOffset;
+      const navbarHeight = syncNavbarHeight();
+      const triggerLine = window.scrollY + navbarHeight + 80;
 
       let current = sectionIds[0];
 
       for (const id of sectionIds) {
-        const section = document.getElementById(id);
+        const sectionTop = getSectionTop(id);
 
-        if (!section) {
+        if (sectionTop === null) {
           continue;
         }
-
-        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
 
         if (sectionTop <= triggerLine) {
           current = id;
@@ -61,6 +75,30 @@ export function Navbar({ lang, copy }: NavbarProps) {
         break;
       }
 
+      const pendingId = pendingActiveRef.current;
+
+      if (pendingId && Date.now() < pendingUntilRef.current) {
+        const pendingIndex = sectionIds.indexOf(pendingId);
+        const nextPendingId = sectionIds[pendingIndex + 1];
+        const pendingTop = getSectionTop(pendingId);
+        const nextPendingTop = nextPendingId ? getSectionTop(nextPendingId) : null;
+
+        if (
+          pendingTop !== null &&
+          triggerLine >= pendingTop &&
+          (nextPendingTop === null || triggerLine < nextPendingTop)
+        ) {
+          setActiveId(pendingId);
+          return;
+        }
+
+        if (pendingTop !== null && triggerLine < pendingTop) {
+          setActiveId(pendingId);
+          return;
+        }
+      }
+
+      pendingActiveRef.current = null;
       setActiveId(current);
     }
 
@@ -92,23 +130,23 @@ export function Navbar({ lang, copy }: NavbarProps) {
   }
 
   function scrollToSection(sectionId: SectionId) {
-    const section = document.getElementById(sectionId);
+    const sectionTop = getSectionTop(sectionId);
 
-    if (!section) {
+    if (sectionTop === null) {
       return;
     }
 
-    const navbarHeight = headerRef.current?.offsetHeight ?? 88;
-    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const navbarHeight = syncNavbarHeight();
     const sectionIndex = navItems.findIndex((item) => item.id === sectionId);
     const nextSectionId = navItems[sectionIndex + 1]?.id;
-    const nextSection = nextSectionId ? document.getElementById(nextSectionId) : null;
-    const desiredTop = sectionTop - navbarHeight - 32;
-    const maxTopBeforeNext = nextSection
-      ? nextSection.getBoundingClientRect().top + window.scrollY - navbarHeight - 81
-      : desiredTop;
+    const nextSectionTop = nextSectionId ? getSectionTop(nextSectionId) : null;
+    const desiredTop = sectionTop - navbarHeight - 40;
+    const maxTopBeforeNext =
+      nextSectionTop !== null ? nextSectionTop - navbarHeight - 92 : desiredTop;
     const top = Math.min(desiredTop, maxTopBeforeNext);
 
+    pendingActiveRef.current = sectionId;
+    pendingUntilRef.current = Date.now() + 900;
     setActiveId(sectionId);
     setMenuOpen(false);
     window.history.replaceState(null, "", `#${sectionId}`);
@@ -122,7 +160,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
     <header ref={headerRef} className="sticky top-3 z-[70] px-3 sm:top-4 sm:px-4 lg:px-6">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-[1560px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/18 bg-[linear-gradient(135deg,rgba(22,24,81,0.96),rgba(20,36,58,0.98))] px-4 py-3 shadow-[0_22px_56px_rgba(15,23,54,0.24),0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md sm:px-6 lg:px-7 lg:py-[0.82rem]"
+        className="mx-auto flex max-w-[1560px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/18 bg-[linear-gradient(135deg,rgba(22,24,81,0.96),rgba(20,36,58,0.98))] px-4 py-3 shadow-[0_22px_56px_rgba(15,23,54,0.24),0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-6 lg:px-7 lg:py-[0.82rem] xl:gap-8"
       >
         <a
           aria-label="Philoo"
@@ -132,7 +170,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
           Philoo
         </a>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden items-center justify-self-center lg:flex">
           <div className="flex items-center gap-2 xl:gap-3">
             {navItems.map((item) => (
               <a
@@ -153,7 +191,9 @@ export function Navbar({ lang, copy }: NavbarProps) {
               </a>
             ))}
           </div>
+        </div>
 
+        <div className="hidden items-center justify-self-end gap-4 xl:gap-5 lg:flex">
           <LanguageToggle
             ariaLabel={copy.language}
             currentLanguage={lang}

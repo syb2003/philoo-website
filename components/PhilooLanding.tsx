@@ -40,8 +40,8 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
       <main className="mx-auto max-w-[1560px] px-3 pb-6 pt-5 sm:px-5 lg:px-8 xl:px-10">
         <section className="overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 shadow-[0_24px_70px_rgba(15,23,54,0.06)]">
           <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-9 lg:pt-16">
-            <div className="grid items-center gap-9 min-[1180px]:grid-cols-[minmax(600px,0.95fr)_minmax(0,1fr)] min-[1180px]:gap-4">
-              <Reveal className="max-w-[720px]">
+            <div className="grid items-center gap-9 min-[1180px]:grid-cols-[minmax(0,620px)_minmax(560px,1fr)] min-[1180px]:gap-12 xl:gap-16">
+              <Reveal className="max-w-[620px] min-[1180px]:pr-2">
                 <h1 className="text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851]">
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[0]}</span>
                   <span className="block min-[1180px]:whitespace-nowrap">
@@ -62,7 +62,7 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
                 </a>
               </Reveal>
 
-              <Reveal className="mx-auto w-full max-w-[760px] min-[1180px]:ml-auto" delay={100}>
+              <Reveal className="mx-auto w-full max-w-[780px] min-[1180px]:justify-self-end min-[1180px]:pl-4" delay={100}>
                 <HeroWorkflowVisual labels={copy.hero.workflow} visualAria={copy.hero.visualAria} />
               </Reveal>
             </div>
