@@ -37,17 +37,14 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
     <div className="page-background">
       <Navbar copy={copy.nav} lang={lang} />
 
-      <main className="mx-auto max-w-[1560px] px-3 pb-6 pt-5 sm:px-5 lg:px-8 xl:px-10">
+      <main className="mx-auto max-w-[1600px] px-3 pb-6 pt-5 sm:px-5 lg:px-10 xl:px-12 2xl:px-14">
         <section className="overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 shadow-[0_24px_70px_rgba(15,23,54,0.06)]">
           <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-9 lg:pt-16">
-            <div className="grid items-center gap-9 min-[1180px]:grid-cols-[minmax(0,620px)_minmax(560px,1fr)] min-[1180px]:gap-12 xl:gap-16">
-              <Reveal className="max-w-[620px] min-[1180px]:pr-2">
+            <div className="grid items-center gap-9 min-[1180px]:grid-cols-[minmax(0,580px)_minmax(620px,1fr)] min-[1180px]:gap-16 xl:gap-20">
+              <Reveal className="max-w-[580px] min-[1180px]:pr-4">
                 <h1 className="text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851]">
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[0]}</span>
-                  <span className="block min-[1180px]:whitespace-nowrap">
-                    {copy.hero.headline[1]}
-                    <span className="gold-dot" />
-                  </span>
+                  <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[1]}</span>
                 </h1>
                 <p className="mt-7 max-w-[560px] text-[1.04rem] font-medium leading-[1.8] text-[#0F1736]/90 sm:text-[1.15rem]">
                   {copy.hero.body}
@@ -62,7 +59,7 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
                 </a>
               </Reveal>
 
-              <Reveal className="mx-auto w-full max-w-[780px] min-[1180px]:justify-self-end min-[1180px]:pl-4" delay={100}>
+              <Reveal className="mx-auto w-full max-w-[820px] min-[1180px]:justify-self-end min-[1180px]:pl-8" delay={100}>
                 <HeroWorkflowVisual labels={copy.hero.workflow} visualAria={copy.hero.visualAria} />
               </Reveal>
             </div>
@@ -202,7 +199,7 @@ function Examples({ copy }: { copy: SiteCopy }) {
 function Process({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section relative mt-4 overflow-hidden rounded-[10px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 py-8 shadow-[0_20px_50px_rgba(15,23,54,0.14)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      className="anchor-section relative mt-6 overflow-hidden rounded-[12px] bg-[#161851] px-5 py-8 shadow-[0_20px_50px_rgba(15,23,54,0.14)] sm:mt-7 sm:px-8 lg:mt-8 lg:px-12"
       id="werkwijze"
     >
       <Reveal>

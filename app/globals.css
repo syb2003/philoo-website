@@ -216,16 +216,6 @@ a {
   font-weight: 800;
 }
 
-.gold-dot {
-  display: inline-block;
-  width: 0.22em;
-  height: 0.22em;
-  margin-left: 0.08em;
-  border-radius: 999px;
-  background: var(--philoo-gold);
-  transform: translateY(-0.02em);
-}
-
 .cta-dot-pattern {
   background-image: radial-gradient(rgba(214, 196, 138, 0.72) 1.2px, transparent 1.4px);
   background-size: 12px 12px;
