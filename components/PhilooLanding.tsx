@@ -254,7 +254,7 @@ function Process({ copy }: { copy: SiteCopy }) {
 function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 py-10 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF] bg-white px-5 py-10 shadow-[0_22px_56px_rgba(15,23,54,0.05)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
       id="voor-wie"
     >
       <div className="grid gap-7 lg:grid-cols-[0.75fr_1.25fr]">
@@ -307,14 +307,14 @@ function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
 function Pricing({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 py-10 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-9 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="pricing"
     >
       <Reveal className="mb-6 max-w-[680px]">
-        <h2 className="text-[clamp(1.75rem,4vw,2.28rem)] font-black leading-tight tracking-[0] text-[#161851]">
+        <h2 className="text-[clamp(1.75rem,4vw,2.28rem)] font-black leading-tight tracking-[0] text-white">
           {copy.pricing.title}
         </h2>
-        <p className="mt-2 text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.subtitle}</p>
+        <p className="mt-2 text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">{copy.pricing.subtitle}</p>
       </Reveal>
 
       <div className="grid gap-4 lg:grid-cols-[0.92fr_1.08fr]">
@@ -357,7 +357,7 @@ function Pricing({ copy }: { copy: SiteCopy }) {
 
 function BottomCta({ copy }: { copy: SiteCopy }) {
   return (
-    <section className="anchor-section mt-4 sm:mt-5 lg:mt-6" id="contact">
+    <section className="anchor-section mt-6 sm:mt-7 lg:mt-8" id="contact">
       <Reveal className="relative overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-6 py-8 shadow-[0_22px_52px_rgba(15,23,54,0.18)] sm:px-10 sm:py-9 lg:px-16">
         <div aria-hidden="true" className="cta-dot-pattern absolute inset-y-0 right-0 w-[40%] opacity-80" />
         <div className="relative grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
