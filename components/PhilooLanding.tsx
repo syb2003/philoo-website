@@ -40,15 +40,18 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
       <Navbar copy={copy.nav} lang={lang} />
 
       <main className="mx-auto max-w-[1620px] px-3 pb-6 pt-5 sm:px-5 lg:px-10 xl:px-12 2xl:px-14">
-        <section className="overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 shadow-[0_24px_70px_rgba(15,23,54,0.06)]">
+        <section
+          className="anchor-section overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 shadow-[0_24px_70px_rgba(15,23,54,0.06)]"
+          id="home"
+        >
           <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-9 lg:pt-16">
-            <div className="grid items-center gap-9 min-[1180px]:grid-cols-[minmax(0,540px)_minmax(700px,1fr)] min-[1180px]:gap-20 xl:gap-24">
+            <div className="grid items-center gap-10 min-[1180px]:grid-cols-[minmax(0,520px)_minmax(760px,1fr)] min-[1180px]:gap-24 xl:gap-28">
               <Reveal
-                className={isDutch ? "max-w-[500px] min-[1180px]:pr-10" : "max-w-[540px] min-[1180px]:pr-6"}
+                className={isDutch ? "max-w-[480px] min-[1180px]:pr-12" : "max-w-[520px] min-[1180px]:pr-8"}
               >
                 <h1
                   className={isDutch
-                    ? "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851] min-[1180px]:text-[clamp(2.65rem,3.75vw,4.15rem)]"
+                    ? "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851] min-[1180px]:text-[clamp(2.4rem,3.25vw,3.7rem)]"
                     : "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851]"}
                 >
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[0]}</span>
@@ -69,8 +72,8 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
 
               <Reveal
                 className={isDutch
-                  ? "mx-auto w-full max-w-[860px] min-[1180px]:justify-self-end min-[1180px]:pl-16"
-                  : "mx-auto w-full max-w-[860px] min-[1180px]:justify-self-end min-[1180px]:pl-12"}
+                  ? "mx-auto w-full max-w-[880px] min-[1180px]:justify-self-end min-[1180px]:pl-20"
+                  : "mx-auto w-full max-w-[880px] min-[1180px]:justify-self-end min-[1180px]:pl-14"}
                 delay={100}
               >
                 <HeroWorkflowVisual labels={copy.hero.workflow} visualAria={copy.hero.visualAria} />
@@ -79,11 +82,13 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
           </div>
 
           <Benefits copy={copy} />
-          <Examples copy={copy} />
-          <Process copy={copy} />
-          <AudienceAndTestimonial copy={copy} />
-          <BottomCta copy={copy} />
         </section>
+
+        <Examples copy={copy} />
+        <Process copy={copy} />
+        <AudienceAndTestimonial copy={copy} />
+        <Pricing copy={copy} />
+        <BottomCta copy={copy} />
       </main>
     </div>
   );
@@ -168,42 +173,43 @@ function Benefits({ copy }: { copy: SiteCopy }) {
 
 function Examples({ copy }: { copy: SiteCopy }) {
   return (
-    <section className="anchor-section px-0 pb-0 pt-2 lg:pt-3" id="voorbeelden">
-      <div className="bg-[linear-gradient(180deg,rgba(255,255,255,0.42),rgba(239,243,249,0.72))] px-5 py-9 sm:px-8 lg:px-12">
-        <Reveal className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="max-w-[760px] text-[clamp(1.75rem,4vw,2.38rem)] font-black leading-tight tracking-[0] text-[#161851]">
-            {copy.examples.title}
-          </h2>
-          <a
-            className="inline-flex items-center gap-2 text-sm font-black text-[#161851] transition-colors hover:text-[#14243A]"
-            href="mailto:hello@philoo.nl"
-          >
-            {copy.examples.link}
-          </a>
-        </Reveal>
+    <section
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 py-9 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      id="voorbeelden"
+    >
+      <Reveal className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <h2 className="max-w-[760px] text-[clamp(1.75rem,4vw,2.38rem)] font-black leading-tight tracking-[0] text-white">
+          {copy.examples.title}
+        </h2>
+        <a
+          className="inline-flex items-center gap-2 text-sm font-black text-[#D6C48A] transition-colors hover:text-white"
+          href="mailto:hello@philoo.nl"
+        >
+          {copy.examples.link}
+        </a>
+      </Reveal>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {copy.examples.cards.map((card, index) => {
-            const Icon = exampleIcons[index];
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {copy.examples.cards.map((card, index) => {
+          const Icon = exampleIcons[index];
 
-            return (
-              <Reveal
-                className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.055)] sm:p-7"
-                delay={index * 70}
-                key={card.eyebrow}
-              >
-                <div className="mb-5 grid h-14 w-14 place-items-center rounded-full bg-[#D6C48A]/22 text-[#161851]">
-                  <Icon className="h-7 w-7" />
-                </div>
-                <p className="text-sm font-bold text-[#161851]/88">{card.eyebrow}</p>
-                <h3 className="mt-2 text-[1.22rem] font-black leading-[1.18] tracking-[0] text-[#161851]">
-                  {card.title}
-                </h3>
-                <p className="mt-5 text-[0.96rem] font-medium leading-7 text-[#0F1736]/82">{card.body}</p>
-              </Reveal>
-            );
-          })}
-        </div>
+          return (
+            <Reveal
+              className="rounded-[14px] border border-white/12 bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
+              delay={index * 70}
+              key={card.eyebrow}
+            >
+              <div className="mb-5 grid h-14 w-14 place-items-center rounded-full bg-[#D6C48A]/22 text-[#161851]">
+                <Icon className="h-7 w-7" />
+              </div>
+              <p className="text-sm font-bold text-[#161851]/88">{card.eyebrow}</p>
+              <h3 className="mt-2 text-[1.22rem] font-black leading-[1.18] tracking-[0] text-[#161851]">
+                {card.title}
+              </h3>
+              <p className="mt-5 text-[0.96rem] font-medium leading-7 text-[#0F1736]/82">{card.body}</p>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );
@@ -212,20 +218,20 @@ function Examples({ copy }: { copy: SiteCopy }) {
 function Process({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section relative mt-6 overflow-hidden rounded-[12px] bg-[#161851] px-5 py-8 shadow-[0_20px_50px_rgba(15,23,54,0.14)] sm:mt-7 sm:px-8 lg:mt-8 lg:px-12"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 py-9 shadow-[0_22px_56px_rgba(15,23,54,0.08)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
       id="werkwijze"
     >
       <Reveal>
-        <h2 className="text-[clamp(1.6rem,3vw,2rem)] font-black leading-tight text-white">{copy.process.title}</h2>
+        <h2 className="text-[clamp(1.6rem,3vw,2rem)] font-black leading-tight text-[#161851]">{copy.process.title}</h2>
       </Reveal>
 
-      <div className="relative mt-4 grid gap-4 lg:grid-cols-4">
+      <div className="mt-5 grid gap-4 lg:grid-cols-4">
         {copy.process.steps.map((step, index) => {
           const Icon = processIcons[index];
 
           return (
             <Reveal
-              className="relative rounded-[12px] border border-white/12 bg-white/[0.075] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
+              className="rounded-[12px] border border-[#E6E8EF] bg-white p-6 text-[#161851] shadow-[0_18px_42px_rgba(15,23,54,0.055)]"
               delay={index * 90}
               key={step.number}
             >
@@ -233,10 +239,10 @@ function Process({ copy }: { copy: SiteCopy }) {
                 <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#D6C48A] text-base font-black text-[#161851]">
                   {step.number}
                 </div>
-                <Icon className="mt-1 h-9 w-9 text-white" />
+                <Icon className="mt-1 h-9 w-9 text-[#161851]" />
               </div>
-              <h3 className="text-lg font-black leading-snug">{step.title}</h3>
-              <p className="mt-2 text-[0.96rem] font-medium leading-7 text-white/86">{step.body}</p>
+              <h3 className="text-lg font-black leading-snug text-[#161851]">{step.title}</h3>
+              <p className="mt-2 text-[0.96rem] font-medium leading-7 text-[#0F1736]/82">{step.body}</p>
             </Reveal>
           );
         })}
@@ -248,58 +254,121 @@ function Process({ copy }: { copy: SiteCopy }) {
 function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section grid gap-7 px-5 py-10 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:px-12"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 py-10 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
       id="voor-wie"
     >
-      <Reveal>
-        <h2 className="text-[clamp(1.6rem,3vw,2.05rem)] font-black leading-tight text-[#161851]">
-          {copy.audience.title}
-        </h2>
-        <ul className="mt-6 grid gap-5">
-          {copy.audience.bullets.map((bullet) => (
-            <li className="flex items-start gap-4 text-[0.98rem] font-medium leading-7 text-[#0F1736]/86" key={bullet}>
-              <CheckCircleIcon className="mt-1 h-5 w-5 shrink-0 text-[#D6C48A]" />
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
-      </Reveal>
+      <div className="grid gap-7 lg:grid-cols-[0.75fr_1.25fr]">
+        <Reveal>
+          <h2 className="text-[clamp(1.6rem,3vw,2.05rem)] font-black leading-tight text-[#161851]">
+            {copy.audience.title}
+          </h2>
+          <ul className="mt-6 grid gap-5">
+            {copy.audience.bullets.map((bullet) => (
+              <li className="flex items-start gap-4 text-[0.98rem] font-medium leading-7 text-[#0F1736]/86" key={bullet}>
+                <CheckCircleIcon className="mt-1 h-5 w-5 shrink-0 text-[#D6C48A]" />
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
 
-      <Reveal
-        className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_46px_rgba(15,23,54,0.07)] sm:p-7"
-        delay={100}
-      >
-        <div className="flex gap-5">
-          <span aria-hidden="true" className="shrink-0 text-5xl font-black leading-none text-[#D6C48A]">
-            “
-          </span>
-          <div>
-            <blockquote className="text-[0.98rem] font-medium leading-7 text-[#0F1736]/90">
-              {copy.testimonial.quote}
-            </blockquote>
-            <div className="mt-6 border-t border-[#E6E8EF] pt-5 sm:flex sm:items-center sm:justify-between">
-              <p className="text-sm font-black text-[#161851]">{copy.testimonial.attribution}</p>
-              <div
-                aria-label={copy.testimonial.ratingLabel}
-                className="mt-3 flex items-center gap-4 text-sm font-black text-[#161851] sm:mt-0"
-              >
-                <span>5.0</span>
-                <span aria-hidden="true" className="text-lg leading-none tracking-[0.08em] text-[#D6C48A]">
-                  ★★★★★
-                </span>
+        <Reveal
+          className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_46px_rgba(15,23,54,0.07)] sm:p-7"
+          delay={100}
+        >
+          <div className="flex gap-5">
+            <span aria-hidden="true" className="shrink-0 text-5xl font-black leading-none text-[#D6C48A]">
+              “
+            </span>
+            <div>
+              <blockquote className="text-[0.98rem] font-medium leading-7 text-[#0F1736]/90">
+                {copy.testimonial.quote}
+              </blockquote>
+              <div className="mt-6 border-t border-[#E6E8EF] pt-5 sm:flex sm:items-center sm:justify-between">
+                <p className="text-sm font-black text-[#161851]">{copy.testimonial.attribution}</p>
+                <div
+                  aria-label={copy.testimonial.ratingLabel}
+                  className="mt-3 flex items-center gap-4 text-sm font-black text-[#161851] sm:mt-0"
+                >
+                  <span>5.0</span>
+                  <span aria-hidden="true" className="text-lg leading-none tracking-[0.08em] text-[#D6C48A]">
+                    ★★★★★
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Pricing({ copy }: { copy: SiteCopy }) {
+  return (
+    <section
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 py-9 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      id="pricing"
+    >
+      <Reveal className="mb-6 max-w-[680px]">
+        <h2 className="text-[clamp(1.75rem,4vw,2.28rem)] font-black leading-tight tracking-[0] text-white">
+          {copy.pricing.title}
+        </h2>
+        <p className="mt-2 text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">{copy.pricing.subtitle}</p>
       </Reveal>
+
+      <div className="grid gap-4 lg:grid-cols-[0.92fr_1.08fr]">
+        <Reveal
+          className="rounded-[14px] border border-white/12 bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
+          delay={40}
+        >
+          <div className="flex items-start justify-between gap-4 border-b border-[#E6E8EF] pb-5">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/72">{copy.pricing.subtitle}</p>
+              <p className="mt-3 text-[clamp(2rem,4vw,2.8rem)] font-black leading-none text-[#161851]">{copy.pricing.price}</p>
+            </div>
+            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[#D6C48A]/22 text-[#161851]">
+              <ScaleIcon className="h-7 w-7" />
+            </div>
+          </div>
+          <p className="mt-5 text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.description}</p>
+          <div className="mt-6 rounded-[12px] border border-[#D6C48A]/45 bg-[#D6C48A]/12 p-5">
+            <p className="text-xs font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.pilotLabel}</p>
+            <p className="mt-2 text-lg font-black leading-snug text-[#161851]">{copy.pricing.pilotPrice}</p>
+          </div>
+        </Reveal>
+
+        <Reveal
+          className="rounded-[14px] border border-white/12 bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
+          delay={110}
+        >
+          <div className="flex items-start justify-between gap-4 border-b border-[#E6E8EF] pb-5">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/72">{copy.pricing.roiLabel}</p>
+              <p className="mt-3 max-w-[460px] text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.payback}</p>
+            </div>
+            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[#D6C48A]/22 text-[#161851]">
+              <TrendIcon className="h-7 w-7" />
+            </div>
+          </div>
+          <div className="mt-5 grid gap-3 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-5">
+            {copy.pricing.roiLines.map((line) => (
+              <p className="text-[0.98rem] font-black leading-6 text-[#161851]" key={line}>
+                {line}
+              </p>
+            ))}
+          </div>
+          <p className="mt-5 text-[0.95rem] font-medium leading-7 text-[#0F1736]/82">{copy.pricing.finalNote}</p>
+        </Reveal>
+      </div>
     </section>
   );
 }
 
 function BottomCta({ copy }: { copy: SiteCopy }) {
   return (
-    <section className="anchor-section px-5 pb-8 pt-2 sm:px-8 lg:px-12 lg:pt-3" id="contact">
-      <Reveal className="relative overflow-hidden rounded-[12px] bg-[linear-gradient(135deg,#161851,#14243A)] px-6 py-7 shadow-[0_22px_52px_rgba(15,23,54,0.18)] sm:px-10 lg:px-16">
+    <section className="anchor-section mt-4 sm:mt-5 lg:mt-6" id="contact">
+      <Reveal className="relative overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-6 py-7 shadow-[0_22px_52px_rgba(15,23,54,0.18)] sm:px-10 lg:px-16">
         <div aria-hidden="true" className="cta-dot-pattern absolute inset-y-0 right-0 w-[40%] opacity-80" />
         <div className="relative grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>

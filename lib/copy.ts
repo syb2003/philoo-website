@@ -1,6 +1,6 @@
 import type { Language } from "./i18n";
 
-export type SectionId = "voorbeelden" | "werkwijze" | "voor-wie" | "contact";
+export type SectionId = "home" | "voorbeelden" | "werkwijze" | "voor-wie" | "pricing" | "contact";
 
 export type SiteCopy = {
   metadata: {
@@ -54,6 +54,18 @@ export type SiteCopy = {
     attribution: string;
     ratingLabel: string;
   };
+  pricing: {
+    title: string;
+    subtitle: string;
+    price: string;
+    description: string;
+    pilotLabel: string;
+    pilotPrice: string;
+    roiLabel: string;
+    roiLines: string[];
+    payback: string;
+    finalNote: string;
+  };
   bottomCta: {
     headline: string;
     body: string;
@@ -70,9 +82,11 @@ export const siteCopy = {
     },
     nav: {
       items: [
+        { id: "home", label: "Home" },
         { id: "voorbeelden", label: "Voorbeelden" },
         { id: "werkwijze", label: "Werkwijze" },
         { id: "voor-wie", label: "Voor wie" },
+        { id: "pricing", label: "Pricing" },
         { id: "contact", label: "Contact" },
       ],
       cta: "Plan een gratis kennismaking",
@@ -176,6 +190,25 @@ export const siteCopy = {
       attribution: "Owner recruitment agency",
       ratingLabel: "5.0 met vijf gouden sterren",
     },
+    pricing: {
+      title: "Pricing",
+      subtitle: "Per automatisering",
+      price: "€4.995 excl. btw",
+      description:
+        "Voor één concrete workflow, inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor optimalisatie en kleine aanpassingen.",
+      pilotLabel: "Tijdelijke pilotprijs",
+      pilotPrice: "€2.995 excl. btw voor de eerste automatisering.",
+      roiLabel: "Voorbeeldberekening",
+      roiLines: [
+        "10 uur minder handmatig werk per maand",
+        "× €50 waarde per uur",
+        "× 12 maanden",
+        "= €6.000 waarde per jaar",
+      ],
+      payback: "Bij een investering van €4.995 is de terugverdientijd ongeveer 10 maanden.",
+      finalNote:
+        "De waarde zit niet alleen in lagere kosten. De vrijgekomen tijd gaat terug naar klanten, opvolging en werk dat omzet oplevert.",
+    },
     bottomCta: {
       headline: "Benieuwd waar in jullie proces winst te behalen valt?",
       body: "We denken graag met jullie mee. Plan een vrijblijvend kennismakingsgesprek of stuur ons een mail.",
@@ -190,9 +223,11 @@ export const siteCopy = {
     },
     nav: {
       items: [
+        { id: "home", label: "Home" },
         { id: "voorbeelden", label: "Examples" },
         { id: "werkwijze", label: "How it works" },
         { id: "voor-wie", label: "Who it’s for" },
+        { id: "pricing", label: "Pricing" },
         { id: "contact", label: "Contact" },
       ],
       cta: "Book a free intro call",
@@ -295,6 +330,25 @@ export const siteCopy = {
         "Philoo delivered the automation and operational structure we were missing. They quickly understood how our team worked and built reliable automations across Notion, HubSpot, Google Sheets, Slack and Airtable. Ideas were translated into working systems fast. Communication was clear, and the solutions were stable, scalable and immediately useful. Philoo felt like a real partner, not just a contractor.",
       attribution: "Owner recruitment agency",
       ratingLabel: "5.0 with five gold stars",
+    },
+    pricing: {
+      title: "Pricing",
+      subtitle: "Per automation",
+      price: "€4,995 excl. VAT",
+      description:
+        "For one concrete workflow, including intake, design, build, testing, handover, documentation and 1 month of support for optimisation and small adjustments.",
+      pilotLabel: "Temporary pilot price",
+      pilotPrice: "€2,995 excl. VAT for the first automation.",
+      roiLabel: "Example calculation",
+      roiLines: [
+        "10 hours less manual work per month",
+        "× €50 value per hour",
+        "× 12 months",
+        "= €6,000 value per year",
+      ],
+      payback: "With an investment of €4,995, the payback period is around 10 months.",
+      finalNote:
+        "The value is not only in lower costs. The freed-up time goes back to clients, follow-up and work that drives revenue.",
     },
     bottomCta: {
       headline: "Curious where your process can save time?",

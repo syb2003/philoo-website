@@ -23,7 +23,7 @@ type NavbarProps = {
 };
 
 export function Navbar({ lang, copy }: NavbarProps) {
-  const [activeId, setActiveId] = useState<SectionId>("voorbeelden");
+  const [activeId, setActiveId] = useState<SectionId>("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement | null>(null);
   const pendingActiveRef = useRef<SectionId | null>(null);
