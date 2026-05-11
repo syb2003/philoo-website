@@ -58,9 +58,11 @@ export type SiteCopy = {
     title: string;
     subtitle: string;
     price: string;
+    regularPriceLabel: string;
     description: string;
     pilotLabel: string;
     pilotPrice: string;
+    pilotSuffix: string;
     roiLabel: string;
     roiLines: string[];
     payback: string;
@@ -194,10 +196,12 @@ export const siteCopy = {
       title: "Pricing",
       subtitle: "Per automatisering",
       price: "€4.995 excl. btw",
+      regularPriceLabel: "Normaal €4.995 excl. btw",
       description:
         "Voor één concrete workflow, inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor optimalisatie en kleine aanpassingen.",
       pilotLabel: "Tijdelijke pilotprijs",
-      pilotPrice: "€2.995 excl. btw voor de eerste automatisering.",
+      pilotPrice: "€2.995 excl. btw",
+      pilotSuffix: "Voor de eerste automatisering.",
       roiLabel: "Voorbeeldberekening",
       roiLines: [
         "10 uur minder handmatig werk per maand",
@@ -335,10 +339,12 @@ export const siteCopy = {
       title: "Pricing",
       subtitle: "Per automation",
       price: "€4,995 excl. VAT",
+      regularPriceLabel: "Regular price €4,995 excl. VAT",
       description:
         "For one concrete workflow, including intake, design, build, testing, handover, documentation and 1 month of support for optimisation and small adjustments.",
       pilotLabel: "Temporary pilot price",
-      pilotPrice: "€2,995 excl. VAT for the first automation.",
+      pilotPrice: "€2,995 excl. VAT",
+      pilotSuffix: "For the first automation.",
       roiLabel: "Example calculation",
       roiLines: [
         "10 hours less manual work per month",

@@ -323,14 +323,14 @@ function Pricing({ copy }: { copy: SiteCopy }) {
           delay={40}
         >
           <div className="border-b border-[#E6E8EF] pb-5">
-            <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.subtitle}</p>
-            <p className="mt-3 text-[clamp(2rem,4vw,2.8rem)] font-black leading-none text-[#161851]">{copy.pricing.price}</p>
+            <p className="inline-flex rounded-full border border-[#D6C48A]/45 px-3 py-1 text-xs font-black uppercase tracking-[0.08em] text-[#161851]/68">
+              {copy.pricing.pilotLabel}
+            </p>
+            <p className="mt-4 text-[clamp(2.2rem,4vw,3rem)] font-black leading-none text-[#161851]">{copy.pricing.pilotPrice}</p>
+            <p className="mt-2 text-[0.98rem] font-black leading-7 text-[#0F1736]/82">{copy.pricing.pilotSuffix}</p>
+            <p className="mt-4 text-sm font-black leading-6 text-[#161851]/58">{copy.pricing.regularPriceLabel}</p>
           </div>
           <p className="mt-5 text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.description}</p>
-          <div className="mt-6 rounded-[12px] border border-[#D6C48A]/45 bg-[#D6C48A]/10 p-5">
-            <p className="text-xs font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.pilotLabel}</p>
-            <p className="mt-2 text-lg font-black leading-snug text-[#161851]">{copy.pricing.pilotPrice}</p>
-          </div>
         </Reveal>
 
         <Reveal
