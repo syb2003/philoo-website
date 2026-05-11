@@ -5,6 +5,11 @@ import "../globals.css";
 export const metadata: Metadata = {
   title: "Philoo",
   description: "Smart AI workflows for practical B2B teams.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RedirectLayout({ children }: { children: ReactNode }) {

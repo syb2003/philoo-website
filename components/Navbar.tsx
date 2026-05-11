@@ -26,9 +26,10 @@ export function Navbar({ lang, copy }: NavbarProps) {
   const [activeId, setActiveId] = useState<SectionId>("voorbeelden");
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement | null>(null);
+  const navItems = copy.items;
 
   useEffect(() => {
-    const sectionIds = copy.items.map((item) => item.id);
+    const sectionIds = navItems.map((item) => item.id);
 
     function getScrollOffset() {
       const navbarHeight = headerRef.current?.offsetHeight ?? 88;
@@ -71,7 +72,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
       window.removeEventListener("scroll", updateActiveSection);
       window.removeEventListener("resize", updateActiveSection);
     };
-  }, [copy.items]);
+  }, [navItems]);
 
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {
@@ -90,11 +91,38 @@ export function Navbar({ lang, copy }: NavbarProps) {
     setMenuOpen(false);
   }
 
+  function scrollToSection(sectionId: SectionId) {
+    const section = document.getElementById(sectionId);
+
+    if (!section) {
+      return;
+    }
+
+    const navbarHeight = headerRef.current?.offsetHeight ?? 88;
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const sectionIndex = navItems.findIndex((item) => item.id === sectionId);
+    const nextSectionId = navItems[sectionIndex + 1]?.id;
+    const nextSection = nextSectionId ? document.getElementById(nextSectionId) : null;
+    const desiredTop = sectionTop - navbarHeight - 32;
+    const maxTopBeforeNext = nextSection
+      ? nextSection.getBoundingClientRect().top + window.scrollY - navbarHeight - 81
+      : desiredTop;
+    const top = Math.min(desiredTop, maxTopBeforeNext);
+
+    setActiveId(sectionId);
+    setMenuOpen(false);
+    window.history.replaceState(null, "", `#${sectionId}`);
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: "smooth",
+    });
+  }
+
   return (
     <header ref={headerRef} className="sticky top-3 z-[70] px-3 sm:top-4 sm:px-4 lg:px-6">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-[1520px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/18 bg-[linear-gradient(135deg,rgba(22,24,81,0.96),rgba(20,36,58,0.98))] px-4 py-3 shadow-[0_22px_56px_rgba(15,23,54,0.24),0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md sm:px-6 lg:px-7 lg:py-[0.82rem]"
+        className="mx-auto flex max-w-[1560px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/18 bg-[linear-gradient(135deg,rgba(22,24,81,0.96),rgba(20,36,58,0.98))] px-4 py-3 shadow-[0_22px_56px_rgba(15,23,54,0.24),0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md sm:px-6 lg:px-7 lg:py-[0.82rem]"
       >
         <a
           aria-label="Philoo"
@@ -106,7 +134,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
 
         <div className="hidden items-center gap-5 lg:flex">
           <div className="flex items-center gap-2 xl:gap-3">
-            {copy.items.map((item) => (
+            {navItems.map((item) => (
               <a
                 aria-current={activeId === item.id ? "location" : undefined}
                 className={`rounded-full border px-4 py-[0.82rem] text-sm font-extrabold leading-none transition-colors xl:px-5 ${
@@ -116,6 +144,10 @@ export function Navbar({ lang, copy }: NavbarProps) {
                 }`}
                 href={`#${item.id}`}
                 key={item.id}
+                onClick={(event) => {
+                  event.preventDefault();
+                  scrollToSection(item.id);
+                }}
               >
                 {item.label}
               </a>
@@ -158,11 +190,11 @@ export function Navbar({ lang, copy }: NavbarProps) {
 
       {menuOpen ? (
         <div
-          className="mx-auto mt-2 max-w-[1440px] rounded-[14px] border border-[#E6E8EF] bg-white/96 p-3 shadow-[0_18px_45px_rgba(15,23,54,0.14)] backdrop-blur lg:hidden"
+          className="mx-auto mt-2 max-w-[1560px] rounded-[14px] border border-[#E6E8EF] bg-white/96 p-3 shadow-[0_18px_45px_rgba(15,23,54,0.14)] backdrop-blur lg:hidden"
           id="mobile-navigation"
         >
           <div className="grid gap-1">
-            {copy.items.map((item) => (
+            {navItems.map((item) => (
               <a
                 aria-current={activeId === item.id ? "location" : undefined}
                 className={`rounded-[10px] border px-4 py-3 text-sm font-extrabold transition-colors ${
@@ -172,7 +204,10 @@ export function Navbar({ lang, copy }: NavbarProps) {
                 }`}
                 href={`#${item.id}`}
                 key={item.id}
-                onClick={() => setMenuOpen(false)}
+                onClick={(event) => {
+                  event.preventDefault();
+                  scrollToSection(item.id);
+                }}
               >
                 {item.label}
               </a>

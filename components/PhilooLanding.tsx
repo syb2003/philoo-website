@@ -37,7 +37,7 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
     <div className="page-background">
       <Navbar copy={copy.nav} lang={lang} />
 
-      <main className="mx-auto max-w-[1520px] px-3 pb-6 pt-5 sm:px-5 lg:px-8 xl:px-10">
+      <main className="mx-auto max-w-[1560px] px-3 pb-6 pt-5 sm:px-5 lg:px-8 xl:px-10">
         <section className="overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 shadow-[0_24px_70px_rgba(15,23,54,0.06)]">
           <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-9 lg:pt-16">
             <div className="grid items-center gap-9 min-[1180px]:grid-cols-[minmax(600px,0.95fr)_minmax(0,1fr)] min-[1180px]:gap-4">

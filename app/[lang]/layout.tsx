@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "../globals.css";
 import { defaultLanguage, isLanguage, languages } from "@/lib/i18n";
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
+};
 
 export function generateStaticParams() {
   return languages.map((lang) => ({ lang }));
