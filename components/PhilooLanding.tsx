@@ -33,6 +33,8 @@ const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
 const workflowIcons = [MailIcon, CalendarIcon, FileCheckIcon, UserIcon, BellIcon] as const;
 
 export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
+  const isDutch = lang === "nl";
+
   return (
     <div className="page-background">
       <Navbar copy={copy.nav} lang={lang} />
@@ -41,8 +43,14 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
         <section className="overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 shadow-[0_24px_70px_rgba(15,23,54,0.06)]">
           <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-9 lg:pt-16">
             <div className="grid items-center gap-9 min-[1180px]:grid-cols-[minmax(0,540px)_minmax(700px,1fr)] min-[1180px]:gap-20 xl:gap-24">
-              <Reveal className="max-w-[540px] min-[1180px]:pr-6">
-                <h1 className="text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851]">
+              <Reveal
+                className={isDutch ? "max-w-[500px] min-[1180px]:pr-10" : "max-w-[540px] min-[1180px]:pr-6"}
+              >
+                <h1
+                  className={isDutch
+                    ? "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851] min-[1180px]:text-[clamp(2.65rem,3.75vw,4.15rem)]"
+                    : "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851]"}
+                >
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[0]}</span>
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[1]}</span>
                 </h1>
@@ -59,7 +67,12 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
                 </a>
               </Reveal>
 
-              <Reveal className="mx-auto w-full max-w-[860px] min-[1180px]:justify-self-end min-[1180px]:pl-12" delay={100}>
+              <Reveal
+                className={isDutch
+                  ? "mx-auto w-full max-w-[860px] min-[1180px]:justify-self-end min-[1180px]:pl-16"
+                  : "mx-auto w-full max-w-[860px] min-[1180px]:justify-self-end min-[1180px]:pl-12"}
+                delay={100}
+              >
                 <HeroWorkflowVisual labels={copy.hero.workflow} visualAria={copy.hero.visualAria} />
               </Reveal>
             </div>
@@ -207,10 +220,6 @@ function Process({ copy }: { copy: SiteCopy }) {
       </Reveal>
 
       <div className="relative mt-4 grid gap-4 lg:grid-cols-4">
-        <div
-          aria-hidden="true"
-          className="absolute left-[10%] right-[10%] top-[34px] hidden border-t-2 border-dotted border-[#D6C48A]/75 lg:block"
-        />
         {copy.process.steps.map((step, index) => {
           const Icon = processIcons[index];
 
