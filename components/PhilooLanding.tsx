@@ -195,7 +195,7 @@ function Examples({ copy }: { copy: SiteCopy }) {
 
           return (
             <Reveal
-              className="rounded-[14px] border border-white/12 bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
+              className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.08)] sm:p-7"
               delay={index * 70}
               key={card.eyebrow}
             >
@@ -307,49 +307,39 @@ function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
 function Pricing({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-9 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 py-10 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
       id="pricing"
     >
       <Reveal className="mb-6 max-w-[680px]">
-        <h2 className="text-[clamp(1.75rem,4vw,2.28rem)] font-black leading-tight tracking-[0] text-white">
+        <h2 className="text-[clamp(1.75rem,4vw,2.28rem)] font-black leading-tight tracking-[0] text-[#161851]">
           {copy.pricing.title}
         </h2>
-        <p className="mt-2 text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">{copy.pricing.subtitle}</p>
+        <p className="mt-2 text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.subtitle}</p>
       </Reveal>
 
       <div className="grid gap-4 lg:grid-cols-[0.92fr_1.08fr]">
         <Reveal
-          className="rounded-[14px] border border-white/12 bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
+          className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.055)] sm:p-7"
           delay={40}
         >
-          <div className="flex items-start justify-between gap-4 border-b border-[#E6E8EF] pb-5">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/72">{copy.pricing.subtitle}</p>
-              <p className="mt-3 text-[clamp(2rem,4vw,2.8rem)] font-black leading-none text-[#161851]">{copy.pricing.price}</p>
-            </div>
-            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[#D6C48A]/22 text-[#161851]">
-              <ScaleIcon className="h-7 w-7" />
-            </div>
+          <div className="border-b border-[#E6E8EF] pb-5">
+            <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.subtitle}</p>
+            <p className="mt-3 text-[clamp(2rem,4vw,2.8rem)] font-black leading-none text-[#161851]">{copy.pricing.price}</p>
           </div>
           <p className="mt-5 text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.description}</p>
-          <div className="mt-6 rounded-[12px] border border-[#D6C48A]/45 bg-[#D6C48A]/12 p-5">
+          <div className="mt-6 rounded-[12px] border border-[#D6C48A]/45 bg-[#D6C48A]/10 p-5">
             <p className="text-xs font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.pilotLabel}</p>
             <p className="mt-2 text-lg font-black leading-snug text-[#161851]">{copy.pricing.pilotPrice}</p>
           </div>
         </Reveal>
 
         <Reveal
-          className="rounded-[14px] border border-white/12 bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
+          className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.055)] sm:p-7"
           delay={110}
         >
-          <div className="flex items-start justify-between gap-4 border-b border-[#E6E8EF] pb-5">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/72">{copy.pricing.roiLabel}</p>
-              <p className="mt-3 max-w-[460px] text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.payback}</p>
-            </div>
-            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[#D6C48A]/22 text-[#161851]">
-              <TrendIcon className="h-7 w-7" />
-            </div>
+          <div className="border-b border-[#E6E8EF] pb-5">
+            <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.roiLabel}</p>
+            <p className="mt-3 max-w-[460px] text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.payback}</p>
           </div>
           <div className="mt-5 grid gap-3 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-5">
             {copy.pricing.roiLines.map((line) => (

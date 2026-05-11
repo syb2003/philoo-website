@@ -205,7 +205,7 @@ export const siteCopy = {
         "× 12 maanden",
         "= €6.000 waarde per jaar",
       ],
-      payback: "Bij een investering van €4.995 is de terugverdientijd ongeveer 10 maanden.",
+      payback: "Bij de tijdelijke pilotprijs van €2.995 is de terugverdientijd ongeveer 6 maanden.",
       finalNote:
         "De waarde zit niet alleen in lagere kosten. De vrijgekomen tijd gaat terug naar klanten, opvolging en werk dat omzet oplevert.",
     },
@@ -346,7 +346,7 @@ export const siteCopy = {
         "× 12 months",
         "= €6,000 value per year",
       ],
-      payback: "With an investment of €4,995, the payback period is around 10 months.",
+      payback: "At the temporary pilot price of €2,995, the payback period is around 6 months.",
       finalNote:
         "The value is not only in lower costs. The freed-up time goes back to clients, follow-up and work that drives revenue.",
     },
