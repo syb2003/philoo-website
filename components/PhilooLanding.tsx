@@ -254,17 +254,17 @@ function Process({ copy }: { copy: SiteCopy }) {
 function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF] bg-white px-5 py-10 shadow-[0_22px_56px_rgba(15,23,54,0.05)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="voor-wie"
     >
       <div className="grid gap-7 lg:grid-cols-[0.75fr_1.25fr]">
         <Reveal>
-          <h2 className="text-[clamp(1.6rem,3vw,2.05rem)] font-black leading-tight text-[#161851]">
+          <h2 className="text-[clamp(1.6rem,3vw,2.05rem)] font-black leading-tight text-white">
             {copy.audience.title}
           </h2>
           <ul className="mt-6 grid gap-5">
             {copy.audience.bullets.map((bullet) => (
-              <li className="flex items-start gap-4 text-[0.98rem] font-medium leading-7 text-[#0F1736]/86" key={bullet}>
+              <li className="flex items-start gap-4 text-[0.98rem] font-medium leading-7 text-white/86" key={bullet}>
                 <CheckCircleIcon className="mt-1 h-5 w-5 shrink-0 text-[#D6C48A]" />
                 <span>{bullet}</span>
               </li>
@@ -307,14 +307,14 @@ function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
 function Pricing({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-9 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 py-10 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
       id="pricing"
     >
       <Reveal className="mb-6 max-w-[680px]">
-        <h2 className="text-[clamp(1.75rem,4vw,2.28rem)] font-black leading-tight tracking-[0] text-white">
+        <h2 className="text-[clamp(1.75rem,4vw,2.28rem)] font-black leading-tight tracking-[0] text-[#161851]">
           {copy.pricing.title}
         </h2>
-        <p className="mt-2 text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">{copy.pricing.subtitle}</p>
+        <p className="mt-2 text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.subtitle}</p>
       </Reveal>
 
       <div className="grid gap-4 lg:grid-cols-[0.92fr_1.08fr]">
