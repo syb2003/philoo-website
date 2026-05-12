@@ -28,7 +28,7 @@ type PhilooLandingProps = {
 };
 
 const benefitIcons = [HandIcon, LightningIcon, ChartIcon, UsersIcon] as const;
-const exampleIcons = [UserIcon, FileCheckIcon, ScaleIcon, BuildingIcon] as const;
+const exampleIcons = [BellIcon, FileCheckIcon, MailIcon, ChatIcon] as const;
 const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
 const workflowIcons = [MailIcon, CalendarIcon, FileCheckIcon, UserIcon, BellIcon] as const;
 
