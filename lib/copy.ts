@@ -19,7 +19,9 @@ export type SiteCopy = {
   };
   hero: {
     headline: [string, string];
+    lead?: string;
     body: string;
+    credibility?: string;
     cta: string;
     visualAria: string;
     workflow: string[];
@@ -113,7 +115,9 @@ export const siteCopy = {
     },
     hero: {
       headline: ["Minder admin.", "Meer tijd voor wat telt."],
-      body: "AI hoeft geen groot en duur project te zijn. Philoo helpt binnen enkele weken één tijdrovend proces te automatiseren binnen de tools die ze al gebruiken.",
+      lead: "Praktisch starten met AI en automatisering.",
+      body: "Philoo helpt mkb-bedrijven om één tijdrovend proces te automatiseren. Klaar in enkele weken, binnen de systemen die jullie al gebruiken.",
+      credibility: "20+ jaar ervaring in tech, data en procesverbetering bij internationale bedrijven.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
       workflow: [

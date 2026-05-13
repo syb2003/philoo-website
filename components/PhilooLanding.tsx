@@ -58,9 +58,21 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[0]}</span>
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[1]}</span>
                 </h1>
-                <p className="mt-7 max-w-[560px] text-[1.04rem] font-medium leading-[1.8] text-[#0F1736]/90 sm:text-[1.15rem]">
-                  {copy.hero.body}
-                </p>
+                <div className="mt-7 max-w-[560px]">
+                  {copy.hero.lead ? (
+                    <p className="text-[1rem] font-black leading-7 text-[#161851] sm:text-[1.05rem]">{copy.hero.lead}</p>
+                  ) : null}
+                  <p
+                    className={`${copy.hero.lead ? "mt-5" : ""} text-[1.04rem] font-medium leading-[1.8] text-[#0F1736]/90 sm:text-[1.15rem]`}
+                  >
+                    {copy.hero.body}
+                  </p>
+                  {copy.hero.credibility ? (
+                    <p className="mt-5 text-[0.92rem] font-medium leading-7 text-[#0F1736]/62 sm:text-[0.96rem]">
+                      {copy.hero.credibility}
+                    </p>
+                  ) : null}
+                </div>
                 <a
                   className="mt-8 inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#161851] px-6 py-4 text-[0.95rem] font-extrabold text-white shadow-[0_16px_32px_rgba(22,24,81,0.2)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#F7F8FA]"
                   href="mailto:hello@philoo.nl"
