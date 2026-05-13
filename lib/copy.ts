@@ -116,8 +116,8 @@ export const siteCopy = {
     hero: {
       headline: ["Minder admin.", "Meer tijd voor wat telt."],
       lead: "Praktisch starten met AI en automatisering.",
-      body: "Philoo helpt mkb-bedrijven om één tijdrovend proces te automatiseren. Klaar in enkele weken, binnen de systemen die jullie al gebruiken.",
-      credibility: "20+ jaar ervaring in tech, data en procesverbetering bij internationale bedrijven.",
+      body: "Philoo helpt mkb-dienstverleners om tijdrovende processen te automatiseren. Klaar in enkele weken, binnen de systemen die jullie nu al gebruiken.",
+      credibility: "20+ jaar ervaring in tech, data, AI en procesverbetering bij internationale bedrijven.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
       workflow: [
