@@ -112,8 +112,8 @@ export const siteCopy = {
       language: "Taal wisselen",
     },
     hero: {
-      headline: ["Minder admin.", "Meer tijd voor klanten."],
-      body: "AI hoeft niet duur of ingewikkeld te zijn. Met Philoo heb je binnen weken een slimme workflow gemaakt in de tools die je team al kent.",
+      headline: ["Minder admin.", "Meer tijd voor wat telt."],
+      body: "AI hoeft geen groot project te zijn. Philoo helpt  binnen enkele weken één tijdrovende workflow te automatiseren binnen de tools die ze al gebruiken.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
       workflow: [
@@ -139,7 +139,7 @@ export const siteCopy = {
       },
       {
         title: "Meer tijd voor klanten",
-        body: "Minder admin betekent meer aandacht voor wat telt.",
+        body: "Minder admin betekent meer aandacht voor klanten.",
       },
     ],
     examples: {
@@ -159,12 +159,12 @@ export const siteCopy = {
         {
           eyebrow: "Offertes opvolgen",
           title: "Van verzonden offerte naar nette opvolging.",
-          body: "Bijhouden welke offertes nog openstaan en automatisch een vriendelijke opvolgmail of taak klaarzetten.",
+          body: "Openstaande offertes worden bijgehouden en klaargezet met een vriendelijke opvolgmail of taak.",
         },
         {
           eyebrow: "Betalingen bewaken",
           title: "Van openstaande factuur naar vriendelijke reminder.",
-          body: "Openstaande betalingen herkennen, status controleren en een nette reminder klaarzetten.",
+          body: "Openstaande betalingen worden herkend, gecontroleerd en klaargezet met een nette reminder.",
         },
       ],
     },
@@ -174,31 +174,31 @@ export const siteCopy = {
         {
           number: "1",
           title: "Begrijpen",
-          body: "We leren jullie proces en tools kennen en bepalen de grootste winstpunten.",
+          body: "We leren jullie processen kennen en bepalen de grootste winstpunten.",
         },
         {
           number: "2",
           title: "Ontwerpen",
-          body: "We ontwerpen een slimme automatisering die aansluit op jullie werkwijze.",
+          body: "We kiezen één workflow en bepalen wat de automatisering wel en niet doet.",
         },
         {
           number: "3",
           title: "Implementeren",
-          body: "Snel en beheerst live, met aandacht voor adoptie en veiligheid.",
+          body: "We bouwen, testen en zetten de automatisering live in jullie systemen.",
         },
         {
           number: "4",
           title: "Optimaliseren",
-          body: "We blijven verbeteren en schalen bij als jullie organisatie meegroeit.",
+          body: "Na livegang kijken we mee, verwerken we feedback en doen we kleine optimalisaties.",
         },
       ],
     },
     audience: {
       title: "Voor wie dit is",
       bullets: [
-        "Teams die minder handmatig werk willen.",
-        "Organisaties die meer grip op processen zoeken.",
-        "Bureaus die meer tijd voor klanten willen.",
+        "Mkb-dienstverleners die minder handmatig werk willen.",
+        "Organisaties die meer overzicht zoeken in hun processen.",
+        "Bedrijven die met AI willen starten zonder groot IT-project of groot budget.",
       ],
     },
     testimonial: {
@@ -218,8 +218,8 @@ export const siteCopy = {
       secondaryLabel: "Uitbreiding bestaande workflow",
       secondaryPrice: "vanaf €750 excl. btw",
       secondaryDescription:
-        "Voor een extra stap, check, reminder, mail, koppeling of kleine uitbreiding binnen een bestaande workflow.",
-      smallNote: "Tooling en gebruikskosten lopen via de eigen accounts van de klant.",
+        "Voor een extra stap, koppeling of kleine uitbreiding.",
+      smallNote: "AI Tooling en gebruikskosten lopen via de eigen accounts van de klant.",
       roiLabel: "Voorbeeldberekening",
       exampleTitle: "Voorbeeld: klantvragen sneller behandelen",
       exampleDescription:
@@ -229,7 +229,7 @@ export const siteCopy = {
         "20 uur minder handmatig werk per maand",
         "× €40 waarde per uur",
         "= €800 waarde per maand",
-        "− €100 tool- en gebruikskosten per maand",
+        "− €100 AI tool- en gebruikskosten per maand",
         "= €700 netto waarde per maand",
       ],
       finalNote: "",
@@ -238,32 +238,32 @@ export const siteCopy = {
     services: {
       title: "Overige diensten",
       intro:
-        "Naast workflow-automatisering helpt Philoo mkb-dienstverleners ook met praktische AI-training, tooling en vindbaarheid.",
+        "Naast het automatiseren van processen helpt Philoo ook met praktische AI-training, tooling en vindbaarheid.",
       cards: [
         {
           title: "AI-training",
-          body: "Praktische sessies waarin teams leren hoe ze AI slim gebruiken in hun dagelijkse werk.",
+          body: "Geen PowerPoint-sessie, maar praktisch aan de slag: iedereen leert hoe je een eigen proces efficiënter maakt met AI.",
           price: "Prijs op aanvraag",
         },
         {
           title: "AI-hackathon",
-          body: "Een korte, begeleide sessie om kansrijke AI-use-cases te vinden en direct te testen.",
+          body: "Een praktische workshop waarin teams samen AI-oplossingen maken die direct bruikbaar zijn in het bedrijf.",
           price: "Prijs op aanvraag",
         },
         {
           title: "AI-tooling implementeren",
-          body: "Hulp bij het kiezen, inrichten en toepassen van AI-tools binnen jullie bestaande werkwijze.",
+          body: "Denk je na over AI-tools, maar wil je eerst goed advies? We helpen met kiezen, inrichten en praktisch gebruiken.",
           price: "Prijs op aanvraag",
         },
         {
           title: "AI SEO & vindbaarheid",
-          body: "Optimalisatie van websitecontent voor betere vindbaarheid in Google en AI-zoekmachines.",
+          body: "We verbeteren je content voor AI-zoekmachines zoals ChatGPT, Perplexity en Gemini, zodat je bedrijf beter herkend en genoemd kan worden.",
           price: "Prijs op aanvraag",
         },
       ],
     },
     bottomCta: {
-      headline: "Benieuwd waar in jullie proces winst te behalen valt?",
+      headline: "Benieuwd waar in jullie processen winst te behalen valt?",
       body: "We denken graag met jullie mee. Plan een vrijblijvend kennismakingsgesprek of stuur ons een mail.",
       button: "hello@philoo.nl",
     },
