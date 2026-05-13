@@ -1,6 +1,6 @@
 import type { Language } from "./i18n";
 
-export type SectionId = "home" | "voorbeelden" | "werkwijze" | "voor-wie" | "pricing" | "contact";
+export type SectionId = "home" | "voorbeelden" | "werkwijze" | "voor-wie" | "pricing" | "services" | "contact";
 
 export type SiteCopy = {
   metadata: {
@@ -69,6 +69,15 @@ export type SiteCopy = {
     roiLines: string[];
     finalNote: string;
   };
+  services: {
+    title: string;
+    intro: string;
+    cards: Array<{
+      title: string;
+      body: string;
+      price: string;
+    }>;
+  };
   bottomCta: {
     headline: string;
     body: string;
@@ -90,6 +99,7 @@ export const siteCopy = {
         { id: "werkwijze", label: "Werkwijze" },
         { id: "voor-wie", label: "Voor wie" },
         { id: "pricing", label: "Pricing" },
+        { id: "services", label: "Overige diensten" },
         { id: "contact", label: "Contact" },
       ],
       cta: "Plan een gratis kennismaking",
@@ -217,6 +227,33 @@ export const siteCopy = {
       finalNote:
         "De waarde zit niet alleen in lagere kosten. De vrijgekomen tijd gaat terug naar klanten, opvolging en werk dat omzet oplevert.",
     },
+    services: {
+      title: "Overige diensten",
+      intro:
+        "Naast workflow-automatisering helpt Philoo mkb-dienstverleners ook met praktische AI-training, tooling en vindbaarheid.",
+      cards: [
+        {
+          title: "AI-training",
+          body: "Praktische sessies waarin teams leren hoe ze AI slim gebruiken in hun dagelijkse werk.",
+          price: "Prijs op aanvraag",
+        },
+        {
+          title: "AI-hackathon",
+          body: "Een korte, begeleide sessie om kansrijke AI-use-cases te vinden en direct te testen.",
+          price: "Prijs op aanvraag",
+        },
+        {
+          title: "AI-tooling implementeren",
+          body: "Hulp bij het kiezen, inrichten en toepassen van AI-tools binnen jullie bestaande werkwijze.",
+          price: "Prijs op aanvraag",
+        },
+        {
+          title: "AI SEO & vindbaarheid",
+          body: "Optimalisatie van websitecontent voor betere vindbaarheid in Google en AI-zoekmachines.",
+          price: "Prijs op aanvraag",
+        },
+      ],
+    },
     bottomCta: {
       headline: "Benieuwd waar in jullie proces winst te behalen valt?",
       body: "We denken graag met jullie mee. Plan een vrijblijvend kennismakingsgesprek of stuur ons een mail.",
@@ -236,6 +273,7 @@ export const siteCopy = {
         { id: "werkwijze", label: "How it works" },
         { id: "voor-wie", label: "Who it’s for" },
         { id: "pricing", label: "Pricing" },
+        { id: "services", label: "Other services" },
         { id: "contact", label: "Contact" },
       ],
       cta: "Book a free intro call",
@@ -362,6 +400,33 @@ export const siteCopy = {
       ],
       finalNote:
         "The value is not only in lower costs. The freed-up time goes back to clients, follow-up and work that drives revenue.",
+    },
+    services: {
+      title: "Other services",
+      intro:
+        "Besides workflow automation, Philoo also helps service SMBs with practical AI training, tooling and visibility.",
+      cards: [
+        {
+          title: "AI training",
+          body: "Practical sessions that help teams use AI effectively in their daily work.",
+          price: "Price on request",
+        },
+        {
+          title: "AI hackathon",
+          body: "A short, guided session to identify promising AI use cases and test them quickly.",
+          price: "Price on request",
+        },
+        {
+          title: "AI tooling implementation",
+          body: "Support with choosing, setting up and applying AI tools inside your existing way of working.",
+          price: "Price on request",
+        },
+        {
+          title: "AI SEO & visibility",
+          body: "Optimising website content for better visibility in Google and AI search engines.",
+          price: "Price on request",
+        },
+      ],
     },
     bottomCta: {
       headline: "Curious where your process can save time?",

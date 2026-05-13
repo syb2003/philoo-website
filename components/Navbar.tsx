@@ -160,7 +160,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
     <header ref={headerRef} className="sticky top-3 z-[70] px-3 sm:top-4 sm:px-4 lg:px-6">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-[1620px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/34 bg-[linear-gradient(135deg,rgba(22,24,81,0.96),rgba(20,36,58,0.98))] px-4 py-3 shadow-[0_34px_86px_rgba(15,23,54,0.34),0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-6 lg:px-7 lg:py-[0.82rem] xl:gap-8"
+        className="mx-auto flex max-w-[1620px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/34 bg-[linear-gradient(135deg,rgba(22,24,81,0.96),rgba(20,36,58,0.98))] px-4 py-3 shadow-[0_34px_86px_rgba(15,23,54,0.34),0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-5 lg:px-6 lg:py-[0.82rem] xl:gap-6 xl:px-7"
       >
         <a
           aria-label="Philoo"
@@ -171,11 +171,11 @@ export function Navbar({ lang, copy }: NavbarProps) {
         </a>
 
         <div className="hidden items-center justify-self-center lg:flex">
-          <div className="flex items-center gap-2 xl:gap-3">
+          <div className="flex items-center gap-1 xl:gap-2">
             {navItems.map((item) => (
               <a
                 aria-current={activeId === item.id ? "location" : undefined}
-                className={`rounded-full border px-4 py-[0.82rem] text-sm font-extrabold leading-none transition-colors xl:px-5 ${
+                className={`rounded-full border px-3 py-[0.82rem] text-sm font-extrabold leading-none transition-colors xl:px-4 ${
                   activeId === item.id
                     ? "border-[#D6C48A]/80 bg-[#D6C48A]/12 text-[#D6C48A]"
                     : "border-transparent text-white hover:border-white/10 hover:bg-white/5"
@@ -193,7 +193,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
           </div>
         </div>
 
-        <div className="hidden items-center justify-self-end gap-4 xl:gap-5 lg:flex">
+        <div className="hidden items-center justify-self-end gap-3 xl:gap-4 lg:flex">
           <LanguageToggle
             ariaLabel={copy.language}
             currentLanguage={lang}

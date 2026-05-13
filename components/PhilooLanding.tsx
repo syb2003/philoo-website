@@ -31,6 +31,7 @@ const benefitIcons = [HandIcon, LightningIcon, ChartIcon, UsersIcon] as const;
 const exampleIcons = [BellIcon, FileCheckIcon, MailIcon, ChatIcon] as const;
 const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
 const workflowIcons = [MailIcon, CalendarIcon, FileCheckIcon, UserIcon, BellIcon] as const;
+const serviceIcons = [UsersIcon, RocketIcon, CubeIcon, TrendIcon] as const;
 
 export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
   const isDutch = lang === "nl";
@@ -88,6 +89,7 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
         <Process copy={copy} />
         <AudienceAndTestimonial copy={copy} />
         <Pricing copy={copy} />
+        <Services copy={copy} />
         <BottomCta copy={copy} />
       </main>
     </div>
@@ -357,6 +359,48 @@ function Pricing({ copy }: { copy: SiteCopy }) {
           </div>
           <p className="mt-5 text-[0.95rem] font-medium leading-7 text-[#0F1736]/82">{copy.pricing.finalNote}</p>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+
+function Services({ copy }: { copy: SiteCopy }) {
+  return (
+    <section
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
+      id="services"
+    >
+      <Reveal className="mb-6 max-w-[760px]">
+        <h2 className="text-[clamp(1.7rem,4vw,2.2rem)] font-black leading-tight tracking-[0] text-white">
+          {copy.services.title}
+        </h2>
+        <p className="mt-3 max-w-[700px] text-[0.98rem] font-medium leading-7 text-white/82">{copy.services.intro}</p>
+      </Reveal>
+
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {copy.services.cards.map((card, index) => {
+          const Icon = serviceIcons[index] ?? CubeIcon;
+
+          return (
+            <Reveal
+              className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
+              delay={index * 70}
+              key={card.title}
+            >
+              <div className="mb-5 grid h-14 w-14 place-items-center rounded-full bg-[#D6C48A]/18 text-[#161851]">
+                <Icon className="h-7 w-7" />
+              </div>
+              <h3 className="text-[1.12rem] font-black leading-snug text-[#161851]">{card.title}</h3>
+              <p className="mt-4 text-[0.96rem] font-medium leading-7 text-[#0F1736]/82">{card.body}</p>
+              <div className="mt-5 pt-4">
+                <span className="inline-flex rounded-full border border-[#D6C48A]/45 px-3 py-1 text-xs font-black uppercase tracking-[0.08em] text-[#161851]/68">
+                  {card.price}
+                </span>
+              </div>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );
