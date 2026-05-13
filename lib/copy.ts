@@ -59,15 +59,19 @@ export type SiteCopy = {
     subtitle: string;
     primaryLabel: string;
     primaryPrice: string;
-    primarySubtext: string;
+    primaryDescription: string;
+    includedLine: string;
     secondaryLabel: string;
     secondaryPrice: string;
-    secondarySubtext: string;
-    description: string;
+    secondaryDescription: string;
+    smallNote: string;
     roiLabel: string;
-    roiIntro: string;
+    exampleTitle: string;
+    exampleDescription: string;
+    paybackLine: string;
     roiLines: string[];
     finalNote: string;
+    disclaimer: string;
   };
   services: {
     title: string;
@@ -143,24 +147,24 @@ export const siteCopy = {
       link: "Bespreek jouw workflow →",
       cards: [
         {
-          eyebrow: "Betalingen bewaken",
-          title: "Van openstaande factuur naar nette reminder.",
-          body: "Openstaande betalingen herkennen, status controleren en automatisch een vriendelijke reminder klaarzetten.",
+          eyebrow: "Klantvragen behandelen",
+          title: "Van volle inbox naar snelle eerste reactie.",
+          body: "Binnenkomende mails of formulieren worden herkend, samengevat en klaargezet met een conceptantwoord of vervolgstap.",
         },
         {
-          eyebrow: "Facturen verwerken",
-          title: "Van factuur naar controle, verwerking en boeking.",
-          body: "Factuurgegevens uitlezen, matchen met klant of project en klaarzetten voor verwerking.",
+          eyebrow: "Aanvragen opvolgen",
+          title: "Van losse aanvraag naar duidelijke opvolging.",
+          body: "Nieuwe aanvragen worden automatisch samengevat, gekoppeld aan de juiste persoon en klaargezet als taak of vervolgmail.",
         },
         {
           eyebrow: "Offertes opvolgen",
-          title: "Van verzonden offerte naar slimme follow-up.",
-          body: "Bijhouden welke offertes openstaan en automatisch een opvolgmail of taak klaarzetten.",
+          title: "Van verzonden offerte naar nette opvolging.",
+          body: "Bijhouden welke offertes nog openstaan en automatisch een vriendelijke opvolgmail of taak klaarzetten.",
         },
         {
-          eyebrow: "Klantvragen behandelen",
-          title: "Van klantvraag naar samenvatting, actie en conceptantwoord.",
-          body: "Binnenkomende mails of formulieren samenvatten, prioriteit bepalen en een conceptantwoord klaarzetten.",
+          eyebrow: "Betalingen bewaken",
+          title: "Van openstaande factuur naar vriendelijke reminder.",
+          body: "Openstaande betalingen herkennen, status controleren en een nette reminder klaarzetten.",
         },
       ],
     },
@@ -206,26 +210,30 @@ export const siteCopy = {
     pricing: {
       title: "Pricing",
       subtitle: "Per automatisering",
-      primaryLabel: "Eerste automatisering",
-      primaryPrice: "€4.995 excl. btw",
-      primarySubtext: "Voor één concrete workflow.",
-      secondaryLabel: "Vanaf automatisering 2",
-      secondaryPrice: "vanaf €5.995 excl. btw",
-      secondarySubtext: "Voor een nieuwe volledige workflow bij dezelfde klant.",
-      description:
-        "Inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor optimalisatie en kleine aanpassingen.",
+      primaryLabel: "Workflow",
+      primaryPrice: "vanaf €4.995 excl. btw",
+      primaryDescription: "Voor één volledige automatisering binnen bestaande tools.",
+      includedLine:
+        "Inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor aftercare, optimalisatie en kleine aanpassingen.",
+      secondaryLabel: "Uitbreiding bestaande workflow",
+      secondaryPrice: "vanaf €750 excl. btw",
+      secondaryDescription:
+        "Voor een extra stap, check, reminder, mail, koppeling of kleine uitbreiding binnen een bestaande workflow.",
+      smallNote: "Tooling en gebruikskosten lopen via de eigen accounts van de klant.",
       roiLabel: "Voorbeeldberekening",
-      roiIntro: "Bij een investering van €4.995 is de terugverdientijd ongeveer 13 maanden.",
+      exampleTitle: "Voorbeeld: klantvragen sneller behandelen",
+      exampleDescription:
+        "Binnenkomende klantvragen worden automatisch samengevat en klaargezet met een conceptantwoord of vervolgstap.",
+      paybackLine: "Terugverdientijd: ongeveer 7 maanden",
       roiLines: [
-        "10 uur minder handmatig werk per maand",
-        "× €50 waarde per uur",
-        "× 12 maanden",
-        "= €6.000 waarde per jaar",
-        "− €1.200 geschatte AI-toolkosten per jaar",
-        "= €4.800 netto waarde per jaar",
+        "20 uur minder handmatig werk per maand",
+        "× €40 waarde per uur",
+        "= €800 waarde per maand",
+        "− €100 tool- en gebruikskosten per maand",
+        "= €700 netto waarde per maand",
       ],
-      finalNote:
-        "De waarde zit niet alleen in lagere kosten. De vrijgekomen tijd gaat terug naar klanten, opvolging en werk dat omzet oplevert.",
+      finalNote: "",
+      disclaimer: "Gebaseerd op een investering van €4.995. De exacte besparing hangt af van volume, proces en huidige werkwijze.",
     },
     services: {
       title: "Overige diensten",
@@ -317,24 +325,24 @@ export const siteCopy = {
       link: "Discuss your workflow →",
       cards: [
         {
-          eyebrow: "Payment reminders",
-          title: "From overdue invoice to friendly reminder.",
-          body: "Detect open payments, check status and prepare a clear reminder automatically.",
+          eyebrow: "Customer request handling",
+          title: "From full inbox to fast first response.",
+          body: "Incoming emails or forms are recognised, summarised and prepared with a draft reply or next step.",
         },
         {
-          eyebrow: "Invoice processing",
-          title: "From invoice to check, processing and booking.",
-          body: "Read invoice data, match it with a client or project and prepare it for processing.",
+          eyebrow: "Request follow-up",
+          title: "From loose request to clear follow-up.",
+          body: "New requests are automatically summarised, assigned to the right person and prepared as a task or follow-up email.",
         },
         {
           eyebrow: "Quote follow-up",
-          title: "From sent quote to smart follow-up.",
-          body: "Track open quotes and automatically prepare a follow-up email or task.",
+          title: "From sent quote to polite follow-up.",
+          body: "Track which quotes are still open and automatically prepare a friendly follow-up email or task.",
         },
         {
-          eyebrow: "Customer request handling",
-          title: "From customer request to summary, action and draft reply.",
-          body: "Summarise incoming emails or forms, determine priority and prepare a draft response.",
+          eyebrow: "Payment reminders",
+          title: "From overdue invoice to friendly reminder.",
+          body: "Detect open payments, check status and prepare a clear reminder.",
         },
       ],
     },
@@ -380,26 +388,30 @@ export const siteCopy = {
     pricing: {
       title: "Pricing",
       subtitle: "Per automation",
-      primaryLabel: "First automation",
-      primaryPrice: "€4,995 excl. VAT",
-      primarySubtext: "For one concrete workflow.",
-      secondaryLabel: "From automation 2",
-      secondaryPrice: "from €5,995 excl. VAT",
-      secondarySubtext: "For a new full workflow with the same client.",
-      description:
-        "Including intake, design, build, testing, handover, documentation and 1 month of support for optimisation and small adjustments.",
+      primaryLabel: "Workflow",
+      primaryPrice: "from €4,995 excl. VAT",
+      primaryDescription: "For one complete automation inside your existing tools.",
+      includedLine:
+        "Includes intake, design, build, testing, handover, documentation and 1 month of support for aftercare, optimisation and small adjustments.",
+      secondaryLabel: "Extension of existing workflow",
+      secondaryPrice: "from €750 excl. VAT",
+      secondaryDescription:
+        "For an extra step, check, reminder, email, integration or small extension inside an existing workflow.",
+      smallNote: "Tooling and usage costs run through the client’s own accounts.",
       roiLabel: "Example calculation",
-      roiIntro: "With an investment of €4,995, the payback period is around 13 months.",
+      exampleTitle: "Example: handling customer requests faster",
+      exampleDescription:
+        "Incoming customer requests are automatically summarised and prepared with a draft reply or next step.",
+      paybackLine: "Payback period: around 7 months",
       roiLines: [
-        "10 hours less manual work per month",
-        "× €50 value per hour",
-        "× 12 months",
-        "= €6,000 value per year",
-        "− €1,200 estimated AI tool costs per year",
-        "= €4,800 net value per year",
+        "20 hours less manual work per month",
+        "× €40 value per hour",
+        "= €800 value per month",
+        "− €100 tool and usage costs per month",
+        "= €700 net value per month",
       ],
-      finalNote:
-        "The value is not only in lower costs. The freed-up time goes back to clients, follow-up and work that drives revenue.",
+      finalNote: "",
+      disclaimer: "Based on an investment of €4,995. The exact saving depends on volume, process and current way of working.",
     },
     services: {
       title: "Other services",

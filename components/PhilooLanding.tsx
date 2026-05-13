@@ -28,7 +28,7 @@ type PhilooLandingProps = {
 };
 
 const benefitIcons = [HandIcon, LightningIcon, ChartIcon, UsersIcon] as const;
-const exampleIcons = [BellIcon, FileCheckIcon, MailIcon, ChatIcon] as const;
+const exampleIcons = [ChatIcon, FileCheckIcon, MailIcon, BellIcon] as const;
 const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
 const workflowIcons = [MailIcon, CalendarIcon, FileCheckIcon, UserIcon, BellIcon] as const;
 const serviceIcons = [UsersIcon, RocketIcon, CubeIcon, TrendIcon] as const;
@@ -329,35 +329,47 @@ function Pricing({ copy }: { copy: SiteCopy }) {
               {copy.pricing.primaryLabel}
             </p>
             <p className="mt-4 text-[clamp(2.2rem,4vw,3rem)] font-black leading-none text-[#161851]">{copy.pricing.primaryPrice}</p>
-            <p className="mt-2 text-[0.98rem] font-black leading-7 text-[#0F1736]/82">{copy.pricing.primarySubtext}</p>
-            <div className="mt-6 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-4">
-              <p className="text-xs font-black uppercase tracking-[0.08em] text-[#161851]/58">{copy.pricing.secondaryLabel}</p>
-              <p className="mt-2 text-lg font-black leading-snug text-[#161851]">{copy.pricing.secondaryPrice}</p>
-              <p className="mt-1 text-sm font-medium leading-6 text-[#0F1736]/76">{copy.pricing.secondarySubtext}</p>
-            </div>
+            <p className="mt-3 text-[1rem] font-black leading-7 text-[#0F1736]/84">{copy.pricing.primaryDescription}</p>
+            <p className="mt-5 max-w-[46rem] text-[0.95rem] font-medium leading-7 text-[#0F1736]/80">{copy.pricing.includedLine}</p>
           </div>
-          <p className="mt-5 text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.description}</p>
+
+          <div className="mt-6 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-4 sm:p-5">
+            <p className="text-xs font-black uppercase tracking-[0.08em] text-[#161851]/58">{copy.pricing.secondaryLabel}</p>
+            <p className="mt-2 text-[1.4rem] font-black leading-snug text-[#161851]">{copy.pricing.secondaryPrice}</p>
+            <p className="mt-2 text-sm font-medium leading-6 text-[#0F1736]/76">{copy.pricing.secondaryDescription}</p>
+          </div>
+
+          <p className="mt-5 text-[0.84rem] font-medium leading-6 text-[#0F1736]/58">{copy.pricing.smallNote}</p>
         </Reveal>
 
         <Reveal
           className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.055)] sm:p-7"
           delay={110}
         >
-          <div className="border-b border-[#E6E8EF] pb-5">
+          <div>
             <div className="flex items-center gap-3">
               <span aria-hidden="true" className="h-px w-8 bg-[#D6C48A]" />
               <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.roiLabel}</p>
             </div>
-            <p className="mt-3 max-w-[460px] text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.roiIntro}</p>
+            <h3 className="mt-4 text-[1.12rem] font-black leading-snug text-[#161851]">{copy.pricing.exampleTitle}</h3>
+            <p className="mt-3 max-w-[38rem] text-[0.95rem] font-medium leading-7 text-[#0F1736]/82">
+              {copy.pricing.exampleDescription}
+            </p>
           </div>
-          <div className="mt-5 grid gap-3 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-5">
+          <div className="mt-5 grid gap-2 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-5 sm:p-6">
             {copy.pricing.roiLines.map((line) => (
-              <p className="text-[0.98rem] font-black leading-6 text-[#161851]" key={line}>
+              <p
+                className={`${line.startsWith("=") ? "text-[1rem] font-black" : "text-[0.98rem] font-bold"} leading-6 text-[#161851]`}
+                key={line}
+              >
                 {line}
               </p>
             ))}
           </div>
-          <p className="mt-5 text-[0.95rem] font-medium leading-7 text-[#0F1736]/82">{copy.pricing.finalNote}</p>
+          <div className="mt-5 rounded-[12px] border border-[#D6C48A]/45 bg-[#D6C48A]/10 px-4 py-3">
+            <p className="text-[0.96rem] font-black leading-6 text-[#161851]">{copy.pricing.paybackLine}</p>
+          </div>
+          <p className="mt-4 text-[0.82rem] font-medium leading-6 text-[#0F1736]/56">{copy.pricing.disclaimer}</p>
         </Reveal>
       </div>
     </section>
