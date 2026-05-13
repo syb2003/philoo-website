@@ -260,7 +260,7 @@ export const siteCopy = {
           price: "Prijs op aanvraag",
         },
         {
-          title: "AI SEO & vindbaarheid",
+          title: "AI-vindbaarheid",
           body: "We verbeteren je content voor AI-zoekmachines zoals ChatGPT, Perplexity en Gemini, zodat je bedrijf beter herkend en genoemd kan worden.",
           price: "Prijs op aanvraag",
         },
@@ -438,7 +438,7 @@ export const siteCopy = {
           price: "Price on request",
         },
         {
-          title: "AI SEO & visibility",
+          title: "AI visibility",
           body: "Optimising website content for better visibility in Google and AI search engines.",
           price: "Price on request",
         },

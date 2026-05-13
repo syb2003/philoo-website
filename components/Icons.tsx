@@ -132,6 +132,52 @@ export function HandIcon(props: IconProps) {
   );
 }
 
+export function GraduationCapIcon(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="m2 9 10-5 10 5-10 5-10-5Z" />
+      <path d="M6 11.5v4.25C6 17.55 8.69 19 12 19s6-1.45 6-3.25V11.5" />
+      <path d="M22 10v6" />
+      <path d="M22 16c0 1.1-.9 2-2 2" />
+    </IconBase>
+  );
+}
+
+export function LightbulbIcon(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M9 18h6" />
+      <path d="M10 22h4" />
+      <path d="M12 2a7 7 0 0 0-4 12.74c.63.42 1 1.13 1 1.88V18h6v-1.38c0-.75.37-1.46 1-1.88A7 7 0 0 0 12 2Z" />
+    </IconBase>
+  );
+}
+
+export function SlidersIcon(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M4 6h6" />
+      <path d="M14 6h6" />
+      <path d="M10 6a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
+      <path d="M4 12h10" />
+      <path d="M18 12h2" />
+      <path d="M14 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
+      <path d="M4 18h4" />
+      <path d="M12 18h8" />
+      <path d="M8 18a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
+    </IconBase>
+  );
+}
+
+export function SearchIcon(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <circle cx="11" cy="11" r="6" />
+      <path d="m20 20-4.2-4.2" />
+    </IconBase>
+  );
+}
+
 export function LightningIcon(props: IconProps) {
   return (
     <IconBase {...props}>

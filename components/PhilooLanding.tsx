@@ -9,11 +9,15 @@ import {
   CheckCircleIcon,
   CubeIcon,
   FileCheckIcon,
+  GraduationCapIcon,
   HandIcon,
   LightningIcon,
+  LightbulbIcon,
   MailIcon,
   RocketIcon,
   ScaleIcon,
+  SearchIcon,
+  SlidersIcon,
   TrendIcon,
   UserIcon,
   UsersIcon,
@@ -31,7 +35,7 @@ const benefitIcons = [HandIcon, LightningIcon, ChartIcon, UsersIcon] as const;
 const exampleIcons = [ChatIcon, FileCheckIcon, MailIcon, BellIcon] as const;
 const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
 const workflowIcons = [MailIcon, CalendarIcon, FileCheckIcon, UserIcon, BellIcon] as const;
-const serviceIcons = [UsersIcon, RocketIcon, CubeIcon, TrendIcon] as const;
+const serviceIcons = [GraduationCapIcon, LightbulbIcon, SlidersIcon, SearchIcon] as const;
 
 export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
   const isDutch = lang === "nl";
@@ -410,19 +414,21 @@ function Services({ copy }: { copy: SiteCopy }) {
 
           return (
             <Reveal
-              className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
+              className="h-full rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
               delay={index * 70}
               key={card.title}
             >
-              <div className="mb-5 grid h-14 w-14 place-items-center rounded-full bg-[#D6C48A]/18 text-[#161851]">
-                <Icon className="h-7 w-7" />
-              </div>
-              <h3 className="text-[1.12rem] font-black leading-snug text-[#161851]">{card.title}</h3>
-              <p className="mt-4 text-[0.96rem] font-medium leading-7 text-[#0F1736]/82">{card.body}</p>
-              <div className="mt-5 pt-4">
-                <span className="inline-flex rounded-full border border-[#D6C48A]/45 px-3 py-1 text-xs font-black uppercase tracking-[0.08em] text-[#161851]/68">
-                  {card.price}
-                </span>
+              <div className="flex h-full flex-col">
+                <div className="mb-5 grid h-14 w-14 place-items-center rounded-full bg-[#D6C48A]/18 text-[#161851]">
+                  <Icon className="h-7 w-7" />
+                </div>
+                <h3 className="text-[1.12rem] font-black leading-snug text-[#161851]">{card.title}</h3>
+                <p className="mt-4 flex-1 text-[0.96rem] font-medium leading-7 text-[#0F1736]/82">{card.body}</p>
+                <div className="mt-5 pt-4">
+                  <span className="inline-flex rounded-full border border-[#D6C48A]/45 px-3 py-1 text-xs font-black uppercase tracking-[0.08em] text-[#161851]/68">
+                    {card.price}
+                  </span>
+                </div>
               </div>
             </Reveal>
           );
