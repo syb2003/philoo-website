@@ -160,7 +160,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
     <header ref={headerRef} className="sticky top-0 z-[70] border-b border-[#E6E8EF]/80 bg-[linear-gradient(180deg,rgba(247,248,250,0.97),rgba(247,248,250,0.9))] px-3 pb-3 pt-3 shadow-[0_14px_36px_rgba(15,23,54,0.05)] backdrop-blur-md sm:px-4 sm:pb-4 sm:pt-4 lg:px-6">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-[1620px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/34 bg-[linear-gradient(135deg,rgba(22,24,81,0.98),rgba(20,36,58,0.99))] px-4 py-3 shadow-[0_36px_88px_rgba(15,23,54,0.3),0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-xl sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-5 lg:px-6 lg:py-[0.82rem] xl:gap-6 xl:px-7"
+        className="mx-auto flex max-w-[1620px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/34 bg-[linear-gradient(135deg,rgba(22,24,81,0.98),rgba(20,36,58,0.99))] px-4 py-3 shadow-[0_36px_88px_rgba(15,23,54,0.3),0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-xl sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-4 lg:px-5 lg:py-[0.8rem] xl:gap-5 xl:px-6"
       >
         <a
           aria-label="Philoo"
@@ -171,11 +171,11 @@ export function Navbar({ lang, copy }: NavbarProps) {
         </a>
 
         <div className="hidden items-center justify-self-center lg:flex">
-          <div className="flex items-center gap-1 xl:gap-2">
+          <div className="flex items-center gap-0.5 xl:gap-1.5">
             {navItems.map((item) => (
               <a
                 aria-current={activeId === item.id ? "location" : undefined}
-                className={`rounded-full border px-3 py-[0.82rem] text-sm font-extrabold leading-none transition-colors xl:px-4 ${
+                className={`rounded-full border px-2.5 py-[0.8rem] text-[0.92rem] font-extrabold leading-none transition-colors xl:px-3.5 ${
                   activeId === item.id
                     ? "border-[#D6C48A]/80 bg-[#D6C48A]/12 text-[#D6C48A]"
                     : "border-transparent text-white hover:border-white/10 hover:bg-white/5"
@@ -193,7 +193,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
           </div>
         </div>
 
-        <div className="hidden items-center justify-self-end gap-3 xl:gap-4 lg:flex">
+        <div className="hidden items-center justify-self-end gap-2.5 xl:gap-3 lg:flex">
           <LanguageToggle
             ariaLabel={copy.language}
             currentLanguage={lang}

@@ -1,6 +1,6 @@
 import type { Language } from "./i18n";
 
-export type SectionId = "home" | "voorbeelden" | "werkwijze" | "voor-wie" | "prijzen" | "services" | "contact";
+export type SectionId = "home" | "voorbeelden" | "werkwijze" | "voor-wie" | "pricing" | "services" | "contact";
 
 export type SiteCopy = {
   metadata: {
@@ -54,7 +54,7 @@ export type SiteCopy = {
     attribution: string;
     ratingLabel: string;
   };
-  prijzen: {
+  pricing: {
     title: string;
     subtitle: string;
     primaryLabel: string;
@@ -102,7 +102,7 @@ export const siteCopy = {
         { id: "voorbeelden", label: "Voorbeelden" },
         { id: "werkwijze", label: "Werkwijze" },
         { id: "voor-wie", label: "Voor wie" },
-        { id: "prijzen", label: "prijzen" },
+        { id: "pricing", label: "Tarieven" },
         { id: "services", label: "Overige diensten" },
         { id: "contact", label: "Contact" },
       ],
@@ -113,8 +113,7 @@ export const siteCopy = {
     },
     hero: {
       headline: ["Minder admin.", "Meer tijd voor wat telt."],
-      body: "AI hoeft geen groot en duur project te zijn. 
-        Philoo helpt  binnen enkele weken één tijdrovend proces te automatiseren binnen de tools die ze al gebruiken.",
+      body: "AI hoeft geen groot en duur project te zijn. Philoo helpt binnen enkele weken één tijdrovend proces te automatiseren binnen de tools die ze al gebruiken.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
       workflow: [
@@ -208,7 +207,7 @@ export const siteCopy = {
       attribution: "Owner recruitment agency",
       ratingLabel: "5.0 met vijf gouden sterren",
     },
-    prijzen: {
+    pricing: {
       title: "prijzen",
       subtitle: "Per automatisering",
       primaryLabel: "Workflow",
@@ -281,7 +280,7 @@ export const siteCopy = {
         { id: "voorbeelden", label: "Examples" },
         { id: "werkwijze", label: "How it works" },
         { id: "voor-wie", label: "Who it’s for" },
-        { id: "prijzen", label: "prijzen" },
+        { id: "pricing", label: "Pricing" },
         { id: "services", label: "Other services" },
         { id: "contact", label: "Contact" },
       ],
@@ -386,7 +385,7 @@ export const siteCopy = {
       attribution: "Owner recruitment agency",
       ratingLabel: "5.0 with five gold stars",
     },
-    prijzen: {
+    pricing: {
       title: "prijzen",
       subtitle: "Per automation",
       primaryLabel: "Workflow",

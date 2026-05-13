@@ -3,7 +3,6 @@ import { Reveal } from "@/components/Reveal";
 import {
   ArrowRightIcon,
   BellIcon,
-  BuildingIcon,
   CalendarIcon,
   ChartIcon,
   ChatIcon,
@@ -19,6 +18,7 @@ import {
   UserIcon,
   UsersIcon,
 } from "@/components/Icons";
+import { SiteFooter } from "@/components/SiteFooter";
 import type { SiteCopy } from "@/lib/copy";
 import type { Language } from "@/lib/i18n";
 
@@ -92,6 +92,8 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
         <Services copy={copy} />
         <BottomCta copy={copy} />
       </main>
+
+      <SiteFooter lang={lang} />
     </div>
   );
 }
