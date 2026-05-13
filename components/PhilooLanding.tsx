@@ -48,12 +48,12 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
           <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-9 lg:pt-16">
             <div className="grid items-center gap-10 min-[1180px]:grid-cols-[minmax(0,520px)_minmax(760px,1fr)] min-[1180px]:gap-24 xl:gap-28">
               <Reveal
-                className={isDutch ? "max-w-[480px] min-[1180px]:pr-12" : "max-w-[520px] min-[1180px]:pr-8"}
+                className={isDutch ? "max-w-[480px] min-[1180px]:pr-12" : "max-w-[492px] min-[1180px]:pr-14"}
               >
                 <h1
                   className={isDutch
                     ? "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851] min-[1180px]:text-[clamp(2.4rem,3.25vw,3.7rem)]"
-                    : "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851]"}
+                    : "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851] min-[1180px]:text-[clamp(2.55rem,3.2vw,3.9rem)]"}
                 >
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[0]}</span>
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[1]}</span>

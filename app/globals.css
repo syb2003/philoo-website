@@ -26,7 +26,7 @@
 html {
   background: var(--philoo-soft);
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--navbar-height) + 52px);
+  scroll-padding-top: calc(var(--navbar-height) + 60px);
 }
 
 body {
@@ -60,7 +60,7 @@ a {
 }
 
 .anchor-section {
-  scroll-margin-top: calc(var(--navbar-height) + 56px);
+  scroll-margin-top: calc(var(--navbar-height) + 64px);
 }
 
 .reveal {

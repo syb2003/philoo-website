@@ -140,9 +140,9 @@ export function Navbar({ lang, copy }: NavbarProps) {
     const sectionIndex = navItems.findIndex((item) => item.id === sectionId);
     const nextSectionId = navItems[sectionIndex + 1]?.id;
     const nextSectionTop = nextSectionId ? getSectionTop(nextSectionId) : null;
-    const desiredTop = sectionTop - navbarHeight - 68;
+    const desiredTop = sectionTop - navbarHeight - 76;
     const maxTopBeforeNext =
-      nextSectionTop !== null ? nextSectionTop - navbarHeight - 124 : desiredTop;
+      nextSectionTop !== null ? nextSectionTop - navbarHeight - 136 : desiredTop;
     const top = Math.min(desiredTop, maxTopBeforeNext);
 
     pendingActiveRef.current = sectionId;
@@ -157,10 +157,10 @@ export function Navbar({ lang, copy }: NavbarProps) {
   }
 
   return (
-    <header ref={headerRef} className="sticky top-3 z-[70] px-3 sm:top-4 sm:px-4 lg:px-6">
+    <header ref={headerRef} className="sticky top-0 z-[70] border-b border-[#E6E8EF]/80 bg-[linear-gradient(180deg,rgba(247,248,250,0.97),rgba(247,248,250,0.9))] px-3 pb-3 pt-3 shadow-[0_14px_36px_rgba(15,23,54,0.05)] backdrop-blur-md sm:px-4 sm:pb-4 sm:pt-4 lg:px-6">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-[1620px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/34 bg-[linear-gradient(135deg,rgba(22,24,81,0.96),rgba(20,36,58,0.98))] px-4 py-3 shadow-[0_34px_86px_rgba(15,23,54,0.34),0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-5 lg:px-6 lg:py-[0.82rem] xl:gap-6 xl:px-7"
+        className="mx-auto flex max-w-[1620px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/34 bg-[linear-gradient(135deg,rgba(22,24,81,0.98),rgba(20,36,58,0.99))] px-4 py-3 shadow-[0_36px_88px_rgba(15,23,54,0.3),0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-xl sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-5 lg:px-6 lg:py-[0.82rem] xl:gap-6 xl:px-7"
       >
         <a
           aria-label="Philoo"
