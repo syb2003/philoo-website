@@ -113,7 +113,7 @@ export const siteCopy = {
     },
     hero: {
       headline: ["Minder admin.", "Meer tijd voor wat telt."],
-      body: "AI hoeft geen groot project te zijn. 
+      body: "AI hoeft geen groot en duur project te zijn. 
         Philoo helpt  binnen enkele weken één tijdrovend proces te automatiseren binnen de tools die ze al gebruiken.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
