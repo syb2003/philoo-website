@@ -263,7 +263,7 @@ export const siteCopy = {
       ],
     },
     bottomCta: {
-      headline: "Benieuwd waar in jullie processen winst te behalen valt?",
+      headline: "Benieuwd waar in jullie bedrijf winst te behalen valt?",
       body: "We denken graag met jullie mee. Plan een vrijblijvend kennismakingsgesprek of stuur ons een mail.",
       button: "hello@philoo.nl",
     },
