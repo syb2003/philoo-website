@@ -57,15 +57,16 @@ export type SiteCopy = {
   pricing: {
     title: string;
     subtitle: string;
-    price: string;
-    regularPriceLabel: string;
+    primaryLabel: string;
+    primaryPrice: string;
+    primarySubtext: string;
+    secondaryLabel: string;
+    secondaryPrice: string;
+    secondarySubtext: string;
     description: string;
-    pilotLabel: string;
-    pilotPrice: string;
-    pilotSuffix: string;
     roiLabel: string;
+    roiIntro: string;
     roiLines: string[];
-    payback: string;
     finalNote: string;
   };
   bottomCta: {
@@ -195,21 +196,24 @@ export const siteCopy = {
     pricing: {
       title: "Pricing",
       subtitle: "Per automatisering",
-      price: "€4.995 excl. btw",
-      regularPriceLabel: "Normaal €4.995 excl. btw",
+      primaryLabel: "Eerste automatisering",
+      primaryPrice: "€4.995 excl. btw",
+      primarySubtext: "Voor één concrete workflow.",
+      secondaryLabel: "Vanaf automatisering 2",
+      secondaryPrice: "vanaf €5.995 excl. btw",
+      secondarySubtext: "Voor een nieuwe volledige workflow bij dezelfde klant.",
       description:
-        "Voor één concrete workflow, inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor optimalisatie en kleine aanpassingen.",
-      pilotLabel: "Tijdelijke pilotprijs",
-      pilotPrice: "€2.995 excl. btw",
-      pilotSuffix: "Voor de eerste automatisering.",
+        "Inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor optimalisatie en kleine aanpassingen.",
       roiLabel: "Voorbeeldberekening",
+      roiIntro: "Bij een investering van €4.995 is de terugverdientijd ongeveer 13 maanden.",
       roiLines: [
         "10 uur minder handmatig werk per maand",
         "× €50 waarde per uur",
         "× 12 maanden",
         "= €6.000 waarde per jaar",
+        "− €1.200 geschatte AI-toolkosten per jaar",
+        "= €4.800 netto waarde per jaar",
       ],
-      payback: "Bij de tijdelijke pilotprijs van €2.995 is de terugverdientijd ongeveer 6 maanden.",
       finalNote:
         "De waarde zit niet alleen in lagere kosten. De vrijgekomen tijd gaat terug naar klanten, opvolging en werk dat omzet oplevert.",
     },
@@ -338,21 +342,24 @@ export const siteCopy = {
     pricing: {
       title: "Pricing",
       subtitle: "Per automation",
-      price: "€4,995 excl. VAT",
-      regularPriceLabel: "Regular price €4,995 excl. VAT",
+      primaryLabel: "First automation",
+      primaryPrice: "€4,995 excl. VAT",
+      primarySubtext: "For one concrete workflow.",
+      secondaryLabel: "From automation 2",
+      secondaryPrice: "from €5,995 excl. VAT",
+      secondarySubtext: "For a new full workflow with the same client.",
       description:
-        "For one concrete workflow, including intake, design, build, testing, handover, documentation and 1 month of support for optimisation and small adjustments.",
-      pilotLabel: "Temporary pilot price",
-      pilotPrice: "€2,995 excl. VAT",
-      pilotSuffix: "For the first automation.",
+        "Including intake, design, build, testing, handover, documentation and 1 month of support for optimisation and small adjustments.",
       roiLabel: "Example calculation",
+      roiIntro: "With an investment of €4,995, the payback period is around 13 months.",
       roiLines: [
         "10 hours less manual work per month",
         "× €50 value per hour",
         "× 12 months",
         "= €6,000 value per year",
+        "− €1,200 estimated AI tool costs per year",
+        "= €4,800 net value per year",
       ],
-      payback: "At the temporary pilot price of €2,995, the payback period is around 6 months.",
       finalNote:
         "The value is not only in lower costs. The freed-up time goes back to clients, follow-up and work that drives revenue.",
     },

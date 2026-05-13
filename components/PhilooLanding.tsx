@@ -324,11 +324,15 @@ function Pricing({ copy }: { copy: SiteCopy }) {
         >
           <div className="border-b border-[#E6E8EF] pb-5">
             <p className="inline-flex rounded-full border border-[#D6C48A]/45 px-3 py-1 text-xs font-black uppercase tracking-[0.08em] text-[#161851]/68">
-              {copy.pricing.pilotLabel}
+              {copy.pricing.primaryLabel}
             </p>
-            <p className="mt-4 text-[clamp(2.2rem,4vw,3rem)] font-black leading-none text-[#161851]">{copy.pricing.pilotPrice}</p>
-            <p className="mt-2 text-[0.98rem] font-black leading-7 text-[#0F1736]/82">{copy.pricing.pilotSuffix}</p>
-            <p className="mt-4 text-sm font-black leading-6 text-[#161851]/58">{copy.pricing.regularPriceLabel}</p>
+            <p className="mt-4 text-[clamp(2.2rem,4vw,3rem)] font-black leading-none text-[#161851]">{copy.pricing.primaryPrice}</p>
+            <p className="mt-2 text-[0.98rem] font-black leading-7 text-[#0F1736]/82">{copy.pricing.primarySubtext}</p>
+            <div className="mt-6 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-4">
+              <p className="text-xs font-black uppercase tracking-[0.08em] text-[#161851]/58">{copy.pricing.secondaryLabel}</p>
+              <p className="mt-2 text-lg font-black leading-snug text-[#161851]">{copy.pricing.secondaryPrice}</p>
+              <p className="mt-1 text-sm font-medium leading-6 text-[#0F1736]/76">{copy.pricing.secondarySubtext}</p>
+            </div>
           </div>
           <p className="mt-5 text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.description}</p>
         </Reveal>
@@ -338,8 +342,11 @@ function Pricing({ copy }: { copy: SiteCopy }) {
           delay={110}
         >
           <div className="border-b border-[#E6E8EF] pb-5">
-            <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.roiLabel}</p>
-            <p className="mt-3 max-w-[460px] text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.payback}</p>
+            <div className="flex items-center gap-3">
+              <span aria-hidden="true" className="h-px w-8 bg-[#D6C48A]" />
+              <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.roiLabel}</p>
+            </div>
+            <p className="mt-3 max-w-[460px] text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.pricing.roiIntro}</p>
           </div>
           <div className="mt-5 grid gap-3 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-5">
             {copy.pricing.roiLines.map((line) => (
