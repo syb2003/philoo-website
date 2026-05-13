@@ -408,18 +408,20 @@ function Services({ copy }: { copy: SiteCopy }) {
 
 function BottomCta({ copy }: { copy: SiteCopy }) {
   return (
-    <section className="anchor-section mt-6 sm:mt-7 lg:mt-8" id="contact">
-      <Reveal className="relative overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-6 py-8 shadow-[0_22px_52px_rgba(15,23,54,0.18)] sm:px-10 sm:py-9 lg:px-16">
-        <div aria-hidden="true" className="cta-dot-pattern absolute inset-y-0 right-0 w-[40%] opacity-80" />
-        <div className="relative grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+    <section
+      className="anchor-section mt-8 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-6 py-8 shadow-[0_18px_46px_rgba(15,23,54,0.06)] sm:mt-10 sm:px-10 sm:py-9 lg:mt-12 lg:px-16"
+      id="contact"
+    >
+      <Reveal>
+        <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <h2 className="text-[clamp(1.55rem,3vw,2.12rem)] font-black leading-tight text-white">
+            <h2 className="text-[clamp(1.55rem,3vw,2.12rem)] font-black leading-tight text-[#161851]">
               {copy.bottomCta.headline}
             </h2>
-            <p className="mt-2 max-w-[720px] text-[1rem] font-medium leading-7 text-white/88">{copy.bottomCta.body}</p>
+            <p className="mt-2 max-w-[720px] text-[1rem] font-medium leading-7 text-[#0F1736]/84">{copy.bottomCta.body}</p>
           </div>
           <a
-            className="inline-flex w-fit items-center justify-center gap-4 rounded-[10px] bg-[#D6C48A] px-6 py-4 text-base font-black text-[#0F1736] shadow-[0_18px_34px_rgba(214,196,138,0.24)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#161851]"
+            className="inline-flex w-fit items-center justify-center gap-4 rounded-[10px] bg-[#D6C48A] px-6 py-4 text-base font-black text-[#0F1736] shadow-[0_18px_34px_rgba(214,196,138,0.18)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-white"
             href="mailto:hello@philoo.nl"
           >
             <MailIcon className="h-5 w-5" />

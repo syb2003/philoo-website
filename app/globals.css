@@ -216,11 +216,6 @@ a {
   font-weight: 800;
 }
 
-.cta-dot-pattern {
-  background-image: radial-gradient(rgba(214, 196, 138, 0.72) 1.2px, transparent 1.4px);
-  background-size: 12px 12px;
-  mask-image: radial-gradient(ellipse at 86% 52%, black 0 36%, transparent 70%);
-}
 
 @media (min-width: 768px) {
   .workflow-card-0 {
