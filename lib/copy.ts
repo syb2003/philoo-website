@@ -1,6 +1,6 @@
 import type { Language } from "./i18n";
 
-export type SectionId = "home" | "voorbeelden" | "werkwijze" | "voor-wie" | "pricing" | "services" | "contact";
+export type SectionId = "home" | "voorbeelden" | "werkwijze" | "voor-wie" | "prijzen" | "services" | "contact";
 
 export type SiteCopy = {
   metadata: {
@@ -54,7 +54,7 @@ export type SiteCopy = {
     attribution: string;
     ratingLabel: string;
   };
-  pricing: {
+  prijzen: {
     title: string;
     subtitle: string;
     primaryLabel: string;
@@ -94,7 +94,7 @@ export const siteCopy = {
     metadata: {
       title: "Philoo | Minder admin. Meer tijd voor klanten.",
       description:
-        "Philoo bouwt slimme AI-workflows in de tools die je team al kent, zodat teams minder handmatig werk doen en meer tijd overhouden voor klanten.",
+        "Philoo bouwt efficiënte AI automatiseringen in de systemen waar je team al mee werkt, zodat teams minder handmatig werk doen en meer tijd overhouden voor wat telt.",
     },
     nav: {
       items: [
@@ -102,7 +102,7 @@ export const siteCopy = {
         { id: "voorbeelden", label: "Voorbeelden" },
         { id: "werkwijze", label: "Werkwijze" },
         { id: "voor-wie", label: "Voor wie" },
-        { id: "pricing", label: "Pricing" },
+        { id: "prijzen", label: "prijzen" },
         { id: "services", label: "Overige diensten" },
         { id: "contact", label: "Contact" },
       ],
@@ -113,7 +113,7 @@ export const siteCopy = {
     },
     hero: {
       headline: ["Minder admin.", "Meer tijd voor wat telt."],
-      body: "AI hoeft geen groot project te zijn. Philoo helpt  binnen enkele weken één tijdrovende workflow te automatiseren binnen de tools die ze al gebruiken.",
+      body: "AI hoeft geen groot project te zijn. Philoo helpt  binnen enkele weken één tijdrovend proces te automatiseren binnen de tools die ze al gebruiken.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
       workflow: [
@@ -144,7 +144,7 @@ export const siteCopy = {
     ],
     examples: {
       title: "Voorbeelden waar Philoo kan helpen",
-      link: "Bespreek jouw workflow →",
+      link: "Bespreek jouw aanvraag →",
       cards: [
         {
           eyebrow: "Klantvragen behandelen",
@@ -179,7 +179,7 @@ export const siteCopy = {
         {
           number: "2",
           title: "Ontwerpen",
-          body: "We kiezen één workflow en bepalen wat de automatisering wel en niet doet.",
+          body: "We kiezen één proces en bepalen wat de automatisering wel en niet doet.",
         },
         {
           number: "3",
@@ -207,15 +207,15 @@ export const siteCopy = {
       attribution: "Owner recruitment agency",
       ratingLabel: "5.0 met vijf gouden sterren",
     },
-    pricing: {
-      title: "Pricing",
+    prijzen: {
+      title: "prijzen",
       subtitle: "Per automatisering",
       primaryLabel: "Workflow",
       primaryPrice: "vanaf €4.995 excl. btw",
       primaryDescription: "Voor één volledige automatisering binnen bestaande tools.",
       includedLine:
         "Inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor aftercare, optimalisatie en kleine aanpassingen.",
-      secondaryLabel: "Uitbreiding bestaande workflow",
+      secondaryLabel: "Uitbreiding bestaande automatisering",
       secondaryPrice: "vanaf €750 excl. btw",
       secondaryDescription:
         "Voor een extra stap, koppeling of kleine uitbreiding.",
@@ -280,7 +280,7 @@ export const siteCopy = {
         { id: "voorbeelden", label: "Examples" },
         { id: "werkwijze", label: "How it works" },
         { id: "voor-wie", label: "Who it’s for" },
-        { id: "pricing", label: "Pricing" },
+        { id: "prijzen", label: "prijzen" },
         { id: "services", label: "Other services" },
         { id: "contact", label: "Contact" },
       ],
@@ -385,8 +385,8 @@ export const siteCopy = {
       attribution: "Owner recruitment agency",
       ratingLabel: "5.0 with five gold stars",
     },
-    pricing: {
-      title: "Pricing",
+    prijzen: {
+      title: "prijzen",
       subtitle: "Per automation",
       primaryLabel: "Workflow",
       primaryPrice: "from €4,995 excl. VAT",
