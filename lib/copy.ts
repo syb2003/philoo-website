@@ -411,7 +411,7 @@ export const siteCopy = {
   smallNote:
     "Tool and usage costs run through the client’s own accounts.",
 
-  roiLabel: "Example calculation",
+  roiLabel: "Return on investment calculation",
   exampleTitle: "Example: faster customer replies",
   exampleDescription:
     "Customer requests are summarised and prepared with a draft reply or next step.",
