@@ -168,7 +168,7 @@ export const siteCopy = {
         {
           eyebrow: "Betalingen bewaken",
           title: "Van openstaande factuur naar vriendelijke reminder.",
-          body: "Openstaande betalingen worden herkend, gecontroleerd en klaargezet met een nette reminder.",
+          body: "Openstaande betalingen worden herkend, gecontroleerd en opgevolgd met een vriendelijke reminder.",
         },
       ],
     },
@@ -309,19 +309,19 @@ export const siteCopy = {
     benefits: [
       {
         title: "Less manual work",
-        body: "Automate repetitive and error-prone tasks.",
+        body: "Automate tasks that keep coming back.",
       },
       {
         title: "Move faster",
-        body: "Actions at the right moment, automatically.",
+        body: "Instant replies, actions and reminders.",
       },
       {
-        title: "More overview",
-        body: "Realtime visibility into actions, statuses and progress.",
+        title: "More control",
+        body: "See what is open, done and still needs attention.",
       },
       {
-        title: "More time for clients",
-        body: "Less admin means more attention for what matters.",
+        title: "Fewer mistakes",
+        body: "Reduce manual errors",
       },
     ],
     examples: {
@@ -329,24 +329,24 @@ export const siteCopy = {
       link: "Discuss your workflow →",
       cards: [
         {
-          eyebrow: "Customer request handling",
-          title: "From full inbox to fast first response.",
+          eyebrow: "Customer questions",
+          title: "From full inbox to fast response.",
           body: "Incoming emails or forms are recognised, summarised and prepared with a draft reply or next step.",
         },
         {
-          eyebrow: "Request follow-up",
-          title: "From loose request to clear follow-up.",
-          body: "New requests are automatically summarised, assigned to the right person and prepared as a task or follow-up email.",
+          eyebrow: "New requests",
+          title: "From new request to clear next step.",
+          body: "New requests are summarised, assigned to the right person and prepared as a task or follow-up email.",
         },
         {
           eyebrow: "Quote follow-up",
           title: "From sent quote to polite follow-up.",
-          body: "Track which quotes are still open and automatically prepare a friendly follow-up email or task.",
+          body: "Open quotes are tracked and prepared with a friendly follow-up email or task.",
         },
         {
           eyebrow: "Payment reminders",
           title: "From overdue invoice to friendly reminder.",
-          body: "Detect open payments, check status and prepare a clear reminder.",
+          body: "Open payments are found, checked and followed up with a friendly reminder.",
         },
       ],
     },
@@ -356,96 +356,111 @@ export const siteCopy = {
         {
           number: "1",
           title: "Understand",
-          body: "We learn your process and tools and identify the biggest opportunities.",
+          body: "We look at your process, tools and manual tasks.",
         },
         {
           number: "2",
           title: "Design",
-          body: "We design a smart automation that fits your current way of working.",
+          body: "We choose one workflow and define how the automation should look like.",
         },
         {
           number: "3",
-          title: "Implement",
-          body: "We go live quickly and safely, with attention to adoption and reliability.",
+          title: "Build",
+          body: "We build, test and launch it in your systems.",
         },
         {
           number: "4",
-          title: "Optimise",
-          body: "We keep improving and scale as your organisation grows.",
+          title: "Improve",
+          body: "After launch, we review feedback and make small improvements.",
         },
       ],
     },
-    audience: {
-      title: "Who this is for",
-      bullets: [
-        "Teams that want less manual work.",
-        "Organisations that want more grip on their processes.",
-        "Firms that want more time for clients.",
-      ],
-    },
+   audience: {
+  title: "Who this is for",
+  bullets: [
+    "Service SMBs that want less manual work.",
+    "Organisations that need more overview of their processes.",
+    "Companies that want to start with AI without a large IT project or budget.",
+  ],
+},
     testimonial: {
       quote:
         "Philoo delivered the automation and operational structure we were missing. They quickly understood how our team worked and built reliable automations across Notion, HubSpot, Google Sheets, Slack and Airtable. Ideas were translated into working systems fast. Communication was clear, and the solutions were stable, scalable and immediately useful. Philoo felt like a real partner, not just a contractor.",
       attribution: "Owner recruitment agency",
       ratingLabel: "5.0 with five gold stars",
     },
-    pricing: {
-      title: "prijzen",
-      subtitle: "Per automation",
-      primaryLabel: "Workflow",
-      primaryPrice: "from €4,995 excl. VAT",
-      primaryDescription: "For one complete automation inside your existing tools.",
-      includedLine:
-        "Includes intake, design, build, testing, handover, documentation and 1 month of support for aftercare, optimisation and small adjustments.",
-      secondaryLabel: "Extension of existing workflow",
-      secondaryPrice: "from €750 excl. VAT",
-      secondaryDescription:
-        "For an extra step, check, reminder, email, integration or small extension inside an existing workflow.",
-      smallNote: "Tooling and usage costs run through the client’s own accounts.",
-      roiLabel: "Example calculation",
-      exampleTitle: "Example: handling customer requests faster",
-      exampleDescription:
-        "Incoming customer requests are automatically summarised and prepared with a draft reply or next step.",
-      paybackLine: "Payback period: around 7 months",
-      roiLines: [
-        "20 hours less manual work per month",
-        "× €40 value per hour",
-        "= €800 value per month",
-        "− €100 tool and usage costs per month",
-        "= €700 net value per month",
-      ],
-      finalNote: "",
-      disclaimer: "Based on an investment of €4,995. The exact saving depends on volume, process and current way of working.",
+   pricing: {
+  title: "Pricing",
+  subtitle: "Per automation",
+
+  primaryLabel: "Workflow",
+  primaryPrice: "From €4,995 excl. VAT",
+  primaryDescription: "One complete automation in your existing tools.",
+
+  includedLine:
+    "Includes intake, design, build, testing, handover, documentation and 1 month of support for small improvements.",
+
+  secondaryLabel: "Workflow extension",
+  secondaryPrice: "From €750 excl. VAT",
+  secondaryDescription:
+    "For an extra step, check, reminder, email, integration or small change in an existing workflow.",
+
+  smallNote:
+    "Tool and usage costs run through the client’s own accounts.",
+
+  roiLabel: "Example calculation",
+  exampleTitle: "Example: faster customer replies",
+  exampleDescription:
+    "Customer requests are summarised and prepared with a draft reply or next step.",
+
+  roiLines: [
+    "20 hours less manual work per month",
+    "× €40 value per hour",
+    "= €800 value per month",
+    "− €100 tool and usage costs per month",
+    "= €700 net value per month",
+  ],
+
+  paybackLine: "Payback period: around 7 months",
+
+  finalNote: "",
+  disclaimer:
+    "Based on an investment of €4,995. The exact saving depends on volume, process and current way of working.",
+},
+    otherServices: {
+  title: "Other services",
+  intro:
+    "Besides process automation, Philoo can also help in other practical ways with AI.",
+
+  items: [
+    {
+      title: "AI training",
+      description:
+        "No slide deck full of theory. Your team learns how to improve one real process with AI.",
+      label: "Price on request",
     },
-    services: {
-      title: "Other services",
-      intro:
-        "Besides workflow automation, Philoo also helps service SMBs with practical AI training, tooling and visibility.",
-      cards: [
-        {
-          title: "AI training",
-          body: "Practical sessions that help teams use AI effectively in their daily work.",
-          price: "Price on request",
-        },
-        {
-          title: "AI hackathon",
-          body: "A short, guided session to identify promising AI use cases and test them quickly.",
-          price: "Price on request",
-        },
-        {
-          title: "AI tooling implementation",
-          body: "Support with choosing, setting up and applying AI tools inside your existing way of working.",
-          price: "Price on request",
-        },
-        {
-          title: "AI visibility",
-          body: "Optimising website content for better visibility in Google and AI search engines.",
-          price: "Price on request",
-        },
-      ],
+    {
+      title: "AI workshop",
+      description:
+        "A live guided session to find useful AI ideas and test the best ones with your team.",
+      label: "Price on request",
     },
+    {
+      title: "AI tooling advice",
+      description:
+        "Thinking about AI tools, but not sure what fits? We help you choose, set up and use them well.",
+      label: "Price on request",
+    },
+    {
+      title: "AI visibility",
+      description:
+        "We improve your company’s visibility in AI search tools, so they better understand what you do and when to mention you.",
+      label: "Price on request",
+    },
+  ],
+},
     bottomCta: {
-      headline: "Curious where your process can save time?",
+      headline: "Ready to find your first automation opportunity?",
       body: "We are happy to think along. Book a free intro call or send us an email.",
       button: "hello@philoo.nl",
     },
