@@ -50,14 +50,14 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
           id="home"
         >
           <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-7 lg:pt-12 2xl:pb-9 2xl:pt-16">
-            <div className="grid items-center gap-10 min-[1180px]:grid-cols-[minmax(0,570px)_minmax(700px,1fr)] min-[1180px]:gap-12 xl:gap-16 2xl:grid-cols-[minmax(0,520px)_minmax(760px,1fr)] 2xl:gap-28">
+            <div className="grid items-center gap-10 min-[1180px]:grid-cols-[minmax(0,600px)_minmax(620px,1fr)] min-[1180px]:gap-10 xl:gap-12 2xl:grid-cols-[minmax(0,560px)_minmax(760px,1fr)] 2xl:gap-24">
               <Reveal
-                className={isDutch ? "max-w-[540px] min-[1180px]:pr-8 2xl:pr-12" : "max-w-[520px] min-[1180px]:pr-12 2xl:max-w-[548px] 2xl:pr-14"}
+                className="max-w-[540px] min-[1180px]:pr-8 2xl:pr-12"
               >
                 <h1
                   className={isDutch
-                    ? "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851] min-[1180px]:text-[clamp(2.4rem,3.25vw,3.7rem)]"
-                    : "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851] min-[1180px]:text-[clamp(2.35rem,2.45vw,2.75rem)] 2xl:text-[clamp(2.45rem,2.35vw,3rem)]"}
+                    ? "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851] min-[1180px]:text-[clamp(2.35rem,2.85vw,3.35rem)]"
+                    : "text-[clamp(2.85rem,4.5vw,4.55rem)] font-black leading-[1.04] tracking-[0] text-[#161851] min-[1180px]:text-[clamp(2.3rem,2.25vw,2.7rem)]"}
                 >
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[0]}</span>
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[1]}</span>
