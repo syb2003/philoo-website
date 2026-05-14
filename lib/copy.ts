@@ -431,31 +431,30 @@ export const siteCopy = {
   title: "Other services",
   intro:
     "Besides process automation, Philoo can also help in other practical ways with AI.",
-
-  items: [
+  cards: [
     {
       title: "AI training",
-      description:
+      body:
         "No slide deck full of theory. Your team learns how to improve one real process with AI.",
-      label: "Price on request",
+      price: "Price on request",
     },
     {
       title: "AI workshop",
-      description:
+      body:
         "A live guided session to find useful AI ideas and test the best ones with your team.",
-      label: "Price on request",
+      price: "Price on request",
     },
     {
       title: "AI tooling advice",
-      description:
+      body:
         "Thinking about AI tools, but not sure what fits? We help you choose, set up and use them well.",
-      label: "Price on request",
+      price: "Price on request",
     },
     {
       title: "AI visibility",
-      description:
+      body:
         "We improve your company’s visibility in AI search tools, so they better understand what you do and when to mention you.",
-      label: "Price on request",
+      price: "Price on request",
     },
   ],
 },
