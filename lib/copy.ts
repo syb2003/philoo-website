@@ -260,10 +260,11 @@ export const siteCopy = {
           price: "Prijs op aanvraag",
         },
         {
-          title: "AI-vindbaarheid",
-          body: "We verbeteren je content voor AI-zoekmachines zoals ChatGPT, Perplexity en Gemini, zodat je bedrijf beter herkend en genoemd kan worden.",
-          price: "Prijs op aanvraag",
-        },
+  title: "AI-vindbaarheid",
+  body:
+    "We verbeteren de vindbaarheid van je bedrijf in AI-zoekmachines, zodat ze beter begrijpen wat je doet en wanneer ze je kunnen noemen.",
+  price: "Prijs op aanvraag",
+},
       ],
     },
     bottomCta: {
@@ -435,25 +436,25 @@ export const siteCopy = {
     {
       title: "AI training",
       body:
-        "No slide deck full of theory. Your team learns how to improve one real process with AI.",
+        "No slide deck full of theory. Your team learns how to improve its own daily time-consuming processes with AI.",
       price: "Price on request",
     },
     {
       title: "AI workshop",
       body:
-        "A live guided session to find useful AI ideas and test the best ones with your team.",
+        "A fun, guided team session where small groups come up with AI ideas for the company.",
       price: "Price on request",
     },
     {
       title: "AI tooling advice",
       body:
-        "Thinking about AI tools, but not sure what fits? We help you choose, set up and use them well.",
+        "Thinking about AI tools, but not sure which ones to use? We help you choose, set them up and make sure your team actually benefits from them.",
       price: "Price on request",
     },
     {
       title: "AI visibility",
       body:
-        "We improve your company’s visibility in AI search tools, so they better understand what you do and when to mention you.",
+        "We improve your company’s visibility in AI search tools, so more potential customers can find you.",
       price: "Price on request",
     },
   ],
