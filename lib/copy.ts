@@ -117,7 +117,7 @@ export const siteCopy = {
       headline: ["Minder admin.", "Meer tijd voor wat telt."],
       lead: "Praktisch starten met AI en automatisering.",
       body: "Philoo helpt mkb-dienstverleners om tijdrovende processen te automatiseren. Klaar in enkele weken, binnen de systemen die jullie nu al gebruiken.",
-      credibility: "20+ jaar ervaring in tech, data, AI en procesverbetering bij internationale bedrijven.",
+      credibility: "20+ jaar ervaring in tech, data, AI en procesverbetering.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
       workflow: [
@@ -275,7 +275,7 @@ export const siteCopy = {
   },
   en: {
     metadata: {
-      title: "Philoo | Less admin. More time for clients.",
+      title: "Philoo | Less admin. More time for what matters.",
       description:
         "Philoo builds smart AI workflows inside the tools your team already uses, helping teams reduce manual work and spend more time with clients.",
     },
@@ -295,9 +295,11 @@ export const siteCopy = {
       language: "Switch language",
     },
     hero: {
-      headline: ["Less admin.", "More time for clients."],
-      body: "AI does not have to be expensive or complicated. With Philoo, you can have a smart workflow built inside the tools your team already uses within weeks.",
-      cta: "Book a free intro call",
+  headline: ["Less admin.", "More time for what matters."],
+  lead: "A practical way to start with AI and automation.",
+  body: "Philoo helps SMBs automate time-consuming processes inside the systems they already use. Built in weeks, not months.",
+  credibility: "20+ years of experience in tech, data, AI and process improvement.",
+  cta: "Book a free intro call",
       visualAria: "Workflow visual with AI by Philoo in the center",
       workflow: [
         "New request",
