@@ -49,10 +49,10 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
           className="anchor-section overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 shadow-[0_24px_70px_rgba(15,23,54,0.06)]"
           id="home"
         >
-          <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-9 lg:pt-16">
-            <div className="grid items-center gap-10 min-[1180px]:grid-cols-[minmax(0,520px)_minmax(760px,1fr)] min-[1180px]:gap-24 xl:gap-28">
+          <div className="px-5 pb-8 pt-10 sm:px-8 sm:pt-14 lg:px-12 lg:pb-7 lg:pt-12 2xl:pb-9 2xl:pt-16">
+            <div className="grid items-center gap-10 min-[1180px]:grid-cols-[minmax(0,570px)_minmax(700px,1fr)] min-[1180px]:gap-12 xl:gap-16 2xl:grid-cols-[minmax(0,520px)_minmax(760px,1fr)] 2xl:gap-28">
               <Reveal
-                className={isDutch ? "max-w-[480px] min-[1180px]:pr-12" : "max-w-[492px] min-[1180px]:pr-14"}
+                className={isDutch ? "max-w-[540px] min-[1180px]:pr-8 2xl:pr-12" : "max-w-[548px] min-[1180px]:pr-10 2xl:pr-14"}
               >
                 <h1
                   className={isDutch
@@ -62,23 +62,23 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[0]}</span>
                   <span className="block min-[1180px]:whitespace-nowrap">{copy.hero.headline[1]}</span>
                 </h1>
-                <div className="mt-7 max-w-[560px]">
+                <div className="mt-6 max-w-[590px] 2xl:mt-7 2xl:max-w-[560px]">
                   {copy.hero.lead ? (
-                    <p className="text-[1rem] font-black leading-7 text-[#161851] sm:text-[1.05rem]">{copy.hero.lead}</p>
+                    <p className="text-[1rem] font-black leading-[1.55] text-[#161851] sm:text-[1.05rem]">{copy.hero.lead}</p>
                   ) : null}
                   <p
-                    className={`${copy.hero.lead ? "mt-5" : ""} text-[1.04rem] font-medium leading-[1.8] text-[#0F1736]/90 sm:text-[1.15rem]`}
+                    className={`${copy.hero.lead ? "mt-4 " : ""}text-[1.04rem] font-medium leading-[1.62] text-[#0F1736]/90 sm:text-[1.15rem]`}
                   >
                     {copy.hero.body}
                   </p>
                   {copy.hero.credibility ? (
-                    <p className="mt-5 text-[0.92rem] font-medium leading-7 text-[#0F1736]/62 sm:text-[0.96rem]">
+                    <p className="mt-3 text-[0.9rem] font-medium leading-[1.6] text-[#0F1736]/62 sm:text-[0.94rem]">
                       {copy.hero.credibility}
                     </p>
                   ) : null}
                 </div>
                 <a
-                  className="mt-8 inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#161851] px-6 py-4 text-[0.95rem] font-extrabold text-white shadow-[0_16px_32px_rgba(22,24,81,0.2)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#F7F8FA]"
+                  className="mt-5 inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#161851] px-6 py-4 text-[0.95rem] font-extrabold text-white shadow-[0_16px_32px_rgba(22,24,81,0.2)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#F7F8FA] 2xl:mt-8"
                   href="mailto:hello@philoo.nl"
                 >
                   <CalendarIcon className="h-5 w-5 text-[#D6C48A]" />
@@ -89,8 +89,8 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
 
               <Reveal
                 className={isDutch
-                  ? "mx-auto w-full max-w-[880px] min-[1180px]:justify-self-end min-[1180px]:pl-20"
-                  : "mx-auto w-full max-w-[880px] min-[1180px]:justify-self-end min-[1180px]:pl-14"}
+                  ? "mx-auto w-full max-w-[880px] min-[1180px]:justify-self-end min-[1180px]:pl-8 xl:pl-14 2xl:pl-20"
+                  : "mx-auto w-full max-w-[880px] min-[1180px]:justify-self-end min-[1180px]:pl-6 xl:pl-10 2xl:pl-14"}
                 delay={100}
               >
                 <HeroWorkflowVisual labels={copy.hero.workflow} visualAria={copy.hero.visualAria} />
