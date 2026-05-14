@@ -175,7 +175,7 @@ function Benefits({ copy }: { copy: SiteCopy }) {
               key={benefit.title}
             >
               <div className="flex gap-5">
-                <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-[#D6C48A]/22 text-[#161851]">
+                <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full border border-[#E6E8EF] bg-[#F7F8FA] text-[#161851]">
                   <Icon className="h-7 w-7" />
                 </div>
                 <div>
@@ -219,7 +219,7 @@ function Examples({ copy }: { copy: SiteCopy }) {
               delay={index * 70}
               key={card.eyebrow}
             >
-              <div className="mb-5 grid h-14 w-14 place-items-center rounded-full bg-[#D6C48A]/22 text-[#161851]">
+              <div className="mb-5 grid h-14 w-14 place-items-center rounded-full border border-[#E6E8EF] bg-[#F7F8FA] text-[#161851]">
                 <Icon className="h-7 w-7" />
               </div>
               <p className="text-sm font-bold text-[#161851]/88">{card.eyebrow}</p>
@@ -375,19 +375,19 @@ function Pricing({ copy }: { copy: SiteCopy }) {
             </p>
           </div>
           <div className="mt-5 grid gap-2 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-5 sm:p-6">
-            {copy.pricing.roiLines.map((line) => (
+            {copy.pricing.roiLines.map((line, index) => (
               <p
-                className={`${line.startsWith("=") ? "text-[1rem] font-black" : "text-[0.98rem] font-bold"} leading-6 text-[#161851]`}
+                className={`leading-6 text-[#161851] ${index === copy.pricing.roiLines.length - 1 ? "rounded-[10px] border border-[#D6C48A]/40 bg-[#D6C48A]/10 px-3 py-2 text-[1rem] font-black" : line.startsWith("=") ? "text-[1rem] font-black" : "text-[0.98rem] font-bold"}`}
                 key={line}
               >
                 {line}
               </p>
             ))}
           </div>
-          <div className="mt-5 rounded-[12px] border border-[#D6C48A]/45 bg-[#D6C48A]/10 px-4 py-3">
+          <div className="mt-5 rounded-[12px] border border-[#D6C48A]/45 bg-[#D6C48A]/8 px-4 py-3">
             <p className="text-[0.96rem] font-black leading-6 text-[#161851]">{copy.pricing.paybackLine}</p>
           </div>
-          <p className="mt-4 text-[0.82rem] font-medium leading-6 text-[#0F1736]/56">{copy.pricing.disclaimer}</p>
+          <p className="mt-4 text-[0.82rem] font-medium leading-6 text-[#0F1736]/64">{copy.pricing.disclaimer}</p>
         </Reveal>
       </div>
     </section>
@@ -405,7 +405,7 @@ function Services({ copy }: { copy: SiteCopy }) {
         <h2 className="text-[clamp(1.7rem,4vw,2.2rem)] font-black leading-tight tracking-[0] text-white">
           {copy.services.title}
         </h2>
-        <p className="mt-3 max-w-[700px] text-[0.98rem] font-medium leading-7 text-white/82">{copy.services.intro}</p>
+        <p className="mt-3 max-w-[700px] text-[0.98rem] font-medium leading-7 text-white/86">{copy.services.intro}</p>
       </Reveal>
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -419,11 +419,11 @@ function Services({ copy }: { copy: SiteCopy }) {
               key={card.title}
             >
               <div className="flex h-full flex-col">
-                <div className="mb-5 grid h-14 w-14 place-items-center rounded-full bg-[#D6C48A]/18 text-[#161851]">
+                <div className="mb-5 grid h-14 w-14 place-items-center rounded-full border border-[#E6E8EF] bg-[#F7F8FA] text-[#161851]">
                   <Icon className="h-7 w-7" />
                 </div>
                 <h3 className="text-[1.12rem] font-black leading-snug text-[#161851]">{card.title}</h3>
-                <p className="mt-4 flex-1 text-[0.96rem] font-medium leading-7 text-[#0F1736]/82">{card.body}</p>
+                <p className="mt-4 flex-1 text-[0.96rem] font-medium leading-7 text-[#0F1736]/88">{card.body}</p>
                 <div className="mt-5 pt-4">
                   <span className="inline-flex rounded-full border border-[#D6C48A]/45 px-3 py-1 text-xs font-black uppercase tracking-[0.08em] text-[#161851]/68">
                     {card.price}
