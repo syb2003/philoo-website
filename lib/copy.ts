@@ -379,7 +379,7 @@ export const siteCopy = {
    audience: {
   title: "Who this is for",
   bullets: [
-    "Service SMBs that want less manual work.",
+    "SMBs that want less manual work.",
     "Organisations that need more overview of their processes.",
     "Companies that want to start with AI without a large IT project or budget.",
   ],
