@@ -427,7 +427,7 @@ export const siteCopy = {
   disclaimer:
     "Based on an investment of €4,995. The exact saving depends on volume, process and current way of working.",
 },
-    otherServices: {
+    Services: {
   title: "Other services",
   intro:
     "Besides process automation, Philoo can also help in other practical ways with AI.",
