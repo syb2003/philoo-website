@@ -218,7 +218,7 @@ export const siteCopy = {
       primaryPrice: "vanaf €4.995 excl. btw",
       primaryDescription: "Voor één volledige automatisering binnen bestaande tools.",
       includedLine:
-        "Inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor aftercare, optimalisatie en kleine aanpassingen.",
+        "Inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor optimalisatie en kleine aanpassingen.",
       secondaryLabel: "Uitbreiding bestaande automatisering",
       secondaryPrice: "vanaf €750 excl. btw",
       secondaryDescription:
