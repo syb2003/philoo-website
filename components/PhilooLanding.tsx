@@ -15,7 +15,6 @@ import {
   LightbulbIcon,
   MailIcon,
   RocketIcon,
-  ScaleIcon,
   SearchIcon,
   SlidersIcon,
   TrendIcon,
@@ -384,10 +383,11 @@ function Pricing({ copy }: { copy: SiteCopy }) {
               </p>
             ))}
           </div>
-          <div className="mt-5 rounded-[12px] border border-[#D6C48A]/45 bg-[#D6C48A]/8 px-4 py-3">
-            <p className="text-[0.96rem] font-black leading-6 text-[#161851]">{copy.pricing.paybackLine}</p>
-          </div>
-          <p className="mt-4 text-[0.82rem] font-medium leading-6 text-[#0F1736]/64">{copy.pricing.disclaimer}</p>
+          {copy.pricing.finalNote ? (
+            <div className="mt-5 rounded-[12px] border border-[#D6C48A]/45 bg-[#D6C48A]/8 px-4 py-3">
+              <p className="text-[0.96rem] font-black leading-6 text-[#161851]">{copy.pricing.finalNote}</p>
+            </div>
+          ) : null}
         </Reveal>
       </div>
     </section>

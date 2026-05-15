@@ -70,10 +70,8 @@ export type SiteCopy = {
     roiLabel: string;
     exampleTitle: string;
     exampleDescription: string;
-    paybackLine: string;
     roiLines: string[];
     finalNote: string;
-    disclaimer: string;
   };
   services: {
     title: string;
@@ -212,32 +210,29 @@ export const siteCopy = {
       ratingLabel: "5.0 met vijf gouden sterren",
     },
     pricing: {
-      title: "prijzen",
-      subtitle: "Per automatisering",
+      title: "Tarieven",
+      subtitle: "Per workflow",
       primaryLabel: "Workflow",
-      primaryPrice: "vanaf €4.995 excl. btw",
-      primaryDescription: "Voor één volledige automatisering binnen bestaande tools.",
+      primaryPrice: "vanaf €5.995 excl. btw",
+      primaryDescription: "Voor één concrete workflow binnen jullie bestaande tools.",
       includedLine:
         "Inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor optimalisatie en kleine aanpassingen.",
-      secondaryLabel: "Uitbreiding bestaande automatisering",
+      secondaryLabel: "Uitbreiding bestaande workflow",
       secondaryPrice: "vanaf €750 excl. btw",
       secondaryDescription:
-        "Voor een extra stap, koppeling of kleine uitbreiding.",
-      smallNote: "AI Tooling en gebruikskosten lopen via de eigen accounts van de klant.",
+        "Voor een extra stap, check, koppeling of kleine uitbreiding.",
+      smallNote: "AI-tooling en gebruikskosten lopen via de eigen accounts van de klant.",
       roiLabel: "Voorbeeldberekening",
       exampleTitle: "Voorbeeld: klantvragen sneller behandelen",
       exampleDescription:
-        "Binnenkomende klantvragen worden automatisch samengevat en klaargezet met een conceptantwoord of vervolgstap.",
-      paybackLine: "Terugverdientijd: ongeveer 7 maanden",
+        "Nieuwe klantvragen worden automatisch gestructureerd, samengevat en klaargezet met een conceptantwoord of vervolgstap.",
       roiLines: [
-        "20 uur minder handmatig werk per maand",
-        "× €40 waarde per uur",
-        "= €800 waarde per maand",
-        "− €100 AI tool- en gebruikskosten per maand",
-        "= €700 netto waarde per maand",
+        "25 uur minder handmatig werk per maand",
+        "× €50 waarde per uur",
+        "= €1.250 waarde per maand",
+        "= €15.000 waarde per jaar",
       ],
-      finalNote: "",
-      disclaimer: "Gebaseerd op een investering van €4.995. De exacte besparing hangt af van volume, proces en huidige werkwijze.",
+      finalNote: "Plus: meer tijd voor klanten, opvolging en werk dat omzet oplevert.",
     },
     services: {
       title: "Overige diensten",
@@ -394,41 +389,37 @@ export const siteCopy = {
     },
    pricing: {
   title: "Pricing",
-  subtitle: "Per automation",
+  subtitle: "Per workflow",
 
   primaryLabel: "Workflow",
-  primaryPrice: "From €4,995 excl. VAT",
-  primaryDescription: "One complete automation in your existing tools.",
+  primaryPrice: "from €5,995 excl. VAT",
+  primaryDescription: "For one concrete workflow inside your existing tools.",
 
   includedLine:
-    "Includes intake, design, build, testing, handover, documentation and 1 month of support for small improvements.",
+    "Includes intake, design, build, testing, handover, documentation and 1 month of support for optimisation and small adjustments.",
 
-  secondaryLabel: "Workflow extension",
-  secondaryPrice: "From €750 excl. VAT",
+  secondaryLabel: "Existing workflow extension",
+  secondaryPrice: "from €750 excl. VAT",
   secondaryDescription:
-    "For an extra step, check, reminder, email, integration or small change in an existing workflow.",
+    "For an extra step, check, integration or small extension.",
 
   smallNote:
     "Tool and usage costs run through the client’s own accounts.",
 
-  roiLabel: "Return on investment calculation",
-  exampleTitle: "Example: faster customer replies",
+  roiLabel: "Example calculation",
+  exampleTitle: "Example: handling client questions faster",
   exampleDescription:
-    "Customer requests are summarised and prepared with a draft reply or next step.",
+    "Incoming client questions are automatically structured, summarised and prepared with a draft reply or next step.",
 
   roiLines: [
-    "20 hours less manual work per month",
-    "× €40 value per hour",
-    "= €800 value per month",
-    "− €100 tool and usage costs per month",
-    "= €700 net value per month",
+    "25 hours less manual work per month",
+    "× €50 value per hour",
+    "= €1,250 value per month",
+    "= €15,000 value per year",
   ],
 
-  paybackLine: "Payback period: around 7 months",
 
-  finalNote: "",
-  disclaimer:
-    "Based on an investment of €4,995. The exact saving depends on volume, process and current way of working.",
+  finalNote: "Plus: more time for clients, follow-up and work that drives revenue.",
 },
     services: {
   title: "Other services",
