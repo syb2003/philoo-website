@@ -92,7 +92,7 @@ export type SiteCopy = {
 export const siteCopy = {
   nl: {
     metadata: {
-      title: "Philoo | Minder admin. Meer tijd voor klanten.",
+      title: "Philoo | Minder admin. Meer tijd voor wat telt.",
       description:
         "Philoo bouwt efficiënte AI automatiseringen in de systemen waar je team al mee werkt, zodat teams minder handmatig werk doen en meer tijd overhouden voor wat telt.",
     },
@@ -140,8 +140,8 @@ export const siteCopy = {
         body: "Realtime inzicht in acties, statussen en voortgang.",
       },
       {
-        title: "Meer tijd voor klanten",
-        body: "Minder admin betekent meer aandacht voor klanten.",
+        title: "Meer tijd voor wat telt",
+        body: "Minder admin betekent meer tijd voor werk dat omzet oplevert.",
       },
     ],
     examples: {
