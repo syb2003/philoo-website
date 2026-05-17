@@ -59,19 +59,11 @@ export type SiteCopy = {
   pricing: {
     title: string;
     subtitle: string;
-    primaryLabel: string;
-    primaryPrice: string;
-    primaryDescription: string;
-    includedLine: string;
-    secondaryLabel: string;
-    secondaryPrice: string;
-    secondaryDescription: string;
-    smallNote: string;
-    roiLabel: string;
     exampleTitle: string;
     exampleDescription: string;
     roiLines: string[];
     finalNote: string;
+    disclaimer: string;
   };
   services: {
     title: string;
@@ -102,7 +94,7 @@ export const siteCopy = {
         { id: "voorbeelden", label: "Voorbeelden" },
         { id: "werkwijze", label: "Werkwijze" },
         { id: "voor-wie", label: "Voor wie" },
-        { id: "pricing", label: "Tarieven" },
+        { id: "pricing", label: "Impact" },
         { id: "services", label: "Overige diensten" },
         { id: "contact", label: "Contact" },
       ],
@@ -210,29 +202,19 @@ export const siteCopy = {
       ratingLabel: "5.0 met vijf gouden sterren",
     },
     pricing: {
-      title: "Tarieven",
-      subtitle: "Per workflow",
-      primaryLabel: "Workflow",
-      primaryPrice: "vanaf €5.995 excl. btw",
-      primaryDescription: "Voor één concrete workflow binnen jullie bestaande tools.",
-      includedLine:
-        "Inclusief intake, ontwerp, bouw, test, overdracht, documentatie en 1 maand support voor optimalisatie en kleine aanpassingen.",
-      secondaryLabel: "Uitbreiding bestaande workflow",
-      secondaryPrice: "vanaf €750 excl. btw",
-      secondaryDescription:
-        "Voor een extra stap, check, koppeling of kleine uitbreiding.",
-      smallNote: "AI-tooling en gebruikskosten lopen via de eigen accounts van de klant.",
-      roiLabel: "Voorbeeldberekening",
-      exampleTitle: "Voorbeeld: klantvragen sneller behandelen",
+      title: "De verborgen kosten van handmatig werk",
+      subtitle: "Voorbeeldberekening",
+      exampleTitle: "Voorbeeld: facturen en betalingen opvolgen",
       exampleDescription:
-        "Nieuwe klantvragen worden automatisch gestructureerd, samengevat en klaargezet met een conceptantwoord of vervolgstap.",
+        "Facturen controleren, betaalstatussen checken en reminders klaarzetten lijkt klein werk. Maar als iemand hier elke werkdag tijd aan kwijt is, loopt het snel op.",
       roiLines: [
-        "25 uur minder handmatig werk per maand",
-        "× €50 waarde per uur",
-        "= €1.250 waarde per maand",
-        "= €15.000 waarde per jaar",
+        "1 uur per werkdag",
+        "= 22 uur per maand",
+        "= €1.100 waarde per maand",
+        "= €13.200 waarde per jaar",
       ],
-      finalNote: "Plus: meer tijd voor klanten, opvolging en werk dat omzet oplevert.",
+      finalNote: "En dan rekenen we fouten, vergeten opvolging en extra zoekwerk nog niet mee.",
+      disclaimer: "De exacte waarde hangt af van volume, proces en huidige werkwijze.",
     },
     services: {
       title: "Overige diensten",
@@ -280,7 +262,7 @@ export const siteCopy = {
         { id: "voorbeelden", label: "Examples" },
         { id: "werkwijze", label: "How it works" },
         { id: "voor-wie", label: "Who it’s for" },
-        { id: "pricing", label: "Pricing" },
+        { id: "pricing", label: "Impact" },
         { id: "services", label: "Other services" },
         { id: "contact", label: "Contact" },
       ],
@@ -387,40 +369,21 @@ export const siteCopy = {
       attribution: "Owner recruitment agency",
       ratingLabel: "5.0 with five gold stars",
     },
-   pricing: {
-  title: "Pricing",
-  subtitle: "Per workflow",
-
-  primaryLabel: "Workflow",
-  primaryPrice: "from €5,995 excl. VAT",
-  primaryDescription: "For one concrete workflow inside your existing tools.",
-
-  includedLine:
-    "Includes intake, design, build, testing, handover, documentation and 1 month of support for optimisation and small adjustments.",
-
-  secondaryLabel: "Existing workflow extension",
-  secondaryPrice: "from €750 excl. VAT",
-  secondaryDescription:
-    "For an extra step, check, integration or small extension.",
-
-  smallNote:
-    "Tool and usage costs run through the client’s own accounts.",
-
-  roiLabel: "Example calculation",
-  exampleTitle: "Example: handling client questions faster",
-  exampleDescription:
-    "Incoming client questions are automatically structured, summarised and prepared with a draft reply or next step.",
-
-  roiLines: [
-    "25 hours less manual work per month",
-    "× €50 value per hour",
-    "= €1,250 value per month",
-    "= €15,000 value per year",
-  ],
-
-
-  finalNote: "Plus: more time for clients, follow-up and work that drives revenue.",
-},
+    pricing: {
+      title: "The hidden cost of manual work",
+      subtitle: "Example calculation",
+      exampleTitle: "Example: invoice and payment follow-up",
+      exampleDescription:
+        "Checking invoices, payment statuses and reminders can feel like small work. But when it happens every working day, the cost adds up fast.",
+      roiLines: [
+        "1 hour per working day",
+        "= 22 hours per month",
+        "= €1,100 value per month",
+        "= €13,200 value per year",
+      ],
+      finalNote: "And this does not include mistakes, missed follow-up or extra searching.",
+      disclaimer: "The exact value depends on volume, process and current way of working.",
+    },
     services: {
   title: "Other services",
   intro:
