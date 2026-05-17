@@ -206,7 +206,7 @@ export const siteCopy = {
       subtitle: "Voorbeeldberekening",
       exampleTitle: "Voorbeeld: facturen en betalingen opvolgen",
       exampleDescription:
-        "Facturen controleren, betaalstatussen checken en reminders klaarzetten lijkt klein werk. Maar als iemand hier elke werkdag tijd aan kwijt is, loopt het snel op.",
+        "Facturen controleren, betaalstatussen checken en reminders klaarzetten lijkt niet zo veel werk. Maar als iemand hier elke werkdag tijd aan kwijt is, loopt het snel op.",
       roiLines: [
         "1 uur per werkdag",
         "= 22 uur per maand",
