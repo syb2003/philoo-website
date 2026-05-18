@@ -161,7 +161,7 @@ export const siteCopy = {
         },
         {
           eyebrow: "Betalingen bewaken",
-          title: "Van openstaande factuur naar vriendelijke reminder.",
+          title: "Van openstaande factuur naar reminder.",
           body: "Openstaande betalingen worden herkend, gecontroleerd en opgevolgd met een vriendelijke reminder.",
         },
       ],
