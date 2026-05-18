@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "../globals.css";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { defaultLanguage, isLanguage, languages } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -27,7 +28,10 @@ export default async function LanguageLayout({
 
   return (
     <html className="font-sans antialiased" lang={htmlLang}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppButton lang={htmlLang} />
+      </body>
     </html>
   );
 }
