@@ -110,7 +110,7 @@ export const siteCopy = {
     hero: {
       headline: ["Minder admin.", "Meer tijd voor wat telt."],
       lead: "Praktisch starten met AI en automatisering.",
-      body: "Philoo helpt mkb-dienstverleners om tijdrovende processen te automatiseren. Klaar in enkele weken, binnen de systemen die jullie nu al gebruiken.",
+      body: "Philoo helpt mkb-dienstverleners om handmatige processen te automatiseren. Klaar in enkele weken, binnen de systemen die jullie nu al gebruiken.",
       credibility: "20+ jaar ervaring in tech, data, AI en procesverbetering.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
@@ -209,9 +209,9 @@ export const siteCopy = {
       label: "Probleem",
       title: "De verborgen kosten van handmatig werk",
       intro:
-        "Sommige taken lijken klein. Een factuur controleren. Een betaalstatus checken. Een reminder klaarzetten.",
+        "Sommige taken lijken niet veel werk: Een factuur controleren. Een betaalstatus checken. Een reminder klaarzetten.",
       secondParagraph:
-        "Maar als dit elke dag terugkomt, kost het ongemerkt veel tijd.",
+        "Maar als dit elke dag nodig is, kost het ongemerkt veel tijd.",
       subtitle: "Voorbeeldberekening",
       exampleLabel: "Voorbeeld: facturen en betalingen opvolgen",
       calculationIntro:
@@ -384,7 +384,7 @@ export const siteCopy = {
       intro:
         "Checking an invoice may seem like a small task. So does checking payment status or preparing a reminder.",
       secondParagraph:
-        "But when these tasks come back every working day, the cost adds up quickly.",
+        "But when these tasks come back every day, the cost adds up quickly.",
       subtitle: "Example calculation",
       exampleLabel: "Example: invoice and payment follow-up",
       calculationIntro:
