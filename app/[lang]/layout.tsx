@@ -6,9 +6,9 @@ import { defaultLanguage, isLanguage, languages } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-icon.png",
   },
 };
 

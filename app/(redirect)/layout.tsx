@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   title: "Philoo",
   description: "Smart AI workflows for practical B2B teams.",
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-icon.png",
   },
 };
 
