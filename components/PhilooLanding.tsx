@@ -100,10 +100,10 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
           <Benefits copy={copy} />
         </section>
 
+        <Pricing copy={copy} />
         <Examples copy={copy} />
         <Process copy={copy} />
         <AudienceAndTestimonial copy={copy} />
-        <Pricing copy={copy} />
         <Services copy={copy} />
         <BottomCta copy={copy} />
       </main>
@@ -193,15 +193,15 @@ function Benefits({ copy }: { copy: SiteCopy }) {
 function Examples({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-9 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 pb-9 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="voorbeelden"
     >
       <Reveal className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <h2 className="max-w-[760px] text-[clamp(1.75rem,4vw,2.38rem)] font-black leading-tight tracking-[0] text-white">
+        <h2 className="max-w-[760px] text-[clamp(1.75rem,4vw,2.38rem)] font-black leading-tight tracking-[0] text-[#161851]">
           {copy.examples.title}
         </h2>
         <a
-          className="inline-flex items-center gap-2 text-sm font-black text-[#D6C48A] transition-colors hover:text-white"
+          className="inline-flex items-center gap-2 text-sm font-black text-[#161851] transition-colors hover:text-[#D6C48A]"
           href="mailto:hello@philoo.nl"
         >
           {copy.examples.link}
@@ -237,11 +237,11 @@ function Examples({ copy }: { copy: SiteCopy }) {
 function Process({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 py-9 shadow-[0_22px_56px_rgba(15,23,54,0.08)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 py-9 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
       id="werkwijze"
     >
       <Reveal>
-        <h2 className="text-[clamp(1.6rem,3vw,2rem)] font-black leading-tight text-[#161851]">{copy.process.title}</h2>
+        <h2 className="text-[clamp(1.6rem,3vw,2rem)] font-black leading-tight text-white">{copy.process.title}</h2>
       </Reveal>
 
       <div className="mt-5 grid gap-4 lg:grid-cols-4">
@@ -273,17 +273,17 @@ function Process({ copy }: { copy: SiteCopy }) {
 function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="voor-wie"
     >
       <div className="grid gap-7 lg:grid-cols-[0.75fr_1.25fr]">
         <Reveal>
-          <h2 className="text-[clamp(1.6rem,3vw,2.05rem)] font-black leading-tight text-white">
+          <h2 className="text-[clamp(1.6rem,3vw,2.05rem)] font-black leading-tight text-[#161851]">
             {copy.audience.title}
           </h2>
           <ul className="mt-6 grid gap-5">
             {copy.audience.bullets.map((bullet) => (
-              <li className="flex items-start gap-4 text-[0.98rem] font-medium leading-7 text-white/86" key={bullet}>
+              <li className="flex items-start gap-4 text-[0.98rem] font-medium leading-7 text-[#0F1736]/86" key={bullet}>
                 <CheckCircleIcon className="mt-1 h-5 w-5 shrink-0 text-[#D6C48A]" />
                 <span>{bullet}</span>
               </li>
@@ -326,34 +326,37 @@ function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
 function Pricing({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 py-10 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="pricing"
     >
-      <Reveal className="mb-6 max-w-[680px]">
-        <h2 className="text-[clamp(1.75rem,4vw,2.28rem)] font-black leading-tight tracking-[0] text-[#161851]">
+      <Reveal className="max-w-[780px]">
+        <p className="text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">{copy.pricing.label}</p>
+        <h2 className="mt-3 text-[clamp(1.85rem,4vw,2.55rem)] font-black leading-tight tracking-[0] text-white">
           {copy.pricing.title}
         </h2>
-        <p className="mt-2 text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.subtitle}</p>
+        <div className="mt-5 grid max-w-[760px] gap-3 text-[1rem] font-medium leading-7 text-white/86">
+          <p>{copy.pricing.intro}</p>
+          <p>{copy.pricing.secondParagraph}</p>
+        </div>
       </Reveal>
 
       <Reveal
-        className="max-w-[980px] rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.055)] sm:p-7 lg:p-8"
-        delay={40}
+        className="mt-7 max-w-[980px] rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7 lg:p-8"
+        delay={60}
       >
-        <div className="max-w-[760px]">
-          <div className="flex items-center gap-3">
-            <span aria-hidden="true" className="h-px w-8 bg-[#D6C48A]" />
-            <h3 className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.exampleTitle}</h3>
-          </div>
-          <p className="mt-4 text-[1rem] font-medium leading-7 text-[#0F1736]/84">
-            {copy.pricing.exampleDescription}
-          </p>
+        <div className="flex items-center gap-3">
+          <span aria-hidden="true" className="h-px w-8 bg-[#D6C48A]" />
+          <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.subtitle}</p>
         </div>
+        <h3 className="mt-4 text-[1.2rem] font-black leading-snug text-[#161851]">{copy.pricing.exampleLabel}</h3>
+        <p className="mt-3 max-w-[760px] text-[1rem] font-medium leading-7 text-[#0F1736]/84">
+          {copy.pricing.calculationIntro}
+        </p>
 
-        <div className="mt-6 grid gap-2 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-5 sm:p-6">
-          {copy.pricing.roiLines.map((line, index) => (
+        <div className="mt-6 grid gap-3 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-5 sm:p-6">
+          {copy.pricing.impactLines.map((line, index) => (
             <p
-              className={`leading-6 text-[#161851] ${index === copy.pricing.roiLines.length - 1 ? "rounded-[10px] border border-[#D6C48A]/40 bg-[#D6C48A]/10 px-3 py-2 text-[1.06rem] font-black" : "text-[0.98rem] font-bold"}`}
+              className={`leading-6 text-[#161851] ${index === copy.pricing.impactLines.length - 1 ? "rounded-[10px] border border-[#D6C48A]/45 bg-[#D6C48A]/10 px-3 py-3 text-[1.16rem] font-black" : "text-[1rem] font-bold"}`}
               key={line}
             >
               {line}
@@ -361,7 +364,7 @@ function Pricing({ copy }: { copy: SiteCopy }) {
           ))}
         </div>
 
-        <p className="mt-5 text-[1rem] font-black leading-7 text-[#161851]">{copy.pricing.finalNote}</p>
+        <p className="mt-5 max-w-[760px] text-[1rem] font-black leading-7 text-[#161851]">{copy.pricing.finalLine}</p>
         <p className="mt-3 text-[0.84rem] font-medium leading-6 text-[#0F1736]/62">{copy.pricing.disclaimer}</p>
       </Reveal>
     </section>

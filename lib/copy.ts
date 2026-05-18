@@ -57,15 +57,19 @@ export type SiteCopy = {
     ratingLabel: string;
   };
   pricing: {
+    label: string;
     title: string;
+    intro: string;
+    secondParagraph: string;
     subtitle: string;
-    exampleTitle: string;
-    exampleDescription: string;
-    roiLines: string[];
-    finalNote: string;
+    exampleLabel: string;
+    calculationIntro: string;
+    impactLines: string[];
+    finalLine: string;
     disclaimer: string;
   };
   services: {
+
     title: string;
     intro: string;
     cards: Array<{
@@ -91,10 +95,10 @@ export const siteCopy = {
     nav: {
       items: [
         { id: "home", label: "Home" },
+        { id: "pricing", label: "Impact" },
         { id: "voorbeelden", label: "Voorbeelden" },
         { id: "werkwijze", label: "Werkwijze" },
         { id: "voor-wie", label: "Voor wie" },
-        { id: "pricing", label: "Impact" },
         { id: "services", label: "Overige diensten" },
         { id: "contact", label: "Contact" },
       ],
@@ -202,18 +206,23 @@ export const siteCopy = {
       ratingLabel: "5.0 met vijf gouden sterren",
     },
     pricing: {
+      label: "Probleem",
       title: "De verborgen kosten van handmatig werk",
+      intro:
+        "Sommige taken lijken klein. Een factuur controleren. Een betaalstatus checken. Een reminder klaarzetten.",
+      secondParagraph:
+        "Maar als dit elke dag terugkomt, kost het ongemerkt veel tijd.",
       subtitle: "Voorbeeldberekening",
-      exampleTitle: "Voorbeeld: facturen en betalingen opvolgen",
-      exampleDescription:
-        "Facturen controleren, betaalstatussen checken en reminders klaarzetten lijkt niet zo veel werk. Maar als iemand hier elke werkdag tijd aan kwijt is, loopt het snel op.",
-      roiLines: [
-        "1 uur per werkdag",
-        "= 22 uur per maand",
-        "= €1.100 waarde per maand",
-        "= €13.200 waarde per jaar",
+      exampleLabel: "Voorbeeld: facturen en betalingen opvolgen",
+      calculationIntro:
+        "Is iemand hier gemiddeld één uur per werkdag mee bezig? Dan kost dat al snel:",
+      impactLines: [
+        "22 uur per maand",
+        "€1.100 aan tijdswaarde per maand",
+        "€13.200 per jaar",
       ],
-      finalNote: "En dan rekenen we fouten, vergeten opvolging en extra zoekwerk nog niet mee.",
+      finalLine:
+        "En dan rekenen we gemiste opvolging, fouten en extra zoekwerk nog niet eens mee.",
       disclaimer: "De exacte waarde hangt af van volume, proces en huidige werkwijze.",
     },
     services: {
@@ -259,10 +268,10 @@ export const siteCopy = {
     nav: {
       items: [
         { id: "home", label: "Home" },
+        { id: "pricing", label: "Impact" },
         { id: "voorbeelden", label: "Examples" },
         { id: "werkwijze", label: "How it works" },
         { id: "voor-wie", label: "Who it’s for" },
-        { id: "pricing", label: "Impact" },
         { id: "services", label: "Other services" },
         { id: "contact", label: "Contact" },
       ],
@@ -370,18 +379,23 @@ export const siteCopy = {
       ratingLabel: "5.0 with five gold stars",
     },
     pricing: {
+      label: "Problem",
       title: "The hidden cost of manual work",
+      intro:
+        "Checking an invoice may seem like a small task. So does checking payment status or preparing a reminder.",
+      secondParagraph:
+        "But when these tasks come back every working day, the cost adds up quickly.",
       subtitle: "Example calculation",
-      exampleTitle: "Example: invoice and payment follow-up",
-      exampleDescription:
-        "Checking invoices, payment statuses and reminders can feel like small work. But when it happens every working day, the cost adds up fast.",
-      roiLines: [
-        "1 hour per working day",
-        "= 22 hours per month",
-        "= €1,100 value per month",
-        "= €13,200 value per year",
+      exampleLabel: "Example: invoice and payment follow-up",
+      calculationIntro:
+        "One hour per working day may not sound like much. But it already means:",
+      impactLines: [
+        "22 hours per month",
+        "€1,100 in time value per month",
+        "€13,200 per year",
       ],
-      finalNote: "And this does not include mistakes, missed follow-up or extra searching.",
+      finalLine:
+        "And this does not yet include missed follow-up, mistakes or extra searching.",
       disclaimer: "The exact value depends on volume, process and current way of working.",
     },
     services: {
