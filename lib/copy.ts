@@ -318,25 +318,25 @@ export const siteCopy = {
   link: "Discuss your process →",
   cards: [
     {
-      eyebrow: "Customer requests & intake",
-      title: "From loose request to clear action overview.",
-      body: "New requests from email, forms or WhatsApp are recognised, summarised and linked to customer information. Philoo prepares the right next step.",
-    },
-    {
-      eyebrow: "Contracts & documents",
-      title: "From loose documents to complete file.",
-      body: "Philoo checks what information is missing, prepares documents or drafts and tracks the steps towards approval or signing.",
-    },
-    {
-      eyebrow: "Support & customer questions",
-      title: "From loose customer question to clear follow-up.",
-      body: "Customer questions are recognised, summarised and routed to the right person. Philoo prepares a task, draft reply or internal follow-up.",
-    },
-    {
-      eyebrow: "Invoices & payments",
-      title: "From open invoice to payment control.",
-      body: "Open invoices are tracked, exceptions are flagged and follow-up is prepared before money stays outstanding.",
-    },
+  eyebrow: "Client inquiries & intake",
+  title: "From first contact to clear next step.",
+  body: "Messages from email, forms, WhatsApp or other channels are summarised, linked to customer details and prepared as a task, draft reply or internal update.",
+},
+{
+  eyebrow: "Contracts & documents",
+  title: "From scattered input to ready for approval.",
+  body: "Documents, customer input and drafts are brought together, checked for missing details and prepared for approval, signing or handover.",
+},
+{
+  eyebrow: "Support & customer questions",
+  title: "From scattered questions to clear owner.",
+  body: "Questions from email, forms, WhatsApp or other channels are summarised, prioritised and routed to the right person.",
+},
+{
+  eyebrow: "Invoices & payments",
+  title: "From unpaid invoice to clear follow-up.",
+  body: "Open invoices are tracked, issues are flagged and reminders are prepared before payments are forgotten.",
+},
   ],
     },
     process: {
