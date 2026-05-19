@@ -215,7 +215,7 @@ export const siteCopy = {
   subtitle: "Voorbeeldberekening",
   exampleLabel: "Voorbeeld: facturen en betalingen opvolgen",
   calculationIntro:
-    "Eén uur per werkdag klinkt misschien beperkt. Toch betekent dat al snel:",
+    "Eén uur per werkdag klinkt misschien niet veel. Toch betekent dit al snel:",
   impactLines: [
     "22 uur per maand",
     "€1.100 aan tijdswaarde per maand",
