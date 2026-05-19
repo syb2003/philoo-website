@@ -145,25 +145,25 @@ export const siteCopy = {
   link: "Bespreek jouw proces →",
   cards: [
     {
-      eyebrow: "Klantaanvragen & intake",
-      title: "Van losse aanvraag naar compleet actieoverzicht.",
-      body: "Nieuwe aanvragen uit mail, formulier of WhatsApp worden herkend, samengevat en gekoppeld aan klantinformatie. Philoo zet de juiste vervolgstap klaar.",
-    },
+  eyebrow: "Klantaanvragen & intake",
+  title: "Van eerste contact naar duidelijke vervolgstap.",
+  body: "Berichten uit mail, formulier, WhatsApp of andere kanalen worden samengevat, gekoppeld aan klantinformatie en klaargezet als taak, conceptreactie of interne update.",
+},
+   {
+  eyebrow: "Contracten & documenten",
+  title: "Van ontbrekende informatie naar klaar voor akkoord.",
+  body: "Documenten, klantinput en concepten worden samengebracht, gecontroleerd en klaargezet voordat ondertekening blijft hangen.",
+},
     {
-      eyebrow: "Contracten & documenten",
-      title: "Van losse documenten naar compleet dossier.",
-      body: "Philoo controleert welke informatie mist, zet documenten of concepten klaar en bewaakt de stappen richting akkoord of ondertekening.",
-    },
+  eyebrow: "Support & klantvragen",
+  title: "Van verspreide vragen naar duidelijke opvolging.",
+  body: "Vragen uit mail, formulier, WhatsApp of andere kanalen worden samengevat, beoordeeld op spoed en naar de juiste persoon gestuurd.",
+},
     {
-      eyebrow: "Support & klantvragen",
-      title: "Van losse klantvraag naar duidelijke opvolging.",
-      body: "Klantvragen worden herkend, samengevat en naar de juiste persoon gerouteerd. Philoo zet een taak, conceptantwoord of interne follow-up klaar.",
-    },
-    {
-      eyebrow: "Facturen & betalingen",
-      title: "Van openstaande factuur naar grip op betaling.",
-      body: "Openstaande facturen worden bewaakt, uitzonderingen worden gesignaleerd en opvolging wordt voorbereid voordat geld blijft liggen.",
-    },
+  eyebrow: "Facturen & betalingen",
+  title: "Van factuur naar nette opvolging.",
+  body: "Facturen worden gecontroleerd, betaalstatussen worden gevolgd en reminders worden klaargezet voordat betalingen blijven liggen.",
+},
   ],
     },
     process: {
