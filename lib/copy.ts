@@ -144,25 +144,25 @@ export const siteCopy = {
   title: "Voorbeelden waar Philoo kan helpen",
   link: "Bespreek jouw proces →",
   cards: [
-    {
+  {
   eyebrow: "Sales & intake",
   title: "Van nieuwe kans naar duidelijke vervolgstap.",
-  body: "Nieuwe leads en offerteaanvragen worden herkend, gekoppeld aan klantinformatie en klaargezet als taak, conceptreactie of interne update.",
+  body: "Nieuwe leads en offerteaanvragen worden herkend, gekoppeld aan klantinformatie en omgezet naar een taak, conceptreactie of interne update.",
 },
-   {
+{
   eyebrow: "Contracten & documenten",
   title: "Van ontbrekende informatie naar klaar voor akkoord.",
-  body: "Documenten, klantinput en concepten worden verzameld, gecontroleerd en klaargezet voordat ondertekening blijft hangen.",
+  body: "Documenten, klantinput en concepten worden verzameld en gecontroleerd voordat ondertekening blijft hangen.",
 },
-    {
+{
   eyebrow: "Support & klantvragen",
   title: "Van losse vragen naar duidelijke opvolging.",
-  body: "Vragen uit verschillende kanalen worden uitgelezen, op urgentie beoordeeld en klaargezet voor de juiste opvolging.",
+  body: "Vragen uit verschillende kanalen worden uitgelezen, op urgentie beoordeeld en doorgestuurd naar de juiste opvolging.",
 },
-    {
+{
   eyebrow: "Facturen & betalingen",
   title: "Van openstaande betaling naar duidelijke opvolging.",
-  body: "Betaalstatussen worden gevolgd, afwijkingen worden herkend en reminders worden klaargezet voordat betalingen blijven liggen.",
+  body: "Betaalstatussen worden gevolgd, afwijkingen worden herkend en reminders worden voorbereid voordat betalingen blijven liggen.",
 },
   ],
     },
@@ -336,7 +336,7 @@ export const siteCopy = {
 {
   eyebrow: "Invoices & payments",
   title: "From open payment to clear follow-up.",
-  body: "Payment statuses are tracked, issues are flagged and reminders are prepared before payments stay open.",
+ body: "Open payments are tracked, checked for issues and prepared for follow-up.",
 },
   ],
     },
