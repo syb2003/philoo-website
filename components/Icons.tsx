@@ -100,6 +100,16 @@ export function ChatIcon(props: IconProps) {
   );
 }
 
+export function InboxIcon(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M4 13.5 6.2 5.4A2 2 0 0 1 8.13 4h7.74a2 2 0 0 1 1.93 1.4L20 13.5" />
+      <path d="M4 13.5V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4.5" />
+      <path d="M4 13.5h4.5l2 3h3l2-3H20" />
+    </IconBase>
+  );
+}
+
 export function CubeIcon(props: IconProps) {
   return (
     <IconBase {...props}>
@@ -225,6 +235,32 @@ export function ScaleIcon(props: IconProps) {
       <path d="m6 6-3 7h6L6 6Z" />
       <path d="m18 6-3 7h6l-3-7Z" />
       <path d="M8 21h8" />
+    </IconBase>
+  );
+}
+
+export function LifeBuoyIcon(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="3.2" />
+      <path d="M12 5.8A6.2 6.2 0 0 1 18.2 12" />
+      <path d="M12 18.2A6.2 6.2 0 0 1 5.8 12" />
+      <path d="m8.2 8.2 1.8 1.8" />
+      <path d="m14 14 1.8 1.8" />
+      <path d="m15.8 8.2-1.8 1.8" />
+      <path d="m10 14-1.8 1.8" />
+    </IconBase>
+  );
+}
+
+export function ReceiptIcon(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M7 3h10v18l-2-1.4L13 21l-2-1.4L9 21l-2-1.4L5 21V5a2 2 0 0 1 2-2Z" />
+      <path d="M9 8h6" />
+      <path d="M9 12h6" />
+      <path d="M9 16h4" />
     </IconBase>
   );
 }

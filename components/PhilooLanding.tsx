@@ -11,9 +11,12 @@ import {
   FileCheckIcon,
   GraduationCapIcon,
   HandIcon,
+  InboxIcon,
+  LifeBuoyIcon,
   LightningIcon,
   LightbulbIcon,
   MailIcon,
+  ReceiptIcon,
   RocketIcon,
   SearchIcon,
   SlidersIcon,
@@ -31,7 +34,7 @@ type PhilooLandingProps = {
 };
 
 const benefitIcons = [HandIcon, LightningIcon, ChartIcon, UsersIcon] as const;
-const exampleIcons = [ChatIcon, FileCheckIcon, MailIcon, BellIcon] as const;
+const exampleIcons = [InboxIcon, FileCheckIcon, LifeBuoyIcon, ReceiptIcon] as const;
 const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
 const workflowIcons = [MailIcon, CalendarIcon, FileCheckIcon, UserIcon, BellIcon] as const;
 const serviceIcons = [GraduationCapIcon, LightbulbIcon, SlidersIcon, SearchIcon] as const;

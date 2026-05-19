@@ -141,30 +141,30 @@ export const siteCopy = {
       },
     ],
     examples: {
-      title: "Voorbeelden waar Philoo kan helpen",
-      link: "Bespreek jouw aanvraag →",
-      cards: [
-        {
-          eyebrow: "Klantvragen behandelen",
-          title: "Van volle inbox naar snelle eerste reactie.",
-          body: "Binnenkomende mails of formulieren worden herkend, samengevat en klaargezet met een conceptantwoord of vervolgstap.",
-        },
-        {
-          eyebrow: "Aanvragen opvolgen",
-          title: "Van losse aanvraag naar duidelijke opvolging.",
-          body: "Nieuwe aanvragen worden automatisch samengevat, gekoppeld aan de juiste persoon en klaargezet als taak of vervolgmail.",
-        },
-        {
-          eyebrow: "Offertes opvolgen",
-          title: "Van verzonden offerte naar nette opvolging.",
-          body: "Openstaande offertes worden bijgehouden en klaargezet met een vriendelijke opvolgmail of taak.",
-        },
-        {
-          eyebrow: "Betalingen bewaken",
-          title: "Van openstaande factuur naar reminder.",
-          body: "Openstaande betalingen worden herkend, gecontroleerd en opgevolgd met een vriendelijke reminder.",
-        },
-      ],
+  title: "Voorbeelden waar Philoo kan helpen",
+  link: "Bespreek jouw proces →",
+  cards: [
+    {
+      eyebrow: "Klantaanvragen & intake",
+      title: "Van losse aanvraag naar compleet actieoverzicht.",
+      body: "Nieuwe aanvragen uit mail, formulier of WhatsApp worden herkend, samengevat en gekoppeld aan klantinformatie. Philoo zet de juiste vervolgstap klaar.",
+    },
+    {
+      eyebrow: "Contracten & documenten",
+      title: "Van losse documenten naar compleet dossier.",
+      body: "Philoo controleert welke informatie mist, zet documenten of concepten klaar en bewaakt de stappen richting akkoord of ondertekening.",
+    },
+    {
+      eyebrow: "Support & klantvragen",
+      title: "Van losse klantvraag naar duidelijke opvolging.",
+      body: "Klantvragen worden herkend, samengevat en naar de juiste persoon gerouteerd. Philoo zet een taak, conceptantwoord of interne follow-up klaar.",
+    },
+    {
+      eyebrow: "Facturen & betalingen",
+      title: "Van openstaande factuur naar grip op betaling.",
+      body: "Openstaande facturen worden bewaakt, uitzonderingen worden gesignaleerd en opvolging wordt voorbereid voordat geld blijft liggen.",
+    },
+  ],
     },
     process: {
       title: "Hoe we werken",
@@ -314,30 +314,30 @@ export const siteCopy = {
       },
     ],
     examples: {
-      title: "Examples where Philoo can help",
-      link: "Discuss your workflow →",
-      cards: [
-        {
-          eyebrow: "Customer questions",
-          title: "From full inbox to fast response.",
-          body: "Incoming emails or forms are recognised, summarised and prepared with a draft reply or next step.",
-        },
-        {
-          eyebrow: "New requests",
-          title: "From new request to clear next step.",
-          body: "New requests are summarised, assigned to the right person and prepared as a task or follow-up email.",
-        },
-        {
-          eyebrow: "Quote follow-up",
-          title: "From sent quote to polite follow-up.",
-          body: "Open quotes are tracked and prepared with a friendly follow-up email or task.",
-        },
-        {
-          eyebrow: "Payment reminders",
-          title: "From overdue invoice to friendly reminder.",
-          body: "Open payments are found, checked and followed up with a friendly reminder.",
-        },
-      ],
+  title: "Examples where Philoo can help",
+  link: "Discuss your process →",
+  cards: [
+    {
+      eyebrow: "Customer requests & intake",
+      title: "From loose request to clear action overview.",
+      body: "New requests from email, forms or WhatsApp are recognised, summarised and linked to customer information. Philoo prepares the right next step.",
+    },
+    {
+      eyebrow: "Contracts & documents",
+      title: "From loose documents to complete file.",
+      body: "Philoo checks what information is missing, prepares documents or drafts and tracks the steps towards approval or signing.",
+    },
+    {
+      eyebrow: "Support & customer questions",
+      title: "From loose customer question to clear follow-up.",
+      body: "Customer questions are recognised, summarised and routed to the right person. Philoo prepares a task, draft reply or internal follow-up.",
+    },
+    {
+      eyebrow: "Invoices & payments",
+      title: "From open invoice to payment control.",
+      body: "Open invoices are tracked, exceptions are flagged and follow-up is prepared before money stays outstanding.",
+    },
+  ],
     },
     process: {
       title: "How we work",
