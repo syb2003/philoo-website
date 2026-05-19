@@ -132,13 +132,13 @@ export const siteCopy = {
         body: "Acties op het juiste moment, automatisch.",
       },
       {
-        title: "Meer overzicht",
-        body: "Realtime inzicht in acties, statussen en voortgang.",
-      },
+  title: "Overzicht houden",
+  body: "Zie wat openstaat, klaar is en opvolging nodig heeft.",
+},
       {
-        title: "Meer tijd voor wat telt",
-        body: "Minder admin betekent meer tijd voor werk dat omzet oplevert.",
-      },
+  title: "Tijd voor wat telt",
+  body: "Minder admin geeft ruimte voor klanten, opvolging en groei.",
+},
     ],
     examples: {
   title: "Voorbeelden waar Philoo kan helpen",
