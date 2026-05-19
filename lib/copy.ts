@@ -145,9 +145,9 @@ export const siteCopy = {
   link: "Bespreek jouw proces →",
   cards: [
     {
-  eyebrow: "Klantaanvragen & intake",
-  title: "Van eerste contact naar duidelijke vervolgstap.",
-  body: "Berichten uit mail, formulieren, WhatsApp of andere kanalen worden samengevat, gekoppeld aan klantinformatie en klaargezet als taak, conceptreactie of interne update.",
+  eyebrow: "Sales & intake",
+  title: "Van nieuwe kans naar duidelijke vervolgstap.",
+  body: "Nieuwe leads en offerteaanvragen worden herkend, gekoppeld aan klantinformatie en klaargezet als taak, conceptreactie of interne update.",
 },
    {
   eyebrow: "Contracten & documenten",
@@ -255,7 +255,7 @@ export const siteCopy = {
     },
     bottomCta: {
       headline: "Benieuwd waar jullie tijd en kosten kunnen besparen?",
-      body: "We denken graag met jullie mee. Plan een vrijblijvend kennismakingsgesprek of stuur ons een mail.",
+      body: "We denken graag met jullie mee. Plan een vrijblijvend kennismakingsgesprek, of stuur ons een mail of whatsapp bericht.",
       button: "hello@philoo.nl",
     },
   },
