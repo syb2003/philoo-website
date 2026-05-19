@@ -318,24 +318,24 @@ export const siteCopy = {
   link: "Discuss your process →",
   cards: [
     {
-  eyebrow: "Client inquiries & intake",
-  title: "From first contact to clear next step.",
-  body: "Messages from email, forms, WhatsApp or other channels are summarised, linked to customer details and prepared as a task, draft reply or internal update.",
+  eyebrow: "Sales & intake",
+  title: "From new opportunity to clear next step.",
+  body: "New leads and quote requests are recognised, linked to customer details and prepared as a task, draft reply or internal update.",
 },
 {
   eyebrow: "Contracts & documents",
-  title: "From scattered input to ready for approval.",
-  body: "Documents, customer input and drafts are brought together, checked for missing details and prepared for approval, signing or handover.",
+  title: "From missing details to ready for approval.",
+  body: "Documents, customer input and drafts are collected, checked and prepared before signing gets stuck.",
 },
 {
   eyebrow: "Support & customer questions",
-  title: "From scattered questions to clear owner.",
-  body: "Questions from email, forms, WhatsApp or other channels are summarised, prioritised and routed to the right person.",
+  title: "From loose questions to clear follow-up.",
+  body: "Questions from different channels are read, checked for urgency and prepared for the right follow-up.",
 },
 {
   eyebrow: "Invoices & payments",
-  title: "From unpaid invoice to clear follow-up.",
-  body: "Open invoices are tracked, issues are flagged and reminders are prepared before payments are forgotten.",
+  title: "From open payment to clear follow-up.",
+  body: "Payment statuses are tracked, issues are flagged and reminders are prepared before payments stay open.",
 },
   ],
     },
