@@ -207,22 +207,20 @@ export const siteCopy = {
     },
     pricing: {
       label: "Probleem",
-      title: "De verborgen kosten van handmatig werk",
-      intro:
-        "Sommige taken lijken niet veel werk: Een factuur controleren. Een betaalstatus checken. Een reminder klaarzetten.",
-      secondParagraph:
-        "Maar als dit elke dag nodig is, kost het ongemerkt veel tijd.",
-      subtitle: "Voorbeeldberekening",
-      exampleLabel: "Voorbeeld: facturen en betalingen opvolgen",
-      calculationIntro:
-        "Is iemand hier gemiddeld één uur per werkdag mee bezig? Dan kost dat al snel:",
-      impactLines: [
-        "22 uur per maand",
-        "€1.100 aan tijdswaarde per maand",
-        "€13.200 per jaar",
-      ],
-      finalLine:
-        "En dan rekenen we gemiste opvolging, fouten en extra zoekwerk nog niet eens mee.",
+title: "De verborgen kosten van handmatig werk",
+intro: [
+  "Handmatig werk zit vaak in kleine dagelijkse taken: een status checken, een bericht lezen, een dossier bijwerken of een reminder klaarzetten.",
+  "Elke taak lijkt klein maar bij elkaar opgeteld is dit veel werk.",
+],
+exampleLabel: "Voorbeeldberekening",
+exampleTitle: "Voorbeeld: facturen en betalingen opvolgen",
+exampleIntro: "Eén uur per werkdag klinkt misschien beperkt. Toch betekent dat al snel:",
+lines: [
+  "22 uur per maand",
+  "€1.100 aan tijdswaarde per maand",
+  "€13.200 per jaar",
+],
+finalLine: "En dan rekenen we gemiste opvolging, fouten en extra zoekwerk nog niet eens mee.",
       disclaimer: "De exacte waarde hangt af van volume, proces en huidige werkwijze.",
     },
     services: {
@@ -268,7 +266,7 @@ export const siteCopy = {
     nav: {
       items: [
         { id: "home", label: "Home" },
-        { id: "pricing", label: "Impact" },
+        { id: "pricing", label: "Why?" },
         { id: "voorbeelden", label: "Examples" },
         { id: "werkwijze", label: "How it works" },
         { id: "voor-wie", label: "Who it’s for" },
@@ -380,22 +378,20 @@ export const siteCopy = {
     },
     pricing: {
       label: "Problem",
-      title: "The hidden cost of manual work",
-      intro:
-        "Checking an invoice may seem like a small task. So does checking payment status or preparing a reminder.",
-      secondParagraph:
-        "But when these tasks come back every day, the cost adds up quickly.",
-      subtitle: "Example calculation",
-      exampleLabel: "Example: invoice and payment follow-up",
-      calculationIntro:
-        "One hour per working day may not sound like much. But it already means:",
-      impactLines: [
-        "22 hours per month",
-        "€1,100 in time value per month",
-        "€13,200 per year",
-      ],
-      finalLine:
-        "And this does not yet include missed follow-up, mistakes or extra searching.",
+title: "The hidden cost of manual work",
+intro: [
+  "Manual work often hides in small daily tasks: checking a status, reading a message, updating a file or preparing a reminder.",
+  "Each task feels small on its own. But together, they take up hours every week."
+],
+exampleLabel: "Example calculation",
+exampleTitle: "Example: invoice and payment follow-up",
+exampleIntro: "One hour per working day may not sound like much. But it already means:",
+lines: [
+  "22 hours per month",
+  "€1,100 in time value per month",
+  "€13,200 per year",
+],
+finalLine: "And this does not yet include missed follow-up, mistakes or extra searching.",
       disclaimer: "The exact value depends on volume, process and current way of working.",
     },
     services: {
