@@ -431,7 +431,7 @@ export const siteCopy = {
 },
     bottomCta: {
       headline: "Ready to find your first automation opportunity?",
-      body: "We are happy to think along. Book a free intro call or send us an email.",
+      body: "We are happy to think along. Book a free intro call or send us an email or message on Whatsapp.",
       button: "hello@philoo.nl",
     },
   },
