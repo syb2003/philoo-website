@@ -318,25 +318,25 @@ export const siteCopy = {
   title: "Examples where Philoo can help",
   link: "Discuss your process →",
   cards: [
-    {
+ {
   eyebrow: "Sales & intake",
   title: "From new opportunity to clear next step.",
-  body: "New leads and quote requests are recognised, linked to customer details and prepared as a task, draft reply or internal update.",
+  body: "New leads and quote requests are recognised, linked to customer details and turned into a task, draft reply or internal update.",
 },
 {
   eyebrow: "Contracts & documents",
   title: "From missing details to ready for approval.",
-  body: "Documents, customer input and drafts are collected, checked and prepared before signing gets stuck.",
+  body: "Documents, customer input and drafts are collected and completed.",
 },
 {
   eyebrow: "Support & customer questions",
   title: "From questions to clear follow-up.",
-  body: "Questions from different channels are read, checked for urgency and prepared for the right follow-up.",
+  body: "Questions from different channels are read, assessed for urgency and routed to the right person.",
 },
 {
   eyebrow: "Invoices & payments",
   title: "From open payment to clear follow-up.",
- body: "Open payments are tracked, checked for issues and prepared for follow-up.",
+body: "Open payments are tracked, issues are flagged and reminders are prepared before payment delays build up.",
 },
   ],
     },
@@ -389,7 +389,7 @@ export const siteCopy = {
   subtitle: "Example calculation",
   exampleLabel: "Example: invoice and payment follow-up",
   calculationIntro:
-    "One hour per working day may not sound like much. But it already means:",
+    "One hour per working day may not sound like much. But:",
   impactLines: [
     "22 hours per month",
     "€1,100 in time value per month",
