@@ -232,7 +232,7 @@ export const siteCopy = {
       cards: [
         {
           title: "AI-training",
-          body: "Geen PowerPoint-sessie, maar praktisch aan de slag: iedereen werkt aan een eigen proces en leert hoe AI daarbij kan helpen.",f
+          body: "Geen PowerPoint-sessie, maar praktisch aan de slag: iedereen werkt aan een eigen proces en leert hoe AI daarbij kan helpen.",
           price: "Prijs op aanvraag",
         },
         {
