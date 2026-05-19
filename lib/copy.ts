@@ -151,12 +151,12 @@ export const siteCopy = {
 },
 {
   eyebrow: "Contracten & documenten",
-  title: "Van ontbrekende informatie naar klaar voor akkoord.",
-  body: "Documenten, klantinput en concepten worden verzameld en gecontroleerd voordat ondertekening blijft hangen.",
+  title: "Van verspreide informatie naar verzendklaar document.",
+  body: "Documenten, klantinput en concepten worden verzameld, gecontroleerd en voorbereid om te versturen.",
 },
 {
   eyebrow: "Support & klantvragen",
-  title: "Van losse vragen naar duidelijke opvolging.",
+  title: "Van vragen naar duidelijke opvolging.",
   body: "Vragen uit verschillende kanalen worden uitgelezen, op urgentie beoordeeld en doorgestuurd naar de juiste opvolging.",
 },
 {
@@ -174,16 +174,16 @@ export const siteCopy = {
           title: "Begrijpen",
           body: "We leren jullie processen kennen en bepalen samen de grootste winstpunten.",
         },
-        {
-          number: "2",
-          title: "Ontwerpen",
-          body: "We kiezen één concreet proces en stemmen af wat de automatisering wel en niet doet.",
-        },
-        {
-          number: "3",
-          title: "Implementeren",
-          body: "We bouwen, testen en zetten de automatisering live in jullie systemen.",
-        },
+       {
+  number: "2",
+  title: "Ontwerpen",
+  body: "We kiezen één concreet proces en stemmen af wat wel en in de scope valt.",
+},
+{
+  number: "3",
+  title: "Implementeren",
+  body: "We bouwen, testen en zetten de oplossing live in jullie systemen.",
+},
         {
           number: "4",
           title: "Optimaliseren",
@@ -201,7 +201,7 @@ export const siteCopy = {
     },
     testimonial: {
       quote:
-        "Philoo bracht de automatisering en operationele structuur die we misten. Ze begrepen snel hoe ons team werkte en bouwden betrouwbare automatiseringen in onder andere Notion, HubSpot, Google Sheets, Slack en Airtable. Ideeën werden snel vertaald naar werkende systemen. De communicatie was helder en de oplossingen waren stabiel, schaalbaar en direct bruikbaar. Philoo voelde als een echte partner, niet alleen als uitvoerder.",
+        "Philoo bracht de automatisering en operationele structuur die we misten. Ze begrepen snel hoe ons team werkte en bouwden betrouwbare automatiseringen in onder andere Notion, HubSpot, Google Sheets, Slack en Airtable. Ideeën werden snel vertaald naar werkende systemen. De communicatie was helder en de oplossingen waren stabiel, schaalbaar en direct bruikbaar. Philoo voelde als een echte partne en niet als alleen een uitvoerder.",
       attribution: "Owner recruitment agency",
       ratingLabel: "5.0 met vijf gouden sterren",
     },
@@ -243,7 +243,7 @@ export const siteCopy = {
         },
         {
           title: "AI-tooling implementeren",
-          body: "Denk je na over AI-tools, maar wil je eerst goed advies? We helpen met kiezen, inrichten en praktisch gebruiken.",
+          body: "Denk je na over AI-tools, maar wil je eerst goed advies? We helpen met kiezen, inrichten en zorgen ervoor dat je er ook echt gebruik van maakt.",
           price: "Prijs op aanvraag",
         },
         {
