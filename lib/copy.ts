@@ -95,7 +95,7 @@ export const siteCopy = {
     nav: {
       items: [
         { id: "home", label: "Home" },
-        { id: "pricing", label: "Waarom" },
+        { id: "pricing", label: "Waarom?" },
         { id: "voorbeelden", label: "Voorbeelden" },
         { id: "werkwijze", label: "Werkwijze" },
         { id: "voor-wie", label: "Voor wie" },
