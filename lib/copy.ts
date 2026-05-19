@@ -147,22 +147,22 @@ export const siteCopy = {
     {
   eyebrow: "Klantaanvragen & intake",
   title: "Van eerste contact naar duidelijke vervolgstap.",
-  body: "Berichten uit mail, formulier, WhatsApp of andere kanalen worden samengevat, gekoppeld aan klantinformatie en klaargezet als taak, conceptreactie of interne update.",
+  body: "Berichten uit mail, formulieren, WhatsApp of andere kanalen worden samengevat, gekoppeld aan klantinformatie en klaargezet als taak, conceptreactie of interne update.",
 },
    {
   eyebrow: "Contracten & documenten",
   title: "Van ontbrekende informatie naar klaar voor akkoord.",
-  body: "Documenten, klantinput en concepten worden samengebracht, gecontroleerd en klaargezet voordat ondertekening blijft hangen.",
+  body: "Documenten, klantinput en concepten worden verzameld, gecontroleerd en klaargezet voordat ondertekening blijft hangen.",
 },
     {
   eyebrow: "Support & klantvragen",
-  title: "Van verspreide vragen naar duidelijke opvolging.",
-  body: "Vragen uit mail, formulier, WhatsApp of andere kanalen worden samengevat, beoordeeld op spoed en naar de juiste persoon gestuurd.",
+  title: "Van losse vragen naar duidelijke opvolging.",
+  body: "Vragen uit verschillende kanalen worden uitgelezen, op urgentie beoordeeld en klaargezet voor de juiste opvolging.",
 },
     {
   eyebrow: "Facturen & betalingen",
-  title: "Van factuur naar nette opvolging.",
-  body: "Facturen worden gecontroleerd, betaalstatussen worden gevolgd en reminders worden klaargezet voordat betalingen blijven liggen.",
+  title: "Van openstaande betaling naar duidelijke opvolging.",
+  body: "Betaalstatussen worden gevolgd, afwijkingen worden gezien en reminders worden klaargezet voordat betalingen blijven liggen.",
 },
   ],
     },
