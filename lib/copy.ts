@@ -157,12 +157,12 @@ export const siteCopy = {
 {
   eyebrow: "Support & klantvragen",
   title: "Van vragen naar duidelijke opvolging.",
-  body: "Vragen uit verschillende kanalen worden uitgelezen, op urgentie beoordeeld en doorgestuurd naar de juiste opvolging.",
+  body: "Vragen uit verschillende kanalen worden uitgelezen, op urgentie beoordeeld en doorgestuurd voor de juiste opvolging.",
 },
 {
   eyebrow: "Facturen & betalingen",
   title: "Van openstaande betaling naar duidelijke opvolging.",
-  body: "Betaalstatussen worden gevolgd, afwijkingen worden herkend en reminders worden voorbereid voordat betalingen blijven liggen.",
+  body: "Betaalstatussen worden gevolgd, afwijkingen worden herkend en reminders worden voorbereid zodat betalingen niet blijven liggen.",
 },
   ],
     },
@@ -233,7 +233,7 @@ export const siteCopy = {
       cards: [
         {
           title: "AI-training",
-          body: "Geen PowerPoint-sessie, maar praktisch aan de slag: iedereen werkt aan een eigen proces en leert hoe AI daarbij kan helpen.",
+          body: "Geen PowerPoint-sessie, maar praktisch aan de slag: iedereen verbetert een eigen proces met de hulp van AI.",
           price: "Prijs op aanvraag",
         },
         {
@@ -243,7 +243,7 @@ export const siteCopy = {
         },
         {
           title: "AI-tooling implementeren",
-          body: "Denk je na over AI-tools, maar wil je eerst goed advies? We helpen met kiezen, inrichten en zorgen ervoor dat je er ook echt gebruik van maakt.",
+          body: "Denk je na over AI-tools, maar wil je eerst goed advies? We helpen met kiezen, inrichten en zorgen ervoor dat je er ook echt voordeel uit haalt
           price: "Prijs op aanvraag",
         },
         {
