@@ -254,7 +254,7 @@ export const siteCopy = {
       ],
     },
     bottomCta: {
-      headline: "Benieuwd waar in jullie bedrijf winst te behalen valt?",
+      headline: "Benieuwd waar jullie tijd en kosten kunnen besparen?",
       body: "We denken graag met jullie mee. Plan een vrijblijvend kennismakingsgesprek of stuur ons een mail.",
       button: "hello@philoo.nl",
     },
