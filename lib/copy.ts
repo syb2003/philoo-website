@@ -162,7 +162,7 @@ export const siteCopy = {
     {
   eyebrow: "Facturen & betalingen",
   title: "Van openstaande betaling naar duidelijke opvolging.",
-  body: "Betaalstatussen worden gevolgd, afwijkingen worden gezien en reminders worden klaargezet voordat betalingen blijven liggen.",
+  body: "Betaalstatussen worden gevolgd, afwijkingen worden herkend en reminders worden klaargezet voordat betalingen blijven liggen.",
 },
   ],
     },
@@ -172,12 +172,12 @@ export const siteCopy = {
         {
           number: "1",
           title: "Begrijpen",
-          body: "We leren jullie processen kennen en bepalen de grootste winstpunten.",
+          body: "We leren jullie processen kennen en bepalen samen de grootste winstpunten.",
         },
         {
           number: "2",
           title: "Ontwerpen",
-          body: "We kiezen één proces en bepalen wat de automatisering wel en niet doet.",
+          body: "We kiezen één concreet proces en stemmen af wat de automatisering wel en niet doet.",
         },
         {
           number: "3",
@@ -196,7 +196,7 @@ export const siteCopy = {
       bullets: [
         "Mkb-dienstverleners die minder handmatig werk willen.",
         "Organisaties die meer overzicht zoeken in hun processen.",
-        "Bedrijven die met AI willen starten zonder groot IT-project of groot budget.",
+        "Bedrijven die met AI willen starten maar geen langdurig IT-project willen.",
       ],
     },
     testimonial: {
@@ -232,7 +232,7 @@ export const siteCopy = {
       cards: [
         {
           title: "AI-training",
-          body: "Geen PowerPoint-sessie, maar praktisch aan de slag: iedereen leert hoe je een eigen proces efficiënter maakt met AI.",
+          body: "Geen PowerPoint-sessie, maar praktisch aan de slag: iedereen werkt aan een eigen proces en leert hoe AI daarbij kan helpen.",f
           price: "Prijs op aanvraag",
         },
         {
@@ -248,7 +248,7 @@ export const siteCopy = {
         {
   title: "AI-vindbaarheid",
   body:
-    "We verbeteren de vindbaarheid van je bedrijf in AI-zoekmachines, zodat ze beter begrijpen wat je doet en wanneer ze je kunnen noemen.",
+    "We verbeteren je vindbaarheid in AI-zoekmachines, zodat potentiële klanten je beter kunnen vinden.",
   price: "Prijs op aanvraag",
 },
       ],
