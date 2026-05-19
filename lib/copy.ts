@@ -330,7 +330,7 @@ export const siteCopy = {
 },
 {
   eyebrow: "Support & customer questions",
-  title: "From loose questions to clear follow-up.",
+  title: "From questions to clear follow-up.",
   body: "Questions from different channels are read, checked for urgency and prepared for the right follow-up.",
 },
 {
