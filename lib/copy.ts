@@ -243,7 +243,7 @@ export const siteCopy = {
         },
         {
           title: "AI-tooling implementeren",
-          body: "Denk je na over AI-tools, maar wil je eerst goed advies? We helpen met kiezen, inrichten en zorgen ervoor dat je er ook echt voordeel uit haalt
+          body: "Denk je na over AI-tools, maar wil je eerst goed advies? We helpen met kiezen, inrichten en zorgen ervoor dat je er ook echt voordeel uit haalt.",
           price: "Prijs op aanvraag",
         },
         {
