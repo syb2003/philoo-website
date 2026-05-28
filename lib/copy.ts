@@ -233,7 +233,7 @@ export const siteCopy = {
       cards: [
         {
           title: "AI-training",
-          body: "Geen PowerPoint-sessie, maar praktisch aan de slag: iedereen verbetert een eigen proces met de hulp van AI.",
+          body: "Geen PowerPoint-sessie, maar praktisch aan de slag: iedereen verbetert een van zijn of haar eigen processen met de hulp van AI.",
           price: "Prijs op aanvraag",
         },
         {
