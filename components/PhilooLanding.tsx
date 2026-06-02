@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Reveal } from "@/components/Reveal";
 import {
   ArrowRightIcon,
-  BellIcon,
   CalendarIcon,
   ChartIcon,
   ChatIcon,
@@ -21,7 +21,6 @@ import {
   SearchIcon,
   SlidersIcon,
   TrendIcon,
-  UserIcon,
   UsersIcon,
 } from "@/components/Icons";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -36,7 +35,6 @@ type PhilooLandingProps = {
 const benefitIcons = [HandIcon, LightningIcon, ChartIcon, UsersIcon] as const;
 const exampleIcons = [InboxIcon, FileCheckIcon, LifeBuoyIcon, ReceiptIcon] as const;
 const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
-const workflowIcons = [MailIcon, CalendarIcon, FileCheckIcon, UserIcon, BellIcon] as const;
 const serviceIcons = [GraduationCapIcon, LightbulbIcon, SlidersIcon, SearchIcon] as const;
 
 export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
@@ -95,7 +93,7 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
                   : "mx-auto w-full max-w-[880px] min-[1180px]:justify-self-end min-[1180px]:pl-6 xl:pl-10 2xl:pl-14"}
                 delay={100}
               >
-                <HeroWorkflowVisual labels={copy.hero.workflow} visualAria={copy.hero.visualAria} />
+                <HeroWorkflowVisual lang={lang} />
               </Reveal>
             </div>
           </div>
@@ -116,49 +114,28 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
   );
 }
 
-function HeroWorkflowVisual({ labels, visualAria }: { labels: string[]; visualAria: string }) {
+function HeroWorkflowVisual({ lang }: { lang: Language }) {
+  const image =
+    lang === "nl"
+      ? {
+          alt: "Procesautomatisering door Philoo",
+          src: "/hero-process-nl.png",
+        }
+      : {
+          alt: "Workflow automation by Philoo",
+          src: "/hero-workflow-en.png",
+        };
+
   return (
-    <div aria-label={visualAria} className="workflow-stage mx-auto" role="img">
-      <svg aria-hidden="true" className="workflow-lines" preserveAspectRatio="none" viewBox="0 0 720 468">
-        <path d="M210 92 H438 Q462 92 462 116 V208" />
-        <path d="M210 224 H362 Q386 224 386 248 V248" />
-        <path d="M182 344 H330 Q354 344 354 316 V292 H438" />
-        <path d="M480 174 H564 Q588 174 588 198 V256 H502" />
-        <path d="M502 294 H510 Q534 294 534 318 V352 H594" />
-        <circle cx="210" cy="92" r="4.5" />
-        <circle cx="210" cy="224" r="4.5" />
-        <circle cx="182" cy="344" r="4.5" />
-        <circle cx="564" cy="174" r="4.5" />
-        <circle cx="594" cy="352" r="4.5" />
-      </svg>
-
-      <span aria-hidden="true" className="absolute left-[6%] top-[16%] text-lg font-black text-[#D6C48A]/80">
-        +
-      </span>
-      <span aria-hidden="true" className="absolute bottom-[13%] left-[46%] text-lg font-black text-[#D6C48A]/80">
-        +
-      </span>
-      <span aria-hidden="true" className="absolute right-[3%] top-[31%] text-xl font-black text-[#D6C48A]/80">
-        +
-      </span>
-
-      {labels.map((label, index) => {
-        const Icon = workflowIcons[index] ?? MailIcon;
-
-        return (
-          <div className={`workflow-card workflow-card-${index}`} key={label}>
-            <Icon />
-            <span>{label}</span>
-          </div>
-        );
-      })}
-
-      <div className="workflow-core">
-        <div>
-          <strong>AI</strong>
-          <span>by Philoo</span>
-        </div>
-      </div>
+    <div className="workflow-stage workflow-stage-image mx-auto">
+      <Image
+        alt={image.alt}
+        className="object-contain"
+        fill
+        priority
+        sizes="(min-width: 1180px) 50vw, 100vw"
+        src={image.src}
+      />
     </div>
   );
 }
