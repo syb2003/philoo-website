@@ -238,7 +238,7 @@ export const siteCopy = {
         },
         {
           title: "AI-tool op maat",
-          body: "Heb je een terugkerend probleem dat niet in een standaard workflow past? We kunnen een eenvoudige AI-tool op maat maken die aansluit op jullie proces.",
+          body: "Heb je een specifiek probleem dat niet in een standaard workflow past? We kunnen een eenvoudige AI-tool op maat bouwen rond jullie proces.",
           price: "Prijs op aanvraag",
         },
         {
@@ -412,9 +412,9 @@ body: "Open payments are tracked, issues are flagged and reminders are prepared 
       price: "Price on request",
     },
     {
-      title: "Custom AI tool",
+      title: "Custom Tool",
       body:
-        "Have a recurring problem that does not fit a standard workflow? We can build a simple custom AI tool that fits your process.",
+        "Have a specific problem that does not fit a standard workflow? We can build a simple custom AI tool around your process.",
       price: "Price on request",
     },
     {
