@@ -237,8 +237,8 @@ export const siteCopy = {
           price: "Prijs op aanvraag",
         },
         {
-          title: "AI-hackathon",
-          body: "Een praktische workshop waarin teams samen AI-oplossingen maken die direct bruikbaar zijn in het bedrijf.",
+          title: "AI-tool op maat",
+          body: "Heb je een terugkerend probleem dat niet in een standaard workflow past? We kunnen een eenvoudige AI-tool op maat maken die aansluit op jullie proces.",
           price: "Prijs op aanvraag",
         },
         {
@@ -412,9 +412,9 @@ body: "Open payments are tracked, issues are flagged and reminders are prepared 
       price: "Price on request",
     },
     {
-      title: "AI workshop",
+      title: "Custom AI tool",
       body:
-        "A fun, guided team session where small groups come up with AI ideas for the company.",
+        "Have a recurring problem that does not fit a standard workflow? We can build a simple custom AI tool that fits your process.",
       price: "Price on request",
     },
     {

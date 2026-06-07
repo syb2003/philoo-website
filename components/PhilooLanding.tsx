@@ -14,7 +14,6 @@ import {
   InboxIcon,
   LifeBuoyIcon,
   LightningIcon,
-  LightbulbIcon,
   MailIcon,
   ReceiptIcon,
   RocketIcon,
@@ -25,7 +24,7 @@ import {
 } from "@/components/Icons";
 import { SiteFooter } from "@/components/SiteFooter";
 import type { SiteCopy } from "@/lib/copy";
-import type { Language } from "@/lib/i18n";
+import { CALENDLY_URL, type Language } from "@/lib/i18n";
 
 type PhilooLandingProps = {
   lang: Language;
@@ -35,7 +34,7 @@ type PhilooLandingProps = {
 const benefitIcons = [HandIcon, LightningIcon, ChartIcon, UsersIcon] as const;
 const exampleIcons = [InboxIcon, FileCheckIcon, LifeBuoyIcon, ReceiptIcon] as const;
 const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
-const serviceIcons = [GraduationCapIcon, LightbulbIcon, SlidersIcon, SearchIcon] as const;
+const serviceIcons = [GraduationCapIcon, CubeIcon, SlidersIcon, SearchIcon] as const;
 
 export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
   const isDutch = lang === "nl";
@@ -79,7 +78,9 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
                 </div>
                 <a
                   className="mt-5 inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#161851] px-6 py-4 text-[0.95rem] font-extrabold text-white shadow-[0_16px_32px_rgba(22,24,81,0.2)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#F7F8FA] 2xl:mt-8"
-                  href="mailto:hello@philoo.nl"
+                  href={CALENDLY_URL}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <CalendarIcon className="h-5 w-5 text-[#D6C48A]" />
                   {copy.hero.cta}

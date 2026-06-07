@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRightIcon, MenuIcon, XIcon } from "@/components/Icons";
-import { languageStorageKey, type Language } from "@/lib/i18n";
+import { CALENDLY_URL, languageStorageKey, type Language } from "@/lib/i18n";
 import type { SectionId } from "@/lib/copy";
 
 type NavCopy = {
@@ -202,7 +202,9 @@ export function Navbar({ lang, copy }: NavbarProps) {
 
           <a
             className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#D6C48A] px-5 py-4 text-sm font-extrabold text-[#0F1736] shadow-[0_12px_26px_rgba(214,196,138,0.26)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#161851] xl:px-6"
-            href="mailto:hello@philoo.nl"
+            href={CALENDLY_URL}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             {copy.cta}
             <ArrowRightIcon className="h-4 w-4" />
@@ -255,8 +257,10 @@ export function Navbar({ lang, copy }: NavbarProps) {
           </div>
           <a
             className="mt-3 inline-flex w-full items-center justify-center gap-3 rounded-[10px] bg-[#161851] px-5 py-4 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(22,24,81,0.18)]"
-            href="mailto:hello@philoo.nl"
+            href={CALENDLY_URL}
             onClick={() => setMenuOpen(false)}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             {copy.cta}
             <ArrowRightIcon className="h-4 w-4 text-[#D6C48A]" />
