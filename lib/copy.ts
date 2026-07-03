@@ -111,7 +111,7 @@ export const siteCopy = {
       headline: ["Minder administratie.", "Meer plaatsingen."],
       lead: "Philoo Recruit helpt recruitmentbureaus aan meer plaatsingen in minder tijd door handmatig werk te automatiseren.",
       body: "We verbeteren workflows rond planning, opvolging, ATS/CRM-updates en kandidaat-/klantcoordinatie, binnen de tools die je team al gebruikt.",
-      credibility: "Live in weken. Al actief bij 5+ recruitmentbureaus."
+      credibility: "Live in weken. Al actief bij 5+ recruitmentbureaus.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
       workflow: [
