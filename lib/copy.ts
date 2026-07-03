@@ -278,7 +278,7 @@ export const siteCopy = {
   headline: ["Less admin.", "More placements."],
   lead: "Philoo Recruit helps recruitment agencies get more placements in less time by removing the manual work that slows recruiters down.",
   body: "We improve workflows around scheduling, follow-up, ATS updates and candidate/client coordination, inside the tools your team already uses.",
-  credibility: "Built in weeks. Trusted by 5+ recruitment agencies."
+  credibility: "Built in weeks. Trusted by 5+ recruitment agencies.",
   cta: "Book a free intro call",
       visualAria: "Workflow visual with AI by Philoo in the center",
       workflow: [
