@@ -88,9 +88,9 @@ export type SiteCopy = {
 export const siteCopy = {
   nl: {
     metadata: {
-      title: "Philoo | Minder admin. Meer tijd voor wat telt.",
+      title: "Philoo Recruit | Minder administratie. Meer plaatsingen.",
       description:
-        "Philoo bouwt efficiënte AI automatiseringen in de systemen waar je team al mee werkt, zodat teams minder handmatig werk doen en meer tijd overhouden voor wat telt.",
+        "Philoo Recruit helpt recruitmentbureaus meer plaatsingen te realiseren door handwerk rond planning, opvolging en ATS/CRM-updates te verminderen.",
     },
     nav: {
       items: [
@@ -108,10 +108,10 @@ export const siteCopy = {
       language: "Taal wisselen",
     },
     hero: {
-      headline: ["Minder admin.", "Meer tijd voor wat telt."],
-      lead: "Praktisch starten met AI en automatisering.",
-      body: "Philoo helpt mkb-dienstverleners om handmatige processen te automatiseren. Klaar in enkele weken, binnen de systemen die jullie nu al gebruiken.",
-      credibility: "20+ jaar ervaring in tech, data, AI en procesverbetering.",
+      headline: ["Minder administratie.", "Meer plaatsingen."],
+      lead: "Philoo Recruit helpt recruitmentbureaus aan meer plaatsingen in minder tijd door handwerk weg te halen dat recruiters vertraagt.",
+      body: "We verbeteren workflows rond planning, opvolging, ATS/CRM-updates en kandidaat-/klantcoordinatie, binnen de tools die je team al gebruikt.",
+      credibility: "Live in weken, niet maanden. Recruiters blijven in controle.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
       workflow: [
@@ -124,45 +124,45 @@ export const siteCopy = {
     },
     benefits: [
       {
-        title: "Minder handmatig werk",
-        body: "Automatiseer repetitieve en foutgevoelige taken.",
+        title: "Minder handwerk",
+        body: "Verminder repetitieve taken rond planning, opvolging en ATS-updates.",
       },
       {
         title: "Sneller schakelen",
-        body: "Acties op het juiste moment, automatisch.",
+        body: "Minder vertraging tussen kandidaten, klanten en volgende stappen.",
       },
       {
-  title: "Overzicht houden",
-  body: "Zie wat openstaat, klaar is en opvolging nodig heeft.",
+  title: "Meer recruitertijd",
+  body: "Laat recruiters meer tijd besteden aan kandidaten en klanten spreken.",
 },
       {
-  title: "Tijd voor wat telt",
-  body: "Minder admin geeft ruimte voor klanten, opvolging en groei.",
+  title: "Meer controle",
+  body: "Zie wat openstaat, vertraagd is, afgerond is en aandacht nodig heeft.",
 },
     ],
     examples: {
-  title: "Voorbeelden waar Philoo kan helpen",
-  link: "Bespreek jouw proces →",
+  title: "Waar Philoo Recruit bij kan helpen",
+  link: "Bespreek jouw recruitmentproces →",
   cards: [
   {
-  eyebrow: "Sales & intake",
-  title: "Van nieuwe kans naar duidelijke vervolgstap.",
-  body: "Nieuwe leads en offerteaanvragen worden herkend, gekoppeld aan klantinformatie en omgezet naar een taak, conceptreactie of interne update.",
+  eyebrow: "Interviewplanning",
+  title: "Van heen-en-weer mailen naar duidelijke planning.",
+  body: "Planning, reminders en statusupdates worden klaargezet, zodat recruiters minder tijd verliezen aan coordinatie.",
 },
 {
-  eyebrow: "Contracten & documenten",
-  title: "Van verspreide informatie naar verzendklaar document.",
-  body: "Documenten, klantinput en concepten worden verzameld, gecontroleerd en voorbereid om te versturen.",
+  eyebrow: "ATS/CRM-updates",
+  title: "Van vergeten notities naar schonere data.",
+  body: "Philoo Recruit helpt records bijwerken, opvolging voorbereiden en openstaande acties zichtbaar houden.",
 },
 {
-  eyebrow: "Support & klantvragen",
-  title: "Van vragen naar duidelijke opvolging.",
-  body: "Vragen uit verschillende kanalen worden uitgelezen, op urgentie beoordeeld en doorgestuurd voor de juiste opvolging.",
+  eyebrow: "Kandidaat- en klantopvolging",
+  title: "Van losse reminders naar duidelijke next steps.",
+  body: "Opvolging wordt gestructureerd met nudges, taken en updates voor recruiters om te controleren.",
 },
 {
-  eyebrow: "Facturen & betalingen",
-  title: "Van openstaande betaling naar duidelijke opvolging.",
-  body: "Betaalstatussen worden gevolgd, afwijkingen worden herkend en reminders worden voorbereid zodat betalingen niet blijven liggen.",
+  eyebrow: "Matching- en shortlistsupport",
+  title: "Van klantaanvraag naar eerste shortlist.",
+  body: "Philoo Recruit kan criteria structureren, de database checken en kandidatenlijsten voorbereiden met recruiter approval.",
 },
   ],
     },
@@ -172,31 +172,32 @@ export const siteCopy = {
         {
           number: "1",
           title: "Begrijpen",
-          body: "We leren jullie processen kennen en bepalen samen de grootste winstpunten.",
+          body: "We kijken naar jullie recruitmentproces, tools en handmatige taken.",
         },
        {
   number: "2",
   title: "Ontwerpen",
-  body: "We kiezen één concreet proces en stemmen af wat wel en in de scope valt.",
+  body: "We kiezen één workflow en bepalen wat automatisch kan, en waar recruiters in controle blijven.",
 },
 {
   number: "3",
-  title: "Implementeren",
-  body: "We bouwen, testen en zetten de oplossing live in jullie systemen.",
+  title: "Bouwen",
+  body: "We bouwen, testen en lanceren de workflow binnen jullie bestaande tools.",
 },
         {
           number: "4",
-          title: "Optimaliseren",
-          body: "Na livegang kijken we mee, verwerken we feedback en doen we kleine optimalisaties.",
+          title: "Verbeteren",
+          body: "Na livegang bekijken we feedback, meten we tijdswinst en doen we kleine verbeteringen.",
         },
       ],
     },
     audience: {
       title: "Voor wie dit is",
       bullets: [
-        "Mkb-dienstverleners die minder handmatig werk willen.",
-        "Organisaties die meer overzicht zoeken in hun processen.",
-        "Bedrijven die met AI willen starten maar geen langdurig IT-project willen.",
+        "Recruitmentbureaus die minder handwerk willen.",
+        "Teams die willen dat recruiters meer tijd besteden aan kandidaten en klanten.",
+        "Bureaus die tijd en kosten willen besparen zonder nieuwe tool, nieuw platform of groot IT-project.",
+        "Ondernemers die klein willen starten met één praktische workflow en daarna verder willen uitbreiden.",
       ],
     },
     testimonial: {
@@ -207,64 +208,58 @@ export const siteCopy = {
     },
     pricing: {
   label: "Probleem",
-  title: "De verborgen kosten van handmatig werk",
+  title: "De verborgen kosten van handmatig recruitmentwerk",
   intro:
-    "Handmatig werk zit vaak in kleine dagelijkse taken: een status checken, een bericht lezen, een dossier bijwerken of een reminder klaarzetten.",
+    "Interviewplanning kan tot 35% van recruitertijd kosten. ATS/CRM-administratie kan rond de 8 uur per week kosten. Dat zou de meeste recruitmentondernemers wakker moeten schudden.",
   secondParagraph:
-    "Elke taak lijkt klein maar bij elkaar opgeteld ben je hier elke week uren mee bezig.",
+    "Elk uur dat opgaat aan feedback najagen, records bijwerken of interviews coordineren, is een uur dat niet naar kandidaten spreken, klanten adviseren of vacatures vooruitbrengen gaat.",
   subtitle: "Voorbeeldberekening",
-  exampleLabel: "Voorbeeld: facturen en betalingen opvolgen",
+  exampleLabel: "Voorbeeld: handmatige recruitmentadministratie",
   calculationIntro:
-    "Eén uur per werkdag klinkt misschien niet veel. Toch betekent dit al snel:",
+    "Eén recruiter die 8 uur per week verliest aan ATS/CRM-admin betekent:",
   impactLines: [
-    "22 uur per maand",
-    "€1.100 aan tijdswaarde per maand",
-    "€13.200 per jaar",
+    "32 uur per maand",
+    "384 uur per jaar",
+    "Meer dan €15.000 aan tijdwaarde per recruiter per jaar",
   ],
   finalLine:
-    "En dan rekenen we gemiste opvolging, fouten en extra zoekwerk nog niet eens mee.",
+    "En dan tellen we de kosten van fouten nog niet mee, zoals gemiste opvolging, verouderde kandidaatstatussen, vergeten klantfeedback, incomplete notities, dubbele invoer, verkeerde beschikbaarheidsinformatie of kandidaten die te laat worden benaderd.",
   disclaimer:
-    "De exacte waarde hangt af van volume, proces en huidige werkwijze.",
+    "De exacte waarde hangt af van teamgrootte, proces en huidige werkwijze.",
 },
     services: {
-      title: "Overige diensten",
+      title: "Andere manieren waarop we recruitmentteams helpen",
       intro:
-        "Naast het automatiseren van processen helpt Philoo ook met praktische AI-training, tooling en vindbaarheid.",
+        "Naast workflowautomatisering helpt Philoo Recruit recruitmentteams ook praktisch starten met AI in hun dagelijkse werk.",
       cards: [
         {
-          title: "AI-training",
-          body: "Geen PowerPoint-sessie, maar praktisch aan de slag: iedereen verbetert een van zijn of haar eigen processen met de hulp van AI.",
+          title: "Recruitment workflow scan",
+          body: "We brengen in kaart waar je team tijd verliest en bepalen de beste eerste workflow om te verbeteren.",
           price: "Prijs op aanvraag",
         },
         {
-          title: "AI-tool op maat",
-          body: "Heb je een specifiek probleem dat niet in een standaard workflow past? We kunnen een eenvoudige AI-tool op maat bouwen rond jullie proces.",
+          title: "AI-training voor recruiters",
+          body: "Praktische training voor recruiters om AI veilig te gebruiken in dagelijks werk, zonder het oordeel van recruiters te vervangen.",
           price: "Prijs op aanvraag",
         },
         {
-          title: "AI-tooling implementeren",
-          body: "Denk je na over AI-tools, maar wil je eerst goed advies? We helpen met kiezen, inrichten en zorgen ervoor dat je er ook echt voordeel uit haalt.",
+          title: "Custom workflow build",
+          body: "Een gerichte workflow rond jullie recruitmentproces, tools en bottlenecks.",
           price: "Prijs op aanvraag",
         },
-        {
-  title: "AI-vindbaarheid",
-  body:
-    "We verbeteren je vindbaarheid in AI-zoekmachines, zodat potentiële klanten je beter kunnen vinden.",
-  price: "Prijs op aanvraag",
-},
       ],
     },
     bottomCta: {
-      headline: "Benieuwd waar jullie tijd en kosten kunnen besparen?",
-      body: "We denken graag met jullie mee. Plan een vrijblijvend kennismakingsgesprek, of stuur ons een mail of whatsapp bericht.",
-      button: "hello@philoo.nl",
+      headline: "Klaar om te zien waar je recruiters tijd verliezen?",
+      body: "Plan een gratis kennismaking. We kijken naar jullie huidige proces en identificeren één workflow waar Philoo Recruit handwerk kan verminderen.",
+      button: "Plan een gratis kennismaking",
     },
   },
   en: {
     metadata: {
-      title: "Philoo | Less admin. More time for what matters.",
+      title: "Philoo Recruit | Less admin. More placements.",
       description:
-        "Philoo builds smart AI workflows inside the tools your team already uses, helping teams reduce manual work and spend more time with clients.",
+        "Philoo Recruit helps recruitment agencies get more placements in less time by reducing manual work around scheduling, follow-up and ATS/CRM updates.",
     },
     nav: {
       items: [
@@ -282,10 +277,10 @@ export const siteCopy = {
       language: "Switch language",
     },
     hero: {
-  headline: ["Less admin.", "More time for what matters."],
-  lead: "A practical way to start with AI and automation.",
-  body: "Philoo helps SMBs automate time-consuming processes inside the systems they already use. Built in weeks, not months.",
-  credibility: "20+ years of experience in tech, data, AI and process improvement.",
+  headline: ["Less admin.", "More placements."],
+  lead: "Philoo Recruit helps recruitment agencies get more placements in less time by removing the manual work that slows recruiters down.",
+  body: "We improve workflows around scheduling, follow-up, ATS/CRM updates and candidate/client coordination, inside the tools your team already uses.",
+  credibility: "Built in weeks, not months. Recruiters stay in control.",
   cta: "Book a free intro call",
       visualAria: "Workflow visual with AI by Philoo in the center",
       workflow: [
@@ -299,44 +294,44 @@ export const siteCopy = {
     benefits: [
       {
         title: "Less manual work",
-        body: "Automate tasks that keep coming back.",
+        body: "Reduce repetitive tasks around scheduling, follow-up and ATS updates.",
       },
       {
         title: "Move faster",
-        body: "Instant replies, actions and reminders.",
+        body: "Shorter delays between candidates, clients and next steps.",
+      },
+      {
+        title: "More recruiter time",
+        body: "Let recruiters spend more time speaking with candidates and clients.",
       },
       {
         title: "More control",
-        body: "See what is open, done and still needs attention.",
-      },
-      {
-        title: "Fewer mistakes",
-        body: "Reduce manual errors",
+        body: "See what is open, delayed, completed and needs attention.",
       },
     ],
     examples: {
-  title: "Examples where Philoo can help",
-  link: "Discuss your process →",
+  title: "Where Philoo Recruit can help",
+  link: "Discuss your recruitment workflow →",
   cards: [
  {
-  eyebrow: "Sales & intake",
-  title: "From new opportunity to clear next step.",
-  body: "New leads and quote requests are recognised, linked to customer details and turned into a task, draft reply or internal update.",
+  eyebrow: "Interview scheduling",
+  title: "From back-and-forth emails to clear scheduling flows.",
+  body: "Scheduling, reminders and status updates are prepared so recruiters lose less time on coordination.",
 },
 {
-  eyebrow: "Contracts & documents",
-  title: "From missing details to ready for approval.",
-  body: "Documents, customer input and drafts are collected and completed.",
+  eyebrow: "ATS/CRM updates",
+  title: "From forgotten notes to cleaner data.",
+  body: "Philoo Recruit helps update records, prepare follow-up and keep open actions visible.",
 },
 {
-  eyebrow: "Support & customer questions",
-  title: "From questions to clear follow-up.",
-  body: "Questions from different channels are read, assessed for urgency and routed to the right person.",
+  eyebrow: "Candidate and client follow-up",
+  title: "From reminders to structured next steps.",
+  body: "Follow-up is structured with nudges, tasks and updates for recruiters to review.",
 },
 {
-  eyebrow: "Invoices & payments",
-  title: "From open payment to clear follow-up.",
-body: "Open payments are tracked, issues are flagged and reminders are prepared before payment delays build up.",
+  eyebrow: "Matching and shortlist support",
+  title: "From client request to first shortlist.",
+body: "Philoo Recruit can structure criteria, check the database and prepare candidate lists with recruiter approval.",
 },
   ],
     },
@@ -346,31 +341,32 @@ body: "Open payments are tracked, issues are flagged and reminders are prepared 
         {
           number: "1",
           title: "Understand",
-          body: "We look at your process, tools and manual tasks.",
+          body: "We look at your recruitment process, tools and manual tasks.",
         },
         {
           number: "2",
           title: "Design",
-          body: "We choose one workflow and define how the automation should look like.",
+          body: "We choose one workflow and define what should happen automatically, and where recruiters stay in control.",
         },
         {
           number: "3",
           title: "Build",
-          body: "We build, test and launch it in your systems.",
+          body: "We build, test and launch the workflow inside your existing tools.",
         },
         {
           number: "4",
           title: "Improve",
-          body: "After launch, we review feedback and make small improvements.",
+          body: "After launch, we review feedback, measure time saved and make small improvements.",
         },
       ],
     },
    audience: {
   title: "Who this is for",
   bullets: [
-    "SMBs that want less manual work.",
-    "Organisations that need more overview of their processes.",
-    "Companies that want to start with AI without a large IT project or budget.",
+    "Recruitment agencies that want less manual work.",
+    "Teams that want recruiters to spend more time with candidates and clients.",
+    "Agencies that want to save time and money without new tools, a new platform or a large IT project.",
+    "Owners who want to start small with one practical workflow before expanding further.",
   ],
 },
     testimonial: {
@@ -381,60 +377,54 @@ body: "Open payments are tracked, issues are flagged and reminders are prepared 
     },
     pricing: {
   label: "Problem",
-  title: "The hidden cost of manual work",
+  title: "The hidden cost of manual recruitment work",
   intro:
-    "Manual work often hides in small daily tasks: checking a status, reading a message, updating a file or preparing a reminder.",
+    "Interview scheduling alone can take up to 35% of recruiter time. ATS/CRM administration can cost around 8 hours per week. That should scare most recruitment agency owners.",
   secondParagraph:
-    "Each task feels small on its own. But together, they take up hours every week.",
+    "Every hour spent chasing feedback, updating records or coordinating interviews is an hour not spent speaking with candidates, advising clients or moving vacancies forward.",
   subtitle: "Example calculation",
-  exampleLabel: "Example: invoice and payment follow-up",
+  exampleLabel: "Example: manual recruitment admin",
   calculationIntro:
-    "One hour per working day may not sound like much. But:",
+    "One recruiter losing 8 hours per week to ATS/CRM admin means:",
   impactLines: [
-    "22 hours per month",
-    "€1,100 in time value per month",
-    "€13,200 per year",
+    "32 hours per month",
+    "384 hours per year",
+    "Over €15,000 in time value per recruiter per year",
   ],
   finalLine:
-    "And this does not yet include missed follow-up, mistakes or extra searching.",
+    "And that does not include the cost of mistakes, such as missed follow-ups, outdated candidate statuses, forgotten client feedback, incomplete notes, duplicate data entry, wrong availability information, or candidates being contacted too late.",
   disclaimer:
-    "The exact value depends on volume, process and current way of working.",
+    "The exact value depends on team size, process and current way of working.",
 },
     services: {
-  title: "Other services",
+  title: "Other ways we can help recruitment teams",
   intro:
-    "Besides process automation, Philoo can also help in other practical ways with AI.",
+    "Besides workflow automation, Philoo Recruit can help recruitment teams start practically with AI in their daily work.",
   cards: [
     {
-      title: "AI training",
+      title: "Recruitment workflow scan",
       body:
-        "No slide deck full of theory. Your team learns how to improve its own daily time-consuming processes with AI.",
+        "We map where your team loses time and identify the best first workflow to improve.",
       price: "Price on request",
     },
     {
-      title: "Custom Tool",
+      title: "Recruiter AI training",
       body:
-        "Have a specific problem that does not fit a standard workflow? We can build a simple custom AI tool around your process.",
+        "Practical training for recruiters on how to use AI safely in daily work, without replacing recruiter judgment.",
       price: "Price on request",
     },
     {
-      title: "AI tooling advice",
+      title: "Custom workflow build",
       body:
-        "Thinking about AI tools, but not sure which ones to use? We help you choose, set them up and make sure your team actually benefits from them.",
-      price: "Price on request",
-    },
-    {
-      title: "AI visibility",
-      body:
-        "We improve your company’s visibility in AI search tools, so more potential customers can find you.",
+        "A focused workflow around your agency’s process, tools and bottlenecks.",
       price: "Price on request",
     },
   ],
 },
     bottomCta: {
-      headline: "Ready to find your first automation opportunity?",
-      body: "We are happy to think along. Book a free intro call or send us an email or message on Whatsapp.",
-      button: "hello@philoo.nl",
+      headline: "Ready to find where your recruiters are losing time?",
+      body: "Book a free intro call. We’ll look at your current process and identify one workflow where Philoo Recruit can help reduce manual work.",
+      button: "Book a free intro call",
     },
   },
 } satisfies Record<Language, SiteCopy>;
