@@ -412,7 +412,9 @@ function BottomCta({ copy }: { copy: SiteCopy }) {
           </div>
           <a
             className="inline-flex w-fit items-center justify-center gap-4 rounded-[10px] bg-[#D6C48A] px-6 py-4 text-base font-black text-[#0F1736] shadow-[0_18px_34px_rgba(214,196,138,0.18)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-white"
-            href="mailto:hello@philoo.nl"
+            href={CALENDLY_URL}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <MailIcon className="h-5 w-5" />
             {copy.bottomCta.button}
