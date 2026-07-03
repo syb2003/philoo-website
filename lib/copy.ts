@@ -109,9 +109,9 @@ export const siteCopy = {
     },
     hero: {
       headline: ["Minder administratie.", "Meer plaatsingen."],
-      lead: "Philoo Recruit helpt recruitmentbureaus aan meer plaatsingen in minder tijd door handwerk weg te halen dat recruiters vertraagt.",
+      lead: "Philoo Recruit helpt recruitmentbureaus aan meer plaatsingen in minder tijd door handmatig werk te automatiseren.",
       body: "We verbeteren workflows rond planning, opvolging, ATS/CRM-updates en kandidaat-/klantcoordinatie, binnen de tools die je team al gebruikt.",
-      credibility: "Live in weken, niet maanden. Recruiters blijven in controle.",
+      credibility: "Live in weken. Al actief bij 5+ recruitmentbureaus."
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met AI by Philoo in het midden",
       workflow: [
@@ -124,7 +124,7 @@ export const siteCopy = {
     },
     benefits: [
       {
-        title: "Minder handwerk",
+        title: "Minder handmatig werk",
         body: "Verminder repetitieve taken rond planning, opvolging en ATS-updates.",
       },
       {
@@ -132,7 +132,7 @@ export const siteCopy = {
         body: "Minder vertraging tussen kandidaten, klanten en volgende stappen.",
       },
       {
-  title: "Meer recruitertijd",
+  title: "Meer tijd voor conversa",
   body: "Laat recruiters meer tijd besteden aan kandidaten en klanten spreken.",
 },
       {
@@ -187,7 +187,7 @@ export const siteCopy = {
         {
           number: "4",
           title: "Verbeteren",
-          body: "Na livegang bekijken we feedback, meten we tijdswinst en doen we kleine verbeteringen.",
+          body: "Na livegang bekijken we feedback, meten we tijdswinst en gaan we door naar het volgende proces.",
         },
       ],
     },
@@ -224,16 +224,14 @@ export const siteCopy = {
   ],
   finalLine:
     "En dan tellen we de kosten van fouten nog niet mee, zoals gemiste opvolging, verouderde kandidaatstatussen, vergeten klantfeedback, incomplete notities, dubbele invoer, verkeerde beschikbaarheidsinformatie of kandidaten die te laat worden benaderd.",
-  disclaimer:
-    "De exacte waarde hangt af van teamgrootte, proces en huidige werkwijze.",
 },
     services: {
       title: "Andere manieren waarop we recruitmentteams helpen",
       intro:
-        "Naast workflowautomatisering helpt Philoo Recruit recruitmentteams ook praktisch starten met AI in hun dagelijkse werk.",
+        "Naast procesautomatisering helpt Philoo Recruit recruitmentteams ook praktisch starten met AI in hun dagelijkse werk.",
       cards: [
         {
-          title: "Recruitment workflow scan",
+          title: "Recruitment proces scan",
           body: "We brengen in kaart waar je team tijd verliest en bepalen de beste eerste workflow om te verbeteren.",
           price: "Prijs op aanvraag",
         },
@@ -243,15 +241,15 @@ export const siteCopy = {
           price: "Prijs op aanvraag",
         },
         {
-          title: "Custom workflow build",
+          title: "Recruitment tooling op maat",
           body: "Een gerichte workflow rond jullie recruitmentproces, tools en bottlenecks.",
           price: "Prijs op aanvraag",
         },
       ],
     },
     bottomCta: {
-      headline: "Klaar om te zien waar je recruiters tijd verliezen?",
-      body: "Plan een gratis kennismaking. We kijken naar jullie huidige proces en identificeren één workflow waar Philoo Recruit handwerk kan verminderen.",
+      headline: "Benieuwd waar jij tijd verliest en geld laat liggen?",
+      body: "Plan een gratis kennismaking. We kijken naar jullie huidige proces en identificeren samen waar Philoo Recruit kan helpen.",
       button: "Plan een gratis kennismaking",
     },
   },
@@ -279,8 +277,8 @@ export const siteCopy = {
     hero: {
   headline: ["Less admin.", "More placements."],
   lead: "Philoo Recruit helps recruitment agencies get more placements in less time by removing the manual work that slows recruiters down.",
-  body: "We improve workflows around scheduling, follow-up, ATS/CRM updates and candidate/client coordination, inside the tools your team already uses.",
-  credibility: "Built in weeks, not months. Recruiters stay in control.",
+  body: "We improve workflows around scheduling, follow-up, ATS updates and candidate/client coordination, inside the tools your team already uses.",
+  credibility: "Built in weeks. Trusted by 5+ recruitment agencies."
   cta: "Book a free intro call",
       visualAria: "Workflow visual with AI by Philoo in the center",
       workflow: [
@@ -301,7 +299,7 @@ export const siteCopy = {
         body: "Shorter delays between candidates, clients and next steps.",
       },
       {
-        title: "More recruiter time",
+        title: "More time for conversations",
         body: "Let recruiters spend more time speaking with candidates and clients.",
       },
       {
@@ -320,7 +318,7 @@ export const siteCopy = {
 },
 {
   eyebrow: "ATS/CRM updates",
-  title: "From forgotten notes to cleaner data.",
+  title: "From notes to clean data.",
   body: "Philoo Recruit helps update records, prepare follow-up and keep open actions visible.",
 },
 {
@@ -356,7 +354,7 @@ body: "Philoo Recruit can structure criteria, check the database and prepare can
         {
           number: "4",
           title: "Improve",
-          body: "After launch, we review feedback, measure time saved and make small improvements.",
+          body: "After launch, we review feedback, measure time saved and continue to the next workflow.",
         },
       ],
     },
@@ -393,8 +391,6 @@ body: "Philoo Recruit can structure criteria, check the database and prepare can
   ],
   finalLine:
     "And that does not include the cost of mistakes, such as missed follow-ups, outdated candidate statuses, forgotten client feedback, incomplete notes, duplicate data entry, wrong availability information, or candidates being contacted too late.",
-  disclaimer:
-    "The exact value depends on team size, process and current way of working.",
 },
     services: {
   title: "Other ways we can help recruitment teams",
