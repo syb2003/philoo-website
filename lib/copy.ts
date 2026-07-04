@@ -231,7 +231,7 @@ export const siteCopy = {
       ],
       finalLine:
         "En dan tellen we de kosten van fouten nog niet mee, zoals gemiste opvolging, verouderde kandidaatstatussen, vergeten klantfeedback en incomplete notities.",
-      disclaimer: 
+      disclaimer: "", 
     },
     services: {
       title: "Andere manieren waarop we recruitmentteams helpen",
@@ -400,7 +400,7 @@ export const siteCopy = {
       ],
       finalLine:
         "And that does not include the cost of mistakes, such as missed follow-ups, outdated candidate statuses, forgotten client feedback, and incomplete notes.",
-      disclaimer:
+      disclaimer: "",
     },
     services: {
       title: "Other ways we can help recruitment teams",
