@@ -421,44 +421,46 @@ function Pricing({ copy }: { copy: SiteCopy }) {
       className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="pricing"
     >
-      <Reveal className="mx-auto max-w-[980px]">
-        <p className="text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">{copy.pricing.label}</p>
-        <h2 className="mt-3 text-[clamp(1.85rem,4vw,2.55rem)] font-black leading-tight tracking-[0] text-white">
-          {copy.pricing.title}
-        </h2>
-        <div className="mt-5 grid max-w-[760px] gap-3 text-[1rem] font-medium leading-7 text-white/86">
-          <p>{copy.pricing.intro}</p>
-          <p>{copy.pricing.secondParagraph}</p>
-        </div>
-      </Reveal>
+      <div className="mx-auto grid max-w-[1320px] gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(520px,1fr)] lg:items-start xl:gap-12">
+        <Reveal className="max-w-[640px] lg:mx-0">
+          <p className="text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">{copy.pricing.label}</p>
+          <h2 className="mt-3 text-[clamp(1.85rem,4vw,2.55rem)] font-black leading-tight tracking-[0] text-white">
+            {copy.pricing.title}
+          </h2>
+          <div className="mt-5 grid max-w-[760px] gap-3 text-[1rem] font-medium leading-7 text-white/86">
+            <p>{copy.pricing.intro}</p>
+            <p>{copy.pricing.secondParagraph}</p>
+          </div>
+        </Reveal>
 
-      <Reveal
-        className="mx-auto mt-7 max-w-[980px] rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7 lg:p-8"
-        delay={60}
-      >
-        <div className="flex items-center gap-3">
-          <span aria-hidden="true" className="h-px w-8 bg-[#D6C48A]" />
-          <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.subtitle}</p>
-        </div>
-        <h3 className="mt-4 text-[1.2rem] font-black leading-snug text-[#161851]">{copy.pricing.exampleLabel}</h3>
-        <p className="mt-3 max-w-[760px] text-[1rem] font-medium leading-7 text-[#0F1736]/84">
-          {copy.pricing.calculationIntro}
-        </p>
+        <Reveal
+          className="mx-auto mt-7 w-full max-w-[760px] rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7 lg:mt-0 lg:justify-self-end lg:p-8"
+          delay={60}
+        >
+          <div className="flex items-center gap-3">
+            <span aria-hidden="true" className="h-px w-8 bg-[#D6C48A]" />
+            <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/68">{copy.pricing.subtitle}</p>
+          </div>
+          <h3 className="mt-4 text-[1.2rem] font-black leading-snug text-[#161851]">{copy.pricing.exampleLabel}</h3>
+          <p className="mt-3 max-w-[760px] text-[1rem] font-medium leading-7 text-[#0F1736]/84">
+            {copy.pricing.calculationIntro}
+          </p>
 
-        <div className="mt-6 grid gap-3 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-5 sm:p-6">
-          {copy.pricing.impactLines.map((line, index) => (
-            <p
-              className={`leading-6 text-[#161851] ${index === copy.pricing.impactLines.length - 1 ? "rounded-[10px] border border-[#D6C48A]/45 bg-[#D6C48A]/10 px-3 py-3 text-[1.16rem] font-black" : "text-[1rem] font-bold"}`}
-              key={line}
-            >
-              {line}
-            </p>
-          ))}
-        </div>
+          <div className="mt-6 grid gap-3 rounded-[12px] border border-[#E6E8EF] bg-[#F7F8FA] p-5 sm:p-6">
+            {copy.pricing.impactLines.map((line, index) => (
+              <p
+                className={`leading-6 text-[#161851] ${index === copy.pricing.impactLines.length - 1 ? "rounded-[10px] border border-[#D6C48A]/45 bg-[#D6C48A]/10 px-3 py-3 text-[1.16rem] font-black" : "text-[1rem] font-bold"}`}
+                key={line}
+              >
+                {line}
+              </p>
+            ))}
+          </div>
 
-        <p className="mt-5 max-w-[760px] text-[1rem] font-black leading-7 text-[#161851]">{copy.pricing.finalLine}</p>
-        <p className="mt-3 text-[0.84rem] font-medium leading-6 text-[#0F1736]/62">{copy.pricing.disclaimer}</p>
-      </Reveal>
+          <p className="mt-5 max-w-[760px] text-[1rem] font-black leading-7 text-[#161851]">{copy.pricing.finalLine}</p>
+          <p className="mt-3 text-[0.84rem] font-medium leading-6 text-[#0F1736]/62">{copy.pricing.disclaimer}</p>
+        </Reveal>
+      </div>
     </section>
   );
 }
@@ -477,13 +479,14 @@ function Services({ copy }: { copy: SiteCopy }) {
         <p className="mt-3 max-w-[700px] text-[0.98rem] font-medium leading-7 text-white/86">{copy.services.intro}</p>
       </Reveal>
 
-      <div className="mx-auto grid max-w-[1120px] gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {copy.services.cards.map((card, index) => {
+      <div className="mt-7 rounded-[16px] border border-[#E6E8EF] bg-[#F7F8FA] p-5 shadow-[0_18px_42px_rgba(15,23,54,0.10)] sm:p-7 lg:p-9">
+        <div className="mx-auto grid w-full max-w-[1180px] gap-6 md:grid-cols-2 md:justify-items-center lg:gap-16 xl:gap-24">
+          {copy.services.cards.map((card, index) => {
           const Icon = serviceIcons[index] ?? CubeIcon;
 
           return (
             <Reveal
-              className="h-full rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
+              className="h-full w-full max-w-[460px] rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
               delay={index * 70}
               key={card.title}
             >
@@ -501,7 +504,8 @@ function Services({ copy }: { copy: SiteCopy }) {
               </div>
             </Reveal>
           );
-        })}
+          })}
+        </div>
       </div>
     </section>
   );

@@ -239,11 +239,6 @@ export const siteCopy = {
         "Naast procesautomatisering helpt Philoo Recruit recruitmentteams ook praktisch te kunnen starten met AI in hun dagelijkse werk.",
       cards: [
         {
-          title: "Recruitment proces scan",
-          body: "We brengen in kaart waar je team tijd verliest en bepalen de beste eerste workflow om te verbeteren.",
-          price: "Prijs op aanvraag",
-        },
-        {
           title: "AI-training voor recruiters",
           body: "Praktische training voor recruiters om AI veilig te gebruiken in het dagelijkse.",
           price: "Prijs op aanvraag",
@@ -407,11 +402,6 @@ export const siteCopy = {
       intro:
         "Besides workflow automation, Philoo Recruit can help recruitment teams start practically with AI in their daily work.",
       cards: [
-        {
-          title: "Recruitment workflow scan",
-          body: "We map where your team loses time and identify the best first workflow to improve.",
-          price: "Price on request",
-        },
         {
           title: "Recruiter AI training",
           body: "Practical training for recruiters on how to use AI safely in daily work, without replacing recruiter judgment.",
