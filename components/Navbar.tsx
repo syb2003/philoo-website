@@ -160,7 +160,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
     <header ref={headerRef} className="sticky top-0 z-[70] border-b border-[#E6E8EF]/80 bg-[linear-gradient(180deg,rgba(247,248,250,0.97),rgba(247,248,250,0.9))] px-3 pb-3 pt-3 shadow-[0_14px_36px_rgba(15,23,54,0.05)] backdrop-blur-md sm:px-4 sm:pb-4 sm:pt-4 lg:px-6">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-[1620px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/34 bg-[linear-gradient(135deg,rgba(22,24,81,0.98),rgba(20,36,58,0.99))] px-4 py-3 shadow-[0_36px_88px_rgba(15,23,54,0.3),0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-xl sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-4 lg:px-5 lg:py-[0.8rem] xl:gap-5 xl:px-6"
+        className="mx-auto flex max-w-[1760px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/34 bg-[linear-gradient(135deg,rgba(22,24,81,0.98),rgba(20,36,58,0.99))] px-4 py-3 shadow-[0_36px_88px_rgba(15,23,54,0.3),0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-xl sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-4 lg:px-5 lg:py-[0.8rem] xl:gap-5 xl:px-6"
       >
         <a
           aria-label="Philoo"
@@ -232,7 +232,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
 
       {menuOpen ? (
         <div
-          className="mx-auto mt-2 max-w-[1620px] rounded-[14px] border border-[#E6E8EF] bg-white/96 p-3 shadow-[0_18px_45px_rgba(15,23,54,0.14)] backdrop-blur lg:hidden"
+          className="mx-auto mt-2 max-w-[1760px] rounded-[14px] border border-[#E6E8EF] bg-white/96 p-3 shadow-[0_18px_45px_rgba(15,23,54,0.14)] backdrop-blur lg:hidden"
           id="mobile-navigation"
         >
           <div className="grid gap-1">

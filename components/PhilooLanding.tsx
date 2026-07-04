@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Reveal } from "@/components/Reveal";
 import {
@@ -33,6 +32,7 @@ type PhilooLandingProps = {
 
 const benefitIcons = [HandIcon, LightningIcon, ChartIcon, UsersIcon] as const;
 const exampleIcons = [InboxIcon, FileCheckIcon, LifeBuoyIcon, ReceiptIcon] as const;
+const heroWorkflowIcons = [InboxIcon, CalendarIcon, UsersIcon, ChatIcon, ChartIcon, FileCheckIcon] as const;
 const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
 const serviceIcons = [GraduationCapIcon, CubeIcon, SlidersIcon, SearchIcon] as const;
 
@@ -43,7 +43,7 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
     <div className="page-background">
       <Navbar copy={copy.nav} lang={lang} />
 
-      <main className="mx-auto max-w-[1620px] px-3 pb-6 pt-5 sm:px-5 lg:px-10 xl:px-12 2xl:px-14">
+      <main className="mx-auto max-w-[1760px] px-3 pb-6 pt-5 sm:px-5 lg:px-10 xl:px-12 2xl:px-14">
         <section
           className="anchor-section overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 shadow-[0_24px_70px_rgba(15,23,54,0.06)]"
           id="home"
@@ -94,7 +94,7 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
                   : "mx-auto w-full max-w-[880px] min-[1180px]:justify-self-end min-[1180px]:pl-6 xl:pl-10 2xl:pl-14"}
                 delay={100}
               >
-                <HeroWorkflowVisual lang={lang} />
+                <HeroWorkflowVisual labels={copy.hero.workflow} visualAria={copy.hero.visualAria} />
               </Reveal>
             </div>
           </div>
@@ -115,28 +115,139 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
   );
 }
 
-function HeroWorkflowVisual({ lang }: { lang: Language }) {
-  const image =
-    lang === "nl"
-      ? {
-          alt: "Procesautomatisering door Philoo",
-          src: "/hero-process-nl.png",
-        }
-      : {
-          alt: "Workflow automation by Philoo",
-          src: "/hero-workflow-en.png",
-        };
+function HeroWorkflowVisual({ labels, visualAria }: { labels: string[]; visualAria: string }) {
+  const cardLayout = [
+    "left-[6%] top-[7%] w-[34%]",
+    "left-[0%] top-[39%] w-[32%]",
+    "bottom-[8%] left-[7%] w-[35%]",
+    "right-[7%] top-[7%] w-[35%]",
+    "right-[0%] top-[39%] w-[33%]",
+    "bottom-[8%] right-[7%] w-[36%]",
+  ];
 
   return (
-    <div className="workflow-stage workflow-stage-image mx-auto">
-      <Image
-        alt={image.alt}
-        className="object-contain"
-        fill
-        priority
-        sizes="(min-width: 1180px) 50vw, 100vw"
-        src={image.src}
-      />
+    <div aria-label={visualAria} className="workflow-stage mx-auto" role="img">
+      <div className="hidden sm:block">
+        <HeroWorkflowConnectorLines />
+        <WorkflowSparkles />
+        <HeroWorkflowCenter />
+        {labels.map((label, index) => {
+          const Icon = heroWorkflowIcons[index] ?? FileCheckIcon;
+
+          return (
+            <HeroWorkflowCard
+              className={cardLayout[index]}
+              icon={Icon}
+              key={label}
+              label={label}
+            />
+          );
+        })}
+      </div>
+
+      <div className="grid gap-3 sm:hidden">
+        <HeroWorkflowCenter mobile />
+        {labels.map((label, index) => {
+          const Icon = heroWorkflowIcons[index] ?? FileCheckIcon;
+
+          return <HeroWorkflowCard icon={Icon} key={label} label={label} />;
+        })}
+      </div>
+    </div>
+  );
+}
+
+function HeroWorkflowCenter({ mobile = false }: { mobile?: boolean }) {
+  return (
+    <div
+      className={mobile
+        ? "mx-auto grid h-[118px] w-[118px] place-items-center rounded-[24px] border border-white/15 bg-[linear-gradient(145deg,#161851,#14243A)] text-center text-white shadow-[0_24px_46px_rgba(15,23,54,0.18)]"
+        : "absolute left-1/2 top-1/2 z-20 grid h-[132px] w-[132px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-[26px] border border-white/15 bg-[linear-gradient(145deg,#161851,#14243A)] text-center text-white shadow-[0_26px_54px_rgba(15,23,54,0.2),inset_0_1px_0_rgba(255,255,255,0.16)]"}
+    >
+      <div>
+        <CubeIcon className="mx-auto mb-3 h-8 w-8 text-[#D6C48A]" />
+        <span className="block text-[1.45rem] font-black leading-[0.95] tracking-[0]">Philoo</span>
+        <span className="block text-[1.42rem] font-black leading-[0.95] tracking-[0] text-[#D6C48A]">Recruit</span>
+      </div>
+    </div>
+  );
+}
+
+function HeroWorkflowCard({
+  className = "",
+  icon: Icon,
+  label,
+}: {
+  className?: string;
+  icon: typeof InboxIcon;
+  label: string;
+}) {
+  const positionClass = className ? `absolute ${className}` : "relative";
+
+  return (
+    <div
+      className={`${positionClass} z-10 flex min-h-[70px] items-center gap-3 rounded-[14px] border border-[#E6E8EF] bg-white px-4 py-3 text-[#161851] shadow-[0_18px_42px_rgba(15,23,54,0.075)]`}
+    >
+      <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[#E6E8EF] bg-[#F7F8FA] text-[#161851]">
+        <Icon className="h-5 w-5" />
+      </div>
+      <span className="text-[clamp(0.76rem,1.1vw,0.9rem)] font-black leading-tight tracking-[0]">{label}</span>
+    </div>
+  );
+}
+
+function HeroWorkflowConnectorLines() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="absolute inset-0 z-0 h-full w-full text-[#D6C48A]"
+      fill="none"
+      viewBox="0 0 720 430"
+    >
+      <defs>
+        <marker
+          id="workflow-arrow"
+          markerHeight="8"
+          markerWidth="8"
+          orient="auto"
+          refX="7"
+          refY="4"
+          viewBox="0 0 8 8"
+        >
+          <path d="M0 0 L8 4 L0 8 Z" fill="currentColor" opacity="0.78" />
+        </marker>
+      </defs>
+      <g opacity="0.74" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+        <path d="M266 77 H454" markerEnd="url(#workflow-arrow)" />
+        <path d="M272 85 V122 C272 146 299 146 321 146" />
+        <path d="M448 85 V122 C448 146 421 146 399 146" />
+        <path d="M232 215 H292" />
+        <path d="M428 215 H488" />
+        <path d="M278 350 H322 C338 350 338 294 338 282" />
+        <path d="M442 350 H398 C382 350 382 294 382 282" />
+        <path d="M558 87 H612 C634 87 640 103 640 124 V176" markerEnd="url(#workflow-arrow)" />
+        <path d="M642 253 V305 C642 329 624 350 596 350 H454" markerEnd="url(#workflow-arrow)" />
+        <path d="M166 350 H106 C78 350 70 330 70 305 V262" markerEnd="url(#workflow-arrow)" />
+        <path d="M72 177 V125 C72 102 82 86 106 86 H160" />
+      </g>
+      <g opacity="0.82">
+        <circle cx="272" cy="122" r="4" fill="currentColor" />
+        <circle cx="448" cy="122" r="4" fill="currentColor" />
+        <circle cx="292" cy="215" r="4" fill="currentColor" />
+        <circle cx="428" cy="215" r="4" fill="currentColor" />
+        <circle cx="338" cy="282" r="4" fill="currentColor" />
+        <circle cx="382" cy="282" r="4" fill="currentColor" />
+      </g>
+    </svg>
+  );
+}
+
+function WorkflowSparkles() {
+  return (
+    <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 text-[#D6C48A]">
+      <span className="absolute left-[5%] top-[16%] text-2xl font-black leading-none opacity-80">+</span>
+      <span className="absolute right-[8%] bottom-[15%] text-2xl font-black leading-none opacity-72">+</span>
+      <span className="absolute bottom-[6%] left-[47%] text-xl font-black leading-none opacity-58">+</span>
     </div>
   );
 }
@@ -310,7 +421,7 @@ function Pricing({ copy }: { copy: SiteCopy }) {
       className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="pricing"
     >
-      <Reveal className="max-w-[780px]">
+      <Reveal className="mx-auto max-w-[980px]">
         <p className="text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">{copy.pricing.label}</p>
         <h2 className="mt-3 text-[clamp(1.85rem,4vw,2.55rem)] font-black leading-tight tracking-[0] text-white">
           {copy.pricing.title}
@@ -322,7 +433,7 @@ function Pricing({ copy }: { copy: SiteCopy }) {
       </Reveal>
 
       <Reveal
-        className="mt-7 max-w-[980px] rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7 lg:p-8"
+        className="mx-auto mt-7 max-w-[980px] rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7 lg:p-8"
         delay={60}
       >
         <div className="flex items-center gap-3">
@@ -366,7 +477,7 @@ function Services({ copy }: { copy: SiteCopy }) {
         <p className="mt-3 max-w-[700px] text-[0.98rem] font-medium leading-7 text-white/86">{copy.services.intro}</p>
       </Reveal>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="mx-auto grid max-w-[1120px] gap-4 md:grid-cols-2 lg:grid-cols-3">
         {copy.services.cards.map((card, index) => {
           const Icon = serviceIcons[index] ?? CubeIcon;
 

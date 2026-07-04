@@ -23,7 +23,7 @@ export function SiteFooter({ lang }: { lang: Language }) {
 
   return (
     <footer className="mt-6 border-t border-[#E6E8EF]/14 bg-[#14243A]">
-      <div className="mx-auto max-w-[1620px] px-4 py-5 sm:px-6 lg:px-10 xl:px-12 2xl:px-14">
+      <div className="mx-auto max-w-[1760px] px-4 py-5 sm:px-6 lg:px-10 xl:px-12 2xl:px-14">
         <div className="flex flex-col gap-3 text-sm text-white/82 sm:flex-row sm:items-center sm:justify-between">
           <p>{copy.copyright}</p>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
