@@ -126,7 +126,7 @@ export const siteCopy = {
         "Kandidaat gematcht",
         "Opvolging klaargezet",
         "ATS bijgewerkt",
-        "Notities zijn samengevat",
+        "Notities samengevat",
       ],
     },
     benefits: [
@@ -202,7 +202,7 @@ export const siteCopy = {
       title: "Voor wie dit is",
       bullets: [
         "Recruitmentbureaus die minder handmatig werk willen.",
-        "Teams die willen dat recruiters meer tijd besteden aan kandidaten en klanten.",
+        "Teams die willen dat recruiters meer tijd besteden aan gesprekken met kandidaten en klanten.",
         "Bureaus die tijd en kosten willen besparen zonder nieuwe tool, nieuw platform of groot IT-project.",
         "Ondernemers die klein willen starten met één praktische workflow en daarna verder willen uitbreiden.",
       ],
@@ -217,9 +217,9 @@ export const siteCopy = {
       label: "Probleem",
       title: "De verborgen kosten van handmatig recruitmentwerk",
       intro:
-        "Interviewplanning kan tot 35% van de tijd van recruiters kosten. ATS/CRM-administratie kan rond de 8 uur per week kosten.",
+        "Interviewplanning kan tot 35% van de tijd van recruiters kosten. ATS/CRM-administratie kan ongeveer 8 uur per week kosten.",
       secondParagraph:
-        "Elk uur dat opgaat aan feedback najagen of interviews coördineren, is een uur dat recruiters niet besteden aan kandidaten spreken of klanten adviseren.",
+        "Elk uur dat opgaat aan feedback najagen of interviews coördineren, is een uur dat niet wordt besteed aan kandidaten spreken of klanten adviseren.",
       subtitle: "Voorbeeldberekening",
       exampleLabel: "Voorbeeld: handmatige recruitmentadministratie",
       calculationIntro:
