@@ -116,7 +116,7 @@ export const siteCopy = {
     hero: {
       headline: ["Minder administratie.", "Meer plaatsingen."],
       lead: "Philoo Recruit helpt recruitmentbureaus aan meer plaatsingen in minder tijd door handmatig werk te automatiseren.",
-      body: "AI doet het operationale werk, zodat recruiters meer tijd hebben voor kandidaten en klanten.",
+      body: "AI neemt het operationale werk over zodat recruiters meer tijd hebben voor kandidaten en klanten.",
       credibility: "Live in weken. Al actief bij 5+ recruitmentbureaus.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met Philoo in het midden",
@@ -140,7 +140,7 @@ export const siteCopy = {
       },
       {
         title: "Meer tijd voor gesprekken",
-        body: "Laat recruiters meer tijd besteden aan kandidaten en klanten spreken.",
+        body: "Geef recruiters meer tijd voor gesprekken met kandidaten en klanten.",
       },
       {
         title: "Beter overzicht",
@@ -153,7 +153,7 @@ export const siteCopy = {
       cards: [
         {
           eyebrow: "Interviewplanning",
-          title: "Van heen-en-weer mailen naar automatische planning.",
+          title: "Van heen-en-weer-mailen naar automatische planning",
           body: "Planning, reminders en statusupdates worden klaargezet, zodat recruiters minder tijd verliezen aan coördinatie.",
         },
         {
@@ -210,16 +210,16 @@ export const siteCopy = {
     testimonial: {
       quote:
         "Philoo bracht de automatisering en operationele structuur die we misten. Ze begrepen snel hoe ons team werkte en bouwden betrouwbare automatiseringen in onder andere Notion, HubSpot, Google Sheets, Slack en Airtable. Ideeën werden snel vertaald naar werkende systemen. De communicatie was helder en de oplossingen waren stabiel, schaalbaar en direct bruikbaar. Philoo voelde als een echte partner en niet als alleen een uitvoerder.",
-      attribution: "Eigenaar recruitment agency",
+      attribution: "Eigenaar recruitmentbureau",
       ratingLabel: "5.0 met vijf gouden sterren",
     },
     pricing: {
       label: "Probleem",
       title: "De verborgen kosten van handmatig recruitmentwerk",
       intro:
-        "Interviewplanning kan tot 35% van recruitertijd kosten. ATS/CRM-administratie kan rond de 8 uur per week kosten.",
+        "Interviewplanning kan tot 35% van de tijd van recruiters kosten. ATS/CRM-administratie kan rond de 8 uur per week kosten.",
       secondParagraph:
-        "Elk uur dat opgaat aan feedback najagen of interviews coördineren, is een uur dat niet naar kandidaten spreken of klanten adviseren gaat.",
+        "Elk uur dat opgaat aan feedback najagen of interviews coördineren, is een uur dat recruiters niet besteden aan kandidaten spreken of klanten adviseren.",
       subtitle: "Voorbeeldberekening",
       exampleLabel: "Voorbeeld: handmatige recruitmentadministratie",
       calculationIntro:
@@ -236,11 +236,11 @@ export const siteCopy = {
     services: {
       title: "Andere manieren waarop we recruitmentteams helpen",
       intro:
-        "Naast procesautomatisering helpt Philoo Recruit recruitmentteams ook praktisch te kunnen starten met AI in hun dagelijkse werk.",
+        "Naast procesautomatisering helpt Philoo Recruit recruitmentteams ook om praktisch met AI te starten in hun dagelijkse werk.",
       cards: [
         {
           title: "AI-training voor recruiters",
-          body: "Praktische training voor recruiters om AI veilig te gebruiken in het dagelijkse.",
+          body: "Praktische training voor recruiters om AI veilig te gebruiken in hun dagelijks werk.",
           price: "Prijs op aanvraag",
         },
         {
