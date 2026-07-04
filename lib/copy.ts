@@ -159,7 +159,7 @@ export const siteCopy = {
         {
           eyebrow: "ATS/CRM-updates",
           title: "Van vergeten notities naar een up-to-date CRM.",
-          body: "Philoo Recruit werkt het CRM bij, bereidt opvolgin voor en maakt openstaande acties inzichtelijk.",
+          body: "Philoo Recruit werkt het CRM bij, bereidt opvolging voor en maakt openstaande acties inzichtelijk.",
         },
        {
   eyebrow: "Kandidaat- en klantopvolging",
@@ -227,7 +227,7 @@ export const siteCopy = {
       impactLines: [
         "32 uur per maand",
         "384 uur per jaar",
-        "Meer dan €15.000 aan tijdwaarde per recruiter per jaar",
+        "Meer dan €15.000 aan tijd per recruiter per jaar",
       ],
       finalLine:
         "En dan tellen we de kosten van fouten nog niet mee, zoals gemiste opvolging, verouderde kandidaatstatussen, vergeten klantfeedback en incomplete notities.",
@@ -281,7 +281,7 @@ export const siteCopy = {
       headline: ["Less admin.", "More placements."],
       lead: "Philoo Recruit helps recruitment agencies get more placements in less time by removing the manual work that slows recruiters down.",
       body: "AI takes care of the manual work, so recruiters have more time for candidates and clients.",
-      credibility: "Built in weeks. Trusted by 5+ recruitment agencies.",
+      credibility: "Built in weeks. Already trusted by 5+ recruitment agencies.",
       cta: "Book a free intro call",
       visualAria: "Workflow visual with Philoo in the center",
       workflow: [
@@ -391,7 +391,7 @@ export const siteCopy = {
       impactLines: [
         "32 hours per month",
         "384 hours per year",
-        "Over €15,000 in time value per recruiter per year",
+        "Over €15,000 in time per recruiter per year",
       ],
       finalLine:
         "And that does not include the cost of mistakes, such as missed follow-ups, outdated candidate statuses, forgotten client feedback, and incomplete notes.",
@@ -408,10 +408,10 @@ export const siteCopy = {
           price: "Price on request",
         },
         {
-          title: "Custom workflow build",
-          body: "A focused workflow around your agency’s process, tools and bottlenecks.",
-          price: "Price on request",
-        },
+  title: "Custom recruitment tooling",
+  body: "Internal tooling that helps recruiters spend less time on admin and more time with candidates and clients.",
+  price: "Price on request",
+},
       ],
     },
     bottomCta: {
