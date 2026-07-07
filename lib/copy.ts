@@ -117,7 +117,7 @@ export const siteCopy = {
       headline: ["Minder administratie.", "Meer plaatsingen."],
       lead: "Philoo Recruit helpt recruitmentbureaus aan meer plaatsingen in minder tijd door handmatig werk te automatiseren.",
       body: "AI neemt het operationale werk over zodat recruiters meer tijd hebben voor kandidaten en klanten.",
-      credibility: "Live in weken. Al actief bij 5+ recruitmentbureaus.",
+      credibility: "Live in weken. Actief bij 5+ recruitmentbureaus.",
       cta: "Plan een gratis kennismaking",
       visualAria: "Workflowvisualisatie met Philoo in het midden",
       workflow: [
@@ -281,7 +281,7 @@ export const siteCopy = {
       headline: ["Less admin.", "More placements."],
       lead: "Philoo Recruit helps recruitment agencies get more placements in less time by removing the manual work that slows recruiters down.",
       body: "AI takes care of the manual work, so recruiters have more time for candidates and clients.",
-      credibility: "Built in weeks. Already trusted by 5+ recruitment agencies.",
+      credibility: "Built in weeks. Trusted by 5+ recruitment agencies.",
       cta: "Book a free intro call",
       visualAria: "Workflow visual with Philoo in the center",
       workflow: [
