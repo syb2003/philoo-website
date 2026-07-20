@@ -3,6 +3,7 @@ import type { Language } from "./i18n";
 export type SectionId =
   | "home"
   | "voorbeelden"
+  | "case-study"
   | "werkwijze"
   | "voor-wie"
   | "pricing"
@@ -46,6 +47,36 @@ export type SiteCopy = {
       body: string;
     }>;
   };
+  clientCase: {
+    eyebrow: string;
+    clientLabel: string;
+    title: string;
+    intro: string;
+    cards: Array<{
+      title: string;
+      description: string;
+    }>;
+    comparison: {
+      before: {
+        label: string;
+        text: string;
+      };
+      after: {
+        label: string;
+        text: string;
+      };
+    };
+    metrics: Array<{
+      value: string;
+      label: string;
+    }>;
+    testimonialHeader: {
+      eyebrow: string;
+      title: string;
+    };
+    quote: string;
+    attribution: string;
+  };
   process: {
     title: string;
     steps: Array<{
@@ -57,11 +88,6 @@ export type SiteCopy = {
   audience: {
     title: string;
     bullets: string[];
-  };
-  testimonial: {
-    quote: string;
-    attribution: string;
-    ratingLabel: string;
   };
   pricing: {
     label: string;
@@ -103,6 +129,7 @@ export const siteCopy = {
         { id: "home", label: "Home" },
         { id: "pricing", label: "Waarom?" },
         { id: "voorbeelden", label: "Voorbeelden" },
+        { id: "case-study", label: "Praktijkcase" },
         { id: "werkwijze", label: "Werkwijze" },
         { id: "voor-wie", label: "Voor wie" },
         { id: "services", label: "Overige diensten" },
@@ -173,6 +200,62 @@ export const siteCopy = {
 },
       ],
     },
+    clientCase: {
+      eyebrow: "Praktijkcase",
+      clientLabel: "Recruitmentbureau uit Groningen",
+      title:
+        "Zo werd een nieuwe vacatureaanvraag sneller omgezet naar een eerste voorselectie",
+      intro:
+        "Deze workflow zet een aanvraag om naar duidelijke criteria, doorzoekt relevante kandidaten en zet een eerste voorselectie met onderbouwing klaar. De recruiter beoordeelt de uitkomst en beslist zelf wat er gebeurt.",
+      cards: [
+        {
+          title: "Situatie",
+          description:
+            "Veel handmatig zoek-, vergelijk- en toelichtingswerk per aanvraag.",
+        },
+        {
+          title: "Aanpak",
+          description:
+            "Criteria automatisch vastleggen en een eerste voorselectie met onderbouwing klaarzetten.",
+        },
+        {
+          title: "Resultaat",
+          description:
+            "Sneller schakelen, minder voorbereiding en behoud van menselijke regie.",
+        },
+      ],
+      comparison: {
+        before: {
+          label: "Voorheen",
+          text: "Circa 5 uur handmatige voorbereiding per aanvraag",
+        },
+        after: {
+          label: "Nu",
+          text: "Eerste voorselectie staat klaar",
+        },
+      },
+      metrics: [
+        {
+          value: "3 weken",
+          label: "Van start tot live",
+        },
+        {
+          value: "± 5 uur",
+          label: "Tijdswinst per aanvraag",
+        },
+        {
+          value: "Recruiter beslist",
+          label: "Menselijke regie blijft centraal",
+        },
+      ],
+      testimonialHeader: {
+        eyebrow: "Klant aan het woord",
+        title: "Wat dit recruitmentbureau zegt",
+      },
+      quote:
+        "Philoo hielp ons om een terugkerend proces veel slimmer in te richten. Daardoor kost de voorbereiding minder tijd en kunnen we sneller naar een eerste selectie toe werken.",
+      attribution: "Recruitmentbureau uit Groningen",
+    },
     process: {
       title: "Hoe we werken",
       steps: [
@@ -206,12 +289,6 @@ export const siteCopy = {
         "Bureaus die tijd en kosten willen besparen zonder nieuwe tool, nieuw platform of groot IT-project.",
         "Ondernemers die klein willen starten met één praktische workflow en daarna verder willen uitbreiden.",
       ],
-    },
-    testimonial: {
-      quote:
-        "Philoo bracht de automatisering en operationele structuur die we misten. Ze begrepen snel hoe ons team werkte en bouwden betrouwbare automatiseringen in onder andere Notion, HubSpot, Google Sheets, Slack en Airtable. Ideeën werden snel vertaald naar werkende systemen. De communicatie was helder en de oplossingen waren stabiel, schaalbaar en direct bruikbaar. Philoo voelde als een echte partner en niet als alleen een uitvoerder.",
-      attribution: "Eigenaar recruitmentbureau",
-      ratingLabel: "5.0 met vijf gouden sterren",
     },
     pricing: {
       label: "Probleem",
@@ -267,6 +344,7 @@ export const siteCopy = {
         { id: "home", label: "Home" },
         { id: "pricing", label: "Why?" },
         { id: "voorbeelden", label: "Examples" },
+        { id: "case-study", label: "Case study" },
         { id: "werkwijze", label: "How it works" },
         { id: "voor-wie", label: "Who it’s for" },
         { id: "services", label: "Other services" },
@@ -337,6 +415,61 @@ export const siteCopy = {
 },
       ],
     },
+    clientCase: {
+      eyebrow: "Case study",
+      clientLabel: "Recruitment agency in Groningen",
+      title: "How a new job request was turned into an initial shortlist faster",
+      intro:
+        "This workflow turns a job request into clear criteria, searches for relevant candidates and prepares an initial shortlist with supporting reasoning. The recruiter reviews the outcome and decides what happens next.",
+      cards: [
+        {
+          title: "Situation",
+          description:
+            "A significant amount of manual searching, comparing and write-up work for every request.",
+        },
+        {
+          title: "Approach",
+          description:
+            "Capture the criteria automatically and prepare an initial shortlist with supporting reasoning.",
+        },
+        {
+          title: "Result",
+          description:
+            "Move faster, spend less time on preparation and keep human judgment in control.",
+        },
+      ],
+      comparison: {
+        before: {
+          label: "Before",
+          text: "Around 5 hours of manual preparation per request",
+        },
+        after: {
+          label: "Now",
+          text: "The initial shortlist is ready",
+        },
+      },
+      metrics: [
+        {
+          value: "3 weeks",
+          label: "From start to live",
+        },
+        {
+          value: "± 5 hours",
+          label: "Time saved per request",
+        },
+        {
+          value: "Recruiter decides",
+          label: "Human judgment remains central",
+        },
+      ],
+      testimonialHeader: {
+        eyebrow: "Client perspective",
+        title: "What this recruitment agency says",
+      },
+      quote:
+        "Philoo helped us redesign a recurring process in a much smarter way. Preparation now takes less time, allowing us to move towards an initial shortlist faster.",
+      attribution: "Recruitment agency in Groningen",
+    },
     process: {
       title: "How we work",
       steps: [
@@ -370,12 +503,6 @@ export const siteCopy = {
         "Agencies that want to save time and money without new tools, a new platform or a large IT project.",
         "Owners who want to start small with one practical workflow before expanding further.",
       ],
-    },
-    testimonial: {
-      quote:
-        "Philoo delivered the automation and operational structure we were missing. They quickly understood how our team worked and built reliable automations across Notion, HubSpot, Google Sheets, Slack and Airtable. Ideas were translated into working systems fast. Communication was clear, and the solutions were stable, scalable and immediately useful. Philoo felt like a real partner, not just a contractor.",
-      attribution: "Owner recruitment agency",
-      ratingLabel: "5.0 with five gold stars",
     },
     pricing: {
       label: "Problem",

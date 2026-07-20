@@ -32,6 +32,8 @@ type PhilooLandingProps = {
 
 const benefitIcons = [HandIcon, LightningIcon, ChartIcon, UsersIcon] as const;
 const exampleIcons = [InboxIcon, FileCheckIcon, LifeBuoyIcon, ReceiptIcon] as const;
+const clientCaseIcons = [SearchIcon, FileCheckIcon, TrendIcon] as const;
+const clientCaseMetricIcons = [CalendarIcon, TrendIcon, UsersIcon] as const;
 const heroWorkflowIcons = [InboxIcon, CalendarIcon, UsersIcon, ChatIcon, ChartIcon, FileCheckIcon] as const;
 const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
 const serviceIcons = [GraduationCapIcon, CubeIcon, SlidersIcon, SearchIcon] as const;
@@ -104,8 +106,9 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
 
         <Pricing copy={copy} />
         <Examples copy={copy} />
+        <ClientCase copy={copy} />
         <Process copy={copy} />
-        <AudienceAndTestimonial copy={copy} />
+        <Audience copy={copy} />
         <Services copy={copy} />
         <BottomCta copy={copy} />
       </main>
@@ -326,14 +329,145 @@ function Examples({ copy }: { copy: SiteCopy }) {
   );
 }
 
+function ClientCase({ copy }: { copy: SiteCopy }) {
+  return (
+    <section
+      aria-labelledby="client-case-title"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
+      id="case-study"
+    >
+      <Reveal className="max-w-[920px]">
+        <p className="text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">{copy.clientCase.eyebrow}</p>
+        <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/8 px-3 py-1.5 text-xs font-black text-white shadow-[0_10px_24px_rgba(15,23,54,0.08)]">
+          <UsersIcon className="h-4 w-4 text-[#D6C48A]" />
+          {copy.clientCase.clientLabel}
+        </div>
+        <h2
+          className="mt-5 max-w-[980px] text-[clamp(1.9rem,4vw,2.65rem)] font-black leading-tight tracking-[0] text-white"
+          id="client-case-title"
+        >
+          {copy.clientCase.title}
+        </h2>
+        <p className="mt-4 max-w-[840px] text-[1rem] font-medium leading-7 text-white/84">
+          {copy.clientCase.intro}
+        </p>
+      </Reveal>
+
+      <div className="mt-7 grid gap-4 md:grid-cols-3">
+        {copy.clientCase.cards.map((card, index) => {
+          const Icon = clientCaseIcons[index] ?? FileCheckIcon;
+
+          return (
+            <Reveal
+              className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.07)] sm:p-7"
+              delay={index * 70}
+              key={card.title}
+            >
+              <div className="mb-5 grid h-14 w-14 place-items-center rounded-full border border-[#E6E8EF] bg-[#F7F8FA] text-[#161851]">
+                <Icon className="h-7 w-7" />
+              </div>
+              <h3 className="text-[1.12rem] font-black leading-snug text-[#161851]">{card.title}</h3>
+              <p className="mt-3 text-[0.96rem] font-medium leading-7 text-[#0F1736]/82">{card.description}</p>
+            </Reveal>
+          );
+        })}
+      </div>
+
+      <Reveal
+        className="mt-4 rounded-[14px] border border-[#E6E8EF] bg-white p-5 shadow-[0_18px_42px_rgba(15,23,54,0.06)] sm:p-6"
+        delay={80}
+      >
+        <div className="grid gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
+          <div className="flex items-start gap-4">
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[#D6C48A]/45 bg-[#D6C48A]/10 text-[#161851]">
+              <CalendarIcon className="h-6 w-6" />
+            </div>
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/62">
+                {copy.clientCase.comparison.before.label}
+              </p>
+              <p className="mt-2 text-[1rem] font-black leading-6 text-[#161851]">
+                {copy.clientCase.comparison.before.text}
+              </p>
+            </div>
+          </div>
+          <div className="h-px bg-[#E6E8EF] md:h-16 md:w-px" />
+          <div className="flex items-start gap-4">
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[#D6C48A]/45 bg-[#D6C48A]/10 text-[#161851]">
+              <CheckCircleIcon className="h-6 w-6" />
+            </div>
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/62">
+                {copy.clientCase.comparison.after.label}
+              </p>
+              <p className="mt-2 text-[1rem] font-black leading-6 text-[#161851]">
+                {copy.clientCase.comparison.after.text}
+              </p>
+            </div>
+          </div>
+        </div>
+      </Reveal>
+
+      <Reveal
+        className="mt-4 overflow-hidden rounded-[14px] border border-[#D6C48A]/20 bg-[#14243A] p-5 text-white shadow-[0_18px_42px_rgba(15,23,54,0.28)] sm:p-6 lg:p-7"
+        delay={120}
+      >
+        <div className="grid gap-5 md:grid-cols-3">
+          {copy.clientCase.metrics.map((metric, index) => {
+            const Icon = clientCaseMetricIcons[index] ?? TrendIcon;
+
+            return (
+              <div
+                className={index === 0 ? "flex items-start gap-4" : "flex items-start gap-4 border-white/14 md:border-l md:pl-6"}
+                key={metric.value}
+              >
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[#D6C48A]/50 bg-white/5 text-[#D6C48A]">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <div>
+                  <p className="text-[1.45rem] font-black leading-none tracking-[0] text-white">{metric.value}</p>
+                  <p className="mt-2 text-sm font-medium leading-5 text-white/78">{metric.label}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </Reveal>
+
+      <Reveal className="mt-8 max-w-[760px]" delay={145}>
+        <p className="text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">
+          {copy.clientCase.testimonialHeader.eyebrow}
+        </p>
+        <h3 className="mt-2 text-[clamp(1.45rem,3vw,1.9rem)] font-black leading-tight tracking-[0] text-white">
+          {copy.clientCase.testimonialHeader.title}
+        </h3>
+      </Reveal>
+
+      <Reveal
+        className="mt-4 rounded-[14px] border border-[#E6E8EF] bg-white p-6 text-center shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
+        delay={160}
+      >
+        <span aria-hidden="true" className="text-5xl font-black leading-none text-[#D6C48A]">
+          “
+        </span>
+        <blockquote className="mx-auto mt-1 max-w-[820px] text-[1rem] font-medium italic leading-7 text-[#0F1736]/90">
+          {copy.clientCase.quote}
+        </blockquote>
+        <div className="mx-auto mt-5 h-px max-w-[420px] bg-[#E6E8EF]" />
+        <p className="mt-4 text-sm font-black text-[#161851]">{copy.clientCase.attribution}</p>
+      </Reveal>
+    </section>
+  );
+}
+
 function Process({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 py-9 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 py-9 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 lg:mt-6 lg:px-12"
       id="werkwijze"
     >
       <Reveal>
-        <h2 className="text-[clamp(1.6rem,3vw,2rem)] font-black leading-tight text-white">{copy.process.title}</h2>
+        <h2 className="text-[clamp(1.6rem,3vw,2rem)] font-black leading-tight text-[#161851]">{copy.process.title}</h2>
       </Reveal>
 
       <div className="mt-5 grid gap-4 lg:grid-cols-4">
@@ -362,55 +496,25 @@ function Process({ copy }: { copy: SiteCopy }) {
   );
 }
 
-function AudienceAndTestimonial({ copy }: { copy: SiteCopy }) {
+function Audience({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="voor-wie"
     >
-      <div className="grid gap-7 lg:grid-cols-[0.75fr_1.25fr]">
-        <Reveal>
-          <h2 className="text-[clamp(1.6rem,3vw,2.05rem)] font-black leading-tight text-[#161851]">
-            {copy.audience.title}
-          </h2>
-          <ul className="mt-6 grid gap-5">
-            {copy.audience.bullets.map((bullet) => (
-              <li className="flex items-start gap-4 text-[0.98rem] font-medium leading-7 text-[#0F1736]/86" key={bullet}>
-                <CheckCircleIcon className="mt-1 h-5 w-5 shrink-0 text-[#D6C48A]" />
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
-        <Reveal
-          className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_46px_rgba(15,23,54,0.07)] sm:p-7"
-          delay={100}
-        >
-          <div className="flex gap-5">
-            <span aria-hidden="true" className="shrink-0 text-5xl font-black leading-none text-[#D6C48A]">
-              “
-            </span>
-            <div>
-              <blockquote className="text-[0.98rem] font-medium leading-7 text-[#0F1736]/90">
-                {copy.testimonial.quote}
-              </blockquote>
-              <div className="mt-6 border-t border-[#E6E8EF] pt-5 sm:flex sm:items-center sm:justify-between">
-                <p className="text-sm font-black text-[#161851]">{copy.testimonial.attribution}</p>
-                <div
-                  aria-label={copy.testimonial.ratingLabel}
-                  className="mt-3 flex items-center gap-4 text-sm font-black text-[#161851] sm:mt-0"
-                >
-                  <span>5.0</span>
-                  <span aria-hidden="true" className="text-lg leading-none tracking-[0.08em] text-[#D6C48A]">
-                    ★★★★★
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </div>
+      <Reveal className="max-w-[1120px]">
+        <h2 className="text-[clamp(1.6rem,3vw,2.05rem)] font-black leading-tight text-white">
+          {copy.audience.title}
+        </h2>
+        <ul className="mt-6 grid gap-5 md:grid-cols-2">
+          {copy.audience.bullets.map((bullet) => (
+            <li className="flex items-start gap-4 text-[0.98rem] font-medium leading-7 text-white/86" key={bullet}>
+              <CheckCircleIcon className="mt-1 h-5 w-5 shrink-0 text-[#D6C48A]" />
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+      </Reveal>
     </section>
   );
 }
@@ -469,17 +573,17 @@ function Pricing({ copy }: { copy: SiteCopy }) {
 function Services({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
+      className="anchor-section mt-4 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.06)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="services"
     >
       <Reveal className="mb-6 max-w-[760px]">
-        <h2 className="text-[clamp(1.7rem,4vw,2.2rem)] font-black leading-tight tracking-[0] text-white">
+        <h2 className="text-[clamp(1.7rem,4vw,2.2rem)] font-black leading-tight tracking-[0] text-[#161851]">
           {copy.services.title}
         </h2>
-        <p className="mt-3 max-w-[700px] text-[0.98rem] font-medium leading-7 text-white/86">{copy.services.intro}</p>
+        <p className="mt-3 max-w-[700px] text-[0.98rem] font-medium leading-7 text-[#0F1736]/84">{copy.services.intro}</p>
       </Reveal>
 
-      <div className="mt-7 rounded-[16px] border border-[#E6E8EF] bg-[#F7F8FA] p-5 shadow-[0_18px_42px_rgba(15,23,54,0.10)] sm:p-7 lg:p-9">
+      <div className="mt-7 rounded-[16px] border border-[#E6E8EF] bg-white p-5 shadow-[0_18px_42px_rgba(15,23,54,0.08)] sm:p-7 lg:p-9">
         <div className="mx-auto grid w-full max-w-[1180px] gap-6 md:grid-cols-2 md:justify-items-center lg:gap-16 xl:gap-24">
           {copy.services.cards.map((card, index) => {
           const Icon = serviceIcons[index] ?? CubeIcon;
@@ -514,19 +618,19 @@ function Services({ copy }: { copy: SiteCopy }) {
 function BottomCta({ copy }: { copy: SiteCopy }) {
   return (
     <section
-      className="anchor-section mt-8 overflow-hidden rounded-[18px] border border-[#E6E8EF]/78 bg-[#F7F8FA]/82 px-6 py-8 shadow-[0_18px_46px_rgba(15,23,54,0.06)] sm:mt-10 sm:px-10 sm:py-9 lg:mt-12 lg:px-16"
+      className="anchor-section mt-8 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-6 py-8 shadow-[0_18px_46px_rgba(15,23,54,0.18)] sm:mt-10 sm:px-10 sm:py-9 lg:mt-12 lg:px-16"
       id="contact"
     >
       <Reveal>
         <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <h2 className="text-[clamp(1.55rem,3vw,2.12rem)] font-black leading-tight text-[#161851]">
+            <h2 className="text-[clamp(1.55rem,3vw,2.12rem)] font-black leading-tight text-white">
               {copy.bottomCta.headline}
             </h2>
-            <p className="mt-2 max-w-[720px] text-[1rem] font-medium leading-7 text-[#0F1736]/84">{copy.bottomCta.body}</p>
+            <p className="mt-2 max-w-[720px] text-[1rem] font-medium leading-7 text-white/84">{copy.bottomCta.body}</p>
           </div>
           <a
-            className="inline-flex w-fit items-center justify-center gap-4 rounded-[10px] bg-[#D6C48A] px-6 py-4 text-base font-black text-[#0F1736] shadow-[0_18px_34px_rgba(214,196,138,0.18)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-white"
+            className="inline-flex w-fit items-center justify-center gap-4 rounded-[10px] bg-[#D6C48A] px-6 py-4 text-base font-black text-[#0F1736] shadow-[0_18px_34px_rgba(214,196,138,0.18)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#161851]"
             href={CALENDLY_URL}
             rel="noopener noreferrer"
             target="_blank"
