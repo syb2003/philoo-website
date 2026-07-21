@@ -1,25 +1,18 @@
-import {
-  GUIDE_DOWNLOAD_PATH,
-  normalizeAttribution,
-  normalizeGuideReferrer,
-  recordGuideFormDownloadStarted,
-  recordGuideLead,
-} from "@/lib/googleSheets";
-
 const EMAIL_MAX_LENGTH = 254;
-const GUIDE_PAGE_PATH = "/meer-plaatsingen-met-hetzelfde-team";
+const GUIDE_DOWNLOAD_PATH = "/downloads/meer-plaatsingen-met-hetzelfde-team-philoo.pdf";
 const GUIDE_FORM_SOURCE = "landing-page-email-form";
+const WEBHOOK_TIMEOUT_MS = 8_000;
+const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
 
 type GuideLeadRequest = {
   email?: unknown;
   website?: unknown;
   source?: unknown;
   referrer?: unknown;
-  page?: {
-    referrer?: unknown;
-  };
   attribution?: unknown;
 };
+
+type GuideAttribution = Record<(typeof utmKeys)[number], string>;
 
 function jsonResponse(body: Record<string, unknown>, status: number) {
   return Response.json(body, {
@@ -42,8 +35,13 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 }
 
-function isConfigError(error: unknown) {
-  return error instanceof Error && error.message === "Missing Google Sheets guide configuration";
+function normalizeAttribution(attribution: unknown): GuideAttribution {
+  const source = attribution && typeof attribution === "object" && !Array.isArray(attribution) ? attribution : {};
+  const values = source as Partial<Record<(typeof utmKeys)[number], unknown>>;
+
+  return Object.fromEntries(
+    utmKeys.map((key) => [key, cleanString(values[key], 300).toLowerCase()]),
+  ) as GuideAttribution;
 }
 
 export async function POST(request: Request) {
@@ -77,33 +75,63 @@ export async function POST(request: Request) {
   }
 
   const attribution = normalizeAttribution(body.attribution);
-  const referrer = normalizeGuideReferrer(body.referrer || body.page?.referrer);
+  const webhookUrl = cleanString(process.env.GOOGLE_SHEETS_WEBHOOK_URL, 2_048);
+  const webhookSecret = cleanString(process.env.GOOGLE_SHEETS_WEBHOOK_SECRET, 1_000);
 
-  try {
-    await recordGuideLead({
-      email,
-      source: GUIDE_FORM_SOURCE,
-      attribution,
-      referrer,
-      page: GUIDE_PAGE_PATH,
-    });
-  } catch (error) {
-    return jsonResponse(
-      { ok: false, error: "De gids kon niet worden klaargezet." },
-      isConfigError(error) ? 500 : 502,
-    );
+  console.log("[guide-lead] webhook URL configured:", Boolean(webhookUrl));
+  console.log("[guide-lead] webhook secret configured:", Boolean(webhookSecret));
+
+  if (!webhookUrl || !webhookSecret) {
+    return jsonResponse({ ok: false, error: "De gids kon niet worden klaargezet." }, 500);
   }
 
+  const payload = {
+    secret: webhookSecret,
+    type: "lead",
+    email,
+    source: GUIDE_FORM_SOURCE,
+    referrer: "",
+    attribution,
+  };
+
+  let upstreamBody = "";
+
   try {
-    await recordGuideFormDownloadStarted({
-      source: GUIDE_FORM_SOURCE,
-      email,
-      attribution,
-      referrer,
-      page: GUIDE_PAGE_PATH,
+    const upstreamResponse = await fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(payload),
+      redirect: "follow",
+      cache: "no-store",
+      signal: AbortSignal.timeout(WEBHOOK_TIMEOUT_MS),
     });
+
+    upstreamBody = await upstreamResponse.text();
+
+    console.log("[guide-lead] upstream status:", upstreamResponse.status);
+    console.log("[guide-lead] upstream response body:", upstreamBody);
+
+    if (!upstreamResponse.ok) {
+      return jsonResponse({ ok: false, error: "De gids kon niet worden klaargezet." }, 502);
+    }
+
+    let upstreamJson: unknown;
+
+    try {
+      upstreamJson = JSON.parse(upstreamBody);
+    } catch {
+      return jsonResponse({ ok: false, error: "De gids kon niet worden klaargezet." }, 502);
+    }
+
+    if (!upstreamJson || typeof upstreamJson !== "object" || Array.isArray(upstreamJson) || (upstreamJson as { ok?: unknown }).ok !== true) {
+      return jsonResponse({ ok: false, error: "De gids kon niet worden klaargezet." }, 502);
+    }
   } catch {
-    console.warn("Guide lead stored, but guide_email_form_download_started event append failed.");
+    console.log("[guide-lead] upstream status:", "request failed");
+    console.log("[guide-lead] upstream response body:", upstreamBody);
+    return jsonResponse({ ok: false, error: "De gids kon niet worden klaargezet." }, 502);
   }
 
   return jsonResponse({ ok: true, downloadUrl: GUIDE_DOWNLOAD_PATH }, 200);
