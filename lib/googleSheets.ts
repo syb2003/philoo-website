@@ -1,10 +1,8 @@
 import "server-only";
 
-import { google, type sheets_v4 } from "googleapis";
-
-const GOOGLE_SHEETS_SCOPE = "https://www.googleapis.com/auth/spreadsheets";
 const TEXT_MAX_LENGTH = 300;
 const REFERRER_MAX_LENGTH = 300;
+const WEBHOOK_TIMEOUT_MS = 8_000;
 
 export const GUIDE_DOWNLOAD_PATH = "/downloads/meer-plaatsingen-met-hetzelfde-team-philoo.pdf";
 
@@ -73,15 +71,25 @@ export type GuideLeadInput = {
   page: string;
 };
 
-type GoogleSheetsConfig = {
-  clientEmail: string;
-  privateKey: string;
-  spreadsheetId: string;
-};
+type GuideWebhookPayload =
+  | {
+      action: "record_event";
+      event: GuideEventInput;
+    }
+  | {
+      action: "record_lead";
+      lead: GuideLeadInput;
+      event: GuideEventInput;
+    };
 
-type SheetsContext = {
-  sheets: sheets_v4.Sheets;
-  spreadsheetId: string;
+type GuideWebhookRequest = GuideWebhookPayload & {
+  secret: string;
+  schema: {
+    leadsTab: "Leads";
+    eventsTab: "Events";
+    leadHeaders: readonly string[];
+    eventHeaders: readonly string[];
+  };
 };
 
 function cleanString(value: unknown, maxLength = TEXT_MAX_LENGTH) {
@@ -141,210 +149,85 @@ export function resolveDownloadSource(attribution: GuideAttribution, referrer: s
   return "direct";
 }
 
-function getGoogleSheetsConfig(): GoogleSheetsConfig {
-  const clientEmail = cleanString(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL, 500);
-  const privateKey = cleanString(process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY, 10_000).replace(/\\n/g, "\n");
-  const spreadsheetId = cleanString(process.env.GUIDE_SPREADSHEET_ID, 200);
+function getWebhookConfig() {
+  const url = cleanString(process.env.GOOGLE_SHEETS_WEBHOOK_URL, 2_048);
+  const secret = cleanString(process.env.GOOGLE_SHEETS_WEBHOOK_SECRET, 1_000);
 
-  if (!clientEmail || !privateKey || !spreadsheetId) {
+  if (!url || !secret) {
     throw new Error("Missing Google Sheets guide configuration");
   }
 
-  return {
-    clientEmail,
-    privateKey,
-    spreadsheetId,
+  return { url, secret };
+}
+
+async function callGuideWebhook(payload: GuideWebhookPayload) {
+  const { url, secret } = getWebhookConfig();
+  const requestBody: GuideWebhookRequest = {
+    ...payload,
+    secret,
+    schema: {
+      leadsTab: "Leads",
+      eventsTab: "Events",
+      leadHeaders,
+      eventHeaders,
+    },
   };
-}
 
-async function getSheetsContext(): Promise<SheetsContext> {
-  const config = getGoogleSheetsConfig();
-  const auth = new google.auth.JWT({
-    email: config.clientEmail,
-    key: config.privateKey,
-    scopes: [GOOGLE_SHEETS_SCOPE],
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-webhook-secret": secret,
+    },
+    body: JSON.stringify(requestBody),
+    cache: "no-store",
+    signal: AbortSignal.timeout(WEBHOOK_TIMEOUT_MS),
   });
 
-  return {
-    sheets: google.sheets({ version: "v4", auth }),
-    spreadsheetId: config.spreadsheetId,
-  };
-}
+  if (!response.ok) {
+    throw new Error("Google Sheets webhook failed");
+  }
 
-async function ensureSheetExists(context: SheetsContext, title: string, existingTitles: Set<string>) {
-  if (existingTitles.has(title)) {
+  const responseText = await response.text();
+
+  if (!responseText) {
     return;
   }
 
-  await context.sheets.spreadsheets.batchUpdate({
-    spreadsheetId: context.spreadsheetId,
-    requestBody: {
-      requests: [
-        {
-          addSheet: {
-            properties: {
-              title,
-            },
-          },
-        },
-      ],
-    },
-  });
+  try {
+    const responseJson = JSON.parse(responseText) as { ok?: unknown; success?: unknown; error?: unknown };
 
-  existingTitles.add(title);
-}
+    if (responseJson.ok === false || responseJson.success === false || responseJson.error) {
+      throw new Error("Google Sheets webhook rejected request");
+    }
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return;
+    }
 
-async function ensureHeaderRow(context: SheetsContext, title: string, headers: readonly string[]) {
-  const response = await context.sheets.spreadsheets.values.get({
-    spreadsheetId: context.spreadsheetId,
-    range: `${title}!1:1`,
-  });
-
-  if ((response.data.values ?? []).length > 0) {
-    return;
+    throw error;
   }
-
-  await context.sheets.spreadsheets.values.update({
-    spreadsheetId: context.spreadsheetId,
-    range: `${title}!A1`,
-    valueInputOption: "RAW",
-    requestBody: {
-      values: [Array.from(headers)],
-    },
-  });
-}
-
-async function ensureGuideSheets(context: SheetsContext) {
-  const response = await context.sheets.spreadsheets.get({
-    spreadsheetId: context.spreadsheetId,
-    fields: "sheets(properties(title))",
-  });
-  const existingTitles = new Set((response.data.sheets ?? []).map((sheet) => sheet.properties?.title).filter(Boolean) as string[]);
-
-  await ensureSheetExists(context, "Leads", existingTitles);
-  await ensureSheetExists(context, "Events", existingTitles);
-  await ensureHeaderRow(context, "Leads", leadHeaders);
-  await ensureHeaderRow(context, "Events", eventHeaders);
-}
-
-async function appendEvent(context: SheetsContext, input: GuideEventInput) {
-  const timestamp = input.timestamp ?? new Date().toISOString();
-
-  await context.sheets.spreadsheets.values.append({
-    spreadsheetId: context.spreadsheetId,
-    range: "Events!A:K",
-    valueInputOption: "RAW",
-    insertDataOption: "INSERT_ROWS",
-    requestBody: {
-      values: [
-        [
-          timestamp,
-          input.event,
-          input.source,
-          input.email ?? "",
-          input.attribution.utm_source,
-          input.attribution.utm_medium,
-          input.attribution.utm_campaign,
-          input.attribution.utm_content,
-          input.attribution.utm_term,
-          input.referrer,
-          input.page,
-        ],
-      ],
-    },
-  });
-}
-
-function parseRequestCount(value: unknown) {
-  const parsed = Number.parseInt(typeof value === "string" ? value : "", 10);
-  return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
-}
-
-async function upsertLead(context: SheetsContext, input: GuideLeadInput, timestamp: string) {
-  const response = await context.sheets.spreadsheets.values.get({
-    spreadsheetId: context.spreadsheetId,
-    range: "Leads!A:Q",
-  });
-  const rows = response.data.values ?? [];
-  const existingIndex = rows.findIndex((row, index) => index > 0 && String(row[1] ?? "").toLowerCase() === input.email);
-
-  if (existingIndex === -1) {
-    await context.sheets.spreadsheets.values.append({
-      spreadsheetId: context.spreadsheetId,
-      range: "Leads!A:Q",
-      valueInputOption: "RAW",
-      insertDataOption: "INSERT_ROWS",
-      requestBody: {
-        values: [
-          [
-            timestamp,
-            input.email,
-            input.source,
-            input.source,
-            input.attribution.utm_source,
-            input.attribution.utm_source,
-            input.attribution.utm_medium,
-            input.attribution.utm_medium,
-            input.attribution.utm_campaign,
-            input.attribution.utm_campaign,
-            input.attribution.utm_content,
-            input.attribution.utm_content,
-            input.attribution.utm_term,
-            input.attribution.utm_term,
-            input.referrer,
-            input.referrer,
-            "1",
-          ],
-        ],
-      },
-    });
-    return;
-  }
-
-  const rowNumber = existingIndex + 1;
-  const row = rows[existingIndex] ?? [];
-  const updated = Array.from({ length: leadHeaders.length }, (_, index) => String(row[index] ?? ""));
-
-  updated[0] = timestamp;
-  updated[3] = input.source;
-  updated[5] = input.attribution.utm_source;
-  updated[7] = input.attribution.utm_medium;
-  updated[9] = input.attribution.utm_campaign;
-  updated[11] = input.attribution.utm_content;
-  updated[13] = input.attribution.utm_term;
-  updated[15] = input.referrer;
-  updated[16] = String(parseRequestCount(row[16]) + 1);
-
-  await context.sheets.spreadsheets.values.update({
-    spreadsheetId: context.spreadsheetId,
-    range: `Leads!A${rowNumber}:Q${rowNumber}`,
-    valueInputOption: "RAW",
-    requestBody: {
-      values: [updated],
-    },
-  });
 }
 
 export async function recordGuideDirectDownload(input: Omit<GuideEventInput, "event" | "email">) {
-  const context = await getSheetsContext();
-
-  await ensureGuideSheets(context);
-  await appendEvent(context, {
-    ...input,
-    event: "guide_direct_download_clicked",
-    email: "",
+  await callGuideWebhook({
+    action: "record_event",
+    event: {
+      ...input,
+      event: "guide_direct_download_clicked",
+      email: "",
+      timestamp: input.timestamp ?? new Date().toISOString(),
+    },
   });
 }
 
 export async function recordGuideLead(input: GuideLeadInput) {
-  const context = await getSheetsContext();
   const timestamp = new Date().toISOString();
 
-  await ensureGuideSheets(context);
-  await upsertLead(context, input, timestamp);
-
-  try {
-    await appendEvent(context, {
+  await callGuideWebhook({
+    action: "record_lead",
+    lead: input,
+    event: {
       event: "guide_email_submitted",
       source: input.source,
       email: input.email,
@@ -352,18 +235,17 @@ export async function recordGuideLead(input: GuideLeadInput) {
       referrer: input.referrer,
       page: input.page,
       timestamp,
-    });
-  } catch {
-    console.warn("Guide lead stored, but guide_email_submitted event append failed.");
-  }
+    },
+  });
 }
 
 export async function recordGuideFormDownloadStarted(input: Omit<GuideEventInput, "event">) {
-  const context = await getSheetsContext();
-
-  await ensureGuideSheets(context);
-  await appendEvent(context, {
-    ...input,
-    event: "guide_email_form_download_started",
+  await callGuideWebhook({
+    action: "record_event",
+    event: {
+      ...input,
+      event: "guide_email_form_download_started",
+      timestamp: input.timestamp ?? new Date().toISOString(),
+    },
   });
 }
