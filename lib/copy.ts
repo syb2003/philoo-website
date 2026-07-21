@@ -52,23 +52,44 @@ export type SiteCopy = {
     clientLabel: string;
     title: string;
     intro: string;
-    cards: Array<{
-      title: string;
-      description: string;
-    }>;
-    comparison: {
+    beforeAfter: {
       before: {
-        label: string;
-        text: string;
+        title: string;
+        items: string[];
+        outcome: string;
       };
       after: {
-        label: string;
-        text: string;
+        title: string;
+        items: string[];
+        outcome: string;
       };
     };
+    shortlistReadyText: string;
+    emailPreview: {
+      ariaLabel: string;
+      columns: {
+        from: string;
+        subject: string;
+        time: string;
+      };
+      preparedEmail: {
+        sender: string;
+        subject: string;
+        preview: string;
+        time: string;
+      };
+      requestEmail: {
+        sender: string;
+        subject: string;
+        preview: string;
+        time: string;
+      };
+    };
+    resultsTitle: string;
     metrics: Array<{
+      label?: string;
       value: string;
-      label: string;
+      supportingText?: string;
     }>;
     testimonialHeader: {
       eyebrow: string;
@@ -129,7 +150,7 @@ export const siteCopy = {
         { id: "home", label: "Home" },
         { id: "pricing", label: "Waarom?" },
         { id: "voorbeelden", label: "Voorbeelden" },
-        { id: "case-study", label: "Praktijkcase" },
+        { id: "case-study", label: "Klantverhaal" },
         { id: "werkwijze", label: "Werkwijze" },
         { id: "voor-wie", label: "Voor wie" },
         { id: "services", label: "Overige diensten" },
@@ -201,51 +222,68 @@ export const siteCopy = {
       ],
     },
     clientCase: {
-      eyebrow: "Praktijkcase",
+      eyebrow: "Klantverhaal",
       clientLabel: "Recruitmentbureau uit Groningen",
-      title:
-        "Zo werd een nieuwe vacatureaanvraag sneller omgezet naar een eerste voorselectie",
-      intro:
-        "Deze workflow zet een aanvraag om naar duidelijke criteria, doorzoekt relevante kandidaten en zet een eerste voorselectie met onderbouwing klaar. De recruiter beoordeelt de uitkomst en beslist zelf wat er gebeurt.",
-      cards: [
-        {
-          title: "Situatie",
-          description:
-            "Veel handmatig zoek-, vergelijk- en toelichtingswerk per aanvraag.",
-        },
-        {
-          title: "Aanpak",
-          description:
-            "Criteria automatisch vastleggen en een eerste voorselectie met onderbouwing klaarzetten.",
-        },
-        {
-          title: "Resultaat",
-          description:
-            "Sneller schakelen, minder voorbereiding en behoud van menselijke regie.",
-        },
-      ],
-      comparison: {
+      title: "Van vacatureaanvraag naar een onderbouwde voorselectie",
+      intro: "Wat we in 3 weken bij deze klant hebben ingericht:",
+      beforeAfter: {
         before: {
-          label: "Voorheen",
-          text: "Circa 5 uur handmatige voorbereiding per aanvraag",
+          title: "Voorheen: handmatig uitzoeken",
+          items: [
+            "Vacatureaanvraag lezen en eisen overnemen",
+            "CRM en LinkedIn doorzoeken",
+            "Kandidaten vergelijken en toelichten",
+          ],
+          outcome: "Circa 5 uur handmatig werk per vacature",
         },
         after: {
-          label: "Nu",
-          text: "Eerste voorselectie staat klaar",
+          title: "Nu live: voorbereiding staat klaar",
+          items: [
+            "Criteria automatisch vastgelegd",
+            "CRM én externe bronnen doorzocht",
+            "Eerste voorselectie met onderbouwing klaargezet",
+          ],
+          outcome: "0 uur handmatige voorbereiding",
         },
       },
+      shortlistReadyText: "De voorselectie staat klaar. De recruiter beslist wie naar de klant gaat.",
+      emailPreview: {
+        ariaLabel: "Voorbeeld van een inbox met een voorbereide voorselectie",
+        columns: {
+          from: "Van",
+          subject: "Onderwerp",
+          time: "Tijd",
+        },
+        preparedEmail: {
+          sender: "Philoo",
+          subject: "Voorselectie: Business Intelligence Analyst",
+          preview: "Hi, de voorselectie voor Business Intelligence Analyst is klaar.",
+          time: "06:10",
+        },
+        requestEmail: {
+          sender: "S J",
+          subject: "Vacature Business Intelligence Analyst",
+          preview: "Hi, kunnen jullie iemand op korte termijn voorstellen voor deze rol?",
+          time: "06:09",
+        },
+      },
+      resultsTitle: "Wat levert het op?",
       metrics: [
         {
-          value: "3 weken",
-          label: "Van start tot live",
-        },
-        {
+          label: "Tijdwinst",
           value: "± 5 uur",
-          label: "Tijdswinst per aanvraag",
+          supportingText: "Minder voorbereiding per aanvraag",
         },
         {
-          value: "Recruiter beslist",
-          label: "Menselijke regie blijft centraal",
+          label: "Uitkomst",
+          value: "125 × 5 uur × €35",
+          supportingText: "Op basis van 125 vacatures per jaar met een intern tarief van €35 per recruiteruur",
+        },
+        {
+          label: "Effect per jaar",
+          value: "€21.875",
+          supportingText:
+            "Berekende bruto waarde van capaciteit, waarbij de vrijgekomen tijd kan worden besteed aan kandidaten en klanten",
         },
       ],
       testimonialHeader: {
@@ -253,7 +291,7 @@ export const siteCopy = {
         title: "Wat dit recruitmentbureau zegt",
       },
       quote:
-        "Philoo hielp ons om een terugkerend proces veel slimmer in te richten. Daardoor kost de voorbereiding minder tijd en kunnen we sneller naar een eerste selectie toe werken.",
+        "Philoo hielp ons om ons matchingproces veel slimmer in te richten. Het vinden van goede kandidaten kost nu minder tijd, waardoor we sneller kunnen schakelen en meer plaatsingen per recruiter aankunnen.",
       attribution: "Recruitmentbureau uit Groningen",
     },
     process: {
@@ -418,48 +456,65 @@ export const siteCopy = {
     clientCase: {
       eyebrow: "Case study",
       clientLabel: "Recruitment agency in Groningen",
-      title: "How a new job request was turned into an initial shortlist faster",
-      intro:
-        "This workflow turns a job request into clear criteria, searches for relevant candidates and prepares an initial shortlist with supporting reasoning. The recruiter reviews the outcome and decides what happens next.",
-      cards: [
-        {
-          title: "Situation",
-          description:
-            "A significant amount of manual searching, comparing and write-up work for every request.",
-        },
-        {
-          title: "Approach",
-          description:
-            "Capture the criteria automatically and prepare an initial shortlist with supporting reasoning.",
-        },
-        {
-          title: "Result",
-          description:
-            "Move faster, spend less time on preparation and keep human judgment in control.",
-        },
-      ],
-      comparison: {
+      title: "From job request to a well-supported shortlist",
+      intro: "What we set up for this client in 3 weeks:",
+      beforeAfter: {
         before: {
-          label: "Before",
-          text: "Around 5 hours of manual preparation per request",
+          title: "Before: manual research",
+          items: [
+            "Read the job request and extract the requirements",
+            "Search the CRM and LinkedIn",
+            "Compare candidates and write the rationale",
+          ],
+          outcome: "Around 5 hours of manual work per vacancy",
         },
         after: {
-          label: "Now",
-          text: "The initial shortlist is ready",
+          title: "Now live: preparation ready",
+          items: [
+            "Requirements captured automatically",
+            "CRM and external sources searched",
+            "Candidate selection prepared with clear reasoning",
+          ],
+          outcome: "0 hours of manual preparation",
         },
       },
+      shortlistReadyText: "The selection is ready. The recruiter decides who is presented to the client.",
+      emailPreview: {
+        ariaLabel: "Example inbox with a prepared candidate selection",
+        columns: {
+          from: "From",
+          subject: "Subject",
+          time: "Time",
+        },
+        preparedEmail: {
+          sender: "Philoo",
+          subject: "Shortlist: Business Intelligence Analyst",
+          preview: "Hi, the candidate shortlist for the Business Intelligence Analyst role is ready.",
+          time: "06:10",
+        },
+        requestEmail: {
+          sender: "S J",
+          subject: "Business Intelligence Analyst vacancy",
+          preview: "Hi, can you introduce someone for this role at short notice?",
+          time: "06:09",
+        },
+      },
+      resultsTitle: "What does this deliver?",
       metrics: [
         {
-          value: "3 weeks",
-          label: "From start to live",
-        },
-        {
+          label: "Time saved",
           value: "± 5 hours",
-          label: "Time saved per request",
+          supportingText: "Less preparation per request",
         },
         {
-          value: "Recruiter decides",
-          label: "Human judgment remains central",
+          label: "Outcome",
+          value: "125 × 5 hours × €35",
+          supportingText: "Based on 125 vacancies per year and an internal hourly rate of €35 per recruiter",
+        },
+        {
+          label: "Annual impact",
+          value: "€21,875",
+          supportingText: "Estimated gross value of released capacity that can be spent on candidates and clients",
         },
       ],
       testimonialHeader: {
@@ -467,7 +522,7 @@ export const siteCopy = {
         title: "What this recruitment agency says",
       },
       quote:
-        "Philoo helped us redesign a recurring process in a much smarter way. Preparation now takes less time, allowing us to move towards an initial shortlist faster.",
+        "Philoo helped us redesign our matching process so it works far more efficiently. Finding strong candidates now takes less time, helping us move faster and handle more placements per recruiter.",
       attribution: "Recruitment agency in Groningen",
     },
     process: {

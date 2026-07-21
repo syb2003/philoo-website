@@ -32,11 +32,11 @@ type PhilooLandingProps = {
 
 const benefitIcons = [HandIcon, LightningIcon, ChartIcon, UsersIcon] as const;
 const exampleIcons = [InboxIcon, FileCheckIcon, LifeBuoyIcon, ReceiptIcon] as const;
-const clientCaseIcons = [SearchIcon, FileCheckIcon, TrendIcon] as const;
-const clientCaseMetricIcons = [CalendarIcon, TrendIcon, UsersIcon] as const;
+const clientCaseBeforeAfterIcons = [CalendarIcon, LightningIcon] as const;
 const heroWorkflowIcons = [InboxIcon, CalendarIcon, UsersIcon, ChatIcon, ChartIcon, FileCheckIcon] as const;
 const processIcons = [ChatIcon, CubeIcon, RocketIcon, TrendIcon] as const;
 const serviceIcons = [GraduationCapIcon, CubeIcon, SlidersIcon, SearchIcon] as const;
+const resultCardLabelClassName = "min-h-5 text-xs font-black uppercase leading-5 tracking-[0.08em] text-[#D6C48A]";
 
 export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
   const isDutch = lang === "nl";
@@ -330,133 +330,211 @@ function Examples({ copy }: { copy: SiteCopy }) {
 }
 
 function ClientCase({ copy }: { copy: SiteCopy }) {
+  const beforeAfterCards = [copy.clientCase.beforeAfter.before, copy.clientCase.beforeAfter.after];
+
   return (
     <section
       aria-labelledby="client-case-title"
       className="anchor-section mt-4 overflow-hidden rounded-[18px] bg-[linear-gradient(135deg,#161851,#14243A)] px-5 pb-10 pt-12 shadow-[0_22px_56px_rgba(15,23,54,0.18)] sm:mt-5 sm:px-8 sm:pt-12 lg:mt-6 lg:px-12 lg:pt-14"
       id="case-study"
     >
-      <Reveal className="max-w-[920px]">
+      <Reveal className="mx-auto max-w-[1320px]">
         <p className="text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">{copy.clientCase.eyebrow}</p>
-        <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/8 px-3 py-1.5 text-xs font-black text-white shadow-[0_10px_24px_rgba(15,23,54,0.08)]">
-          <UsersIcon className="h-4 w-4 text-[#D6C48A]" />
-          {copy.clientCase.clientLabel}
+        <div className="mt-3 inline-flex max-w-full items-center gap-2 rounded-full border border-[#D6C48A]/45 bg-white/8 px-4 py-2 text-[0.96rem] font-extrabold leading-snug text-white shadow-[0_10px_24px_rgba(15,23,54,0.08)] sm:text-[1.04rem]">
+          <UsersIcon className="h-5 w-5 shrink-0 text-[#D6C48A]" />
+          <span>{copy.clientCase.clientLabel}</span>
         </div>
         <h2
-          className="mt-5 max-w-[980px] text-[clamp(1.9rem,4vw,2.65rem)] font-black leading-tight tracking-[0] text-white"
+          className="mt-5 max-w-[980px] text-[clamp(1.9rem,4vw,2.85rem)] font-black leading-tight tracking-[0] text-white"
           id="client-case-title"
         >
           {copy.clientCase.title}
         </h2>
-        <p className="mt-4 max-w-[840px] text-[1rem] font-medium leading-7 text-white/84">
+        <p className="mt-5 max-w-[840px] text-[1.12rem] font-black leading-7 text-white/90 sm:text-[1.22rem]">
           {copy.clientCase.intro}
         </p>
       </Reveal>
 
-      <div className="mt-7 grid gap-4 md:grid-cols-3">
-        {copy.clientCase.cards.map((card, index) => {
-          const Icon = clientCaseIcons[index] ?? FileCheckIcon;
-
-          return (
-            <Reveal
-              className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.07)] sm:p-7"
-              delay={index * 70}
-              key={card.title}
-            >
-              <div className="mb-5 grid h-14 w-14 place-items-center rounded-full border border-[#E6E8EF] bg-[#F7F8FA] text-[#161851]">
-                <Icon className="h-7 w-7" />
-              </div>
-              <h3 className="text-[1.12rem] font-black leading-snug text-[#161851]">{card.title}</h3>
-              <p className="mt-3 text-[0.96rem] font-medium leading-7 text-[#0F1736]/82">{card.description}</p>
-            </Reveal>
-          );
-        })}
+      <div className="mx-auto mt-7 grid max-w-[1320px] gap-5 lg:grid-cols-2">
+        {beforeAfterCards.map((card, index) => (
+          <BeforeAfterCard
+            card={card}
+            delay={index * 70}
+            icon={clientCaseBeforeAfterIcons[index] ?? FileCheckIcon}
+            key={card.title}
+          />
+        ))}
       </div>
 
-      <Reveal
-        className="mt-4 rounded-[14px] border border-[#E6E8EF] bg-white p-5 shadow-[0_18px_42px_rgba(15,23,54,0.06)] sm:p-6"
-        delay={80}
-      >
-        <div className="grid gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
-          <div className="flex items-start gap-4">
-            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[#D6C48A]/45 bg-[#D6C48A]/10 text-[#161851]">
-              <CalendarIcon className="h-6 w-6" />
-            </div>
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/62">
-                {copy.clientCase.comparison.before.label}
-              </p>
-              <p className="mt-2 text-[1rem] font-black leading-6 text-[#161851]">
-                {copy.clientCase.comparison.before.text}
-              </p>
-            </div>
-          </div>
-          <div className="h-px bg-[#E6E8EF] md:h-16 md:w-px" />
-          <div className="flex items-start gap-4">
-            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[#D6C48A]/45 bg-[#D6C48A]/10 text-[#161851]">
-              <CheckCircleIcon className="h-6 w-6" />
-            </div>
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.08em] text-[#161851]/62">
-                {copy.clientCase.comparison.after.label}
-              </p>
-              <p className="mt-2 text-[1rem] font-black leading-6 text-[#161851]">
-                {copy.clientCase.comparison.after.text}
-              </p>
-            </div>
-          </div>
-        </div>
-      </Reveal>
-
-      <Reveal
-        className="mt-4 overflow-hidden rounded-[14px] border border-[#D6C48A]/20 bg-[#14243A] p-5 text-white shadow-[0_18px_42px_rgba(15,23,54,0.28)] sm:p-6 lg:p-7"
-        delay={120}
-      >
-        <div className="grid gap-5 md:grid-cols-3">
-          {copy.clientCase.metrics.map((metric, index) => {
-            const Icon = clientCaseMetricIcons[index] ?? TrendIcon;
-
-            return (
-              <div
-                className={index === 0 ? "flex items-start gap-4" : "flex items-start gap-4 border-white/14 md:border-l md:pl-6"}
-                key={metric.value}
-              >
-                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[#D6C48A]/50 bg-white/5 text-[#D6C48A]">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-[1.45rem] font-black leading-none tracking-[0] text-white">{metric.value}</p>
-                  <p className="mt-2 text-sm font-medium leading-5 text-white/78">{metric.label}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </Reveal>
-
-      <Reveal className="mt-8 max-w-[760px]" delay={145}>
-        <p className="text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">
-          {copy.clientCase.testimonialHeader.eyebrow}
+      <Reveal className="mx-auto mt-6 max-w-[1320px]" delay={90}>
+        <p className="text-[1rem] font-black leading-7 text-white sm:text-[1.08rem]">
+          {copy.clientCase.shortlistReadyText}
         </p>
-        <h3 className="mt-2 text-[clamp(1.45rem,3vw,1.9rem)] font-black leading-tight tracking-[0] text-white">
-          {copy.clientCase.testimonialHeader.title}
+      </Reveal>
+
+      <Reveal className="mx-auto mt-3 max-w-[1320px]" delay={105}>
+        <ShortlistEmailMockup emailPreview={copy.clientCase.emailPreview} />
+      </Reveal>
+
+      <Reveal className="mx-auto mt-7 max-w-[1320px]" delay={115}>
+        <h3 className="text-sm font-black uppercase tracking-[0.08em] text-white">
+          {copy.clientCase.resultsTitle}
         </h3>
       </Reveal>
 
       <Reveal
-        className="mt-4 rounded-[14px] border border-[#E6E8EF] bg-white p-6 text-center shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7"
-        delay={160}
+        className="mx-auto mt-4 max-w-[1320px]"
+        delay={120}
       >
-        <span aria-hidden="true" className="text-5xl font-black leading-none text-[#D6C48A]">
-          “
-        </span>
-        <blockquote className="mx-auto mt-1 max-w-[820px] text-[1rem] font-medium italic leading-7 text-[#0F1736]/90">
-          {copy.clientCase.quote}
-        </blockquote>
-        <div className="mx-auto mt-5 h-px max-w-[420px] bg-[#E6E8EF]" />
-        <p className="mt-4 text-sm font-black text-[#161851]">{copy.clientCase.attribution}</p>
+        <div className="grid gap-5 md:grid-cols-3">
+          {copy.clientCase.metrics.map((metric, index) => (
+            <div
+              className="flex min-w-0 flex-col items-center rounded-[14px] border border-[#E6E8EF] bg-white p-6 text-center shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7 lg:min-h-[230px] lg:p-8"
+              key={`${metric.value}-${index}`}
+            >
+              {metric.label ? (
+                <p className={resultCardLabelClassName}>{metric.label}</p>
+              ) : null}
+              <p className="mt-4 break-words text-[1.75rem] font-black leading-tight tracking-[0] text-[#161851] sm:text-[2rem] lg:text-[2.15rem]">
+                {metric.value}
+              </p>
+              {metric.supportingText ? (
+                <p className="mx-auto mt-5 max-w-[340px] text-[0.95rem] font-medium leading-6 text-[#161851]/86">
+                  {metric.supportingText}
+                </p>
+              ) : null}
+            </div>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal className="mx-auto mt-12 max-w-[1320px] lg:mt-16" delay={145}>
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.35fr)] lg:items-center">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.08em] text-[#D6C48A]">
+              {copy.clientCase.testimonialHeader.eyebrow}
+            </p>
+            <h3 className="mt-2 max-w-[520px] text-[clamp(1.45rem,3vw,1.9rem)] font-black leading-tight tracking-[0] text-white">
+              {copy.clientCase.testimonialHeader.title}
+            </h3>
+          </div>
+
+          <div className="rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.12)] sm:p-7">
+            <span aria-hidden="true" className="text-5xl font-black leading-none text-[#D6C48A]">
+              “
+            </span>
+            <blockquote className="mt-1 text-[1rem] font-medium italic leading-7 text-[#0F1736]/90">
+              {copy.clientCase.quote}
+            </blockquote>
+            <p className="mt-5 text-sm font-black text-[#161851]">{copy.clientCase.attribution}</p>
+          </div>
+        </div>
       </Reveal>
     </section>
+  );
+}
+
+function BeforeAfterCard({
+  card,
+  delay,
+  icon: Icon,
+}: {
+  card: SiteCopy["clientCase"]["beforeAfter"]["before"];
+  delay: number;
+  icon: typeof CalendarIcon;
+}) {
+  return (
+    <Reveal
+      className="h-full rounded-[14px] border border-[#E6E8EF] bg-white p-6 shadow-[0_18px_42px_rgba(15,23,54,0.1)] sm:p-7"
+      delay={delay}
+    >
+      <div className="grid h-full grid-cols-[56px_minmax(0,1fr)] gap-x-5">
+        <div className="grid h-14 w-14 place-items-center rounded-full border border-[#E6E8EF] bg-[#F7F8FA] text-[#D6C48A]">
+          <Icon className="h-7 w-7" />
+        </div>
+        <div className="min-w-0">
+          <h3 className="text-[1.14rem] font-black leading-snug text-[#161851] sm:text-[1.22rem]">{card.title}</h3>
+          <ul className="mt-4 grid gap-3">
+            {card.items.map((item) => (
+              <li className="flex items-start gap-3 text-[0.96rem] font-medium leading-6 text-[#0F1736]/84" key={item}>
+                <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#D6C48A]" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 border-t border-[#E6E8EF] pt-5 text-left">
+            <p className="text-[1rem] font-black leading-6 text-[#161851]">{card.outcome}</p>
+          </div>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function ShortlistEmailMockup({
+  emailPreview,
+}: {
+  emailPreview: SiteCopy["clientCase"]["emailPreview"];
+}) {
+  return (
+    <div
+      aria-label={emailPreview.ariaLabel}
+      className="overflow-hidden rounded-[14px] border border-[#E6E8EF] bg-white shadow-[0_18px_42px_rgba(15,23,54,0.12)]"
+      role="group"
+    >
+      <div className="hidden grid-cols-[64px_minmax(150px,220px)_minmax(0,1fr)_76px] border-b border-[#E6E8EF] bg-white px-4 py-3 text-xs font-black text-[#0F1736]/58 sm:grid sm:px-5">
+        <span aria-hidden="true" />
+        <span>{emailPreview.columns.from}</span>
+        <span>{emailPreview.columns.subject}</span>
+        <span className="text-right">{emailPreview.columns.time}</span>
+      </div>
+      <InboxEmailRow email={emailPreview.preparedEmail} selected />
+      <InboxEmailRow email={emailPreview.requestEmail} />
+    </div>
+  );
+}
+
+function InboxEmailRow({
+  email,
+  selected = false,
+}: {
+  email: SiteCopy["clientCase"]["emailPreview"]["preparedEmail"];
+  selected?: boolean;
+}) {
+  const initials = email.sender === "Philoo" ? "Ph" : email.sender;
+
+  return (
+    <div
+      className={`grid grid-cols-[auto_minmax(0,1fr)_auto] gap-x-3 gap-y-2 border-l-4 border-b border-[#E6E8EF] px-3 py-4 last:border-b-0 sm:grid-cols-[64px_minmax(150px,220px)_minmax(0,1fr)_76px] sm:items-center sm:px-5 ${
+        selected ? "border-l-[#D6C48A] bg-[#F3F7FE]" : "border-l-transparent bg-white"
+      }`}
+    >
+      <div className="flex items-center gap-3 sm:gap-4">
+        <span aria-hidden="true" className="h-4 w-4 rounded-[4px] border border-[#9CA8C4] bg-white" />
+        <span aria-hidden="true" className="text-xl leading-none text-[#9CA8C4]">
+          ☆
+        </span>
+      </div>
+      <div className="flex min-w-0 items-center gap-3">
+        <span
+          aria-hidden="true"
+          className={`grid h-10 w-10 shrink-0 place-items-center rounded-full text-sm font-black ${
+            selected ? "bg-[#161851] text-white" : "bg-[#E6E8EF] text-[#161851]"
+          }`}
+        >
+          {initials}
+        </span>
+        <span className="min-w-0 break-words text-[0.95rem] font-black leading-5 text-[#161851]">{email.sender}</span>
+      </div>
+      <div className="col-span-3 min-w-0 sm:col-span-1">
+        <p className="break-words text-[0.95rem] font-black leading-5 text-[#161851]">{email.subject}</p>
+        <p className="mt-1 break-words text-[0.88rem] font-medium leading-5 text-[#0F1736]/70">{email.preview}</p>
+      </div>
+      <div className="col-start-3 row-start-1 flex items-center justify-end gap-2 text-[0.94rem] font-bold text-[#161851]/76 sm:col-start-4">
+        <span>{email.time}</span>
+        {selected ? <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full bg-[#D6C48A]" /> : null}
+      </div>
+    </div>
   );
 }
 
