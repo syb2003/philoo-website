@@ -1,5 +1,4 @@
 const EMAIL_MAX_LENGTH = 254;
-const GUIDE_DOWNLOAD_PATH = "/downloads/meer-plaatsingen-met-hetzelfde-team-philoo.pdf";
 const GUIDE_FORM_SOURCE = "landing-page-email-form";
 const WEBHOOK_TIMEOUT_MS = 8_000;
 const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
@@ -65,7 +64,7 @@ export async function POST(request: Request) {
   const honeypot = cleanString(body.website, 200);
 
   if (honeypot) {
-    return jsonResponse({ ok: true, downloadUrl: GUIDE_DOWNLOAD_PATH }, 200);
+    return jsonResponse({ ok: true }, 200);
   }
 
   const email = cleanString(body.email, EMAIL_MAX_LENGTH).toLowerCase();
@@ -77,9 +76,6 @@ export async function POST(request: Request) {
   const attribution = normalizeAttribution(body.attribution);
   const webhookUrl = cleanString(process.env.GOOGLE_SHEETS_WEBHOOK_URL, 2_048);
   const webhookSecret = cleanString(process.env.GOOGLE_SHEETS_WEBHOOK_SECRET, 1_000);
-
-  console.log("[guide-lead] webhook URL configured:", Boolean(webhookUrl));
-  console.log("[guide-lead] webhook secret configured:", Boolean(webhookSecret));
 
   if (!webhookUrl || !webhookSecret) {
     return jsonResponse({ ok: false, error: "De gids kon niet worden klaargezet." }, 500);
@@ -94,8 +90,6 @@ export async function POST(request: Request) {
     attribution,
   };
 
-  let upstreamBody = "";
-
   try {
     const upstreamResponse = await fetch(webhookUrl, {
       method: "POST",
@@ -108,10 +102,7 @@ export async function POST(request: Request) {
       signal: AbortSignal.timeout(WEBHOOK_TIMEOUT_MS),
     });
 
-    upstreamBody = await upstreamResponse.text();
-
-    console.log("[guide-lead] upstream status:", upstreamResponse.status);
-    console.log("[guide-lead] upstream response body:", upstreamBody);
+    const upstreamBody = await upstreamResponse.text();
 
     if (!upstreamResponse.ok) {
       return jsonResponse({ ok: false, error: "De gids kon niet worden klaargezet." }, 502);
@@ -129,10 +120,8 @@ export async function POST(request: Request) {
       return jsonResponse({ ok: false, error: "De gids kon niet worden klaargezet." }, 502);
     }
   } catch {
-    console.log("[guide-lead] upstream status:", "request failed");
-    console.log("[guide-lead] upstream response body:", upstreamBody);
     return jsonResponse({ ok: false, error: "De gids kon niet worden klaargezet." }, 502);
   }
 
-  return jsonResponse({ ok: true, downloadUrl: GUIDE_DOWNLOAD_PATH }, 200);
+  return jsonResponse({ ok: true }, 200);
 }

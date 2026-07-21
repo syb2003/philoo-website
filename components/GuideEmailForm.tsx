@@ -5,22 +5,6 @@ import { useState, type FormEvent } from "react";
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
-const fallbackDownloadUrl = "/downloads/meer-plaatsingen-met-hetzelfde-team-philoo.pdf";
-const downloadFilename = "meer-plaatsingen-met-hetzelfde-team-philoo.pdf";
-
-type GuideLeadResponse = {
-  ok?: boolean;
-  downloadUrl?: string;
-};
-
-function startGuideDownload(downloadUrl: string) {
-  const link = document.createElement("a");
-  link.href = downloadUrl;
-  link.download = downloadFilename;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-}
 
 export function GuideEmailForm() {
   const [email, setEmail] = useState("");
@@ -59,10 +43,7 @@ export function GuideEmailForm() {
         throw new Error("Guide request failed");
       }
 
-      const data = (await response.json()) as GuideLeadResponse;
-
       setStatus("success");
-      startGuideDownload(data.downloadUrl || fallbackDownloadUrl);
     } catch {
       setStatus("error");
     }
