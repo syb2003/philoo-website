@@ -1,23 +1,17 @@
 import {
-  GUIDE_DOWNLOAD_PATH,
   normalizeAttribution,
   normalizeGuideReferrer,
-  recordGuideFormDownloadStarted,
-  recordGuideLead,
+  recordGuideDirectDownload,
+  resolveDownloadSource,
 } from "@/lib/googleSheets";
 
-const EMAIL_MAX_LENGTH = 254;
 const GUIDE_PAGE_PATH = "/meer-plaatsingen-met-hetzelfde-team";
-const GUIDE_FORM_SOURCE = "landing-page-email-form";
+const ALLOWED_EVENT = "guide_direct_download_clicked";
 
-type GuideLeadRequest = {
-  email?: unknown;
-  website?: unknown;
+type GuideEventRequest = {
+  event?: unknown;
   source?: unknown;
   referrer?: unknown;
-  page?: {
-    referrer?: unknown;
-  };
   attribution?: unknown;
 };
 
@@ -32,14 +26,6 @@ function jsonResponse(body: Record<string, unknown>, status: number) {
 
 function cleanString(value: unknown, maxLength: number) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
-}
-
-function isValidEmail(email: string) {
-  if (!email || email.length > EMAIL_MAX_LENGTH || email.includes("..")) {
-    return false;
-  }
-
-  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 }
 
 function isConfigError(error: unknown) {
@@ -63,48 +49,30 @@ export async function POST(request: Request) {
     return jsonResponse({ ok: false, error: "Ongeldig verzoek." }, 400);
   }
 
-  const body = rawBody as GuideLeadRequest;
-  const honeypot = cleanString(body.website, 200);
+  const body = rawBody as GuideEventRequest;
+  const event = cleanString(body.event, 100);
 
-  if (honeypot) {
-    return jsonResponse({ ok: true, downloadUrl: GUIDE_DOWNLOAD_PATH }, 200);
-  }
-
-  const email = cleanString(body.email, EMAIL_MAX_LENGTH).toLowerCase();
-
-  if (!isValidEmail(email)) {
-    return jsonResponse({ ok: false, error: "Vul een geldig e-mailadres in." }, 422);
+  if (event !== ALLOWED_EVENT) {
+    return jsonResponse({ ok: false, error: "Ongeldig verzoek." }, 422);
   }
 
   const attribution = normalizeAttribution(body.attribution);
-  const referrer = normalizeGuideReferrer(body.referrer || body.page?.referrer);
+  const referrer = normalizeGuideReferrer(body.referrer);
+  const source = resolveDownloadSource(attribution, referrer);
 
   try {
-    await recordGuideLead({
-      email,
-      source: GUIDE_FORM_SOURCE,
+    await recordGuideDirectDownload({
+      source,
       attribution,
       referrer,
       page: GUIDE_PAGE_PATH,
     });
   } catch (error) {
     return jsonResponse(
-      { ok: false, error: "De gids kon niet worden klaargezet." },
+      { ok: false, error: "De download kon niet worden geregistreerd." },
       isConfigError(error) ? 500 : 502,
     );
   }
 
-  try {
-    await recordGuideFormDownloadStarted({
-      source: GUIDE_FORM_SOURCE,
-      email,
-      attribution,
-      referrer,
-      page: GUIDE_PAGE_PATH,
-    });
-  } catch {
-    console.warn("Guide lead stored, but guide_email_form_download_started event append failed.");
-  }
-
-  return jsonResponse({ ok: true, downloadUrl: GUIDE_DOWNLOAD_PATH }, 200);
+  return jsonResponse({ ok: true }, 200);
 }

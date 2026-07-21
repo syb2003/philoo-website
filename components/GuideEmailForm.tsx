@@ -5,6 +5,22 @@ import { useState, type FormEvent } from "react";
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
+const fallbackDownloadUrl = "/downloads/meer-plaatsingen-met-hetzelfde-team-philoo.pdf";
+const downloadFilename = "meer-plaatsingen-met-hetzelfde-team-philoo.pdf";
+
+type GuideLeadResponse = {
+  ok?: boolean;
+  downloadUrl?: string;
+};
+
+function startGuideDownload(downloadUrl: string) {
+  const link = document.createElement("a");
+  link.href = downloadUrl;
+  link.download = downloadFilename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
 
 export function GuideEmailForm() {
   const [email, setEmail] = useState("");
@@ -33,9 +49,8 @@ export function GuideEmailForm() {
         body: JSON.stringify({
           email,
           website: formData.get("website") ?? "",
-          page: {
-            referrer: document.referrer,
-          },
+          source: "landing-page-email-form",
+          referrer: document.referrer,
           attribution,
         }),
       });
@@ -44,7 +59,10 @@ export function GuideEmailForm() {
         throw new Error("Guide request failed");
       }
 
+      const data = (await response.json()) as GuideLeadResponse;
+
       setStatus("success");
+      startGuideDownload(data.downloadUrl || fallbackDownloadUrl);
     } catch {
       setStatus("error");
     }
@@ -54,7 +72,7 @@ export function GuideEmailForm() {
     <div className="rounded-[12px] bg-[#F7F8FA] p-4 sm:p-5">
       {status === "success" ? (
         <p aria-live="polite" className="font-extrabold leading-7 text-[#161851]">
-          Gelukt. De gids komt zo je kant op.
+          Gelukt. De gids komt zo.
         </p>
       ) : (
         <>
@@ -93,14 +111,14 @@ export function GuideEmailForm() {
               disabled={status === "loading"}
               type="submit"
             >
-              {status === "loading" ? "Bezig met versturen…" : "Stuur mij de gids"}
+              {status === "loading" ? "Bezig…" : "Stuur mij de gids"}
             </button>
           </form>
 
           <div aria-live="polite">
             {status === "error" ? (
               <p className="mt-3 text-sm font-semibold leading-6 text-[#8A2633]">
-                Dat ging niet goed. Probeer het opnieuw of download de gids direct.
+                Dat ging niet goed. Probeer het opnieuw.
               </p>
             ) : null}
           </div>

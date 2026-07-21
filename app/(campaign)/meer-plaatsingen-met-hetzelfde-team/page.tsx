@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideEmailForm } from "@/components/GuideEmailForm";
 import { ArrowRightIcon, CalendarIcon, CheckCircleIcon, FileCheckIcon } from "@/components/Icons";
+import { TrackedGuideDownloadLink } from "@/components/TrackedGuideDownloadLink";
 import { CALENDLY_URL } from "@/lib/i18n";
 
 const pageTitle = "Meer plaatsingen met hetzelfde team | Gratis gids | Philoo";
@@ -116,14 +117,14 @@ export default function GuideDownloadPage() {
                 5–10 minuten scan- en leestijd
               </p>
 
-              <a
+              <TrackedGuideDownloadLink
                 aria-label="Download de gids Meer plaatsingen met hetzelfde team als PDF"
                 className="mt-4 inline-flex w-full items-center justify-center rounded-[10px] bg-[#161851] px-6 py-4 text-[0.95rem] font-extrabold text-white shadow-[0_16px_32px_rgba(22,24,81,0.2)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-white sm:text-base"
-                download
+                download="meer-plaatsingen-met-hetzelfde-team-philoo.pdf"
                 href="/downloads/meer-plaatsingen-met-hetzelfde-team-philoo.pdf"
               >
                 Download de gratis gids
-              </a>
+              </TrackedGuideDownloadLink>
 
               <div aria-hidden="true" className="my-5 flex items-center gap-4 text-sm font-semibold text-[#0F1736]/55">
                 <span className="h-px flex-1 bg-[#E6E8EF]" />
