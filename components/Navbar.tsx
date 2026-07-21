@@ -11,6 +11,10 @@ type NavCopy = {
     id: SectionId;
     label: string;
   }>;
+  guideLink?: {
+    label: string;
+    href: string;
+  };
   cta: string;
   menu: string;
   close: string;
@@ -21,6 +25,24 @@ type NavbarProps = {
   lang: Language;
   copy: NavCopy;
 };
+
+function desktopNavLinkClassName(isActive: boolean, compact: boolean) {
+  return `rounded-full border px-2.5 py-[0.8rem] text-[0.92rem] font-extrabold leading-none transition-colors ${
+    compact ? "" : "xl:px-3.5"
+  } ${
+    isActive
+      ? "border-[#D6C48A]/80 bg-[#D6C48A]/12 text-[#D6C48A]"
+      : "border-transparent text-white hover:border-white/10 hover:bg-white/5"
+  }`;
+}
+
+function mobileNavLinkClassName(isActive: boolean) {
+  return `rounded-[10px] border px-4 py-3 text-sm font-extrabold transition-colors ${
+    isActive
+      ? "border-[#D6C48A]/75 bg-[#D6C48A]/16 text-[#161851]"
+      : "border-transparent text-[#0F1736] hover:bg-[#F7F8FA]"
+  }`;
+}
 
 export function Navbar({ lang, copy }: NavbarProps) {
   const [activeId, setActiveId] = useState<SectionId>("home");
@@ -160,7 +182,11 @@ export function Navbar({ lang, copy }: NavbarProps) {
     <header ref={headerRef} className="sticky top-0 z-[70] border-b border-[#E6E8EF]/80 bg-[linear-gradient(180deg,rgba(247,248,250,0.97),rgba(247,248,250,0.9))] px-3 pb-3 pt-3 shadow-[0_14px_36px_rgba(15,23,54,0.05)] backdrop-blur-md sm:px-4 sm:pb-4 sm:pt-4 lg:px-6">
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-[1760px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/34 bg-[linear-gradient(135deg,rgba(22,24,81,0.98),rgba(20,36,58,0.99))] px-4 py-3 shadow-[0_36px_88px_rgba(15,23,54,0.3),0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-xl sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-4 lg:px-5 lg:py-[0.8rem] xl:gap-5 xl:px-6"
+        className={`mx-auto flex max-w-[1760px] items-center justify-between rounded-[16px] border border-white/12 border-b-white/34 bg-[linear-gradient(135deg,rgba(22,24,81,0.98),rgba(20,36,58,0.99))] px-4 py-3 shadow-[0_36px_88px_rgba(15,23,54,0.3),0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-xl sm:px-6 ${
+          copy.guideLink
+            ? "xl:grid xl:grid-cols-[auto_1fr_auto] xl:items-center xl:gap-4 xl:px-5 xl:py-[0.8rem]"
+            : "lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-4 lg:px-5 lg:py-[0.8rem] xl:gap-5 xl:px-6"
+        }`}
       >
         <a
           aria-label="Philoo"
@@ -170,16 +196,12 @@ export function Navbar({ lang, copy }: NavbarProps) {
           Philoo
         </a>
 
-        <div className="hidden items-center justify-self-center lg:flex">
-          <div className="flex items-center gap-0.5 xl:gap-1.5">
+        <div className={`hidden items-center justify-self-center ${copy.guideLink ? "xl:flex" : "lg:flex"}`}>
+          <div className={`flex items-center gap-0.5 ${copy.guideLink ? "" : "xl:gap-1.5"}`}>
             {navItems.map((item) => (
               <a
                 aria-current={activeId === item.id ? "location" : undefined}
-                className={`rounded-full border px-2.5 py-[0.8rem] text-[0.92rem] font-extrabold leading-none transition-colors xl:px-3.5 ${
-                  activeId === item.id
-                    ? "border-[#D6C48A]/80 bg-[#D6C48A]/12 text-[#D6C48A]"
-                    : "border-transparent text-white hover:border-white/10 hover:bg-white/5"
-                }`}
+                className={desktopNavLinkClassName(activeId === item.id, Boolean(copy.guideLink))}
                 href={`#${item.id}`}
                 key={item.id}
                 onClick={(event) => {
@@ -190,10 +212,15 @@ export function Navbar({ lang, copy }: NavbarProps) {
                 {item.label}
               </a>
             ))}
+            {copy.guideLink ? (
+              <Link className={desktopNavLinkClassName(false, true)} href={copy.guideLink.href}>
+                {copy.guideLink.label}
+              </Link>
+            ) : null}
           </div>
         </div>
 
-        <div className="hidden items-center justify-self-end gap-2.5 xl:gap-3 lg:flex">
+        <div className={`hidden items-center justify-self-end gap-2.5 ${copy.guideLink ? "xl:flex" : "lg:flex xl:gap-3"}`}>
           <LanguageToggle
             ariaLabel={copy.language}
             currentLanguage={lang}
@@ -201,7 +228,9 @@ export function Navbar({ lang, copy }: NavbarProps) {
           />
 
           <a
-            className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#D6C48A] px-5 py-4 text-sm font-extrabold text-[#0F1736] shadow-[0_12px_26px_rgba(214,196,138,0.26)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#161851] xl:px-6"
+            className={`inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#D6C48A] px-5 py-4 text-sm font-extrabold text-[#0F1736] shadow-[0_12px_26px_rgba(214,196,138,0.26)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-[#161851] ${
+              copy.guideLink ? "" : "xl:px-6"
+            }`}
             href={CALENDLY_URL}
             rel="noopener noreferrer"
             target="_blank"
@@ -211,7 +240,7 @@ export function Navbar({ lang, copy }: NavbarProps) {
           </a>
         </div>
 
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className={`flex items-center gap-3 ${copy.guideLink ? "xl:hidden" : "lg:hidden"}`}>
           <LanguageToggle
             ariaLabel={copy.language}
             currentLanguage={lang}
@@ -232,18 +261,16 @@ export function Navbar({ lang, copy }: NavbarProps) {
 
       {menuOpen ? (
         <div
-          className="mx-auto mt-2 max-w-[1760px] rounded-[14px] border border-[#E6E8EF] bg-white/96 p-3 shadow-[0_18px_45px_rgba(15,23,54,0.14)] backdrop-blur lg:hidden"
+          className={`mx-auto mt-2 max-w-[1760px] rounded-[14px] border border-[#E6E8EF] bg-white/96 p-3 shadow-[0_18px_45px_rgba(15,23,54,0.14)] backdrop-blur ${
+            copy.guideLink ? "xl:hidden" : "lg:hidden"
+          }`}
           id="mobile-navigation"
         >
           <div className="grid gap-1">
             {navItems.map((item) => (
               <a
                 aria-current={activeId === item.id ? "location" : undefined}
-                className={`rounded-[10px] border px-4 py-3 text-sm font-extrabold transition-colors ${
-                  activeId === item.id
-                    ? "border-[#D6C48A]/75 bg-[#D6C48A]/16 text-[#161851]"
-                    : "border-transparent text-[#0F1736] hover:bg-[#F7F8FA]"
-                }`}
+                className={mobileNavLinkClassName(activeId === item.id)}
                 href={`#${item.id}`}
                 key={item.id}
                 onClick={(event) => {
@@ -254,6 +281,15 @@ export function Navbar({ lang, copy }: NavbarProps) {
                 {item.label}
               </a>
             ))}
+            {copy.guideLink ? (
+              <Link
+                className={mobileNavLinkClassName(false)}
+                href={copy.guideLink.href}
+                onClick={() => setMenuOpen(false)}
+              >
+                {copy.guideLink.label}
+              </Link>
+            ) : null}
           </div>
           <a
             className="mt-3 inline-flex w-full items-center justify-center gap-3 rounded-[10px] bg-[#161851] px-5 py-4 text-sm font-extrabold text-white shadow-[0_14px_30px_rgba(22,24,81,0.18)]"

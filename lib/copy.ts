@@ -20,6 +20,10 @@ export type SiteCopy = {
       id: SectionId;
       label: string;
     }>;
+    guideLink?: {
+      label: string;
+      href: string;
+    };
     cta: string;
     menu: string;
     close: string;
@@ -156,6 +160,10 @@ export const siteCopy = {
         { id: "services", label: "Overige diensten" },
         { id: "contact", label: "Contact" },
       ],
+      guideLink: {
+        label: "Gids: meer plaatsingen?",
+        href: "/meer-plaatsingen-met-hetzelfde-team",
+      },
       cta: "Plan een gratis kennismaking",
       menu: "Menu openen",
       close: "Menu sluiten",

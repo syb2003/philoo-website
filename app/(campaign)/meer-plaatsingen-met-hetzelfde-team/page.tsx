@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideEmailForm } from "@/components/GuideEmailForm";
 import { ArrowRightIcon, CalendarIcon, CheckCircleIcon, FileCheckIcon } from "@/components/Icons";
 import { CALENDLY_URL } from "@/lib/i18n";
 
@@ -59,8 +60,8 @@ export default function GuideDownloadPage() {
 
       <main className="flex flex-1">
         <section className="flex w-full flex-1 items-center" aria-labelledby="guide-title">
-          <div className="mx-auto grid w-full max-w-[1440px] items-center gap-10 px-5 py-10 sm:px-8 sm:py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(390px,0.8fr)] lg:gap-14 lg:px-12 lg:py-14 xl:gap-20">
-            <div className="max-w-[760px] lg:pb-4">
+          <div className="mx-auto grid w-full max-w-[1440px] items-start gap-10 px-5 py-10 sm:px-8 sm:py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(390px,0.8fr)] lg:gap-14 lg:px-12 lg:py-7 xl:gap-20">
+            <div className="max-w-[760px]">
               <p className="text-xs font-black uppercase leading-5 tracking-[0.08em] text-[#B39A4D] sm:text-sm">
                 Praktische gids voor recruitmentbureaus
               </p>
@@ -77,20 +78,19 @@ export default function GuideDownloadPage() {
               <div className="mt-10 text-base leading-7 text-[#0F1736]/82 sm:text-lg sm:leading-8">
                 <p>Wil je eens sparren over waar jullie tegenaan lopen?</p>
                 <a
-                  className="mt-2 inline-block font-extrabold text-[#161851] underline decoration-[#D6C48A] decoration-2 underline-offset-8 transition-opacity hover:opacity-75 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-4"
+                  className="mt-3 inline-block text-2xl font-black leading-[1.15] text-[#161851] underline decoration-[#D6C48A] decoration-2 underline-offset-8 transition-opacity hover:opacity-75 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-4 sm:text-[1.75rem] lg:text-[2rem] xl:text-[2.25rem]"
                   href={CALENDLY_URL}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Boek dan een kennismaking
+                  Boek dan een kennismaking.
                 </a>
-                .
               </div>
             </div>
 
             <aside
               aria-labelledby="guide-contents-title"
-              className="w-full rounded-[16px] border border-[#E6E8EF] bg-white p-6 shadow-[0_24px_60px_rgba(15,23,54,0.09)] sm:p-8 lg:justify-self-end xl:p-10"
+              className="w-full rounded-[16px] border border-[#E6E8EF] bg-white p-6 shadow-[0_24px_60px_rgba(15,23,54,0.09)] sm:p-7 lg:justify-self-end xl:p-8"
             >
               <div className="flex items-center gap-4 sm:gap-5">
                 <FileCheckIcon aria-hidden="true" className="h-10 w-10 shrink-0 text-[#B89B45] sm:h-12 sm:w-12" />
@@ -102,7 +102,7 @@ export default function GuideDownloadPage() {
                 </div>
               </div>
 
-              <ul className="mt-7 space-y-4 sm:mt-8 sm:space-y-5">
+              <ul className="mt-6 space-y-4 sm:mt-7">
                 {guideHighlights.map((item) => (
                   <li className="flex items-start gap-3.5 text-[0.95rem] font-semibold leading-6 text-[#0F1736]/88 sm:text-base" key={item}>
                     <CheckCircleIcon aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[#B89B45]" />
@@ -111,19 +111,27 @@ export default function GuideDownloadPage() {
                 ))}
               </ul>
 
-              <p className="mt-7 inline-flex items-center gap-2 rounded-full border border-[#D6C48A]/60 bg-[#F7F8FA] px-3.5 py-2 text-xs font-extrabold text-[#161851] sm:text-sm">
+              <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#D6C48A]/60 bg-[#F7F8FA] px-3.5 py-2 text-xs font-extrabold text-[#161851] sm:text-sm">
                 <CalendarIcon aria-hidden="true" className="h-4 w-4 shrink-0" />
                 5–10 minuten scan- en leestijd
               </p>
 
               <a
                 aria-label="Download de gids Meer plaatsingen met hetzelfde team als PDF"
-                className="mt-5 inline-flex w-full items-center justify-center rounded-[10px] bg-[#161851] px-6 py-4 text-[0.95rem] font-extrabold text-white shadow-[0_16px_32px_rgba(22,24,81,0.2)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-white sm:text-base"
+                className="mt-4 inline-flex w-full items-center justify-center rounded-[10px] bg-[#161851] px-6 py-4 text-[0.95rem] font-extrabold text-white shadow-[0_16px_32px_rgba(22,24,81,0.2)] transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-2 focus:ring-offset-white sm:text-base"
                 download
                 href="/downloads/meer-plaatsingen-met-hetzelfde-team-philoo.pdf"
               >
                 Download de gratis gids
               </a>
+
+              <div aria-hidden="true" className="my-5 flex items-center gap-4 text-sm font-semibold text-[#0F1736]/55">
+                <span className="h-px flex-1 bg-[#E6E8EF]" />
+                <span>of</span>
+                <span className="h-px flex-1 bg-[#E6E8EF]" />
+              </div>
+
+              <GuideEmailForm />
             </aside>
           </div>
         </section>
