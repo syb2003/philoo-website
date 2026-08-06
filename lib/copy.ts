@@ -3,6 +3,7 @@ import type { Language } from "./i18n";
 export type SectionId =
   | "home"
   | "voorbeelden"
+  | "interne-sourcing-demo"
   | "case-study"
   | "werkwijze"
   | "voor-wie"
@@ -50,6 +51,15 @@ export type SiteCopy = {
       title: string;
       body: string;
     }>;
+  };
+  internalSourcingDemo?: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    supportingPoints: [string, string, string];
+    ctaIntroduction: string;
+    cta: string;
+    microcopy: string;
   };
   clientCase: {
     eyebrow: string;
@@ -153,7 +163,7 @@ export const siteCopy = {
       items: [
         { id: "home", label: "Home" },
         { id: "pricing", label: "Waarom?" },
-        { id: "voorbeelden", label: "Voorbeelden" },
+        { id: "interne-sourcing-demo", label: "Voorbeelden" },
         { id: "case-study", label: "Klantverhaal" },
         { id: "werkwijze", label: "Werkwijze" },
         { id: "voor-wie", label: "Voor wie" },
@@ -228,6 +238,19 @@ export const siteCopy = {
   body: "Kandidaten worden vergeleken met de aanvraag. De recruiter krijgt een overzicht met mogelijke matches, toelichting en aandachtspunten, maar blijft zelf beslissen.",
 },
       ],
+    },
+    internalSourcingDemo: {
+      eyebrow: "DEMO · 80 SECONDEN",
+      title: "Van vacature naar een eerste shortlist uit je eigen database",
+      body: "Deze workflow haalt de belangrijkste criteria uit een vacature, zoekt binnen het bestaande ATS of CRM en zet relevante kandidaten met toelichting klaar. De recruiter controleert de selectie en bepaalt zelf de vervolgstap.",
+      supportingPoints: [
+        "Werkt met het bestaande ATS of CRM",
+        "Geen nieuwe software voor recruiters",
+        "De recruiter blijft beslissen",
+      ],
+      ctaIntroduction: "Ook interne sourcing automatiseren binnen jullie bestaande systemen?",
+      cta: "Bespreek deze workflow",
+      microcopy: "Voorbeeldworkflow. De exacte inrichting wordt afgestemd op jullie ATS, CRM en werkwijze.",
     },
     clientCase: {
       eyebrow: "Klantverhaal",

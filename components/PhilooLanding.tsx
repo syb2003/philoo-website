@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Reveal } from "@/components/Reveal";
+import { InternalSourcingDemo } from "@/components/InternalSourcingDemo";
 import {
   ArrowRightIcon,
   CalendarIcon,
@@ -106,6 +107,7 @@ export function PhilooLanding({ lang, copy }: PhilooLandingProps) {
 
         <Pricing copy={copy} />
         <Examples copy={copy} />
+        {copy.internalSourcingDemo ? <InternalSourcingDemo copy={copy.internalSourcingDemo} /> : null}
         <ClientCase copy={copy} />
         <Process copy={copy} />
         <Audience copy={copy} />
