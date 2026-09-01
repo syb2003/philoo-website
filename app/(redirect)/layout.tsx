@@ -3,8 +3,9 @@ import type { ReactNode } from "react";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Philoo",
-  description: "Smart AI workflows for practical B2B teams.",
+  metadataBase: new URL("https://www.philoo.nl"),
+  title: "Philoo | Software & AI voor recruitmentbureaus",
+  description: "Philoo bouwt software en AI voor recruitmentbureaus die handmatig werk verminderen.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RedirectLayout({ children }: { children: ReactNode }) {
   return (
-    <html className="font-sans antialiased" lang="en">
+      <html className="font-sans antialiased" lang="nl">
       <body>{children}</body>
     </html>
   );

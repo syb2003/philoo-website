@@ -1,14 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <circle cx="256" cy="256" r="248" fill="#161851" />
-  <text
-    x="126"
-    y="356"
-    fill="#ffffff"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="260"
-    font-weight="700"
-    letter-spacing="-10"
-  >
-    Ph
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 1254">
+  <image href="/philoo-logo.png" width="1254" height="1254" />
 </svg>

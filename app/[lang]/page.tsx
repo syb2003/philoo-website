@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { PhilooLanding } from "@/components/PhilooLanding";
+import { notFound, redirect } from "next/navigation";
+import { HomePage } from "@/components/site/HomePage";
 import { isLanguage, languages } from "@/lib/i18n";
-import { siteCopy } from "@/lib/copy";
+import { socialMetadata } from "@/lib/seo";
 
 type LanguagePageProps = {
   params: Promise<{ lang: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
 export function generateStaticParams() {
@@ -19,27 +20,34 @@ export async function generateMetadata({ params }: LanguagePageProps): Promise<M
     return {};
   }
 
-  const metadata = siteCopy[lang].metadata;
+  if (lang === "en") {
+    return {
+      title: "Philoo | Software & AI for Recruitment Agencies",
+      description: "Philoo builds software and AI for recruitment agencies that reduce manual work.",
+      alternates: { canonical: "/en", languages: { nl: "/", en: "/en" } },
+      ...socialMetadata("Philoo | Software & AI for Recruitment Agencies", "Philoo builds software and AI for recruitment agencies that reduce manual work.", "/en", "en_GB"),
+    };
+  }
 
-  return {
-    title: metadata.title,
-    description: metadata.description,
-    alternates: {
-      canonical: `/${lang}`,
-      languages: {
-        nl: "/nl",
-        en: "/en",
-      },
-    },
-  };
+  return { robots: { index: false, follow: false } };
 }
 
-export default async function LanguagePage({ params }: LanguagePageProps) {
+export default async function LanguagePage({ params, searchParams }: LanguagePageProps) {
   const { lang } = await params;
 
   if (!isLanguage(lang)) {
     notFound();
   }
 
-  return <PhilooLanding copy={siteCopy[lang]} lang={lang} />;
+  if (lang === "nl") {
+    const paramsToKeep = await searchParams;
+    const query = new URLSearchParams();
+    for (const [key, value] of Object.entries(paramsToKeep)) {
+      if (Array.isArray(value)) value.forEach((item) => query.append(key, item));
+      else if (value) query.set(key, value);
+    }
+    redirect(query.size ? `/?${query.toString()}` : "/");
+  }
+
+  return <HomePage lang="en" />;
 }

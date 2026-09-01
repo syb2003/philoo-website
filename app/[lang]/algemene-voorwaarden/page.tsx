@@ -20,10 +20,12 @@ export default async function DutchTermsPage({
   return (
     <LegalPage
       backLabel="Terug naar home"
-      body="Deze pagina bevat binnenkort de algemene voorwaarden van Philoo."
       lang="nl"
-      smallText="Laatste update: wordt later aangevuld."
       title="Algemene voorwaarden"
-    />
+    >
+      <h2 className="text-xl font-black text-[#161851]">Coming soon</h2>
+      <p>Onze volledige algemene voorwaarden worden binnenkort gepubliceerd.</p>
+      <p><strong>Philoo Pte. Ltd.</strong><br />68 Circular Road, #02-01<br />049422 Singapore<br /><a className="font-bold text-[#161851] underline decoration-[#D6C48A] decoration-2 underline-offset-4" href="mailto:hello@philoo.nl">hello@philoo.nl</a></p>
+    </LegalPage>
   );
 }
