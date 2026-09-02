@@ -64,42 +64,42 @@ export function HomePage({ lang }: { lang: Language }) {
       <SiteHeader lang={lang} />
       <AnalyticsPageView event="site_page_view" language={lang} />
       <main>
-        <section className="relative overflow-hidden border-b border-[#EDEEFA]">
+        <section className="relative overflow-hidden border-b border-[#EDEEFA]" data-home-hero>
           <div className="hero-ambient absolute inset-0" />
-          <div className="relative mx-auto grid max-w-[1440px] gap-2 px-5 pb-8 pt-12 sm:px-8 sm:pb-12 sm:pt-16 lg:grid-cols-[minmax(0,0.98fr)_minmax(380px,0.78fr)] lg:items-center lg:px-10 lg:pb-10 lg:pt-16 xl:gap-20 xl:pb-12">
-            <div className="max-w-[720px]">
+          <div className="relative mx-auto grid max-w-[1440px] gap-0 px-5 pb-4 pt-9 sm:px-8 sm:pb-7 sm:pt-11 lg:grid-cols-[minmax(0,1fr)_minmax(300px,0.68fr)] lg:items-center lg:gap-12 lg:px-10 lg:py-9 xl:gap-16">
+            <div className="max-w-[700px]">
               <p className="text-[0.72rem] font-black tracking-[0.075em] text-[#563DFF] sm:text-xs">{copy.eyebrow}</p>
-              <h1 className="mt-5 max-w-[760px] text-[clamp(2.7rem,5.4vw,5.25rem)] font-black leading-[0.98] tracking-[-0.065em] text-[#091238]">{copy.title}</h1>
-              <p className="mt-6 max-w-[650px] text-[1.02rem] leading-8 text-[#4D5679] sm:text-[1.12rem]">{copy.intro}</p>
+              <h1 className="mt-4 max-w-[580px] text-[clamp(2.65rem,4.65vw,4.6rem)] font-bold leading-[1.01] tracking-[-0.04em] text-[#091238]">{copy.title}</h1>
+              <p className="mt-5 max-w-[660px] text-[1rem] leading-7 text-[#4D5679] sm:text-[1.08rem] sm:leading-8">{copy.intro}</p>
             </div>
-            <div className="mx-auto -mb-2 mt-1 w-[min(40vw,220px)] min-w-0 lg:mb-0 lg:mt-0 lg:w-full lg:max-w-[430px]">
+            <div className="mx-auto mt-1 w-[min(28vw,110px)] min-w-0 lg:mt-0 lg:w-full lg:max-w-[330px]" data-home-hero-mark>
               <PhilooHeroMark />
             </div>
           </div>
         </section>
 
-        <section aria-label={lang === "nl" ? "Oplossingen" : "Solutions"} className="mx-auto max-w-[1440px] px-5 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-          <div className="grid gap-4 lg:grid-cols-3 lg:gap-6">
+        <section aria-label={lang === "nl" ? "Oplossingen" : "Solutions"} className="mx-auto max-w-[1440px] px-5 py-5 sm:px-8 sm:py-7 lg:px-10 lg:py-5">
+          <div className="grid gap-4 lg:grid-cols-3 lg:gap-6" data-home-route-cards>
             {copy.routes.map((route) => (
               <RouteCard key={route.href} lang={lang} route={route} />
             ))}
           </div>
         </section>
 
-        <section className="border-t border-[#ECECF6] bg-white/60 px-5 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
-          <div className="mx-auto max-w-[1080px] text-center">
+        <section className="border-t border-[#ECECF6] bg-white/60 px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14" data-home-why>
+          <div className="mx-auto max-w-[1040px] text-center">
             <p className="text-xs font-black tracking-[0.08em] text-[#563DFF]">{copy.whyEyebrow}</p>
-            <h2 className="mx-auto mt-4 max-w-[790px] text-[clamp(2rem,4vw,3.3rem)] font-black leading-[1.05] tracking-[-0.055em] text-[#0B1239]">{copy.whyTitle}</h2>
-            <p className="mx-auto mt-5 max-w-[720px] text-[1rem] leading-7 text-[#596180] sm:text-[1.08rem]">{copy.whyBody}</p>
-            <div className="mt-10 grid gap-7 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+            <h2 className="mx-auto mt-3 max-w-[760px] text-[clamp(1.8rem,3.25vw,2.75rem)] font-bold leading-[1.08] tracking-[-0.04em] text-[#0B1239]">{copy.whyTitle}</h2>
+            <p className="mx-auto mt-4 max-w-[700px] text-[1rem] leading-7 text-[#596180]">{copy.whyBody}</p>
+            <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-6 sm:gap-x-8 sm:gap-y-7 lg:grid-cols-4 lg:gap-5">
               {copy.benefits.map((benefit, index) => {
                 const Icon = benefitIcons[index];
                 return (
-                  <div className="flex flex-col items-center gap-3" key={benefit}>
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#F0EEFF] text-[#563DFF]">
-                      <Icon className="h-5 w-5" />
+                  <div className="flex flex-col items-center gap-2.5" key={benefit}>
+                    <span className="grid h-11 w-11 place-items-center rounded-2xl bg-[#F0EEFF] text-[#563DFF]">
+                      <Icon className="h-[1.1rem] w-[1.1rem]" />
                     </span>
-                    <h3 className="max-w-[150px] text-sm font-bold leading-5 text-[#161C42]">{benefit}</h3>
+                    <h3 className="max-w-[155px] text-sm font-bold leading-5 text-[#161C42]">{benefit}</h3>
                   </div>
                 );
               })}
@@ -121,18 +121,20 @@ function RouteCard({ route, lang }: { route: RouteCard; lang: Language }) {
   }[route.accent];
 
   return (
-    <article className={`flex min-h-[292px] flex-col rounded-[1.55rem] border p-6 transition-transform duration-200 hover:-translate-y-1 sm:p-7 ${accent}`}>
-      <div className="flex min-h-8 items-start justify-between gap-3">
-        <span className="grid h-11 w-11 place-items-center rounded-xl bg-white shadow-[0_8px_20px_rgba(43,39,103,0.08)]">
-          {route.accent === "green" ? <CubeIcon className="h-5 w-5" /> : route.accent === "purple" ? <UsersIcon className="h-5 w-5" /> : <SearchIcon className="h-5 w-5" />}
+    <article className="h-full" data-home-route-card>
+      <TrackedLink aria-label={`${route.title}: ${route.cta}`} className={`group flex h-full min-h-[286px] flex-col rounded-[1.55rem] border p-5 transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 motion-reduce:transform-none motion-reduce:transition-none sm:p-6 ${accent}`} event={event} href={route.href} language={lang}>
+        <div className="flex min-h-8 items-start justify-between gap-3">
+          <span className="grid h-11 w-11 place-items-center rounded-xl bg-white shadow-[0_8px_20px_rgba(43,39,103,0.08)]">
+            {route.accent === "green" ? <CubeIcon className="h-5 w-5" /> : route.accent === "purple" ? <UsersIcon className="h-5 w-5" /> : <SearchIcon className="h-5 w-5" />}
+          </span>
+          {route.badge ? <span className="rounded-full bg-white/85 px-3 py-1.5 text-xs font-bold text-[#5A47C9] shadow-[0_4px_14px_rgba(70,53,180,0.07)]">{route.badge}</span> : null}
+        </div>
+        <h2 className="mt-5 max-w-[290px] text-[1.38rem] font-bold leading-[1.14] tracking-[-0.035em] text-[#10173C]">{route.title}</h2>
+        <p className="mt-3 flex-1 text-[0.96rem] leading-7 text-[#505977]">{route.body}</p>
+        <span aria-hidden="true" className={`mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 text-sm font-bold text-white shadow-[0_10px_22px_rgba(33,40,85,0.13)] transition-transform duration-200 group-hover:-translate-y-0.5 motion-reduce:transform-none ${route.accent === "green" ? "bg-[#159A61]" : route.accent === "purple" ? "bg-[#563DFF]" : "bg-[#1769FF]"}`} data-home-route-cta>
+          {route.cta}
+          <ArrowRightIcon className="h-4 w-4" />
         </span>
-        {route.badge ? <span className="rounded-full bg-white/85 px-3 py-1.5 text-xs font-bold text-[#5A47C9] shadow-[0_4px_14px_rgba(70,53,180,0.07)]">{route.badge}</span> : null}
-      </div>
-      <h2 className="mt-6 max-w-[290px] text-[1.45rem] font-black leading-[1.12] tracking-[-0.04em] text-[#10173C]">{route.title}</h2>
-      <p className="mt-4 flex-1 text-[0.98rem] leading-7 text-[#505977]">{route.body}</p>
-      <TrackedLink className={`mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 text-sm font-bold text-white shadow-[0_10px_22px_rgba(33,40,85,0.13)] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#563DFF] ${route.accent === "green" ? "bg-[#159A61]" : route.accent === "purple" ? "bg-[#563DFF]" : "bg-[#1769FF]"}`} event={event} href={route.href} language={lang}>
-        {route.cta}
-        <ArrowRightIcon className="h-4 w-4" />
       </TrackedLink>
     </article>
   );
