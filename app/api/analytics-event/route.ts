@@ -1,7 +1,7 @@
 import { normalizeAttribution, normalizeGuideReferrer, recordSiteAnalyticsEvent, type SiteAnalyticsEventName } from "@/lib/googleSheets";
 
 const allowedEvents = new Set<SiteAnalyticsEventName>([
-  "site_page_view", "homepage_maatwerk_click", "homepage_cvstudio_click", "homepage_autosourcer_click", "calendly_cta_click", "cvstudio_page_view", "cvstudio_demo_play", "cvstudio_demo_50", "cvstudio_demo_complete", "cvstudio_early_access_click", "cvstudio_early_access_submit", "autosourcer_page_view", "autosourcer_interest_click", "autosourcer_interest_submit",
+  "site_page_view", "homepage_maatwerk_click", "homepage_cvstudio_click", "homepage_autosourcer_click", "calendly_cta_click", "cvstudio_page_view", "cvstudio_demo_play", "cvstudio_demo_50", "cvstudio_demo_complete", "cvstudio_early_access_click", "cvstudio_early_access_submit", "autosourcer_page_view", "autosourcer_interest_click", "autosourcer_interest_submit", "maatwerk_demo_play", "maatwerk_demo_50", "maatwerk_demo_complete",
 ]);
 
 function respond(body: Record<string, unknown>, status: number) { return Response.json(body, { status, headers: { "cache-control": "no-store" } }); }

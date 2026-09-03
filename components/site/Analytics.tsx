@@ -19,7 +19,10 @@ export type AnalyticsEvent =
   | "cvstudio_early_access_submit"
   | "autosourcer_page_view"
   | "autosourcer_interest_click"
-  | "autosourcer_interest_submit";
+  | "autosourcer_interest_submit"
+  | "maatwerk_demo_play"
+  | "maatwerk_demo_50"
+  | "maatwerk_demo_complete";
 
 type TrackOptions = { language: Language; sourceCategory?: string };
 

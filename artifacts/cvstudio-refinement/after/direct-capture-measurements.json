@@ -1,0 +1,2501 @@
+{
+  "nl-hero-1440x900.png": {
+    "copy": "philoo Producten ⌄ Maatwerk NL EN Kennismaken CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "document": {
+      "width": 1425,
+      "height": 5537
+    },
+    "header": {
+      "top": 0,
+      "bottom": 81,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 183,
+        "bottom": 318,
+        "left": 40,
+        "right": 607,
+        "width": 567,
+        "height": 135
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "66.96px",
+      "weight": "700",
+      "lineHeight": "67.6296px",
+      "letterSpacing": "-2.6784px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 545,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 545,
+        "bottom": 1040,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 494
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1040,
+        "bottom": 1956,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 916
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 1956,
+        "bottom": 2336,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 380
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 2336,
+        "bottom": 3471,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 1135
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3471,
+        "bottom": 3825,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 354
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 3825,
+        "bottom": 4314,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 489
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 4314,
+        "bottom": 4597,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 282
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 4597,
+        "bottom": 4972,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 375
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 4972,
+        "bottom": 5436,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      }
+    ],
+    "video": {
+      "top": 1228,
+      "bottom": 1878,
+      "left": 136,
+      "right": 1290,
+      "width": 1154,
+      "height": 649
+    },
+    "outputImage": {
+      "top": 2576,
+      "bottom": 3303,
+      "left": 66,
+      "right": 1360,
+      "width": 1294,
+      "height": 728
+    },
+    "form": {
+      "top": 5255,
+      "bottom": 5335,
+      "left": 130,
+      "right": 1296,
+      "width": 1166,
+      "height": 80
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-problem-demo-1440x900.png": {
+    "copy": "philoo Producten ⌄ Maatwerk NL EN Kennismaken CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "document": {
+      "width": 1425,
+      "height": 5537
+    },
+    "header": {
+      "top": 500,
+      "bottom": 581,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 183,
+        "bottom": 318,
+        "left": 40,
+        "right": 607,
+        "width": 567,
+        "height": 135
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "66.96px",
+      "weight": "700",
+      "lineHeight": "67.6296px",
+      "letterSpacing": "-2.6784px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 545,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 545,
+        "bottom": 1040,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 494
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1040,
+        "bottom": 1956,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 916
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 1956,
+        "bottom": 2336,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 380
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 2336,
+        "bottom": 3471,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 1135
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3471,
+        "bottom": 3825,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 354
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 3825,
+        "bottom": 4314,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 489
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 4314,
+        "bottom": 4597,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 282
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 4597,
+        "bottom": 4972,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 375
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 4972,
+        "bottom": 5436,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      }
+    ],
+    "video": {
+      "top": 1228,
+      "bottom": 1878,
+      "left": 136,
+      "right": 1290,
+      "width": 1154,
+      "height": 649
+    },
+    "outputImage": {
+      "top": 2576,
+      "bottom": 3303,
+      "left": 66,
+      "right": 1360,
+      "width": 1294,
+      "height": 728
+    },
+    "form": {
+      "top": 5255,
+      "bottom": 5335,
+      "left": 130,
+      "right": 1296,
+      "width": 1166,
+      "height": 80
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-demo-1440x900.png": {
+    "copy": "philoo Producten ⌄ Maatwerk NL EN Kennismaken CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "document": {
+      "width": 1425,
+      "height": 5537
+    },
+    "header": {
+      "top": 1050,
+      "bottom": 1131,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 183,
+        "bottom": 318,
+        "left": 40,
+        "right": 607,
+        "width": 567,
+        "height": 135
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "66.96px",
+      "weight": "700",
+      "lineHeight": "67.6296px",
+      "letterSpacing": "-2.6784px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 545,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 545,
+        "bottom": 1040,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 494
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1040,
+        "bottom": 1956,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 916
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 1956,
+        "bottom": 2336,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 380
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 2336,
+        "bottom": 3471,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 1135
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3471,
+        "bottom": 3825,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 354
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 3825,
+        "bottom": 4314,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 489
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 4314,
+        "bottom": 4597,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 282
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 4597,
+        "bottom": 4972,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 375
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 4972,
+        "bottom": 5436,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      }
+    ],
+    "video": {
+      "top": 1228,
+      "bottom": 1878,
+      "left": 136,
+      "right": 1290,
+      "width": 1154,
+      "height": 649
+    },
+    "outputImage": {
+      "top": 2576,
+      "bottom": 3303,
+      "left": 66,
+      "right": 1360,
+      "width": 1294,
+      "height": 728
+    },
+    "form": {
+      "top": 5255,
+      "bottom": 5335,
+      "left": 130,
+      "right": 1296,
+      "width": 1166,
+      "height": 80
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-output-1440x900.png": {
+    "copy": "philoo Producten ⌄ Maatwerk NL EN Kennismaken CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "document": {
+      "width": 1425,
+      "height": 5537
+    },
+    "header": {
+      "top": 2300,
+      "bottom": 2381,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 183,
+        "bottom": 318,
+        "left": 40,
+        "right": 607,
+        "width": 567,
+        "height": 135
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "66.96px",
+      "weight": "700",
+      "lineHeight": "67.6296px",
+      "letterSpacing": "-2.6784px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 545,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 545,
+        "bottom": 1040,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 494
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1040,
+        "bottom": 1956,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 916
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 1956,
+        "bottom": 2336,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 380
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 2336,
+        "bottom": 3471,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 1135
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3471,
+        "bottom": 3825,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 354
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 3825,
+        "bottom": 4314,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 489
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 4314,
+        "bottom": 4597,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 282
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 4597,
+        "bottom": 4972,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 375
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 4972,
+        "bottom": 5436,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      }
+    ],
+    "video": {
+      "top": 1228,
+      "bottom": 1878,
+      "left": 136,
+      "right": 1290,
+      "width": 1154,
+      "height": 649
+    },
+    "outputImage": {
+      "top": 2576,
+      "bottom": 3303,
+      "left": 66,
+      "right": 1360,
+      "width": 1294,
+      "height": 728
+    },
+    "form": {
+      "top": 5255,
+      "bottom": 5335,
+      "left": 130,
+      "right": 1296,
+      "width": 1166,
+      "height": 80
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-trust-privacy-1440x900.png": {
+    "copy": "philoo Producten ⌄ Maatwerk NL EN Kennismaken CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "document": {
+      "width": 1425,
+      "height": 5537
+    },
+    "header": {
+      "top": 3700,
+      "bottom": 3781,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 183,
+        "bottom": 318,
+        "left": 40,
+        "right": 607,
+        "width": 567,
+        "height": 135
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "66.96px",
+      "weight": "700",
+      "lineHeight": "67.6296px",
+      "letterSpacing": "-2.6784px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 545,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 545,
+        "bottom": 1040,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 494
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1040,
+        "bottom": 1956,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 916
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 1956,
+        "bottom": 2336,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 380
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 2336,
+        "bottom": 3471,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 1135
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3471,
+        "bottom": 3825,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 354
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 3825,
+        "bottom": 4314,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 489
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 4314,
+        "bottom": 4597,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 282
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 4597,
+        "bottom": 4972,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 375
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 4972,
+        "bottom": 5436,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      }
+    ],
+    "video": {
+      "top": 1228,
+      "bottom": 1878,
+      "left": 136,
+      "right": 1290,
+      "width": 1154,
+      "height": 649
+    },
+    "outputImage": {
+      "top": 2576,
+      "bottom": 3303,
+      "left": 66,
+      "right": 1360,
+      "width": 1294,
+      "height": 728
+    },
+    "form": {
+      "top": 5255,
+      "bottom": 5335,
+      "left": 130,
+      "right": 1296,
+      "width": 1166,
+      "height": 80
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-pricing-form-1440x900.png": {
+    "copy": "philoo Producten ⌄ Maatwerk NL EN Kennismaken CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "document": {
+      "width": 1425,
+      "height": 5537
+    },
+    "header": {
+      "top": 4550,
+      "bottom": 4631,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 183,
+        "bottom": 318,
+        "left": 40,
+        "right": 607,
+        "width": 567,
+        "height": 135
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "66.96px",
+      "weight": "700",
+      "lineHeight": "67.6296px",
+      "letterSpacing": "-2.6784px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 545,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 545,
+        "bottom": 1040,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 494
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1040,
+        "bottom": 1956,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 916
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 1956,
+        "bottom": 2336,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 380
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 2336,
+        "bottom": 3471,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 1135
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3471,
+        "bottom": 3825,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 354
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 3825,
+        "bottom": 4314,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 489
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 4314,
+        "bottom": 4597,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 282
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 4597,
+        "bottom": 4972,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 375
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 4972,
+        "bottom": 5436,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      }
+    ],
+    "video": {
+      "top": 1228,
+      "bottom": 1878,
+      "left": 136,
+      "right": 1290,
+      "width": 1154,
+      "height": 649
+    },
+    "outputImage": {
+      "top": 2576,
+      "bottom": 3303,
+      "left": 66,
+      "right": 1360,
+      "width": 1294,
+      "height": 728
+    },
+    "form": {
+      "top": 5255,
+      "bottom": 5335,
+      "left": 130,
+      "right": 1296,
+      "width": 1166,
+      "height": 80
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-hero-390x844.png": {
+    "copy": "philoo CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "document": {
+      "width": 375,
+      "height": 7650
+    },
+    "header": {
+      "top": 0,
+      "bottom": 81,
+      "left": 0,
+      "right": 375,
+      "width": 375,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 150,
+        "bottom": 279,
+        "left": 20,
+        "right": 355,
+        "width": 335,
+        "height": 128
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "42.4px",
+      "weight": "700",
+      "lineHeight": "42.824px",
+      "letterSpacing": "-1.696px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 761,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 680
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 761,
+        "bottom": 1871,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1110
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1871,
+        "bottom": 2293,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 422
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 2293,
+        "bottom": 3090,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 796
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 3090,
+        "bottom": 3882,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 792
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3882,
+        "bottom": 4506,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 624
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 4506,
+        "bottom": 5559,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1053
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 5559,
+        "bottom": 6204,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 644
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 6204,
+        "bottom": 6770,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 567
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 6770,
+        "bottom": 7441,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 671
+      }
+    ],
+    "video": {
+      "top": 2057,
+      "bottom": 2235,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "outputImage": {
+      "top": 3310,
+      "bottom": 3488,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "form": {
+      "top": 7088,
+      "bottom": 7368,
+      "left": 45,
+      "right": 330,
+      "width": 285,
+      "height": 280
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-demo-390x844.png": {
+    "copy": "philoo CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "document": {
+      "width": 375,
+      "height": 7650
+    },
+    "header": {
+      "top": 1800,
+      "bottom": 1881,
+      "left": 0,
+      "right": 375,
+      "width": 375,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 150,
+        "bottom": 279,
+        "left": 20,
+        "right": 355,
+        "width": 335,
+        "height": 128
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "42.4px",
+      "weight": "700",
+      "lineHeight": "42.824px",
+      "letterSpacing": "-1.696px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 761,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 680
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 761,
+        "bottom": 1871,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1110
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1871,
+        "bottom": 2293,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 422
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 2293,
+        "bottom": 3090,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 796
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 3090,
+        "bottom": 3882,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 792
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3882,
+        "bottom": 4506,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 624
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 4506,
+        "bottom": 5559,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1053
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 5559,
+        "bottom": 6204,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 644
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 6204,
+        "bottom": 6770,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 567
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 6770,
+        "bottom": 7441,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 671
+      }
+    ],
+    "video": {
+      "top": 2057,
+      "bottom": 2235,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "outputImage": {
+      "top": 3310,
+      "bottom": 3488,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "form": {
+      "top": 7088,
+      "bottom": 7368,
+      "left": 45,
+      "right": 330,
+      "width": 285,
+      "height": 280
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-output-390x844.png": {
+    "copy": "philoo CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "document": {
+      "width": 375,
+      "height": 7650
+    },
+    "header": {
+      "top": 3050,
+      "bottom": 3131,
+      "left": 0,
+      "right": 375,
+      "width": 375,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 150,
+        "bottom": 279,
+        "left": 20,
+        "right": 355,
+        "width": 335,
+        "height": 128
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "42.4px",
+      "weight": "700",
+      "lineHeight": "42.824px",
+      "letterSpacing": "-1.696px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 761,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 680
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 761,
+        "bottom": 1871,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1110
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1871,
+        "bottom": 2293,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 422
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 2293,
+        "bottom": 3090,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 796
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 3090,
+        "bottom": 3882,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 792
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3882,
+        "bottom": 4506,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 624
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 4506,
+        "bottom": 5559,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1053
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 5559,
+        "bottom": 6204,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 644
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 6204,
+        "bottom": 6770,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 567
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 6770,
+        "bottom": 7441,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 671
+      }
+    ],
+    "video": {
+      "top": 2057,
+      "bottom": 2235,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "outputImage": {
+      "top": 3310,
+      "bottom": 3488,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "form": {
+      "top": 7088,
+      "bottom": 7368,
+      "left": 45,
+      "right": 330,
+      "width": 285,
+      "height": 280
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-form-390x844.png": {
+    "copy": "philoo CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "document": {
+      "width": 375,
+      "height": 7650
+    },
+    "header": {
+      "top": 6700,
+      "bottom": 6781,
+      "left": 0,
+      "right": 375,
+      "width": 375,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 150,
+        "bottom": 279,
+        "left": 20,
+        "right": 355,
+        "width": 335,
+        "height": 128
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "42.4px",
+      "weight": "700",
+      "lineHeight": "42.824px",
+      "letterSpacing": "-1.696px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 761,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 680
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 761,
+        "bottom": 1871,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1110
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1871,
+        "bottom": 2293,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 422
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 2293,
+        "bottom": 3090,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 796
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 3090,
+        "bottom": 3882,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 792
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3882,
+        "bottom": 4506,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 624
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 4506,
+        "bottom": 5559,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1053
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 5559,
+        "bottom": 6204,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 644
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 6204,
+        "bottom": 6770,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 567
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 6770,
+        "bottom": 7441,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 671
+      }
+    ],
+    "video": {
+      "top": 2057,
+      "bottom": 2235,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "outputImage": {
+      "top": 3310,
+      "bottom": 3488,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "form": {
+      "top": 7088,
+      "bottom": 7368,
+      "left": 45,
+      "right": 330,
+      "width": 285,
+      "height": 280
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-full-1440.png": {
+    "copy": "philoo Producten ⌄ Maatwerk NL EN Kennismaken CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "document": {
+      "width": 1425,
+      "height": 5537
+    },
+    "header": {
+      "top": 0,
+      "bottom": 81,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 183,
+        "bottom": 318,
+        "left": 40,
+        "right": 607,
+        "width": 567,
+        "height": 135
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "66.96px",
+      "weight": "700",
+      "lineHeight": "67.6296px",
+      "letterSpacing": "-2.6784px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 545,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 545,
+        "bottom": 1040,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 494
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1040,
+        "bottom": 1956,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 916
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 1956,
+        "bottom": 2336,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 380
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 2336,
+        "bottom": 3471,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 1135
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3471,
+        "bottom": 3825,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 354
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 3825,
+        "bottom": 4314,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 489
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 4314,
+        "bottom": 4597,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 282
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 4597,
+        "bottom": 4972,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 375
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 4972,
+        "bottom": 5436,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      }
+    ],
+    "video": {
+      "top": 1228,
+      "bottom": 1878,
+      "left": 136,
+      "right": 1290,
+      "width": 1154,
+      "height": 649
+    },
+    "outputImage": {
+      "top": 2576,
+      "bottom": 3303,
+      "left": 66,
+      "right": 1360,
+      "width": 1294,
+      "height": 728
+    },
+    "form": {
+      "top": 5255,
+      "bottom": 5335,
+      "left": 130,
+      "right": 1296,
+      "width": 1166,
+      "height": 80
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "nl-full-390.png": {
+    "copy": "philoo CV STUDIO Eén kandidaat. Elke gevraagde versie. Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Meld je aan voor vroege toegang Bekijk de demo HET PROBLEEM Eén kandidaat, vaak meerdere versies. De kandidaat blijft hetzelfde. Maar een bureau, opdrachtgever of aanbesteding kan een andere indeling, andere informatie of andere regels vragen. Bureauformat Het kandidaatprofiel in de eigen stijl en opbouw van het bureau. Opdrachtgever Een versie die past bij wat een specifieke klant wil zien. Aanbesteding Een profiel met de gevraagde onderdelen en relevante informatie voor de aanbesteding. Geanonimiseerde versie Persoonsgegevens weglaten wanneer dat voor deze versie nodig is. BEKIJK CV STUDIO Van bron-CV naar de juiste versie. HOE HET WERKT Van één bron naar de juiste versie in drie stappen. 1 Upload één bron-CV Upload het originele CV of haal de gegevens uit je bestaande proces. 2 Kies bestemming en regels Kies voor wie het profiel bedoeld is en welke opbouw, informatie en regels nodig zijn. 3 Controleer en download Bekijk het resultaat, pas aan waar nodig en gebruik daarna de juiste versie. VERSCHILLENDE UITVOER, ÉÉN BRON Dezelfde kandidaat. Een profiel dat past bij de ontvanger. Bureauprofiel Opdrachtgeverprofiel Aanbestedingsprofiel Geanonimiseerde versie Niet alleen een andere opmaak. Per bestemming kan verschillen welke informatie belangrijk is, in welke volgorde die staat en wat wel of niet wordt getoond. Volgorde Relevante ervaring Verplichte onderdelen Huisstijl Privacy DE RECRUITER HOUDT CONTROLE Gebaseerd op het bron-CV. Niet op verzonnen informatie. Brongetrouw De inhoud blijft gebaseerd op de informatie uit het bron-CV. Niets verzinnen Philoo voegt geen ervaring, vaardigheden of opleidingen toe die niet in de bron staan. Eerst controleren De recruiter bekijkt het resultaat voordat de versie wordt gebruikt. PDF en DOCX Gebruik de uiteindelijke versie in het formaat dat bij jullie proces past. Privacy kan per versie verschillen. Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen. Aansluiten op je bestaande proces. CV Studio kan als losse stap worden gebruikt en kan later waar passend worden aangesloten op bestaande recruitmentsoftware. FLEXIBEL STARTEN Betaal op een manier die past bij je gebruik. CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken. Pay-as-you-go Betaal per gebruik wanneer je af en toe een profiel nodig hebt. Maandplan voor teams Een vast maandbedrag voor teams met meer volume. VROEGE TOEGANG Wil je CV Studio als een van de eersten gebruiken? Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen. Naam Zakelijke e-mail Bedrijf Website Meld je aan voor vroege toegang We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio. Privacybeleid philoo © 2026 Philoo. Alle rechten voorbehouden. Privacybeleid Algemene voorwaarden",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "document": {
+      "width": 375,
+      "height": 7650
+    },
+    "header": {
+      "top": 0,
+      "bottom": 81,
+      "left": 0,
+      "right": 375,
+      "width": 375,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 150,
+        "bottom": 279,
+        "left": 20,
+        "right": 355,
+        "width": 335,
+        "height": 128
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "42.4px",
+      "weight": "700",
+      "lineHeight": "42.824px",
+      "letterSpacing": "-1.696px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 761,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 680
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 761,
+        "bottom": 1871,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1110
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1871,
+        "bottom": 2293,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 422
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 2293,
+        "bottom": 3090,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 796
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 3090,
+        "bottom": 3882,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 792
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3882,
+        "bottom": 4506,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 624
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 4506,
+        "bottom": 5559,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1053
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 5559,
+        "bottom": 6204,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 644
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 6204,
+        "bottom": 6770,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 567
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 6770,
+        "bottom": 7441,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 671
+      }
+    ],
+    "video": {
+      "top": 2057,
+      "bottom": 2235,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "outputImage": {
+      "top": 3310,
+      "bottom": 3488,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "form": {
+      "top": 7088,
+      "bottom": 7368,
+      "left": 45,
+      "right": 330,
+      "width": 285,
+      "height": 280
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "en-hero-1440x900.png": {
+    "copy": "philoo Products ⌄ Custom Software NL EN Get in touch CV STUDIO One candidate. Every version you need. Turn one source CV into the right version for your agency, client or tender. Join early access Watch the demo THE PROBLEM One candidate often needs multiple versions. The candidate stays the same, but an agency, client or tender may require a different structure, information or set of rules. Agency format A candidate profile in the agency's own structure and style. Client profile A version tailored to what a specific client needs to see. Tender profile A profile structured around the information requested for a tender. Anonymised version Personal information removed when that version requires it. SEE CV STUDIO From source CV to the right version. HOW IT WORKS From one source to the right version in three steps. 1 Upload one source CV Upload the original CV or bring the information in from your existing process. 2 Choose destination and rules Choose who the profile is for and which structure, information and rules apply. 3 Review and download Check the result, make adjustments where needed and use the final version. DIFFERENT OUTPUTS, ONE SOURCE The same candidate. A profile that fits the recipient. Agency profile Client profile Tender profile Anonymised version More than a different layout. Each destination can require different information, a different order and different rules for what should or should not be shown. Order Relevant experience Required sections Brand style Privacy THE RECRUITER STAYS IN CONTROL Based on the source CV. Not invented information. Source-faithful Content stays based on information contained in the source CV. Nothing invented Philoo does not add experience, skills or education that are not in the source. Review first The recruiter reviews the result before the version is used. PDF and DOCX Use the final version in the format that fits your process. Privacy can differ by version. One client may require a complete profile while another version needs to be anonymised. Rules can therefore differ for each output. Fits into your existing process. CV Studio can be used as a standalone step and can later be connected to existing recruitment software where appropriate. FLEXIBLE START Pay in a way that fits your usage. CV Studio is designed for both occasional use and teams producing candidate profiles more frequently. Pay-as-you-go Pay per use when you only need profiles occasionally. Monthly team plan A fixed monthly fee for teams with more volume. EARLY ACCESS Want to be one of the first to use CV Studio? Leave your details and we’ll get in touch when there is an opportunity to try CV Studio. Name Business email Company Website Join early access We only use your details to contact you about CV Studio. Privacy Policy philoo © 2026 Philoo. All rights reserved. Privacy Policy Terms and Conditions",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "document": {
+      "width": 1425,
+      "height": 5537
+    },
+    "header": {
+      "top": 0,
+      "bottom": 81,
+      "left": 0,
+      "right": 1425,
+      "width": 1425,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 153,
+        "bottom": 356,
+        "left": 40,
+        "right": 607,
+        "width": 567,
+        "height": 203
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "66.96px",
+      "weight": "700",
+      "lineHeight": "67.6296px",
+      "letterSpacing": "-2.6784px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 553,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 472
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 553,
+        "bottom": 1068,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 515
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1068,
+        "bottom": 1984,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 916
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 1984,
+        "bottom": 2364,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 380
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 2364,
+        "bottom": 3500,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 1136
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3500,
+        "bottom": 3854,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 354
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 3854,
+        "bottom": 4343,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 489
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 4343,
+        "bottom": 4597,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 254
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 4597,
+        "bottom": 4972,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 375
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 4972,
+        "bottom": 5436,
+        "left": 0,
+        "right": 1425,
+        "width": 1425,
+        "height": 464
+      }
+    ],
+    "video": {
+      "top": 1257,
+      "bottom": 1906,
+      "left": 136,
+      "right": 1290,
+      "width": 1154,
+      "height": 649
+    },
+    "outputImage": null,
+    "form": {
+      "top": 5255,
+      "bottom": 5335,
+      "left": 130,
+      "right": 1296,
+      "width": 1166,
+      "height": 80
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "en-hero-390x844.png": {
+    "copy": "philoo CV STUDIO One candidate. Every version you need. Turn one source CV into the right version for your agency, client or tender. Join early access Watch the demo THE PROBLEM One candidate often needs multiple versions. The candidate stays the same, but an agency, client or tender may require a different structure, information or set of rules. Agency format A candidate profile in the agency's own structure and style. Client profile A version tailored to what a specific client needs to see. Tender profile A profile structured around the information requested for a tender. Anonymised version Personal information removed when that version requires it. SEE CV STUDIO From source CV to the right version. HOW IT WORKS From one source to the right version in three steps. 1 Upload one source CV Upload the original CV or bring the information in from your existing process. 2 Choose destination and rules Choose who the profile is for and which structure, information and rules apply. 3 Review and download Check the result, make adjustments where needed and use the final version. DIFFERENT OUTPUTS, ONE SOURCE The same candidate. A profile that fits the recipient. Agency profile Client profile Tender profile Anonymised version More than a different layout. Each destination can require different information, a different order and different rules for what should or should not be shown. Order Relevant experience Required sections Brand style Privacy THE RECRUITER STAYS IN CONTROL Based on the source CV. Not invented information. Source-faithful Content stays based on information contained in the source CV. Nothing invented Philoo does not add experience, skills or education that are not in the source. Review first The recruiter reviews the result before the version is used. PDF and DOCX Use the final version in the format that fits your process. Privacy can differ by version. One client may require a complete profile while another version needs to be anonymised. Rules can therefore differ for each output. Fits into your existing process. CV Studio can be used as a standalone step and can later be connected to existing recruitment software where appropriate. FLEXIBLE START Pay in a way that fits your usage. CV Studio is designed for both occasional use and teams producing candidate profiles more frequently. Pay-as-you-go Pay per use when you only need profiles occasionally. Monthly team plan A fixed monthly fee for teams with more volume. EARLY ACCESS Want to be one of the first to use CV Studio? Leave your details and we’ll get in touch when there is an opportunity to try CV Studio. Name Business email Company Website Join early access We only use your details to contact you about CV Studio. Privacy Policy philoo © 2026 Philoo. All rights reserved. Privacy Policy Terms and Conditions",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "document": {
+      "width": 375,
+      "height": 7382
+    },
+    "header": {
+      "top": 0,
+      "bottom": 81,
+      "left": 0,
+      "right": 375,
+      "width": 375,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 150,
+        "bottom": 279,
+        "left": 20,
+        "right": 355,
+        "width": 335,
+        "height": 128
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "42.4px",
+      "weight": "700",
+      "lineHeight": "42.824px",
+      "letterSpacing": "-1.696px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 733,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 652
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 733,
+        "bottom": 1791,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1058
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1791,
+        "bottom": 2213,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 422
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 2213,
+        "bottom": 2986,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 772
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 2986,
+        "bottom": 3778,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 792
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3778,
+        "bottom": 4402,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 624
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 4402,
+        "bottom": 5398,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 996
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 5398,
+        "bottom": 5966,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 568
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 5966,
+        "bottom": 6533,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 567
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 6533,
+        "bottom": 7173,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 640
+      }
+    ],
+    "video": {
+      "top": 1977,
+      "bottom": 2155,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "outputImage": null,
+    "form": {
+      "top": 6820,
+      "bottom": 7100,
+      "left": 45,
+      "right": 330,
+      "width": 285,
+      "height": 280
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  },
+  "en-form-390x844.png": {
+    "copy": "philoo CV STUDIO One candidate. Every version you need. Turn one source CV into the right version for your agency, client or tender. Join early access Watch the demo THE PROBLEM One candidate often needs multiple versions. The candidate stays the same, but an agency, client or tender may require a different structure, information or set of rules. Agency format A candidate profile in the agency's own structure and style. Client profile A version tailored to what a specific client needs to see. Tender profile A profile structured around the information requested for a tender. Anonymised version Personal information removed when that version requires it. SEE CV STUDIO From source CV to the right version. HOW IT WORKS From one source to the right version in three steps. 1 Upload one source CV Upload the original CV or bring the information in from your existing process. 2 Choose destination and rules Choose who the profile is for and which structure, information and rules apply. 3 Review and download Check the result, make adjustments where needed and use the final version. DIFFERENT OUTPUTS, ONE SOURCE The same candidate. A profile that fits the recipient. Agency profile Client profile Tender profile Anonymised version More than a different layout. Each destination can require different information, a different order and different rules for what should or should not be shown. Order Relevant experience Required sections Brand style Privacy THE RECRUITER STAYS IN CONTROL Based on the source CV. Not invented information. Source-faithful Content stays based on information contained in the source CV. Nothing invented Philoo does not add experience, skills or education that are not in the source. Review first The recruiter reviews the result before the version is used. PDF and DOCX Use the final version in the format that fits your process. Privacy can differ by version. One client may require a complete profile while another version needs to be anonymised. Rules can therefore differ for each output. Fits into your existing process. CV Studio can be used as a standalone step and can later be connected to existing recruitment software where appropriate. FLEXIBLE START Pay in a way that fits your usage. CV Studio is designed for both occasional use and teams producing candidate profiles more frequently. Pay-as-you-go Pay per use when you only need profiles occasionally. Monthly team plan A fixed monthly fee for teams with more volume. EARLY ACCESS Want to be one of the first to use CV Studio? Leave your details and we’ll get in touch when there is an opportunity to try CV Studio. Name Business email Company Website Join early access We only use your details to contact you about CV Studio. Privacy Policy philoo © 2026 Philoo. All rights reserved. Privacy Policy Terms and Conditions",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "document": {
+      "width": 375,
+      "height": 7382
+    },
+    "header": {
+      "top": 6538,
+      "bottom": 6619,
+      "left": 0,
+      "right": 375,
+      "width": 375,
+      "height": 81
+    },
+    "h1": {
+      "rect": {
+        "top": 150,
+        "bottom": 279,
+        "left": 20,
+        "right": 355,
+        "width": 335,
+        "height": 128
+      },
+      "family": "Inter, \"SF Pro Display\", \"Segoe UI\", ui-sans-serif, system-ui, sans-serif",
+      "size": "42.4px",
+      "weight": "700",
+      "lineHeight": "42.824px",
+      "letterSpacing": "-1.696px"
+    },
+    "sections": [
+      {
+        "name": "hero",
+        "id": null,
+        "top": 81,
+        "bottom": 733,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 652
+      },
+      {
+        "name": "problem",
+        "id": null,
+        "top": 733,
+        "bottom": 1791,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 1058
+      },
+      {
+        "name": "demo",
+        "id": "demo",
+        "top": 1791,
+        "bottom": 2213,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 422
+      },
+      {
+        "name": "steps",
+        "id": null,
+        "top": 2213,
+        "bottom": 2986,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 772
+      },
+      {
+        "name": "outputs",
+        "id": null,
+        "top": 2986,
+        "bottom": 3778,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 792
+      },
+      {
+        "name": "differences",
+        "id": null,
+        "top": 3778,
+        "bottom": 4402,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 624
+      },
+      {
+        "name": "trust",
+        "id": null,
+        "top": 4402,
+        "bottom": 5398,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 996
+      },
+      {
+        "name": "reassurance",
+        "id": null,
+        "top": 5398,
+        "bottom": 5966,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 568
+      },
+      {
+        "name": "pricing",
+        "id": null,
+        "top": 5966,
+        "bottom": 6533,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 567
+      },
+      {
+        "name": "early-access",
+        "id": "early-access",
+        "top": 6533,
+        "bottom": 7173,
+        "left": 0,
+        "right": 375,
+        "width": 375,
+        "height": 640
+      }
+    ],
+    "video": {
+      "top": 1977,
+      "bottom": 2155,
+      "left": 29,
+      "right": 346,
+      "width": 317,
+      "height": 178
+    },
+    "outputImage": null,
+    "form": {
+      "top": 6820,
+      "bottom": 7100,
+      "left": 45,
+      "right": 330,
+      "width": 285,
+      "height": 280
+    },
+    "counts": {
+      "h1": 1,
+      "form": 1,
+      "video": 1,
+      "footer": 1
+    },
+    "overflow": false,
+    "errors": []
+  }
+}

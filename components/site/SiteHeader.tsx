@@ -11,6 +11,7 @@ type HeaderCopy = {
   products: string;
   productLinks: Array<{ href: string; label: string }>;
   customSoftware: { href: string; label: string };
+  about: { href: string; label: string };
   contact: string;
   menu: string;
   close: string;
@@ -29,6 +30,7 @@ const headerCopy: Record<Language, HeaderCopy> = {
       { href: "/auto-sourcer", label: "Automatisch kandidaten vinden" },
     ],
     customSoftware: { href: "/maatwerk", label: "Maatwerk" },
+    about: { href: "/over", label: "Over Philoo" },
     contact: "Kennismaken",
     menu: "Menu openen",
     close: "Menu sluiten",
@@ -41,6 +43,7 @@ const headerCopy: Record<Language, HeaderCopy> = {
       { href: "/en/auto-sourcer", label: "Auto Sourcer" },
     ],
     customSoftware: { href: "/en/custom-software", label: "Custom Software" },
+    about: { href: "/en/about", label: "About Philoo" },
     contact: "Get in touch",
     menu: "Open menu",
     close: "Close menu",
@@ -136,6 +139,9 @@ export function SiteHeader({ lang, languageHrefs = homeLanguageHrefs }: { lang: 
           <Link className="inline-flex min-h-11 items-center rounded-lg px-4 text-sm font-bold text-[#11183B] transition-colors hover:bg-[#F7F7FC] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#563DFF]" href={copy.customSoftware.href}>
             {copy.customSoftware.label}
           </Link>
+          <Link className="inline-flex min-h-11 items-center rounded-lg px-4 text-sm font-bold text-[#11183B] transition-colors hover:bg-[#F7F7FC] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#563DFF]" href={copy.about.href}>
+            {copy.about.label}
+          </Link>
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -175,6 +181,9 @@ export function SiteHeader({ lang, languageHrefs = homeLanguageHrefs }: { lang: 
             ))}
             <Link className="min-h-12 rounded-xl px-4 py-3 text-base font-bold text-[#11183B] hover:bg-[#F5F4FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#563DFF]" href={copy.customSoftware.href} onClick={() => setMenuOpen(false)}>
               {copy.customSoftware.label}
+            </Link>
+            <Link className="min-h-12 rounded-xl px-4 py-3 text-base font-bold text-[#11183B] hover:bg-[#F5F4FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#563DFF]" href={copy.about.href} onClick={() => setMenuOpen(false)}>
+              {copy.about.label}
             </Link>
             <div className="mt-4 border-t border-[#EAEBF2] pt-4">
               <LanguageLinks hrefs={languageHrefs} lang={lang} onNavigate={() => setMenuOpen(false)} />

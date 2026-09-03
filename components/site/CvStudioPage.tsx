@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { ComponentType, SVGProps } from "react";
 import {
@@ -16,6 +15,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { AnalyticsPageView, TrackedLink } from "@/components/site/Analytics";
 import { CvStudioDemo } from "@/components/site/CvStudioDemo";
 import { ProductInterestForm } from "@/components/site/ProductInterestForm";
+import { PhilooMark } from "@/components/site/PhilooMark";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import type { Language } from "@/lib/i18n";
 
@@ -34,7 +34,7 @@ type CvStudioCopy = {
   integrations: { title: string; body: string };
   pricing: { eyebrow: string; title: string; body: string; items: Item[] };
   access: { eyebrow: string; title: string; body: string; cta: string; privacy: string; successTitle: string; successBody: string };
-  visuals: { flow: string; outputs: string; flowAlt: string; outputsAlt: string };
+  visuals: { flowAlt: string; outputsAlt: string };
 };
 
 const pairedLanguageHrefs = { nl: "/cv-studio", en: "/en/cv-studio" };
@@ -63,7 +63,7 @@ const pageCopy: Record<Language, CvStudioCopy> = {
       eyebrow: "BEKIJK CV STUDIO",
       title: "Van bron-CV naar de juiste versie.",
       label: "CV Studio demo in het Nederlands",
-      source: "/videos/philoo-cv-studio-nl.mp4",
+      source: "/videos/philoo-cv-studio-demo-nl.mp4",
     },
     steps: {
       eyebrow: "HOE HET WERKT",
@@ -126,8 +126,6 @@ const pageCopy: Record<Language, CvStudioCopy> = {
       successBody: "Bedankt. We nemen contact met je op zodra er plek is om CV Studio te testen.",
     },
     visuals: {
-      flow: "/images/cv-studio/flow-nl.png",
-      outputs: "/images/cv-studio/outputs-nl.png",
       flowAlt: "Philoo CV Studio-bron-CV met meerdere mogelijke profielen",
       outputsAlt: "Eén bron-CV met verschillende profielversies voor ontvangers",
     },
@@ -155,7 +153,7 @@ const pageCopy: Record<Language, CvStudioCopy> = {
       eyebrow: "SEE CV STUDIO",
       title: "From source CV to the right version.",
       label: "CV Studio demo in English",
-      source: "/videos/philoo-cv-studio-en.mp4",
+      source: "/videos/philoo-cv-studio-demo-en.mp4",
     },
     steps: {
       eyebrow: "HOW IT WORKS",
@@ -218,8 +216,6 @@ const pageCopy: Record<Language, CvStudioCopy> = {
       successBody: "Thanks. We’ll get in touch when there is an opportunity to try CV Studio.",
     },
     visuals: {
-      flow: "/images/cv-studio/flow-en.png",
-      outputs: "/images/cv-studio/outputs-en.png",
       flowAlt: "Philoo CV Studio source CV with multiple possible profiles",
       outputsAlt: "One source CV with different profile versions for recipients",
     },
@@ -234,14 +230,14 @@ export function CvStudioPage({ lang }: { lang: Language }) {
       <SiteHeader lang={lang} languageHrefs={pairedLanguageHrefs} />
       <AnalyticsPageView event="cvstudio_page_view" language={lang} />
       <main>
-        <section className="relative overflow-hidden border-b border-[#EDEEFA]">
+        <section className="relative overflow-hidden border-b border-[#EDEEFA]" data-cv-section="hero">
           <div className="hero-ambient absolute inset-0" />
-          <div className="relative mx-auto grid max-w-[1440px] gap-8 px-5 pb-12 pt-12 sm:px-8 sm:pb-16 sm:pt-16 lg:grid-cols-[minmax(0,.8fr)_minmax(500px,1.2fr)] lg:items-center lg:gap-10 lg:px-10 lg:pb-18 lg:pt-20 xl:gap-16">
-            <div className="max-w-[650px]">
+          <div className="relative mx-auto grid max-w-[1440px] gap-6 px-5 pb-8 pt-9 sm:px-8 sm:pb-10 sm:pt-11 lg:grid-cols-[minmax(0,.88fr)_minmax(460px,1.12fr)] lg:items-center lg:gap-12 lg:px-10 lg:py-10 xl:gap-14">
+            <div className="max-w-[620px]">
               <p className="text-[0.72rem] font-black tracking-[0.08em] text-[#563DFF] sm:text-xs">{copy.hero.eyebrow}</p>
-              <h1 className="mt-5 text-[clamp(2.7rem,5vw,5.2rem)] font-black leading-[0.98] tracking-[-0.067em] text-[#091238]">{copy.hero.title}</h1>
-              <p className="mt-6 max-w-[600px] text-[1.04rem] leading-8 text-[#4D5679] sm:text-[1.13rem]">{copy.hero.body}</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <h1 className="mt-4 max-w-[600px] text-[clamp(2.65rem,4.65vw,4.6rem)] font-bold leading-[1.01] tracking-[-0.04em] text-[#091238]">{copy.hero.title}</h1>
+              <p className="mt-5 max-w-[610px] text-[1rem] leading-7 text-[#4D5679] sm:text-[1.08rem] sm:leading-8">{copy.hero.body}</p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <TrackedLink className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#563DFF] px-5 text-center text-[0.96rem] font-bold text-white shadow-[0_12px_28px_rgba(86,61,255,0.24)] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#563DFF]" event="cvstudio_early_access_click" href="#early-access" language={lang}>
                   {copy.hero.primary}<ArrowRightIcon className="h-5 w-5 shrink-0" />
                 </TrackedLink>
@@ -250,114 +246,114 @@ export function CvStudioPage({ lang }: { lang: Language }) {
                 </Link>
               </div>
             </div>
-            <ProductVisual alt={copy.visuals.flowAlt} src={copy.visuals.flow} />
+            <ProductVisual alt={copy.visuals.flowAlt} lang={lang} />
           </div>
         </section>
 
-        <section aria-labelledby="problem-heading" className="px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-22">
+        <section aria-labelledby="problem-heading" className="px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14" data-cv-section="problem">
           <div className="mx-auto max-w-[1280px]">
-            <SectionIntro eyebrow={copy.problem.eyebrow} title={copy.problem.title} body={copy.problem.body} />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
+            <SectionIntro eyebrow={copy.problem.eyebrow} title={copy.problem.title} body={copy.problem.body} tier="support" />
+            <div className="mt-7 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
               {copy.problem.items.map(({ title, body, icon: Icon }) => (
-                <article className="rounded-[1.45rem] border border-[#E1E4F2] bg-white p-6 shadow-[0_14px_36px_rgba(30,37,92,0.045)]" key={title}>
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#F0EEFF] text-[#563DFF]"><Icon className="h-5 w-5" /></span>
-                  <h3 className="mt-5 text-[1.2rem] font-black leading-[1.15] tracking-[-0.04em] text-[#11183B]">{title}</h3>
-                  <p className="mt-3 text-[0.96rem] leading-7 text-[#56607E]">{body}</p>
+                <article className="rounded-[1.45rem] border border-[#E1E4F2] bg-white p-5 shadow-[0_12px_30px_rgba(30,37,92,0.04)] sm:p-6" key={title}>
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#F0EEFF] text-[#563DFF]"><Icon className="h-[1.1rem] w-[1.1rem]" /></span>
+                  <h3 className="mt-4 text-[1.12rem] font-bold leading-[1.18] tracking-[-0.03em] text-[#11183B]">{title}</h3>
+                  <p className="mt-2.5 text-[0.94rem] leading-6 text-[#56607E]">{body}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section aria-labelledby="demo-heading" className="scroll-mt-24 border-y border-[#E6E8F4] bg-[linear-gradient(135deg,#FBFAFF,#F6F5FF_55%,#FBFCFF)] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-22" id="demo">
-          <div className="mx-auto max-w-[1120px]">
-            <SectionIntro centered eyebrow={copy.demo.eyebrow} title={copy.demo.title} />
-            <div className="mt-9 overflow-hidden rounded-[1.55rem] border border-[#DEDBFF] bg-[#091238] p-2 shadow-[0_26px_70px_rgba(46,39,130,0.19)] sm:p-3">
+        <section aria-labelledby="demo-heading" className="scroll-mt-24 border-y border-[#E6E8F4] bg-[linear-gradient(135deg,#FBFAFF,#F6F5FF_55%,#FBFCFF)] px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16" data-cv-section="demo" id="demo">
+          <div className="mx-auto max-w-[1180px]">
+            <SectionIntro centered eyebrow={copy.demo.eyebrow} title={copy.demo.title} tier="primary" />
+            <div className="mt-8 overflow-hidden rounded-[1.55rem] border border-[#DEDBFF] bg-[#091238] p-2 shadow-[0_24px_62px_rgba(46,39,130,0.18)] sm:p-3">
               <CvStudioDemo label={copy.demo.label} language={lang} source={copy.demo.source} />
             </div>
           </div>
         </section>
 
-        <section aria-labelledby="steps-heading" className="px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-22">
+        <section aria-labelledby="steps-heading" className="px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-12" data-cv-section="steps">
           <div className="mx-auto max-w-[1240px]">
-            <SectionIntro centered eyebrow={copy.steps.eyebrow} title={copy.steps.title} />
-            <ol className="mt-10 grid gap-5 lg:grid-cols-3 lg:gap-7">
+            <SectionIntro centered eyebrow={copy.steps.eyebrow} title={copy.steps.title} tier="compact" />
+            <ol className="mt-7 grid gap-4 lg:grid-cols-3 lg:gap-5">
               {copy.steps.items.map(({ title, body, icon: Icon }, index) => (
-                <li className="relative rounded-[1.45rem] border border-[#E2E5F2] bg-white p-6 shadow-[0_12px_35px_rgba(26,37,93,0.04)] sm:p-7" key={title}>
-                  <div className="flex items-center gap-4"><span className="grid h-10 w-10 place-items-center rounded-full bg-[#F0EEFF] text-lg font-black text-[#563DFF]">{index + 1}</span><span className="grid h-11 w-11 place-items-center rounded-xl bg-[#F6F5FF] text-[#563DFF]"><Icon className="h-5 w-5" /></span></div>
-                  <h3 className="mt-6 text-[1.24rem] font-black leading-[1.15] tracking-[-0.04em] text-[#11183B]">{title}</h3>
-                  <p className="mt-3 text-[0.98rem] leading-7 text-[#56607E]">{body}</p>
+                <li className="relative rounded-[1.45rem] border border-[#E2E5F2] bg-white p-5 shadow-[0_10px_28px_rgba(26,37,93,0.035)] sm:p-6" key={title}>
+                  <div className="flex items-center gap-3"><span className="grid h-9 w-9 place-items-center rounded-full bg-[#F0EEFF] text-base font-bold text-[#563DFF]">{index + 1}</span><span className="grid h-10 w-10 place-items-center rounded-xl bg-[#F6F5FF] text-[#563DFF]"><Icon className="h-[1.1rem] w-[1.1rem]" /></span></div>
+                  <h3 className="mt-5 text-[1.14rem] font-bold leading-[1.18] tracking-[-0.03em] text-[#11183B]">{title}</h3>
+                  <p className="mt-2.5 text-[0.95rem] leading-6 text-[#56607E]">{body}</p>
                 </li>
               ))}
             </ol>
           </div>
         </section>
 
-        <section aria-labelledby="outputs-heading" className="border-y border-[#E8EAF3] bg-[#FCFCFF] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-22">
-          <div className="mx-auto max-w-[1280px]">
-            <SectionIntro centered eyebrow={copy.outputs.eyebrow} title={copy.outputs.title} />
-            <div className="mt-10 overflow-hidden rounded-[1.6rem] border border-[#E0E2F3] bg-white p-3 shadow-[0_18px_52px_rgba(30,37,92,0.08)] sm:p-5">
-              <Image alt={copy.visuals.outputsAlt} className="h-auto w-full rounded-xl" height={1080} loading="eager" sizes="(max-width: 768px) 100vw, 1100px" src={copy.visuals.outputs} width={1920} />
+        <section aria-labelledby="outputs-heading" className="border-y border-[#E8EAF3] bg-[#FCFCFF] px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16" data-cv-section="outputs">
+          <div className="mx-auto max-w-[1320px]">
+            <SectionIntro centered eyebrow={copy.outputs.eyebrow} title={copy.outputs.title} tier="primary" />
+            <div className="mt-8 overflow-hidden rounded-[1.6rem] border border-[#E0E2F3] bg-white p-2 shadow-[0_18px_48px_rgba(30,37,92,0.075)] sm:p-3">
+              <OutputVisual alt={copy.visuals.outputsAlt} lang={lang} />
             </div>
-            <div className="mt-7 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
               {copy.outputs.items.map(({ title, icon: Icon, tone }) => (
-                <div className="flex items-center gap-3 rounded-2xl border border-[#E1E4F2] bg-white px-4 py-4" key={title}>
-                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#F7F7FF]" style={{ color: tone }}><Icon className="h-5 w-5" /></span>
-                  <span className="text-sm font-black leading-5 text-[#182047]">{title}</span>
+                <div className="flex items-center gap-3 rounded-2xl border border-[#E1E4F2] bg-white px-4 py-3.5" key={title}>
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#F7F7FF]" style={{ color: tone }}><Icon className="h-[1.1rem] w-[1.1rem]" /></span>
+                  <span className="text-sm font-bold leading-5 text-[#182047]">{title}</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-20">
-          <div className="mx-auto grid max-w-[1240px] gap-7 rounded-[1.75rem] border border-[#DFDDFF] bg-[linear-gradient(120deg,#FBFAFF,#F4F2FF)] p-7 shadow-[0_18px_50px_rgba(73,54,184,0.08)] sm:p-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(440px,1fr)] lg:items-center lg:p-12">
-            <div><h2 className="text-[clamp(2rem,3.5vw,3rem)] font-black leading-[1.04] tracking-[-0.055em] text-[#0B1239]">{copy.differences.title}</h2><p className="mt-5 max-w-[560px] text-[1rem] leading-7 text-[#596180] sm:text-[1.08rem]">{copy.differences.body}</p></div>
+        <section className="px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14" data-cv-section="differences">
+          <div className="mx-auto grid max-w-[1240px] gap-5 rounded-[1.75rem] border border-[#DFDDFF] bg-[linear-gradient(120deg,#FBFAFF,#F4F2FF)] p-6 shadow-[0_16px_42px_rgba(73,54,184,0.07)] sm:p-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(440px,1fr)] lg:items-center lg:p-9">
+            <div><h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-[1.08] tracking-[-0.04em] text-[#0B1239]">{copy.differences.title}</h2><p className="mt-3 max-w-[560px] text-[1rem] leading-7 text-[#596180]">{copy.differences.body}</p></div>
             <ul className="grid gap-3 sm:grid-cols-2" role="list">
               {copy.differences.items.map((item) => <li className="flex min-h-12 items-center gap-3 rounded-xl border border-white bg-white/85 px-4 text-sm font-bold text-[#242D55] shadow-[0_8px_20px_rgba(30,37,92,0.04)]" key={item}><CheckCircleIcon className="h-5 w-5 shrink-0 text-[#5D45EF]" />{item}</li>)}
             </ul>
           </div>
         </section>
 
-        <section aria-labelledby="trust-heading" className="border-t border-[#EEF0F8] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-22">
+        <section aria-labelledby="trust-heading" className="border-t border-[#EEF0F8] px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16" data-cv-section="trust">
           <div className="mx-auto max-w-[1280px]">
-            <SectionIntro centered eyebrow={copy.trust.eyebrow} title={copy.trust.title} />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
+            <SectionIntro centered eyebrow={copy.trust.eyebrow} title={copy.trust.title} tier="support" />
+            <div className="mt-7 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
               {copy.trust.items.map(({ title, body, icon: Icon }) => (
-                <article className="rounded-[1.45rem] border border-[#E1E4F2] bg-white p-6" key={title}>
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#F0EEFF] text-[#563DFF]"><Icon className="h-5 w-5" /></span>
-                  <h3 className="mt-5 text-[1.18rem] font-black tracking-[-0.04em] text-[#11183B]">{title}</h3>
-                  <p className="mt-3 text-[0.95rem] leading-7 text-[#56607E]">{body}</p>
+                <article className="rounded-[1.45rem] border border-[#E1E4F2] bg-white p-5 sm:p-6" key={title}>
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#F0EEFF] text-[#563DFF]"><Icon className="h-[1.1rem] w-[1.1rem]" /></span>
+                  <h3 className="mt-4 text-[1.1rem] font-bold tracking-[-0.03em] text-[#11183B]">{title}</h3>
+                  <p className="mt-2.5 text-[0.94rem] leading-6 text-[#56607E]">{body}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="px-5 pb-14 sm:px-8 sm:pb-18 lg:px-10 lg:pb-20">
+        <section className="px-5 pb-10 sm:px-8 sm:pb-12 lg:px-10 lg:pb-12" data-cv-section="reassurance">
           <div className="mx-auto grid max-w-[1240px] gap-5 lg:grid-cols-2">
             <InfoCard icon={ShieldIcon} title={copy.privacy.title} body={copy.privacy.body} />
             <InfoCard icon={SlidersIcon} title={copy.integrations.title} body={copy.integrations.body} />
           </div>
         </section>
 
-        <section aria-labelledby="pricing-heading" className="border-y border-[#E8EAF3] bg-[#FCFCFF] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-20">
+        <section aria-labelledby="pricing-heading" className="border-y border-[#E8EAF3] bg-[#FCFCFF] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-12" data-cv-section="pricing">
           <div className="mx-auto max-w-[1240px]">
-            <SectionIntro eyebrow={copy.pricing.eyebrow} title={copy.pricing.title} body={copy.pricing.body} />
-            <div className="mt-9 grid gap-4 md:grid-cols-2">
+            <SectionIntro eyebrow={copy.pricing.eyebrow} title={copy.pricing.title} body={copy.pricing.body} tier="compact" />
+            <div className="mt-7 grid gap-4 md:grid-cols-2">
               {copy.pricing.items.map(({ title, body, icon: Icon }) => (
-                <article className="flex items-start gap-5 rounded-[1.4rem] border border-[#E2E0FF] bg-white p-6 shadow-[0_12px_34px_rgba(30,37,92,0.05)] sm:p-7" key={title}>
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[#F0EEFF] text-[#563DFF]"><Icon className="h-6 w-6" /></span>
-                  <div><h3 className="text-[1.2rem] font-black tracking-[-0.04em] text-[#11183B]">{title}</h3><p className="mt-3 text-[0.98rem] leading-7 text-[#56607E]">{body}</p></div>
+                <article className="flex items-start gap-4 rounded-[1.4rem] border border-[#E2E0FF] bg-white p-5 shadow-[0_10px_28px_rgba(30,37,92,0.04)] sm:p-6" key={title}>
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#F0EEFF] text-[#563DFF]"><Icon className="h-5 w-5" /></span>
+                  <div><h3 className="text-[1.1rem] font-bold tracking-[-0.03em] text-[#11183B]">{title}</h3><p className="mt-2.5 text-[0.95rem] leading-6 text-[#56607E]">{body}</p></div>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section aria-labelledby="early-access-heading" className="scroll-mt-24 px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-20" id="early-access">
-          <div className="mx-auto max-w-[1240px] rounded-[1.85rem] border border-[#DED9FF] bg-[linear-gradient(118deg,#FBFAFF,#F4F2FF)] p-7 shadow-[0_18px_46px_rgba(78,59,189,0.1)] sm:p-10 lg:p-11">
-            <div className="max-w-[720px]"><p className="text-xs font-black tracking-[0.08em] text-[#563DFF]">{copy.access.eyebrow}</p><h2 className="mt-4 text-[clamp(1.9rem,3.5vw,3rem)] font-black leading-[1.04] tracking-[-0.055em] text-[#0B1239]" id="early-access-heading">{copy.access.title}</h2><p className="mt-4 max-w-[680px] text-[1rem] leading-7 text-[#56607E] sm:text-[1.08rem]">{copy.access.body}</p></div>
+        <section aria-labelledby="early-access-heading" className="scroll-mt-24 px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16" data-cv-section="early-access" id="early-access">
+          <div className="mx-auto max-w-[1240px] rounded-[1.85rem] border border-[#DED9FF] bg-[linear-gradient(118deg,#FBFAFF,#F4F2FF)] p-6 shadow-[0_18px_46px_rgba(78,59,189,0.1)] sm:p-8 lg:p-9">
+            <div className="max-w-[720px]"><p className="text-xs font-black tracking-[0.08em] text-[#563DFF]">{copy.access.eyebrow}</p><h2 className="mt-3 text-[clamp(1.8rem,3vw,2.5rem)] font-bold leading-[1.08] tracking-[-0.04em] text-[#0B1239]" id="early-access-heading">{copy.access.title}</h2><p className="mt-3 max-w-[680px] text-[1rem] leading-7 text-[#56607E]">{copy.access.body}</p></div>
             <ProductInterestForm clickEvent="cvstudio_early_access_click" interestType="cvstudio_early_access" language={lang} privacyText={copy.access.privacy} submitEvent="cvstudio_early_access_submit" submitLabel={copy.access.cta} successMessage={copy.access.successBody} successTitle={copy.access.successTitle} />
           </div>
         </section>
@@ -367,21 +363,107 @@ export function CvStudioPage({ lang }: { lang: Language }) {
   );
 }
 
-function ProductVisual({ src, alt }: { src: string; alt: string }) {
+type VisualCopy = {
+  source: string;
+  outcome: string;
+  agency: string;
+  client: string;
+  tender: string;
+  visualTitle: string;
+  visualBody: string;
+  outputsTitle: string;
+  outputsBody: string;
+  outputLabel: string;
+  clientContext: string;
+  relevantExperience: string;
+  tenderRequirements: string;
+};
+
+const visualCopy: Record<Language, VisualCopy> = {
+  nl: {
+    source: "Kandidaat-CV", outcome: "Juiste output", agency: "Bureauformat", client: "Opdrachtgeversformat", tender: "Aanbestedingsformat",
+    visualTitle: "Eén kandidaat. Elke gevraagde versie.", visualBody: "Van één bron-CV naar bureauprofiel, opdrachtgeverprofiel of aanbestedingsprofiel.",
+    outputsTitle: "Eén kandidaat. Drie verschillende outputs.", outputsBody: "Inhoud, volgorde en nadruk veranderen per ontvanger.", outputLabel: "Outputs voor verschillende ontvangers",
+    clientContext: "Opdrachtgevercontext", relevantExperience: "Relevante ervaring", tenderRequirements: "Kernvereisten uit de uitvraag",
+  },
+  en: {
+    source: "Candidate CV", outcome: "Right output", agency: "Agency format", client: "Client format", tender: "Tender format",
+    visualTitle: "One candidate. Every version you need.", visualBody: "From one source CV to an agency profile, client profile or tender profile.",
+    outputsTitle: "One candidate. Three different outputs.", outputsBody: "Content, order and emphasis change for each recipient.", outputLabel: "Outputs for different recipients",
+    clientContext: "Client context", relevantExperience: "Relevant experience", tenderRequirements: "Tender requirements",
+  },
+};
+
+function ProductLockup({ inverse = false }: { inverse?: boolean }) {
+  return <div className="flex items-center gap-2"><span className="shrink-0"><PhilooMark className="h-6 w-6" sizes="24px" /></span><span className={`text-sm font-bold tracking-[-0.04em] ${inverse ? "text-[#10183D]" : "text-[#10183D]"}`}>Philoo</span><span className={`text-sm font-bold tracking-[-0.04em] ${inverse ? "text-[#2767E9]" : "text-[#2767E9]"}`}>CV Studio</span></div>;
+}
+
+function ProductVisual({ alt, lang }: { alt: string; lang: Language }) {
+  const copy = visualCopy[lang];
+
   return (
-    <div className="relative mx-auto w-full max-w-[760px]">
-      <div aria-hidden="true" className="absolute -inset-7 rounded-full bg-[radial-gradient(circle,rgba(115,86,255,0.2),transparent_63%)] blur-xl" />
-      <div className="relative overflow-hidden rounded-[1.7rem] border border-[#E1DEFF] bg-white shadow-[0_25px_65px_rgba(79,61,193,0.13)]">
-        <Image alt={alt} className="h-auto w-full" height={1080} priority sizes="(max-width: 1024px) 100vw, 720px" src={src} width={1920} />
+    <div aria-label={alt} className="relative mx-auto w-full max-w-[680px]" role="img">
+      <div aria-hidden="true" className="absolute -inset-6 rounded-full bg-[radial-gradient(circle,rgba(115,86,255,0.16),transparent_63%)] blur-xl" />
+      <div className="relative overflow-hidden rounded-[1.55rem] border border-[#E1DEFF] bg-[linear-gradient(135deg,#FFFFFF,#F8F7FF)] p-4 shadow-[0_20px_54px_rgba(79,61,193,0.11)] sm:p-6">
+        <ProductLockup />
+        <h2 className="mt-5 max-w-[480px] text-[clamp(1.4rem,2.55vw,2.15rem)] font-bold leading-[1.04] tracking-[-0.045em] text-[#0B1239]">{copy.visualTitle}</h2>
+        <p className="mt-2 max-w-[430px] text-[0.66rem] leading-4 text-[#5B6480] sm:text-xs sm:leading-5">{copy.visualBody}</p>
+        <div className="mt-5 grid min-w-0 grid-cols-1 justify-items-center gap-2 sm:mt-7 sm:grid-cols-[minmax(0,.82fr)_auto_minmax(0,1.08fr)_auto_minmax(0,.88fr)] sm:items-center sm:gap-3">
+          <VisualSourceCard className="w-full max-w-[210px] sm:max-w-none" label={copy.source} />
+          <VisualArrow className="rotate-90 sm:rotate-0" />
+          <div className="flex min-h-10 w-full max-w-[260px] items-center justify-center rounded-full border border-[#CFC8FF] bg-[#F4F2FF] px-2.5 shadow-[0_8px_18px_rgba(73,56,222,0.12)] sm:min-h-14 sm:max-w-none sm:px-4"><ProductLockup inverse /></div>
+          <VisualArrow className="rotate-90 sm:rotate-0" />
+          <div className="flex min-h-10 w-full max-w-[260px] items-center justify-center gap-1.5 rounded-full border border-[#CDEBDD] bg-[#F0FAF4] px-2 text-center text-[0.55rem] font-bold leading-tight text-[#18384B] sm:min-h-14 sm:max-w-none sm:gap-2 sm:px-4 sm:text-xs"><CheckCircleIcon className="h-3.5 w-3.5 shrink-0 text-[#17A765] sm:h-5 sm:w-5" />{copy.outcome}</div>
+        </div>
+        <div className="mt-3 border-l border-t border-r border-[#D5D9E8] pt-3 sm:ml-[32%] sm:mt-4 sm:pt-4">
+          <div className="grid grid-cols-3 gap-1 sm:gap-1.5">
+            <OutputChip icon={BuildingIcon} label={copy.agency} tone="#17A765" />
+            <OutputChip icon={UserIcon} label={copy.client} tone="#2767E9" />
+            <OutputChip icon={ReceiptIcon} label={copy.tender} tone="#7651D8" />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-function SectionIntro({ eyebrow, title, body, centered = false }: { eyebrow: string; title: string; body?: string; centered?: boolean }) {
-  return <div className={`${centered ? "mx-auto text-center" : ""} max-w-[760px]`}><p className="text-xs font-black tracking-[0.08em] text-[#563DFF]">{eyebrow}</p><h2 className="mt-4 text-[clamp(2.1rem,4vw,3.45rem)] font-black leading-[1.04] tracking-[-0.055em] text-[#0B1239]">{title}</h2>{body ? <p className={`${centered ? "mx-auto" : ""} mt-5 max-w-[710px] text-[1rem] leading-7 text-[#596180] sm:text-[1.08rem]`}>{body}</p> : null}</div>;
+function VisualArrow({ className = "" }: { className?: string }) {
+  return <ArrowRightIcon aria-hidden="true" className={`h-4 w-4 text-[#2767E9] sm:h-6 sm:w-6 ${className}`} />;
+}
+
+function VisualSourceCard({ className = "", label }: { className?: string; label: string }) {
+  return <div className={`relative rounded-xl border border-[#DFE3EF] bg-white p-2 shadow-[0_7px_16px_rgba(20,31,78,0.08)] sm:rounded-2xl sm:p-3 ${className}`}><span className="absolute -top-3 left-2 rounded-full bg-[#EEF0FA] px-2 py-1 text-[0.48rem] font-bold text-[#1B254A] sm:-top-4 sm:left-3 sm:px-3 sm:text-[0.62rem]">{label}</span><p className="mt-2 text-[0.53rem] font-bold text-[#182146] sm:mt-3 sm:text-xs">Jan de Vries</p><p className="mt-1 text-[0.42rem] text-[#5E6783] sm:text-[0.58rem]">Senior Projectleider</p><div className="mt-2 space-y-1.5 sm:mt-3 sm:space-y-2"><span className="block h-1 rounded-full bg-[#E4E6EE]" /><span className="block h-1 w-4/5 rounded-full bg-[#E4E6EE]" /><span className="block h-1 w-3/5 rounded-full bg-[#E4E6EE]" /></div></div>;
+}
+
+function OutputChip({ icon: Icon, label, tone }: { icon: Icon; label: string; tone: string }) {
+  return <div className="min-w-0 rounded-lg border border-[#E3E5EE] bg-white px-1.5 py-2 text-center shadow-[0_5px_12px_rgba(20,31,78,0.06)] sm:rounded-xl sm:px-2 sm:py-3"><Icon className="mx-auto h-3 w-3 sm:h-4 sm:w-4" style={{ color: tone }} /><span className="mt-1 block whitespace-nowrap text-[0.44rem] font-bold leading-none tracking-[-0.02em] text-[#1D274B] sm:text-[0.56rem]">{label}</span></div>;
+}
+
+function OutputVisual({ alt, lang }: { alt: string; lang: Language }) {
+  const copy = visualCopy[lang];
+  const profileCards = [
+    { title: copy.agency, tone: "#17A765", detailTitle: "Profiel", lines: ["Projectmanagement", "Stakeholdermanagement", "Risicobeheersing"], icon: BuildingIcon },
+    { title: copy.client, tone: "#2767E9", detailTitle: copy.clientContext, lines: ["Noordelijk Waterschap", copy.relevantExperience, "Waterbouwkundige projecten"], icon: UserIcon },
+    { title: copy.tender, tone: "#7651D8", detailTitle: copy.tenderRequirements, lines: ["Leidinggeven aan projectteams", "Waterbouwkundige ervaring", "Planning en risicobeheersing"], icon: ReceiptIcon },
+  ];
+
+  return <div aria-label={alt} className="rounded-xl bg-[linear-gradient(135deg,#FCFDFF,#F7F6FF)] p-3 sm:p-5" role="img"><div className="flex flex-wrap items-start justify-between gap-3"><ProductLockup /><div className="max-w-[760px] text-left sm:text-right"><h3 className="text-[clamp(1.05rem,2.4vw,2rem)] font-bold leading-[1.06] tracking-[-0.04em] text-[#0B1239]">{copy.outputsTitle}</h3><p className="mt-1 text-[0.72rem] leading-5 text-[#5C6583] sm:text-sm">{copy.outputsBody}</p></div></div><div className="mt-5 grid gap-3 md:grid-cols-[minmax(160px,.68fr)_40px_repeat(3,minmax(0,1fr))] md:items-stretch"><VisualSourceCard label={copy.source} /><div className="hidden place-items-center md:grid"><VisualArrow /></div><div className="md:col-span-3"><div className="mb-3 rounded-full bg-[#EEF0FA] px-3 py-1.5 text-center text-[0.68rem] font-bold text-[#1B254A] sm:text-xs">{copy.outputLabel}</div><div className="grid gap-3 sm:grid-cols-3">{profileCards.map((card) => <ProfilePreviewCard {...card} key={card.title} />)}</div></div></div></div>;
+}
+
+function ProfilePreviewCard({ title, tone, detailTitle, lines, icon: Icon }: { title: string; tone: string; detailTitle: string; lines: string[]; icon: Icon }) {
+  return <article className="rounded-xl border border-[#DFE3EF] bg-white p-3.5 text-left shadow-[0_8px_18px_rgba(20,31,78,0.06)] sm:p-4"><div className="flex items-center gap-2"><span className="grid h-7 w-7 place-items-center rounded-lg bg-[#F5F5FF]" style={{ color: tone }}><Icon className="h-4 w-4" /></span><h4 className="text-[0.76rem] font-bold leading-tight sm:text-sm" style={{ color: tone }}>{title}</h4></div><div className="mt-3 border-t border-[#E4E6EE] pt-3"><p className="text-sm font-bold text-[#162345]">Jan de Vries</p><p className="mt-1 text-[0.67rem] text-[#56607E]">Senior Projectleider</p><h5 className="mt-4 text-[0.72rem] font-bold sm:text-[0.8rem]" style={{ color: tone }}>{detailTitle}</h5><ul className="mt-2 space-y-1.5 text-[0.66rem] leading-4 text-[#53607B] sm:text-xs">{lines.map((line) => <li className="flex gap-1.5" key={line}><span style={{ color: tone }}>•</span><span>{line}</span></li>)}</ul></div></article>;
+}
+
+function SectionIntro({ eyebrow, title, body, centered = false, tier = "support" }: { eyebrow: string; title: string; body?: string; centered?: boolean; tier?: "primary" | "support" | "compact" }) {
+  const titleClasses = {
+    primary: "text-[clamp(2rem,3.5vw,3rem)] font-bold leading-[1.06] tracking-[-0.04em]",
+    support: "text-[clamp(1.9rem,3.15vw,2.6rem)] font-bold leading-[1.08] tracking-[-0.04em]",
+    compact: "text-[clamp(1.7rem,2.7vw,2.2rem)] font-bold leading-[1.1] tracking-[-0.035em]",
+  }[tier];
+
+  return <div className={`${centered ? "mx-auto text-center" : ""} max-w-[760px]`}><p className="text-xs font-black tracking-[0.08em] text-[#563DFF]">{eyebrow}</p><h2 className={`mt-3 ${titleClasses} text-[#0B1239]`}>{title}</h2>{body ? <p className={`${centered ? "mx-auto" : ""} mt-4 max-w-[710px] text-[1rem] leading-7 text-[#596180]`}>{body}</p> : null}</div>;
 }
 
 function InfoCard({ title, body, icon: Icon }: { title: string; body: string; icon: Icon }) {
-  return <article className="rounded-[1.5rem] border border-[#E1E4F2] bg-white p-7 shadow-[0_14px_36px_rgba(30,37,92,0.045)] sm:p-8"><span className="grid h-11 w-11 place-items-center rounded-xl bg-[#F0EEFF] text-[#563DFF]"><Icon className="h-5 w-5" /></span><h2 className="mt-5 text-[1.5rem] font-black leading-[1.12] tracking-[-0.045em] text-[#11183B]">{title}</h2><p className="mt-4 text-[0.98rem] leading-7 text-[#56607E]">{body}</p></article>;
+  return <article className="rounded-[1.5rem] border border-[#E1E4F2] bg-white p-6 shadow-[0_12px_30px_rgba(30,37,92,0.04)] sm:p-7"><span className="grid h-10 w-10 place-items-center rounded-xl bg-[#F0EEFF] text-[#563DFF]"><Icon className="h-[1.1rem] w-[1.1rem]" /></span><h2 className="mt-4 text-[1.3rem] font-bold leading-[1.16] tracking-[-0.035em] text-[#11183B]">{title}</h2><p className="mt-3 text-[0.96rem] leading-7 text-[#56607E]">{body}</p></article>;
 }

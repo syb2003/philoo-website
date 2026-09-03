@@ -5,7 +5,6 @@ import {
   BuildingIcon,
   CalendarIcon,
   ChatIcon,
-  CubeIcon,
   FileCheckIcon,
   MailIcon,
   SearchIcon,
@@ -14,6 +13,7 @@ import {
 } from "@/components/Icons";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AnalyticsPageView, TrackedAnchor } from "@/components/site/Analytics";
+import { MaatwerkDemo } from "@/components/site/MaatwerkDemo";
 import { PhilooMark } from "@/components/site/PhilooMark";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { CALENDLY_URL, type Language } from "@/lib/i18n";
@@ -148,12 +148,12 @@ export function CustomSoftwarePage({ lang }: { lang: Language }) {
       <main>
         <section className="relative overflow-hidden border-b border-[#EDEEFA]">
           <div className="hero-ambient absolute inset-0" />
-          <div className="relative mx-auto grid max-w-[1440px] gap-10 px-5 pb-12 pt-12 sm:px-8 sm:pb-14 sm:pt-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(490px,0.85fr)] lg:items-center lg:px-10 lg:pb-16 lg:pt-20 xl:gap-16">
+          <div className="relative mx-auto grid max-w-[1440px] gap-8 px-5 pb-10 pt-10 sm:px-8 sm:pb-12 sm:pt-14 lg:grid-cols-[minmax(0,0.95fr)_minmax(490px,0.85fr)] lg:items-center lg:px-10 lg:py-14 xl:gap-14">
             <div className="max-w-[710px]">
               <p className="text-[0.72rem] font-black tracking-[0.075em] text-[#563DFF] sm:text-xs">{copy.hero.eyebrow}</p>
-              <h1 className="mt-5 max-w-[790px] text-[clamp(2.7rem,5.15vw,5.1rem)] font-black leading-[0.98] tracking-[-0.065em] text-[#091238]">{copy.hero.title}</h1>
-              <p className="mt-6 max-w-[660px] text-[1.02rem] leading-8 text-[#4D5679] sm:text-[1.12rem]">{copy.hero.body}</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <h1 className="mt-4 max-w-[790px] text-[clamp(2.55rem,4.75vw,4.7rem)] font-bold leading-[1.02] tracking-[-0.04em] text-[#091238]">{copy.hero.title}</h1>
+              <p className="mt-5 max-w-[660px] text-[1.02rem] leading-7 text-[#4D5679] sm:text-[1.1rem] sm:leading-8">{copy.hero.body}</p>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <TrackedAnchor className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#563DFF] px-6 text-base font-bold text-white shadow-[0_12px_28px_rgba(86,61,255,0.24)] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#563DFF]" event="calendly_cta_click" href={CALENDLY_URL} language={lang} rel="noopener noreferrer" sourceCategory="calendly" target="_blank">
                   {copy.hero.primary}<ArrowRightIcon className="h-5 w-5" />
                 </TrackedAnchor>
@@ -166,12 +166,12 @@ export function CustomSoftwarePage({ lang }: { lang: Language }) {
           </div>
         </section>
 
-        <section aria-labelledby="examples-heading" className="scroll-mt-24 border-b border-[#EEF0F8] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-20" id="voorbeelden">
+        <section aria-labelledby="examples-heading" className="scroll-mt-24 border-b border-[#EEF0F8] px-5 py-11 sm:px-8 sm:py-14 lg:px-10 lg:py-16" id="voorbeelden">
           <div className="mx-auto max-w-[1440px]">
             <SectionIntro eyebrow={copy.examples.eyebrow} title={copy.examples.title} body={copy.examples.body} />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5">
               {copy.examples.cards.map(({ title, body, icon: Icon }) => (
-                <article className="flex min-h-[250px] flex-col rounded-[1.5rem] border border-[#E1E4F2] bg-white p-6 shadow-[0_14px_36px_rgba(30,37,92,0.05)] sm:p-7" key={title}>
+                <article className="flex min-h-[220px] flex-col rounded-[1.5rem] border border-[#E1E4F2] bg-white p-6 shadow-[0_14px_36px_rgba(30,37,92,0.05)] sm:p-7" key={title}>
                   <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#F0EEFF] text-[#563DFF]"><Icon className="h-5 w-5" /></span>
                   <h3 className="mt-6 text-[1.35rem] font-black leading-[1.12] tracking-[-0.04em] text-[#11183B]">{title}</h3>
                   <p className="mt-4 text-[0.98rem] leading-7 text-[#56607E]">{body}</p>
@@ -181,20 +181,22 @@ export function CustomSoftwarePage({ lang }: { lang: Language }) {
           </div>
         </section>
 
-        <section aria-labelledby="systems-heading" className="px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-20">
-          <div className="mx-auto grid max-w-[1240px] gap-10 rounded-[2rem] border border-[#E2E0FF] bg-[linear-gradient(135deg,#FBFAFF,#F4F2FF_54%,#FBFCFF)] p-7 shadow-[0_20px_60px_rgba(73,54,184,0.08)] sm:p-10 lg:grid-cols-[minmax(0,0.78fr)_minmax(470px,1fr)] lg:items-center lg:p-12">
+        {lang === "nl" ? <MaatwerkDemo language={lang} /> : null}
+
+        <section aria-labelledby="systems-heading" className="px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+          <div className="mx-auto grid max-w-[1240px] gap-8 rounded-[2rem] border border-[#E2E0FF] bg-[linear-gradient(135deg,#FBFAFF,#F4F2FF_54%,#FBFCFF)] p-6 shadow-[0_16px_42px_rgba(73,54,184,0.06)] sm:p-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(470px,1fr)] lg:items-center lg:p-9">
             <div>
               <SectionIntro eyebrow={copy.systems.eyebrow} title={copy.systems.title} body={copy.systems.body} compact />
-              <p className="mt-7 border-l-2 border-[#775CFF] pl-4 text-base font-bold leading-7 text-[#313A63]">{copy.systems.supporting}</p>
+              <p className="mt-5 border-l-2 border-[#775CFF] pl-4 text-base font-bold leading-7 text-[#313A63]">{copy.systems.supporting}</p>
             </div>
             <SystemsDiagram copy={copy.systems} visual={copy.visual} />
           </div>
         </section>
 
-        <section aria-labelledby="approach-heading" className="border-t border-[#EEF0F8] px-5 py-14 sm:px-8 sm:py-18 lg:px-10 lg:py-20">
+        <section aria-labelledby="approach-heading" className="border-t border-[#EEF0F8] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
           <div className="mx-auto max-w-[1240px]">
             <SectionIntro centered eyebrow={copy.approach.eyebrow} title={copy.approach.title} />
-            <ol className="mt-10 grid gap-5 lg:grid-cols-3 lg:gap-7">
+            <ol className="mt-8 grid gap-4 lg:grid-cols-3 lg:gap-6">
               {copy.approach.steps.map((step, index) => (
                 <li className="relative rounded-[1.45rem] border border-[#E2E5F2] bg-white p-6 sm:p-7" key={step.title}>
                   <span className="grid h-12 w-12 place-items-center rounded-full bg-[#F0EEFF] text-xl font-black text-[#563DFF]">{index + 1}</span>
@@ -206,15 +208,18 @@ export function CustomSoftwarePage({ lang }: { lang: Language }) {
           </div>
         </section>
 
-        <section aria-labelledby="contact-heading" className="px-5 pb-14 sm:px-8 sm:pb-18 lg:px-10 lg:pb-20">
+        <section aria-labelledby="contact-heading" className="px-5 pb-11 sm:px-8 sm:pb-14 lg:px-10 lg:pb-16">
           <div className="mx-auto flex max-w-[1240px] flex-col gap-7 rounded-[1.85rem] border border-[#DED9FF] bg-[linear-gradient(118deg,#FBFAFF,#F4F2FF)] p-7 shadow-[0_18px_46px_rgba(78,59,189,0.1)] sm:p-10 lg:flex-row lg:items-center lg:justify-between lg:p-11">
             <div className="max-w-[720px]">
               <h2 className="text-[clamp(1.85rem,3vw,2.75rem)] font-black leading-[1.04] tracking-[-0.055em] text-[#0B1239]" id="contact-heading">{copy.cta.title}</h2>
               <p className="mt-4 max-w-[680px] text-[1rem] leading-7 text-[#56607E] sm:text-[1.08rem]">{copy.cta.body}</p>
             </div>
-            <TrackedAnchor className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#563DFF] px-6 text-base font-bold text-white shadow-[0_12px_28px_rgba(86,61,255,0.24)] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#563DFF]" event="calendly_cta_click" href={CALENDLY_URL} language={lang} rel="noopener noreferrer" sourceCategory="calendly" target="_blank">
-              {copy.cta.label}<ArrowRightIcon className="h-5 w-5" />
-            </TrackedAnchor>
+            <div className="flex flex-col items-start gap-3 lg:items-end">
+              <TrackedAnchor className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#563DFF] px-6 text-base font-bold text-white shadow-[0_12px_28px_rgba(86,61,255,0.24)] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#563DFF]" event="calendly_cta_click" href={CALENDLY_URL} language={lang} rel="noopener noreferrer" sourceCategory="calendly" target="_blank">
+                {copy.cta.label}<ArrowRightIcon className="h-5 w-5" />
+              </TrackedAnchor>
+              <span className="text-sm text-[#596180]">{lang === "nl" ? "Liever mailen?" : "Prefer email?"} <a className="font-semibold text-[#30395F] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#563DFF]" href="mailto:hello@philoo.nl">hello@philoo.nl</a></span>
+            </div>
           </div>
         </section>
       </main>
@@ -239,10 +244,10 @@ function CustomSoftwareVisual({ copy }: { copy: PageCopy["visual"] }) {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_50%,rgba(112,84,255,0.16),transparent_29%),linear-gradient(145deg,rgba(255,255,255,0.95),rgba(245,243,255,0.9))]" />
       <div className="relative grid gap-5 md:grid-cols-[1fr_132px_1fr] md:items-center">
         <VisualGroup icons={existingIcons} labels={copy.existing} title={copy.inputs} />
-        <div className="relative mx-auto grid h-28 w-28 place-items-center rounded-full border border-white bg-[#6A51F8] text-white shadow-[0_16px_38px_rgba(91,67,240,0.28)] md:h-32 md:w-32">
-          <span className="absolute -inset-4 rounded-full border border-[#C9C0FF]/70" />
-          <PhilooMark className="relative h-16 w-16 drop-shadow-[0_8px_14px_rgba(0,0,0,0.14)]" />
-          <span className="absolute -bottom-8 w-40 text-center text-[0.68rem] font-black uppercase tracking-[0.08em] text-[#523BDB]">{copy.layer}</span>
+        <div className="relative mx-auto flex min-h-28 w-full flex-col items-center justify-center">
+          <span className="absolute h-28 w-28 rounded-full bg-[#EEEAFE]/70 blur-2xl" />
+          <PhilooMark className="relative h-12 w-12 object-contain md:h-14 md:w-14" />
+          <span className="relative mt-2 text-[1.2rem] font-black leading-none tracking-[-0.075em] text-[#0A1034]">philoo</span>
         </div>
         <VisualGroup icons={processIcons} labels={copy.processes} title={copy.outputs} />
       </div>
@@ -268,7 +273,7 @@ function SystemsDiagram({ copy, visual }: { copy: PageCopy["systems"]; visual: P
   return (
     <div aria-hidden="true" className="grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
       <DiagramColumn items={visual.existing} title={copy.existing} />
-      <div className="relative mx-auto grid h-20 w-20 place-items-center rounded-2xl bg-[#634BF2] text-white shadow-[0_14px_30px_rgba(86,61,255,0.22)]"><CubeIcon className="h-8 w-8" /></div>
+      <div className="relative mx-auto flex h-20 w-24 items-center justify-center"><PhilooMark className="h-10 w-10 object-contain" /></div>
       <DiagramColumn items={visual.processes} title={copy.processes} />
       <p className="sm:col-span-3 sm:pt-1 text-center text-sm font-black text-[#513AD8]">{copy.layer}</p>
     </div>

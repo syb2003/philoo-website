@@ -66,7 +66,7 @@ export function HomePage({ lang }: { lang: Language }) {
       <main>
         <section className="relative overflow-hidden border-b border-[#EDEEFA]" data-home-hero>
           <div className="hero-ambient absolute inset-0" />
-          <div className="relative mx-auto grid max-w-[1440px] gap-0 px-5 pb-4 pt-9 sm:px-8 sm:pb-7 sm:pt-11 lg:grid-cols-[minmax(0,1fr)_minmax(300px,0.68fr)] lg:items-center lg:gap-12 lg:px-10 lg:py-9 xl:gap-16">
+          <div className="relative mx-auto grid max-w-[1440px] gap-0 px-5 pb-4 pt-9 sm:px-8 sm:pb-7 sm:pt-11 lg:grid-cols-[minmax(0,1fr)_minmax(300px,0.68fr)] lg:items-center lg:gap-12 lg:px-10 lg:py-5 xl:gap-16">
             <div className="max-w-[700px]">
               <p className="text-[0.72rem] font-black tracking-[0.075em] text-[#563DFF] sm:text-xs">{copy.eyebrow}</p>
               <h1 className="mt-4 max-w-[580px] text-[clamp(2.65rem,4.65vw,4.6rem)] font-bold leading-[1.01] tracking-[-0.04em] text-[#091238]">{copy.title}</h1>

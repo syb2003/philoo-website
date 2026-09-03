@@ -67,7 +67,10 @@ export type SiteAnalyticsEventName =
   | "cvstudio_early_access_submit"
   | "autosourcer_page_view"
   | "autosourcer_interest_click"
-  | "autosourcer_interest_submit";
+  | "autosourcer_interest_submit"
+  | "maatwerk_demo_play"
+  | "maatwerk_demo_50"
+  | "maatwerk_demo_complete";
 
 export type GuideEventInput = {
   event: GuideEventName | SiteAnalyticsEventName;
