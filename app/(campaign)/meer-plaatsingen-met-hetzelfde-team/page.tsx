@@ -3,12 +3,14 @@ import Link from "next/link";
 import { GuideEmailForm } from "@/components/GuideEmailForm";
 import { ArrowRightIcon, CalendarIcon, CheckCircleIcon, FileCheckIcon } from "@/components/Icons";
 import { TrackedGuideDownloadLink } from "@/components/TrackedGuideDownloadLink";
+import { TrackedAnchor } from "@/components/site/Analytics";
+import { PhilooLogo } from "@/components/site/PhilooLogo";
 import { CALENDLY_URL } from "@/lib/i18n";
 
 const pageTitle = "Meer plaatsingen met hetzelfde team | Gratis gids | Philoo";
 const pageDescription =
   "Download de gratis Philoo-gids over waar recruitmentbureaus tijd verliezen en welke terugkerende werkzaamheden je als eerste slimmer kunt inrichten.";
-const canonicalUrl = "https://philoo.nl/meer-plaatsingen-met-hetzelfde-team";
+const canonicalUrl = "https://www.philoo.nl/meer-plaatsingen-met-hetzelfde-team";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     type: "website",
   },
+  twitter: { card: "summary", title: pageTitle, description: pageDescription },
   robots: {
     index: true,
     follow: true,
@@ -42,13 +45,7 @@ export default function GuideDownloadPage() {
     <div className="flex min-h-screen flex-col bg-[#F7F8FA] text-[#0F1736]">
       <header className="border-b border-[#E6E8EF] bg-white">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-5 px-5 py-5 sm:px-8 lg:px-12">
-          <Link
-            aria-label="Philoo homepage"
-            className="text-[1.85rem] font-black leading-none tracking-[0] text-[#161851] focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-4 sm:text-[2.15rem]"
-            href="/nl"
-          >
-            Philoo
-          </Link>
+          <PhilooLogo href="/nl" />
           <Link
             className="inline-flex items-center gap-2 text-sm font-extrabold text-[#161851] transition-opacity hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-4 sm:text-base"
             href="/nl"
@@ -78,14 +75,17 @@ export default function GuideDownloadPage() {
               </p>
               <div className="mt-10 text-base leading-7 text-[#0F1736]/82 sm:text-lg sm:leading-8">
                 <p>Wil je eens sparren over waar jullie tegenaan lopen?</p>
-                <a
+                <TrackedAnchor
                   className="mt-3 inline-block text-2xl font-black leading-[1.15] text-[#161851] underline decoration-[#D6C48A] decoration-2 underline-offset-8 transition-opacity hover:opacity-75 focus:outline-none focus:ring-2 focus:ring-[#D6C48A] focus:ring-offset-4 sm:text-[1.75rem] lg:text-[2rem] xl:text-[2.25rem]"
                   href={CALENDLY_URL}
+                  event="calendly_cta_click"
+                  language="nl"
+                  sourceCategory="calendly"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   Boek dan een kennismaking.
-                </a>
+                </TrackedAnchor>
               </div>
             </div>
 

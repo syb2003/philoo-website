@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "../globals.css";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { defaultLanguage, isLanguage, languages } from "@/lib/i18n";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.philoo.nl"),
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -27,11 +27,8 @@ export default async function LanguageLayout({
   const htmlLang = isLanguage(lang) ? lang : defaultLanguage;
 
   return (
-    <html className="font-sans antialiased" lang={htmlLang}>
-      <body>
-        {children}
-        <WhatsAppButton lang={htmlLang} />
-      </body>
+      <html className="font-sans antialiased" lang={htmlLang}>
+      <body>{children}</body>
     </html>
   );
 }

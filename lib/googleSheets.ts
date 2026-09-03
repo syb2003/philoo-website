@@ -53,8 +53,27 @@ export type GuideEventName =
   | "guide_email_submitted"
   | "guide_email_form_download_started";
 
+export type SiteAnalyticsEventName =
+  | "site_page_view"
+  | "homepage_maatwerk_click"
+  | "homepage_cvstudio_click"
+  | "homepage_autosourcer_click"
+  | "calendly_cta_click"
+  | "cvstudio_page_view"
+  | "cvstudio_demo_play"
+  | "cvstudio_demo_50"
+  | "cvstudio_demo_complete"
+  | "cvstudio_early_access_click"
+  | "cvstudio_early_access_submit"
+  | "autosourcer_page_view"
+  | "autosourcer_interest_click"
+  | "autosourcer_interest_submit"
+  | "maatwerk_demo_play"
+  | "maatwerk_demo_50"
+  | "maatwerk_demo_complete";
+
 export type GuideEventInput = {
-  event: GuideEventName;
+  event: GuideEventName | SiteAnalyticsEventName;
   source: string;
   email?: string;
   attribution: GuideAttribution;
@@ -245,6 +264,17 @@ export async function recordGuideFormDownloadStarted(input: Omit<GuideEventInput
     event: {
       ...input,
       event: "guide_email_form_download_started",
+      timestamp: input.timestamp ?? new Date().toISOString(),
+    },
+  });
+}
+
+export async function recordSiteAnalyticsEvent(input: Omit<GuideEventInput, "event" | "email"> & { event: SiteAnalyticsEventName }) {
+  await callGuideWebhook({
+    action: "record_event",
+    event: {
+      ...input,
+      email: "",
       timestamp: input.timestamp ?? new Date().toISOString(),
     },
   });

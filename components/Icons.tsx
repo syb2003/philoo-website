@@ -188,6 +188,15 @@ export function SearchIcon(props: IconProps) {
   );
 }
 
+export function ShieldIcon(props: IconProps) {
+  return (
+    <IconBase {...props}>
+      <path d="M12 3 20 6v5c0 5.1-3.4 8.6-8 10-4.6-1.4-8-4.9-8-10V6l8-3Z" />
+      <path d="m8.7 12.2 2.1 2.1 4.5-4.7" />
+    </IconBase>
+  );
+}
+
 export function LightningIcon(props: IconProps) {
   return (
     <IconBase {...props}>

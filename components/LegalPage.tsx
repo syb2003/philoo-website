@@ -1,16 +1,16 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/SiteFooter";
 import type { Language } from "@/lib/i18n";
 
 type LegalPageProps = {
   lang: Language;
   title: string;
-  body: string;
-  smallText: string;
+  children: ReactNode;
   backLabel: string;
 };
 
-export function LegalPage({ lang, title, body, smallText, backLabel }: LegalPageProps) {
+export function LegalPage({ lang, title, children, backLabel }: LegalPageProps) {
   return (
     <div className="page-background min-h-screen">
       <main className="mx-auto max-w-[1620px] px-3 pb-8 pt-5 sm:px-5 lg:px-10 xl:px-12 2xl:px-14">
@@ -18,8 +18,7 @@ export function LegalPage({ lang, title, body, smallText, backLabel }: LegalPage
           <div className="max-w-[760px]">
             <span aria-hidden="true" className="mb-4 block h-px w-12 bg-[#D6C48A]" />
             <h1 className="text-[clamp(1.9rem,4vw,2.6rem)] font-black leading-tight text-[#161851]">{title}</h1>
-            <p className="mt-5 text-[1rem] font-medium leading-8 text-[#0F1736]/84">{body}</p>
-            <p className="mt-4 text-[0.9rem] font-medium leading-6 text-[#0F1736]/58">{smallText}</p>
+            <div className="mt-5 space-y-4 text-[1rem] font-medium leading-8 text-[#0F1736]/84">{children}</div>
             <Link
               className="mt-8 inline-flex items-center text-sm font-black text-[#161851] underline decoration-[#D6C48A] decoration-2 underline-offset-4 transition-opacity hover:opacity-80"
               href={`/${lang}`}
