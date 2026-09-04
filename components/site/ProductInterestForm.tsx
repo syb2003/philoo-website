@@ -13,7 +13,7 @@ type Copy = { name: string; email: string; company: string; submit: string; succ
 
 const copy: Record<Language, Copy> = {
   nl: { name: "Naam", email: "Zakelijke e-mail", company: "Bedrijf", submit: "Meld je aan voor vroege toegang", success: "Bedankt. We nemen contact op zodra er plek is.", error: "Dat ging niet goed. Controleer je gegevens en probeer het opnieuw.", privacy: "We gebruiken je gegevens alleen om contact met je op te nemen over dit product.", privacyLabel: "Privacybeleid", loading: "Bezig…" },
-  en: { name: "Name", email: "Business email", company: "Company", submit: "Join early access", success: "Thanks. We’ll get in touch when there is an opportunity to join.", error: "Something went wrong. Check your details and try again.", privacy: "We only use your details to contact you about this product.", privacyLabel: "Privacy Policy", loading: "Sending…" },
+  en: { name: "Name", email: "Business email", company: "Company", submit: "Join early access", success: "Thanks. We’ll get in touch when there is an opportunity to try it.", error: "Something went wrong. Check your details and try again.", privacy: "We only use your details to contact you about this product.", privacyLabel: "Privacy Policy", loading: "Sending…" },
 };
 
 export function ProductInterestForm({ interestType, language, submitLabel, successMessage, successTitle, privacyText, clickEvent, submitEvent }: { interestType: InterestType; language: Language; submitLabel?: string; successMessage?: string; successTitle?: string; privacyText?: string; clickEvent: AnalyticsEvent; submitEvent: AnalyticsEvent }) {

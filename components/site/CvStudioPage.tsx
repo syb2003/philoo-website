@@ -44,7 +44,7 @@ const pageCopy: Record<Language, CvStudioCopy> = {
     hero: {
       eyebrow: "CV STUDIO",
       title: "Eén kandidaat. Elke gevraagde versie.",
-      body: "Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding.",
+      body: "Maak van één kandidaat-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding.",
       primary: "Meld je aan voor vroege toegang",
       secondary: "Bekijk de demo",
     },
@@ -101,7 +101,7 @@ const pageCopy: Record<Language, CvStudioCopy> = {
     },
     privacy: {
       title: "Privacy kan per versie verschillen.",
-      body: "Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per uitvoer verschillen.",
+      body: "Voor de ene opdrachtgever kan een volledig profiel nodig zijn, terwijl een andere versie geanonimiseerd moet worden. De regels kunnen daarom per versie verschillen.",
     },
     integrations: {
       title: "Aansluiten op je bestaande proces.",
@@ -112,14 +112,14 @@ const pageCopy: Record<Language, CvStudioCopy> = {
       title: "Betaal op een manier die past bij je gebruik.",
       body: "CV Studio is bedoeld voor zowel incidenteel gebruik als teams die vaker kandidaatprofielen maken.",
       items: [
-        { title: "Pay-as-you-go", body: "Betaal per gebruik wanneer je af en toe een profiel nodig hebt.", icon: FileCheckIcon },
-        { title: "Maandplan voor teams", body: "Een vast maandbedrag voor teams met meer volume.", icon: UsersIcon },
+        { title: "Betalen per gebruik", body: "Betaal per gebruik wanneer je af en toe een profiel nodig hebt.", icon: FileCheckIcon },
+        { title: "Maandabonnement voor teams", body: "Een vast maandbedrag voor teams met meer volume.", icon: UsersIcon },
       ],
     },
     access: {
       eyebrow: "VROEGE TOEGANG",
       title: "Wil je CV Studio als een van de eersten gebruiken?",
-      body: "Laat je gegevens achter. We nemen contact op zodra er plek is om CV Studio te testen.",
+      body: "Laat je gegevens achter. We nemen contact op zodra je CV Studio kunt testen.",
       cta: "Meld je aan voor vroege toegang",
       privacy: "We gebruiken je gegevens alleen om contact met je op te nemen over CV Studio.",
       successTitle: "Je staat op de lijst.",
@@ -134,7 +134,7 @@ const pageCopy: Record<Language, CvStudioCopy> = {
     hero: {
       eyebrow: "CV STUDIO",
       title: "One candidate. Every version you need.",
-      body: "Turn one source CV into the right version for your agency, client or tender.",
+      body: "Turn one candidate CV into the right version for your agency, client or tender.",
       primary: "Join early access",
       secondary: "Watch the demo",
     },
@@ -144,14 +144,14 @@ const pageCopy: Record<Language, CvStudioCopy> = {
       body: "The candidate stays the same, but an agency, client or tender may require a different structure, information or set of rules.",
       items: [
         { title: "Agency format", body: "A candidate profile in the agency's own structure and style.", icon: BuildingIcon },
-        { title: "Client profile", body: "A version tailored to what a specific client needs to see.", icon: UserIcon },
-        { title: "Tender profile", body: "A profile structured around the information requested for a tender.", icon: ReceiptIcon },
+        { title: "Client format", body: "A version tailored to what a specific client needs to see.", icon: UserIcon },
+        { title: "Tender format", body: "A profile structured around the information requested for a tender.", icon: ReceiptIcon },
         { title: "Anonymised version", body: "Personal information removed when that version requires it.", icon: ShieldIcon },
       ],
     },
     demo: {
       eyebrow: "SEE CV STUDIO",
-      title: "From source CV to the right version.",
+      title: "From candidate CV to the right version.",
       label: "CV Studio demo in English",
       source: "/videos/philoo-cv-studio-demo-en.mp4",
     },
@@ -159,13 +159,13 @@ const pageCopy: Record<Language, CvStudioCopy> = {
       eyebrow: "HOW IT WORKS",
       title: "From one source to the right version in three steps.",
       items: [
-        { title: "Upload one source CV", body: "Upload the original CV or bring the information in from your existing process.", icon: FileCheckIcon },
+        { title: "Upload one candidate CV", body: "Upload the candidate CV or bring its information in from your existing process.", icon: FileCheckIcon },
         { title: "Choose destination and rules", body: "Choose who the profile is for and which structure, information and rules apply.", icon: SlidersIcon },
         { title: "Review and download", body: "Check the result, make adjustments where needed and use the final version.", icon: CheckCircleIcon },
       ],
     },
     outputs: {
-      eyebrow: "DIFFERENT OUTPUTS, ONE SOURCE",
+      eyebrow: "DIFFERENT VERSIONS, ONE SOURCE",
       title: "The same candidate. A profile that fits the recipient.",
       items: [
         { title: "Agency profile", icon: BuildingIcon, tone: "#1BAA6E" },
@@ -181,9 +181,9 @@ const pageCopy: Record<Language, CvStudioCopy> = {
     },
     trust: {
       eyebrow: "THE RECRUITER STAYS IN CONTROL",
-      title: "Based on the source CV. Not invented information.",
+      title: "Based on the candidate CV. Not invented information.",
       items: [
-        { title: "Source-faithful", body: "Content stays based on information contained in the source CV.", icon: FileCheckIcon },
+        { title: "Source-faithful", body: "Content stays based on information contained in the candidate CV.", icon: FileCheckIcon },
         { title: "Nothing invented", body: "Philoo does not add experience, skills or education that are not in the source.", icon: ShieldIcon },
         { title: "Review first", body: "The recruiter reviews the result before the version is used.", icon: CheckCircleIcon },
         { title: "PDF and DOCX", body: "Use the final version in the format that fits your process.", icon: ReceiptIcon },
@@ -191,7 +191,7 @@ const pageCopy: Record<Language, CvStudioCopy> = {
     },
     privacy: {
       title: "Privacy can differ by version.",
-      body: "One client may require a complete profile while another version needs to be anonymised. Rules can therefore differ for each output.",
+      body: "One client may require a complete profile while another version needs to be anonymised. Rules can therefore differ for each version.",
     },
     integrations: {
       title: "Fits into your existing process.",
@@ -200,7 +200,7 @@ const pageCopy: Record<Language, CvStudioCopy> = {
     pricing: {
       eyebrow: "FLEXIBLE START",
       title: "Pay in a way that fits your usage.",
-      body: "CV Studio is designed for both occasional use and teams producing candidate profiles more frequently.",
+      body: "CV Studio is designed for occasional use and for teams that create candidate profiles more often.",
       items: [
         { title: "Pay-as-you-go", body: "Pay per use when you only need profiles occasionally.", icon: FileCheckIcon },
         { title: "Monthly team plan", body: "A fixed monthly fee for teams with more volume.", icon: UsersIcon },
@@ -216,8 +216,8 @@ const pageCopy: Record<Language, CvStudioCopy> = {
       successBody: "Thanks. We’ll get in touch when there is an opportunity to try CV Studio.",
     },
     visuals: {
-      flowAlt: "Philoo CV Studio source CV with multiple possible profiles",
-      outputsAlt: "One source CV with different profile versions for recipients",
+      flowAlt: "Philoo CV Studio candidate CV with multiple possible profiles",
+      outputsAlt: "One candidate CV with different profile versions for recipients",
     },
   },
 };
@@ -381,15 +381,15 @@ type VisualCopy = {
 
 const visualCopy: Record<Language, VisualCopy> = {
   nl: {
-    source: "Kandidaat-CV", outcome: "Juiste output", agency: "Bureauformat", client: "Opdrachtgeversformat", tender: "Aanbestedingsformat",
-    visualTitle: "Eén kandidaat. Elke gevraagde versie.", visualBody: "Van één bron-CV naar bureauprofiel, opdrachtgeverprofiel of aanbestedingsprofiel.",
-    outputsTitle: "Eén kandidaat. Drie verschillende outputs.", outputsBody: "Inhoud, volgorde en nadruk veranderen per ontvanger.", outputLabel: "Outputs voor verschillende ontvangers",
+    source: "Kandidaat-CV", outcome: "Juiste versie", agency: "Bureauformat", client: "Opdrachtgeversformat", tender: "Aanbestedingsformat",
+    visualTitle: "Eén kandidaat. Elke gevraagde versie.", visualBody: "Van één kandidaat-CV naar bureauprofiel, opdrachtgeverprofiel of aanbestedingsprofiel.",
+    outputsTitle: "Eén kandidaat. Drie verschillende versies.", outputsBody: "Inhoud, volgorde en nadruk veranderen per ontvanger.", outputLabel: "Versies voor verschillende ontvangers",
     clientContext: "Opdrachtgevercontext", relevantExperience: "Relevante ervaring", tenderRequirements: "Kernvereisten uit de uitvraag",
   },
   en: {
-    source: "Candidate CV", outcome: "Right output", agency: "Agency format", client: "Client format", tender: "Tender format",
-    visualTitle: "One candidate. Every version you need.", visualBody: "From one source CV to an agency profile, client profile or tender profile.",
-    outputsTitle: "One candidate. Three different outputs.", outputsBody: "Content, order and emphasis change for each recipient.", outputLabel: "Outputs for different recipients",
+    source: "Candidate CV", outcome: "Right version", agency: "Agency format", client: "Client format", tender: "Tender format",
+    visualTitle: "One candidate. Every version you need.", visualBody: "From one candidate CV to an agency profile, client profile or tender profile.",
+    outputsTitle: "One candidate. Three different versions.", outputsBody: "Content, order and emphasis change for each recipient.", outputLabel: "Versions for different recipients",
     clientContext: "Client context", relevantExperience: "Relevant experience", tenderRequirements: "Tender requirements",
   },
 };
