@@ -9,7 +9,7 @@ import { CALENDLY_URL } from "@/lib/i18n";
 
 const pageTitle = "Meer plaatsingen met hetzelfde team | Gratis gids | Philoo";
 const pageDescription =
-  "Download de gratis Philoo-gids over waar recruitmentbureaus tijd verliezen en welke terugkerende werkzaamheden je als eerste slimmer kunt inrichten.";
+  "Download de gratis Philoo-gids over waar recruitmentbureaus tijd verliezen, welke werkzaamheden onnodig veel tijd kosten en waar je als eerste gericht kunt verbeteren.";
 const canonicalUrl = "https://www.philoo.nl/meer-plaatsingen-met-hetzelfde-team";
 
 export const metadata: Metadata = {

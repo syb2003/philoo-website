@@ -39,13 +39,13 @@ export function MaatwerkDemo({ language }: { language: Language }) {
             Van vacature naar kandidaten uit je eigen database.
           </h2>
           <p className="mt-5 max-w-[700px] text-[1rem] leading-7 text-[#596180] sm:text-[1.08rem]">
-            Bekijk in 80 seconden hoe een maatwerkproces interne sourcing slimmer kan maken rondom bestaande recruitmentsoftware.
+            Bekijk in 80 seconden hoe een maatwerkproces kandidaten uit je bestaande database kan selecteren.
           </p>
         </div>
 
         <div className="mx-auto mt-8 max-w-[1040px] overflow-hidden rounded-[1.5rem] border border-[#DED9FF] bg-[#0A1236] p-1.5 shadow-[0_20px_52px_rgba(58,43,168,0.14)] sm:mt-10 sm:p-2">
           <video
-            aria-label="Demo van een Philoo maatwerkproces voor interne sourcing."
+            aria-label="Demo van een Philoo maatwerkproces voor kandidaten zoeken in je bestaande database."
             className="block aspect-video w-full rounded-[1.05rem] bg-[#0A1236] object-contain"
             controls
             onEnded={() => {

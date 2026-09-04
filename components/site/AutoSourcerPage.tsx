@@ -40,7 +40,7 @@ const pageCopy: Record<Language, AutoSourcerCopy> = {
       eyebrow: "AUTOMATISCH KANDIDATEN VINDEN",
       status: "In ontwikkeling",
       title: "Vind sneller geschikte kandidaten.",
-      body: "Auto Sourcer zoekt eerst in je eigen database en kijkt pas daarna buiten je CRM. Zo krijg je sneller een onderbouwde selectie van kandidaten.",
+      body: "Auto Sourcer zoekt eerst in je eigen database en kijkt pas daarna buiten je CRM. Zo krijg je sneller een onderbouwde selectie van geschikte kandidaten.",
       primary: "Meld interesse",
       secondary: "Volg de ontwikkeling",
     },
@@ -51,7 +51,7 @@ const pageCopy: Record<Language, AutoSourcerCopy> = {
     principles: [
       { title: "Eerst intern zoeken", body: "Auto Sourcer doorzoekt eerst je eigen database op relevante kandidaten.", icon: LightningIcon },
       { title: "Ook buiten je CRM", body: "Als intern niet genoeg oplevert, kan de zoektocht worden uitgebreid naar geselecteerde externe bronnen.", icon: SearchIcon },
-      { title: "Onderbouwde selectie", body: "Je krijgt kandidaten met uitleg waarom ze mogelijk passen bij de vacature.", icon: FileCheckIcon },
+      { title: "Onderbouwde selectie", body: "Je krijgt kandidaten met uitleg waarom ze mogelijk bij de vacature passen.", icon: FileCheckIcon },
       { title: "Recruiter houdt controle", body: "Jij beoordeelt de resultaten en bepaalt wat er daarna gebeurt.", icon: ShieldIcon },
     ],
     steps: {
@@ -79,7 +79,7 @@ const pageCopy: Record<Language, AutoSourcerCopy> = {
       eyebrow: "AUTO SOURCER",
       status: "In development",
       title: "Find suitable candidates faster.",
-      body: "Auto Sourcer searches your own database first and only expands beyond your CRM when needed. This gives you a faster, better-supported selection of candidates.",
+      body: "Auto Sourcer searches your own database first and only looks beyond your CRM when needed. This gives you candidates with clear reasons and less manual searching.",
       primary: "Join the waitlist",
       secondary: "Follow development",
     },
@@ -90,26 +90,26 @@ const pageCopy: Record<Language, AutoSourcerCopy> = {
     principles: [
       { title: "Search internal candidates first", body: "Auto Sourcer checks your own database first for relevant candidates.", icon: LightningIcon },
       { title: "Also search beyond your CRM", body: "If internal results are not enough, the search can expand to selected external sources.", icon: SearchIcon },
-      { title: "Supported selection", body: "You receive candidates with clear reasons why they may fit the vacancy.", icon: FileCheckIcon },
+      { title: "Selection with clear reasons", body: "You receive candidates with clear reasons why they may fit the vacancy.", icon: FileCheckIcon },
       { title: "Recruiter stays in control", body: "You review the results and decide what happens next.", icon: ShieldIcon },
     ],
     steps: {
       eyebrow: "HOW IT WORKS",
-      title: "From vacancy to a selection to review.",
+      title: "From vacancy to a supported selection.",
       items: [
         { title: "Share the vacancy", body: "Provide the vacancy, preferences and important criteria.", icon: FileCheckIcon },
         { title: "Auto Sourcer searches internally and externally", body: "It starts in your own database. If that is not enough, the search expands to selected external sources.", icon: SearchIcon },
-        { title: "Review the selection", body: "You receive a supported selection of candidates and decide the next step.", icon: CheckCircleIcon },
+        { title: "Review the selection", body: "You receive candidates with clear reasons and decide the next step.", icon: CheckCircleIcon },
       ],
     },
     development: {
       eyebrow: "IN DEVELOPMENT",
       title: "We are building Auto Sourcer step by step.",
-      body: "We are developing Auto Sourcer together with recruitment agencies and testing which approach provides the most practical value.",
+      body: "We are developing Auto Sourcer with recruitment agencies and testing what helps in practice.",
     },
     interest: {
       title: "Want to stay informed?",
-      body: "Let us know you are interested. We will get in touch when there is a suitable opportunity to try Auto Sourcer.",
+      body: "Tell us you are interested. We will get in touch when there is an opportunity to try Auto Sourcer.",
       cta: "Join the waitlist",
     },
   },
@@ -153,7 +153,7 @@ export function AutoSourcerPage({ lang }: { lang: Language }) {
         </section>
 
         <section aria-labelledby="interesse-heading" className="scroll-mt-24 px-5 pb-11 sm:px-8 sm:pb-14 lg:px-10 lg:pb-16" id="interesse">
-          <div className="mx-auto max-w-[1240px] rounded-[1.85rem] border border-[#DED9FF] bg-[linear-gradient(118deg,#FBFAFF,#F4F2FF)] p-7 shadow-[0_18px_46px_rgba(78,59,189,0.1)] sm:p-10 lg:p-11"><div className="max-w-[720px]"><h2 className="text-[clamp(1.9rem,3.5vw,3rem)] font-black leading-[1.04] tracking-[-0.055em] text-[#0B1239]" id="interesse-heading">{copy.interest.title}</h2><p className="mt-4 max-w-[680px] text-[1rem] leading-7 text-[#56607E] sm:text-[1.08rem]">{copy.interest.body}</p></div><ProductInterestForm clickEvent="autosourcer_interest_click" interestType="autosourcer_interest" language={lang} submitEvent="autosourcer_interest_submit" submitLabel={copy.interest.cta} successMessage={lang === "nl" ? "Bedankt. We houden je op de hoogte." : "Thanks. We’ll keep you updated."} /></div>
+          <div className="mx-auto max-w-[1240px] rounded-[1.85rem] border border-[#DED9FF] bg-[linear-gradient(118deg,#FBFAFF,#F4F2FF)] p-7 shadow-[0_18px_46px_rgba(78,59,189,0.1)] sm:p-10 lg:p-11"><div className="max-w-[720px]"><h2 className="text-[clamp(1.9rem,3.5vw,3rem)] font-black leading-[1.04] tracking-[-0.055em] text-[#0B1239]" id="interesse-heading">{copy.interest.title}</h2><p className="mt-4 max-w-[680px] text-[1rem] leading-7 text-[#56607E] sm:text-[1.08rem]">{copy.interest.body}</p></div><ProductInterestForm clickEvent="autosourcer_interest_click" interestType="autosourcer_interest" language={lang} submitEvent="autosourcer_interest_submit" submitLabel={copy.interest.cta} successMessage={lang === "nl" ? "Bedankt. We nemen contact op zodra er een geschikte mogelijkheid is." : "Thanks. We’ll keep you updated."} /></div>
         </section>
       </main>
       <SiteFooter lang={lang} />
