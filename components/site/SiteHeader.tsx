@@ -104,7 +104,8 @@ export function SiteHeader({ lang, languageHrefs = homeLanguageHrefs }: { lang: 
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#E8E9F1]/90 bg-white/90 backdrop-blur-xl">
+    <>
+      <header className="sticky top-0 z-50 border-b border-[#E8E9F1]/90 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex min-h-20 max-w-[1440px] items-center justify-between gap-5 px-5 sm:px-8 lg:px-10">
         <PhilooLogo href={lang === "nl" ? "/" : "/en"} />
 
@@ -170,9 +171,11 @@ export function SiteHeader({ lang, languageHrefs = homeLanguageHrefs }: { lang: 
         </button>
       </div>
 
+      </header>
+
       {menuOpen ? (
-        <div aria-modal="true" className="fixed inset-x-0 bottom-0 top-20 z-40 overflow-y-auto border-t border-[#E8E9F1] bg-white px-5 py-6 sm:px-8 lg:hidden" id="mobile-navigation" ref={panelRef} role="dialog" tabIndex={-1}>
-          <nav aria-label="Mobile navigation" className="mx-auto grid max-w-xl gap-2">
+        <div aria-modal="true" className="fixed inset-x-0 bottom-0 top-20 z-[60] isolate h-[calc(100dvh-5rem)] max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain border-t border-[#E8E9F1] bg-white px-5 py-6 shadow-[0_20px_48px_rgba(9,18,56,0.16)] sm:px-8 lg:hidden" id="mobile-navigation" ref={panelRef} role="dialog" tabIndex={-1}>
+          <nav aria-label="Mobile navigation" className="mx-auto grid max-w-xl gap-2 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
             <p className="px-3 pb-1 pt-2 text-xs font-black uppercase tracking-[0.08em] text-[#684EFF]">{copy.products}</p>
             {copy.productLinks.map((item) => (
               <Link className="min-h-12 rounded-xl px-4 py-3 text-base font-bold text-[#11183B] hover:bg-[#F5F4FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#563DFF]" href={item.href} key={item.href} onClick={() => setMenuOpen(false)}>
@@ -195,6 +198,6 @@ export function SiteHeader({ lang, languageHrefs = homeLanguageHrefs }: { lang: 
           </nav>
         </div>
       ) : null}
-    </header>
+    </>
   );
 }
