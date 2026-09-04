@@ -72,7 +72,7 @@ export function HomePage({ lang }: { lang: Language }) {
               <h1 className="mt-4 max-w-[580px] text-[clamp(2.65rem,4.65vw,4.6rem)] font-bold leading-[1.01] tracking-[-0.04em] text-[#091238]">{copy.title}</h1>
               <p className="mt-5 max-w-[660px] text-[1rem] leading-7 text-[#4D5679] sm:text-[1.08rem] sm:leading-8">{copy.intro}</p>
             </div>
-            <div className="mx-auto mt-1 w-[min(28vw,110px)] min-w-0 lg:mt-0 lg:w-full lg:max-w-[330px]" data-home-hero-mark>
+            <div className="mx-auto mt-1 w-[min(34vw,128px)] min-w-0 lg:mt-0 lg:w-full lg:max-w-[360px]" data-home-hero-mark>
               <PhilooHeroMark />
             </div>
           </div>
