@@ -90,7 +90,7 @@ export function LoginScreen({ email }: { email: string }) {
         <section className="rounded-[1.75rem] border border-[#E0E2EC] bg-white p-6 shadow-[0_24px_70px_rgba(20,29,75,0.11)] sm:p-8" aria-labelledby="login-heading">
           <h2 className="text-3xl font-bold tracking-[-0.04em]" id="login-heading">Inloggen</h2>
           <p className="mt-2 text-base leading-7 text-[#626B87]">Open de tijdelijke demo-omgeving van Bluefin.</p>
-          <form className="mt-7 space-y-5" onSubmit={handleSubmit}>
+          <form className="mt-7 space-y-5" method="post" onSubmit={handleSubmit}>
             <div>
               <label className="text-sm font-bold text-[#20284C]" htmlFor="email">E-mailadres</label>
               <input autoComplete="username" className="mt-2 min-h-12 w-full rounded-xl border border-[#D9DCE8] bg-white px-4 text-base text-[#11183B] outline-none transition focus:border-[#765FFF] focus:ring-4 focus:ring-[#765FFF]/10" defaultValue={email} id="email" name="email" required type="email" />
