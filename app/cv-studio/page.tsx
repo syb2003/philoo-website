@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
-import { CvStudioPage } from "@/components/site/CvStudioPage";
-import { socialMetadata } from "@/lib/seo";
+import { LoginScreen } from "@/components/cv-studio/LoginScreen";
+import { redirect } from "next/navigation";
+import { CV_STUDIO_HOME_PATH, getCvStudioDemoEmail } from "@/lib/cv-studio/config";
+import { getDemoSession } from "@/lib/cv-studio/session";
 
-export const metadata: Metadata = {
-  title: "CV Studio voor recruitmentbureaus | Philoo",
-  description: "Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Brongetrouw, controleerbaar en klaar voor gebruik.",
-  alternates: { canonical: "/cv-studio", languages: { nl: "/cv-studio", en: "/en/cv-studio" } },
-  ...socialMetadata("CV Studio voor recruitmentbureaus | Philoo", "Maak van één bron-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding. Brongetrouw, controleerbaar en klaar voor gebruik.", "/cv-studio", "nl_NL"),
-};
-
-export default function DutchCvStudioPage() { return <CvStudioPage lang="nl" />; }
+export default async function CvStudioLoginPage() {
+  if (await getDemoSession()) redirect(CV_STUDIO_HOME_PATH);
+  return <LoginScreen email={getCvStudioDemoEmail()} />;
+}

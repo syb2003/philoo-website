@@ -30,7 +30,7 @@ const homeCopy: Record<Language, {
     intro: "Philoo helpt recruitmentbureaus handmatig werk te verminderen, zodat recruiters sneller kunnen werken en meer tijd hebben voor kandidaten en klanten.",
     routes: [
       { href: "/maatwerk", title: "Maatwerk software, AI & automatisering", body: "Verminder handmatig werk in je recruitmentproces met software rond je ATS, CRM en werkwijze.", cta: "Bekijk maatwerk", accent: "green" },
-      { href: "/cv-studio", badge: "Vroege toegang", title: "CV Studio", body: "Maak van één kandidaat-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding.", cta: "Bekijk CV Studio", accent: "purple" },
+      { href: "/nl/cv-studio", badge: "Vroege toegang", title: "CV Studio", body: "Maak van één kandidaat-CV snel de juiste versie voor je bureau, opdrachtgever of aanbesteding.", cta: "Bekijk CV Studio", accent: "purple" },
       { href: "/auto-sourcer", badge: "In ontwikkeling", title: "Automatisch kandidaten vinden", body: "Vind geschikte kandidaten in én buiten je CRM, zonder steeds handmatig te zoeken.", cta: "Bekijk hoe het werkt", accent: "blue" },
     ],
     whyEyebrow: "WAAROM PHILOO",
