@@ -103,6 +103,47 @@ test("download mappings expose the correct MIME types", () => {
   assert.equal(pdf?.mimeType, "application/pdf");
 });
 
+test("all six final Bluefin PDFs are valid one-page files", async () => {
+  for (const candidate of demoCandidates) {
+    for (const variant of ["named", "anonymous"] as const) {
+      const asset = getDemoOutputAsset(candidate.id, variant, "pdf");
+      assert.ok(asset);
+
+      const file = await readFile(join(assetDirectory, asset.fileName));
+      const pdfSource = file.toString("latin1");
+      assert.equal(file.subarray(0, 5).toString("ascii"), "%PDF-", `${asset.fileName} should be a PDF`);
+      assert.match(pdfSource, /%%EOF\s*$/, `${asset.fileName} should have a valid PDF trailer`);
+      assert.equal(
+        pdfSource.match(/\/Type\s*\/Page\b/g)?.length,
+        1,
+        `${asset.fileName} should contain exactly one page`,
+      );
+    }
+  }
+});
+
+test("all six final Bluefin DOCX files remain editable OOXML packages", async () => {
+  for (const candidate of demoCandidates) {
+    for (const variant of ["named", "anonymous"] as const) {
+      const asset = getDemoOutputAsset(candidate.id, variant, "docx");
+      assert.ok(asset);
+
+      const file = await readFile(join(assetDirectory, asset.fileName));
+      assert.equal(file.subarray(0, 4).toString("hex"), "504b0304", `${asset.fileName} should be an OOXML ZIP package`);
+    }
+  }
+});
+
+test("the result screen derives preview and both downloads from the active variant", async () => {
+  const resultScreen = await readFile(join(projectRoot, "components/cv-studio/ResultScreen.tsx"), "utf8");
+  assert.match(resultScreen, /useState<DemoVariant>\(initialVariant\)/);
+  assert.match(resultScreen, /setVariant\("named"\)/);
+  assert.match(resultScreen, /setVariant\("anonymous"\)/);
+  assert.match(resultScreen, /fileUrl\(candidate\.id, variant, "docx"\)/);
+  assert.match(resultScreen, /fileUrl\(candidate\.id, variant, "pdf"\)/);
+  assert.match(resultScreen, /fileUrl\(candidate\.id, variant, "pdf", true\)/);
+});
+
 test("app pages and file downloads keep the demo session boundary", async () => {
   const [appLayout, fileRoute] = await Promise.all([
     readFile(join(projectRoot, "app/cv-studio/(app)/layout.tsx"), "utf8"),

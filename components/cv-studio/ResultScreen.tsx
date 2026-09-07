@@ -74,7 +74,7 @@ export function ResultScreen({ candidate, initialVariant }: { candidate: DemoCan
             <ArrowRightIcon className="h-4 w-4" />
           </a>
         </div>
-        <iframe className="h-[560px] w-full bg-[#EEF0F4] sm:h-[760px]" key={pdfPreviewUrl} src={pdfPreviewUrl} title={`Preview van ${assetSet.pdf.fileName}`} />
+        <iframe className="h-[720px] w-full bg-[#EEF0F4] sm:h-[920px] lg:h-[1040px]" key={pdfPreviewUrl} src={pdfPreviewUrl} title={`Preview van ${assetSet.pdf.fileName}`} />
       </section>
     </div>
   );
