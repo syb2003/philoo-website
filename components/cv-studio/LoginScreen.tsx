@@ -6,9 +6,9 @@ import { ArrowRightIcon, CheckCircleIcon, FileCheckIcon } from "@/components/Ico
 import { PhilooLogo } from "@/components/site/PhilooLogo";
 
 const steps = [
-  { title: "Huisstijl", body: "Bluefin-stijl staat klaar." },
+  { title: "Huisstijl", body: "Kies de actieve huisstijl." },
   { title: "Kandidaat-cv", body: "Upload een kandidaat-cv." },
-  { title: "Eind-cv", body: "Download een professionele Bluefin-presentatie." },
+  { title: "Eind-cv", body: "Download een professioneel opgemaakt cv." },
 ];
 
 export function LoginScreen({ email }: { email: string }) {
@@ -45,19 +45,19 @@ export function LoginScreen({ email }: { email: string }) {
         <div className="mx-auto flex min-h-20 max-w-[1240px] items-center justify-between px-5 sm:px-8">
           <PhilooLogo />
           <span className="rounded-full border border-[#DAD6FF] bg-[#F4F2FF] px-3 py-1.5 text-sm font-bold text-[#563DFF]">
-            Bluefin demo
+            CV Studio
           </span>
         </div>
       </header>
 
       <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-[1240px] gap-12 px-5 py-10 sm:px-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(380px,0.72fr)] lg:items-center lg:py-14">
         <section className="max-w-[650px]">
-          <p className="text-xs font-black tracking-[0.1em] text-[#563DFF]">BLUEFIN DEMO</p>
+          <p className="text-xs font-black tracking-[0.1em] text-[#563DFF]">PHILOO CV STUDIO</p>
           <h1 className="mt-4 max-w-[620px] text-[clamp(2.5rem,5vw,4.4rem)] font-bold leading-[1.02] tracking-[-0.045em]">
-            CV Studio voor Bluefin
+            Van kandidaat-cv naar professioneel cv
           </h1>
           <p className="mt-5 max-w-[580px] text-[1.05rem] leading-8 text-[#56607E]">
-            Van kandidaat-cv naar een nette Bluefin-presentatie in een paar klikken.
+            Snel een professioneel cv in de gekozen huisstijl.
           </p>
 
           <div className="mt-9 flex max-w-[590px] items-center gap-3 rounded-[1.6rem] border border-[#DFE2EF] bg-white p-4 shadow-[0_18px_46px_rgba(27,36,87,0.07)] sm:gap-5 sm:p-5">
@@ -68,7 +68,7 @@ export function LoginScreen({ email }: { email: string }) {
             <ArrowRightIcon className="h-5 w-5 shrink-0 text-[#563DFF]" />
             <div className="flex min-w-0 flex-1 items-center gap-3 rounded-2xl bg-[#F0EEFF] p-3.5">
               <CheckCircleIcon className="h-6 w-6 shrink-0 text-[#563DFF]" />
-              <span className="text-sm font-bold text-[#342292]">Bluefin-cv</span>
+              <span className="text-sm font-bold text-[#342292]">Eind-cv</span>
             </div>
           </div>
 
@@ -88,8 +88,8 @@ export function LoginScreen({ email }: { email: string }) {
         </section>
 
         <section className="rounded-[1.75rem] border border-[#E0E2EC] bg-white p-6 shadow-[0_24px_70px_rgba(20,29,75,0.11)] sm:p-8" aria-labelledby="login-heading">
-          <h2 className="text-3xl font-bold tracking-[-0.04em]" id="login-heading">Inloggen</h2>
-          <p className="mt-2 text-base leading-7 text-[#626B87]">Open de tijdelijke demo-omgeving van Bluefin.</p>
+          <h2 className="text-3xl font-bold tracking-[-0.04em]" id="login-heading">Inloggen op CV Studio</h2>
+          <p className="mt-2 text-base leading-7 text-[#626B87]">Log in om CV Studio te openen.</p>
           <form className="mt-7 space-y-5" method="post" onSubmit={handleSubmit}>
             <div>
               <label className="text-sm font-bold text-[#20284C]" htmlFor="email">E-mailadres</label>
@@ -105,7 +105,10 @@ export function LoginScreen({ email }: { email: string }) {
               <ArrowRightIcon className="h-5 w-5" />
             </button>
           </form>
-          <p className="mt-5 text-center text-sm text-[#7A8299]">Alleen voor demo-doeleinden</p>
+          <div className="mt-5 text-center text-sm text-[#7A8299]">
+            <p className="font-bold text-[#5B6481]">Tijdelijke demo-omgeving</p>
+            <p className="mt-1">Deze omgeving is bedoeld om de CV Studio-flow te ervaren.</p>
+          </div>
         </section>
       </div>
     </main>

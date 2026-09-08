@@ -144,6 +144,33 @@ test("the result screen derives preview and both downloads from the active varia
   assert.match(resultScreen, /fileUrl\(candidate\.id, variant, "pdf", true\)/);
 });
 
+test("the private CV Studio shell uses generic product language and centralized demo display values", async () => {
+  const uiFiles = [
+    "app/cv-studio/layout.tsx",
+    "app/cv-studio/(app)/dashboard/page.tsx",
+    "app/cv-studio/(app)/conversies/page.tsx",
+    "app/cv-studio/(app)/conversies/nieuw/page.tsx",
+    "app/cv-studio/(app)/templates/page.tsx",
+    "app/cv-studio/(app)/instellingen/page.tsx",
+    "components/cv-studio/AppShell.tsx",
+    "components/cv-studio/LoginScreen.tsx",
+    "components/cv-studio/NewConversion.tsx",
+    "components/cv-studio/ProcessingScreen.tsx",
+    "components/cv-studio/ResultScreen.tsx",
+  ];
+  const privateUi = (await Promise.all(uiFiles.map((file) => readFile(join(projectRoot, file), "utf8")))).join("\n");
+  const displayConfig = await readFile(join(projectRoot, "lib/cv-studio/demo-display-config.ts"), "utf8");
+
+  assert.doesNotMatch(privateUi, /Bluefin demo|CV Studio voor Bluefin|Bluefin-cv wordt voorbereid|Genereer Bluefin-cv|Bluefin-output/i);
+  assert.match(privateUi, /Inloggen op CV Studio/);
+  assert.match(privateUi, /Log in om CV Studio te openen/);
+  assert.match(privateUi, /PHILOO CV STUDIO/);
+  assert.match(displayConfig, /userName:\s*"Wouter"/);
+  assert.match(displayConfig, /userEmail:\s*"wouter@bluefin\.nl"/);
+  assert.match(displayConfig, /companyName:\s*"Bluefin"/);
+  assert.match(displayConfig, /templateName:\s*"Bluefin"/);
+});
+
 test("app pages and file downloads keep the demo session boundary", async () => {
   const [appLayout, fileRoute] = await Promise.all([
     readFile(join(projectRoot, "app/cv-studio/(app)/layout.tsx"), "utf8"),

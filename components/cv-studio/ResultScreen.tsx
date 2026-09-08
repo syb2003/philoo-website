@@ -36,7 +36,7 @@ export function ResultScreen({ candidate, initialVariant }: { candidate: DemoCan
             <div>
               <p className="text-xs font-black tracking-[0.09em] text-[#27875A]">CONVERSIE GEREED</p>
               <h1 className="mt-2 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.05] tracking-[-0.045em]">{candidate.name}</h1>
-              <p className="mt-2 max-w-[650px] text-base leading-7 text-[#5C6680]">De kandidaat-cv is omgezet naar een professioneel opgemaakte Bluefin-cv.</p>
+              <p className="mt-2 max-w-[650px] text-base leading-7 text-[#5C6680]">Het kandidaat-cv is omgezet naar een professioneel opgemaakt cv.</p>
             </div>
           </div>
 

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CheckCircleIcon, FileCheckIcon } from "@/components/Icons";
 import type { DemoCandidate, DemoVariant } from "@/lib/cv-studio/demo-manifest";
+import { cvStudioDemoConfig } from "@/lib/cv-studio/demo-display-config";
 
 const milestones = [
   { progress: 25, label: "Bron-cv ontvangen" },
@@ -34,9 +35,9 @@ export function ProcessingScreen({ candidate, variant }: { candidate: DemoCandid
           <FileCheckIcon className="h-8 w-8" />
         </span>
         <p className="mt-6 text-xs font-black tracking-[0.09em] text-[#563DFF]">CONVERSIE BEZIG</p>
-        <h1 className="mt-3 text-[clamp(2rem,5vw,3.1rem)] font-bold leading-[1.05] tracking-[-0.045em]">Bluefin-cv wordt voorbereid</h1>
+        <h1 className="mt-3 text-[clamp(2rem,5vw,3.1rem)] font-bold leading-[1.05] tracking-[-0.045em]">Je cv wordt voorbereid</h1>
         <p className="mx-auto mt-3 max-w-[510px] text-base leading-7 text-[#626B87]">
-          {candidate.name} · {variant === "anonymous" ? "Anonieme versie" : "Versie met naam"}
+          {candidate.name} · {variant === "anonymous" ? "Anonieme versie" : "Versie met naam"} · Huisstijl: {cvStudioDemoConfig.templateName}
         </p>
 
         <div className="mt-8 h-3 overflow-hidden rounded-full bg-[#ECECF4]" aria-label={`${progress}% gereed`} role="progressbar" aria-valuemax={100} aria-valuemin={0} aria-valuenow={progress}>

@@ -7,7 +7,7 @@ export default async function NewConversionPage() {
   return (
     <div className="mx-auto max-w-[1280px]">
       <PageHeader
-        description="Zet een kandidaat-cv om naar een professioneel opgemaakte Bluefin-cv. Volg de stappen hieronder, het is zo geregeld."
+        description="Zet een kandidaat-cv om naar een professioneel opgemaakt cv in de gekozen huisstijl."
         title="Nieuwe conversie"
       />
       <NewConversion />

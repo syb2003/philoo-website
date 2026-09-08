@@ -2,10 +2,11 @@ import Link from "next/link";
 import { ArrowRightIcon, CheckCircleIcon, FileCheckIcon, ReceiptIcon } from "@/components/Icons";
 import { PageHeader } from "@/components/cv-studio/PageHeader";
 import { demoCandidates } from "@/lib/cv-studio/demo-manifest";
+import { cvStudioDemoConfig } from "@/lib/cv-studio/demo-display-config";
 import { requireDemoSession } from "@/lib/cv-studio/session";
 
 const steps = [
-  { title: "Huisstijl kiezen", body: "Bluefin staat al voor je klaar.", icon: ReceiptIcon },
+  { title: "Huisstijl kiezen", body: `${cvStudioDemoConfig.templateName} staat voor je klaar.`, icon: ReceiptIcon },
   { title: "Kandidaat-cv uploaden", body: "Kies één van de drie demo-cv's.", icon: FileCheckIcon },
   { title: "Eind-cv downloaden", body: "Ontvang bewerkbare DOCX en PDF.", icon: CheckCircleIcon },
 ] as const;
@@ -18,8 +19,8 @@ export default async function DashboardPage() {
       <section className="mt-8 rounded-[1.7rem] border border-[#DCD8FF] bg-[linear-gradient(135deg,#FFFFFF,#F2F0FF)] p-6 shadow-[0_18px_48px_rgba(62,47,165,0.08)] sm:p-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-xs font-black tracking-[0.09em] text-[#563DFF]">BLUEFIN CV STUDIO</p>
-            <h2 className="mt-3 max-w-[620px] text-[clamp(2rem,4vw,3.3rem)] font-bold leading-[1.04] tracking-[-0.045em]">Snel van cv naar Bluefin-output</h2>
+            <p className="text-xs font-black tracking-[0.09em] text-[#563DFF]">PHILOO CV STUDIO</p>
+            <h2 className="mt-3 max-w-[620px] text-[clamp(2rem,4vw,3.3rem)] font-bold leading-[1.04] tracking-[-0.045em]">Snel van kandidaat-cv naar eind-cv</h2>
           </div>
           <Link className="inline-flex min-h-12 w-fit items-center gap-2 rounded-xl bg-[#563DFF] px-5 text-base font-bold text-white shadow-[0_12px_28px_rgba(86,61,255,0.23)]" href="/cv-studio/conversies/nieuw">Nieuwe conversie <ArrowRightIcon className="h-5 w-5" /></Link>
         </div>

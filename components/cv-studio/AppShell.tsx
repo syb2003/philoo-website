@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import { ChartIcon, FileCheckIcon, ReceiptIcon, SlidersIcon } from "@/components/Icons";
 import { PhilooLogo } from "@/components/site/PhilooLogo";
 import { LogoutButton } from "@/components/cv-studio/LogoutButton";
+import { cvStudioDemoConfig } from "@/lib/cv-studio/demo-display-config";
 
 const navigation = [
   { href: "/cv-studio/dashboard", label: "Dashboard", icon: ChartIcon },
@@ -24,16 +25,16 @@ export function AppShell({ children }: { children: ReactNode }) {
           <PhilooLogo />
           <div className="flex items-center gap-3">
             <span className="hidden rounded-full border border-[#DAD6FF] bg-[#F4F2FF] px-3 py-1.5 text-sm font-bold text-[#563DFF] sm:inline-flex">
-              Bluefin demo
+              {cvStudioDemoConfig.companyName}
             </span>
             <details className="relative">
               <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-xl border border-[#E0E2EC] bg-white px-3 text-sm font-bold text-[#192044] marker:content-none hover:bg-[#F8F8FC]">
-                <span className="grid h-7 w-7 place-items-center rounded-full bg-[#EDEAFF] text-xs text-[#563DFF]">W</span>
-                Wouter
+                <span className="grid h-7 w-7 place-items-center rounded-full bg-[#EDEAFF] text-xs text-[#563DFF]">{cvStudioDemoConfig.userInitial}</span>
+                {cvStudioDemoConfig.userName}
                 <span aria-hidden="true" className="text-[#7B8299]">⌄</span>
               </summary>
               <div className="absolute right-0 mt-2 w-56 rounded-2xl border border-[#E1E3ED] bg-white p-2 shadow-[0_20px_55px_rgba(26,34,77,0.14)]">
-                <p className="px-3 py-2 text-xs text-[#747C95]">wouter@bluefin.nl</p>
+                <p className="px-3 py-2 text-xs text-[#747C95]">{cvStudioDemoConfig.userEmail}</p>
                 <LogoutButton className="min-h-10 w-full rounded-xl px-3 text-left text-sm font-bold text-[#20284C] hover:bg-[#F4F2FF]" />
               </div>
             </details>

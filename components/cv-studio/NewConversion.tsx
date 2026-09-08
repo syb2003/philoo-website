@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRightIcon, CheckCircleIcon, FileCheckIcon, UserIcon } from "@/components/Icons";
 import { storePendingConversion } from "@/lib/cv-studio/browser-state";
+import { cvStudioDemoConfig } from "@/lib/cv-studio/demo-display-config";
 import {
   demoCandidates,
   getDemoCandidate,
@@ -87,8 +88,8 @@ export function NewConversion() {
               <h2 className="text-xl font-bold tracking-[-0.03em]" id="house-style-heading">Huisstijl</h2>
               <div className="mt-4 flex items-center justify-between gap-4 rounded-2xl border border-[#D9D6FF] bg-[#F8F7FF] p-4">
                 <div>
-                  <p className="font-bold text-[#20284C]">Bluefin template</p>
-                  <p className="mt-1 text-sm text-[#66708C]">Gebaseerd op de gekozen Bluefin-opmaak.</p>
+                  <p className="font-bold text-[#20284C]">{cvStudioDemoConfig.templateName}</p>
+                  <p className="mt-1 text-sm text-[#66708C]">Actieve huisstijl voor deze conversie.</p>
                 </div>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-bold text-[#3B9A68] shadow-sm">
                   <CheckCircleIcon className="h-4 w-4" /> Geselecteerd
@@ -198,11 +199,11 @@ export function NewConversion() {
 
       <aside className="h-fit rounded-[1.5rem] border border-[#DCD9FF] bg-[linear-gradient(145deg,#FFFFFF,#F5F3FF)] p-5 shadow-[0_18px_46px_rgba(63,47,170,0.09)] sm:p-6 xl:sticky xl:top-28">
         <p className="text-xs font-black tracking-[0.08em] text-[#563DFF]">OVERZICHT</p>
-        <h2 className="mt-3 text-xl font-bold tracking-[-0.03em]">Bluefin-cv</h2>
+        <h2 className="mt-3 text-xl font-bold tracking-[-0.03em]">Eind-cv</h2>
         <dl className="mt-5 space-y-4 text-sm">
           <div>
             <dt className="text-[#7A829A]">Huisstijl</dt>
-            <dd className="mt-1 font-bold text-[#273052]">Bluefin template</dd>
+            <dd className="mt-1 font-bold text-[#273052]">{cvStudioDemoConfig.templateName}</dd>
           </div>
           <div>
             <dt className="text-[#7A829A]">Kandidaat</dt>
@@ -223,7 +224,7 @@ export function NewConversion() {
           onClick={generate}
           type="button"
         >
-          Genereer Bluefin-cv
+          Genereer cv
           <ArrowRightIcon className="h-5 w-5" />
         </button>
       </aside>

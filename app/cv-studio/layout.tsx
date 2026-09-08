@@ -6,8 +6,8 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.philoo.nl"),
-  title: "Bluefin CV Studio demo | Philoo",
-  description: "Tijdelijke besloten CV Studio demo voor Bluefin.",
+  title: "Philoo CV Studio",
+  description: "Tijdelijke besloten omgeving om de CV Studio-flow te ervaren.",
   robots: {
     index: false,
     follow: false,

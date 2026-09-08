@@ -1,3 +1,5 @@
+import { cvStudioDemoConfig } from "@/lib/cv-studio/demo-display-config";
+
 export const CV_STUDIO_LOGIN_PATH = "/cv-studio";
 export const CV_STUDIO_HOME_PATH = "/cv-studio/conversies/nieuw";
 export const CV_STUDIO_SESSION_COOKIE = "philoo_cv_studio_demo";
@@ -7,7 +9,7 @@ export function isCvStudioDemoEnabled() {
 }
 
 export function getCvStudioDemoEmail() {
-  return process.env.CV_STUDIO_DEMO_EMAIL?.trim().toLowerCase() || "wouter@bluefin.nl";
+  return process.env.CV_STUDIO_DEMO_EMAIL?.trim().toLowerCase() || cvStudioDemoConfig.userEmail;
 }
 
 export function getCvStudioServerConfig() {
