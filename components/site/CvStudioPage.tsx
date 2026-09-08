@@ -37,7 +37,7 @@ type CvStudioCopy = {
   visuals: { flowAlt: string; outputsAlt: string };
 };
 
-const pairedLanguageHrefs = { nl: "/cv-studio", en: "/en/cv-studio" };
+const pairedLanguageHrefs = { nl: "/nl/cv-studio", en: "/en/cv-studio" };
 
 const pageCopy: Record<Language, CvStudioCopy> = {
   nl: {

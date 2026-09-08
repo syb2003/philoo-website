@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot,
   },
+  outputFileTracingIncludes: {
+    "/cv-studio/api/files/**/*": ["./private/cv-studio-demo/**/*"],
+  },
 };
 
 export default nextConfig;

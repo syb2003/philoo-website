@@ -26,7 +26,7 @@ const headerCopy: Record<Language, HeaderCopy> = {
   nl: {
     products: "Producten",
     productLinks: [
-      { href: "/cv-studio", label: "CV Studio" },
+      { href: "/nl/cv-studio", label: "CV Studio" },
       { href: "/auto-sourcer", label: "Automatisch kandidaten vinden" },
     ],
     customSoftware: { href: "/maatwerk", label: "Maatwerk" },
