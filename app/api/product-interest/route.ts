@@ -3,7 +3,7 @@ const NAME_MAX_LENGTH = 120;
 const COMPANY_MAX_LENGTH = 160;
 const EMAIL_MAX_LENGTH = 254;
 const WEBHOOK_TIMEOUT_MS = 8_000;
-const interestTypes = ["cvstudio_early_access", "autosourcer_interest"] as const;
+const interestTypes = ["cvstudio_early_access", "autosourcer_interest", "scout_updates"] as const;
 const languages = ["nl", "en"] as const;
 const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
 
@@ -30,7 +30,9 @@ export async function POST(request: Request) {
   const company = clean(body.company, COMPANY_MAX_LENGTH);
   const interestType = clean(body.interest_type, 80);
   const language = clean(body.language, 8);
-  if (!name || !company || !emailValid(email) || !interestTypes.includes(interestType as (typeof interestTypes)[number]) || !languages.includes(language as (typeof languages)[number])) return respond({ ok: false, error: "Please check the required fields." }, 422);
+  const knownInterestType = interestTypes.includes(interestType as (typeof interestTypes)[number]);
+  const scoutUpdate = interestType === "scout_updates";
+  if ((!scoutUpdate && (!name || !company)) || !emailValid(email) || !knownInterestType || !languages.includes(language as (typeof languages)[number])) return respond({ ok: false, error: "Please check the required fields." }, 422);
   const webhookUrl = clean(process.env.GOOGLE_SHEETS_WEBHOOK_URL, 2_048);
   const webhookSecret = clean(process.env.GOOGLE_SHEETS_WEBHOOK_SECRET, 1_000);
   if (!webhookUrl || !webhookSecret) return respond({ ok: false, error: "The form is not configured yet." }, 500);
