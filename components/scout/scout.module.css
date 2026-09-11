@@ -2589,13 +2589,54 @@
 }
 
 .howProcessCard {
+  --step-accent: #6248f5;
+  --step-border: #cfc7ff;
+  --step-icon-bg: #eeeaff;
+  --step-number-bg: #f1eeff;
+  --step-tint: rgba(99, 72, 245, 0.07);
+  position: relative;
   min-width: 0;
   min-height: 164px;
-  border: 1px solid #dcd8f6;
+  overflow: hidden;
+  border: 1px solid var(--step-border);
   border-radius: 1.1rem;
-  background: rgba(255, 255, 255, 0.98);
-  padding: 1.15rem;
-  box-shadow: 0 12px 34px rgba(48, 36, 112, 0.045);
+  background: linear-gradient(155deg, var(--step-tint) 0%, rgba(255, 255, 255, 0.98) 38%, #fff 100%);
+  padding: 1.25rem;
+  box-shadow:
+    0 18px 42px rgba(32, 26, 77, 0.075),
+    0 2px 8px rgba(32, 26, 77, 0.035);
+}
+
+.howProcessCard::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: var(--step-accent);
+  content: "";
+}
+
+.howProcessCard:nth-child(2) {
+  --step-accent: #3679d8;
+  --step-border: #c7daf4;
+  --step-icon-bg: #eaf4ff;
+  --step-number-bg: #eef6ff;
+  --step-tint: rgba(54, 121, 216, 0.065);
+}
+
+.howProcessCard:nth-child(3) {
+  --step-accent: #198563;
+  --step-border: #bee4d5;
+  --step-icon-bg: #e7f7f0;
+  --step-number-bg: #edf9f4;
+  --step-tint: rgba(25, 133, 99, 0.065);
+}
+
+.howProcessCard:nth-child(4) {
+  --step-accent: #342b84;
+  --step-border: #c8c9e4;
+  --step-icon-bg: #eeedfa;
+  --step-number-bg: #f1f0fa;
+  --step-tint: rgba(52, 43, 132, 0.07);
 }
 
 .howProcessCardTop {
@@ -2607,49 +2648,51 @@
 
 .howProcessIcon {
   display: grid;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 3.15rem;
+  height: 3.15rem;
   place-items: center;
-  border-radius: 0.8rem;
-  background: #efecff;
-  color: var(--scout-purple);
-}
-
-.howProcessCard:nth-child(2) .howProcessIcon {
-  background: #eaf4ff;
-  color: #1768cf;
-}
-
-.howProcessCard:nth-child(3) .howProcessIcon {
-  background: #e9f7f0;
-  color: #159565;
+  border: 1px solid color-mix(in srgb, var(--step-accent) 22%, white);
+  border-radius: 0.95rem;
+  background: var(--step-icon-bg);
+  color: var(--step-accent);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--step-accent) 12%, transparent);
 }
 
 .howProcessIcon svg {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: 1.55rem;
+  height: 1.55rem;
 }
 
 .howProcessNumber {
-  color: #7a6ee5;
-  font-size: 0.72rem;
-  font-weight: 850;
-  letter-spacing: 0.08em;
+  display: inline-flex;
+  min-width: 2.45rem;
+  min-height: 1.9rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--step-border);
+  border-radius: 999px;
+  background: var(--step-number-bg);
+  padding: 0.25rem 0.55rem;
+  color: var(--step-accent);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
 }
 
 .howProcessCard h3 {
-  margin: 0.9rem 0 0;
+  margin: 1rem 0 0;
   color: var(--scout-navy);
-  font-size: 1.08rem;
+  font-size: 1.16rem;
+  font-weight: 750;
   letter-spacing: -0.025em;
   line-height: 1.24;
 }
 
 .howProcessCard p {
-  margin: 0.42rem 0 0;
-  color: var(--scout-copy);
-  font-size: 0.88rem;
-  line-height: 1.5;
+  margin: 0.48rem 0 0;
+  color: #3f496c;
+  font-size: 0.94rem;
+  line-height: 1.48;
 }
 
 .demoSectionIntro {
