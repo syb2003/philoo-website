@@ -2527,7 +2527,7 @@
 .howHeroGrid {
   display: grid;
   grid-template-columns: minmax(0, 0.88fr) minmax(36rem, 1.12fr);
-  align-items: center;
+  align-items: start;
   gap: clamp(3rem, 4.5vw, 5rem);
 }
 
@@ -2800,8 +2800,8 @@
   border-radius: 1.35rem;
   background: rgba(255, 255, 255, 0.97);
   box-shadow:
-    0 30px 80px rgba(64, 43, 160, 0.16),
-    0 5px 20px rgba(31, 24, 80, 0.045);
+    0 22px 58px rgba(64, 43, 160, 0.12),
+    0 4px 16px rgba(31, 24, 80, 0.04);
 }
 
 .searchDemoHeader {
@@ -2851,10 +2851,10 @@
 }
 
 .demoInlineNavigation button.demoStageActive {
-  border-color: #9383ff;
-  background: #fff;
+  border-color: #745cff;
+  background: #f0edff;
   color: var(--scout-navy);
-  box-shadow: 0 8px 22px rgba(64, 43, 160, 0.07);
+  box-shadow: 0 8px 22px rgba(64, 43, 160, 0.09);
 }
 
 .demoInlineNavigation button > span {
@@ -2868,6 +2868,17 @@
   font-size: 0.75rem;
   font-weight: 750;
   line-height: 1.2;
+}
+
+.demoInlineNavigation button.demoStageActive > span {
+  display: grid;
+  width: 1.65rem;
+  height: 1.65rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--scout-purple);
+  color: #fff;
 }
 
 .demoPlaybackControl {
@@ -3043,6 +3054,223 @@
 
 .reviewStage {
   place-items: center;
+}
+
+.demoSelectionStage {
+  display: grid;
+  min-width: 0;
+  min-height: 100%;
+  grid-template-rows: auto 1fr;
+  gap: 0.8rem;
+}
+
+.demoSelectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.demoSelectionHeader strong {
+  color: var(--scout-navy);
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+.demoSelectionHeader span {
+  border-radius: 999px;
+  background: #e9e5ff;
+  padding: 0.35rem 0.65rem;
+  color: var(--scout-purple-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.demoSelectionGrid {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(12.5rem, 0.78fr) minmax(0, 1.42fr);
+  gap: 0.8rem;
+}
+
+.demoCandidateList {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+}
+
+.demoCandidateRow {
+  display: grid;
+  min-width: 0;
+  min-height: 68px;
+  grid-template-columns: 2.2rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.65rem;
+  border: 1px solid #dedbf1;
+  border-radius: 0.82rem;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.55rem 0.65rem;
+}
+
+.demoCandidateRow > span {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #efecff;
+  color: var(--scout-purple);
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.demoCandidateRow > div {
+  min-width: 0;
+}
+
+.demoCandidateRow strong,
+.demoCandidateRow small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.demoCandidateRow strong {
+  color: var(--scout-navy);
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.demoCandidateRow small {
+  margin-top: 0.16rem;
+  color: var(--scout-copy);
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.demoCandidateRow > small {
+  grid-column: 2;
+  margin-top: -0.32rem;
+  color: #707999;
+}
+
+.demoCandidateRowActive {
+  border-color: #755dff;
+  background: #f0edff;
+  box-shadow: 0 8px 22px rgba(70, 45, 175, 0.08);
+}
+
+.demoCandidateRowActive > span {
+  background: var(--scout-purple);
+  color: #fff;
+}
+
+.demoCandidateDetail {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: 0.7rem;
+  border: 1px solid #cec6ff;
+  border-radius: 0.95rem;
+  background: rgba(255, 255, 255, 0.97);
+  padding: 0.85rem;
+  box-shadow: 0 12px 28px rgba(48, 36, 112, 0.055);
+}
+
+.demoCandidateDetail > header span,
+.demoRelevantBlock > strong,
+.demoCandidateMetaGrid section > span {
+  display: block;
+  color: var(--scout-purple-dark);
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.055em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.demoCandidateDetail > header h3 {
+  margin: 0.2rem 0 0;
+  color: var(--scout-navy);
+  font-size: 1.05rem;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.demoCandidateDetail > header p {
+  margin: 0.18rem 0 0;
+  color: var(--scout-copy);
+  font-size: 0.78rem;
+}
+
+.demoRelevantBlock {
+  border-top: 1px solid #ebe9f4;
+  padding-top: 0.65rem;
+}
+
+.demoRelevantBlock > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  margin-top: 0.42rem;
+}
+
+.demoRelevantBlock > div > span {
+  border: 1px solid #d8d2ff;
+  border-radius: 999px;
+  background: #f3f1ff;
+  padding: 0.32rem 0.52rem;
+  color: #3f347a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.demoCandidateMetaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.demoCandidateMetaGrid section {
+  min-width: 0;
+  border-radius: 0.75rem;
+  padding: 0.62rem;
+}
+
+.demoCandidateMetaGrid section > strong {
+  display: block;
+  margin-top: 0.32rem;
+  color: var(--scout-navy);
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.demoCandidateMetaGrid section > small {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.demoSignalBlock {
+  border: 1px solid #bfe8d8;
+  background: #eefaf5;
+}
+
+.demoSignalBlock > span,
+.demoSignalBlock > small {
+  color: #157655 !important;
+}
+
+.demoCheckBlock {
+  border: 1px solid #ead9c5;
+  background: #fff9f1;
+}
+
+.demoCheckBlock > span {
+  color: #8a5a2b !important;
 }
 
 .demoCandidateCard {
@@ -4567,6 +4795,48 @@
 
   .demoInlineNavigation button > span {
     font-size: 0.72rem;
+  }
+
+  .demoSelectionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .demoCandidateList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .demoCandidateRow {
+    min-height: 82px;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 0.3rem;
+    padding-inline: 0.35rem;
+    text-align: center;
+  }
+
+  .demoCandidateRow > small {
+    display: none;
+  }
+
+  .demoCandidateRow > div {
+    width: 100%;
+  }
+
+  .demoCandidateRow > div > small {
+    display: none;
+  }
+
+  .demoCandidateRow strong {
+    font-size: 0.75rem;
+  }
+
+  .demoCandidateRow strong,
+  .demoCandidateRow small {
+    max-width: 100%;
+  }
+
+  .demoCandidateMetaGrid {
+    grid-template-columns: 1fr;
   }
 
   .searchDemoWindow {
