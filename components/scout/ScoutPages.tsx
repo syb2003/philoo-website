@@ -4,6 +4,7 @@ import {
   CheckCircleIcon,
   FileCheckIcon,
   SearchIcon,
+  SlidersIcon,
   UsersIcon,
 } from "@/components/Icons";
 import { AnalyticsPageView } from "@/components/site/Analytics";
@@ -23,6 +24,7 @@ import { scoutHomeCopy, scoutPageCopy, scoutPaths, scoutUi } from "@/lib/scout";
 import styles from "@/components/scout/scout.module.css";
 
 const stepIcons = [ChatIcon, UsersIcon, SearchIcon] as const;
+const howStepIcons = [ChatIcon, UsersIcon, SlidersIcon, SearchIcon] as const;
 
 export function ScoutHomePage({ lang }: { lang: Language }) {
   const copy = scoutHomeCopy[lang];
@@ -148,6 +150,17 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
 export function ScoutHowItWorksPage({ lang }: { lang: Language }) {
   const copy = scoutPageCopy.howItWorks[lang];
   const demoCopy = scoutDemoCopy[lang];
+  const heroSteps = lang === "nl" ? [
+    ["Vertel wie je zoekt", "Beschrijf wat iemand moet kunnen en wat belangrijk is voor je team."],
+    ["Bekijk kandidaten", "Bekijk hun ervaring en geef aan wie je zou benaderen."],
+    ["Geef feedback", "Vertel wat ontbreekt of te zwaar meeweegt."],
+    ["Scout zoekt verder", "Scout gebruikt je reacties om verder te zoeken. Jij kiest wie je benadert."],
+  ] as const : [
+    ["Explain who you need", "Describe the work, the team and what matters most."],
+    ["Review candidates", "See relevant experience and decide who you would contact."],
+    ["Give feedback", "Explain what is missing or receiving too much weight."],
+    ["Scout keeps searching", "Scout uses your feedback to refine the search. You choose who to contact."],
+  ] as const;
 
   return (
     <ScoutShell currentPage="howItWorks" lang={lang}>
@@ -155,8 +168,40 @@ export function ScoutHowItWorksPage({ lang }: { lang: Language }) {
       <main id="main-content">
         <section className={`${styles.section} ${styles.heroSection} ${styles.howHeroSection}`}>
           <div className={styles.container}>
-            <PageHeroCopy eyebrow={copy.eyebrow} intro={copy.intro} title={copy.title} />
-            <ScoutSearchDemo lang={lang} />
+            <div className={styles.howHeroGrid}>
+              <div className={`${styles.heroCopy} ${styles.howHeroCopy}`}>
+                <p className={styles.eyebrow}>{copy.eyebrow}</p>
+                <h1 className={styles.pageHeroTitle}>{copy.title}</h1>
+                <p className={styles.heroLead}>{copy.intro}</p>
+                <div className={styles.heroActions}>
+                  <ScoutTrackedLink className={styles.primaryButton} event="scout_primary_cta_click" href={scoutPaths.demo[lang]} language={lang} placement="how-it-works-hero">
+                    {scoutUi[lang].demo} <span aria-hidden="true">→</span>
+                  </ScoutTrackedLink>
+                </div>
+              </div>
+              <div className={styles.howHeroDemoWrap}>
+                <ScoutSearchDemo lang={lang} />
+              </div>
+            </div>
+
+            <section aria-labelledby="how-process-title" className={styles.howProcess}>
+              <h2 className={styles.srOnly} id="how-process-title">{lang === "nl" ? "Zo werkt Scout" : "How Scout works"}</h2>
+              <ol className={styles.howProcessGrid}>
+                {heroSteps.map(([title, body], index) => {
+                  const Icon = howStepIcons[index];
+                  return (
+                    <li className={styles.howProcessCard} key={title}>
+                      <div className={styles.howProcessCardTop}>
+                        <span className={styles.howProcessIcon}><Icon /></span>
+                        <span className={styles.howProcessNumber}>0{index + 1}</span>
+                      </div>
+                      <h3>{title}</h3>
+                      <p>{body}</p>
+                    </li>
+                  );
+                })}
+              </ol>
+            </section>
           </div>
         </section>
 

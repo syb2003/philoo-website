@@ -202,12 +202,6 @@ export function ScoutSearchDemo({ lang }: { lang: Language }) {
 
   return (
     <section aria-labelledby="interactive-example-title" className={`${styles.searchDemo} ${playing ? styles.demoPlaying : styles.demoPaused}`} id="interactive-example" ref={rootRef}>
-      <DemoStageNavigation
-        className={styles.demoStageNavigation}
-        copy={copy}
-        onSelect={(index) => selectStage(index, "manual")}
-        stage={stage}
-      />
       <div className={styles.searchDemoWindow}>
         <header className={styles.searchDemoHeader}>
           <DemoBrand />
@@ -219,6 +213,12 @@ export function ScoutSearchDemo({ lang }: { lang: Language }) {
             reducedMotion={reducedMotion}
           />
         </header>
+        <DemoStageNavigation
+          className={styles.demoInlineNavigation}
+          copy={copy}
+          onSelect={(index) => selectStage(index, "manual")}
+          stage={stage}
+        />
         <div aria-atomic="true" aria-live="polite" className={styles.demoCanvas} key={stage}>
           <h2 className={styles.srOnly} id="interactive-example-title">{copy.stages[stage].title}</h2>
           {stage === 0 ? <NeedStage copy={copy} /> : null}
@@ -274,25 +274,18 @@ function DemoStageNavigation({ className, copy, onSelect, stage }: {
   stage: number;
 }) {
   return (
-    <div className={styles.demoExplanation}>
-      <nav aria-label={copy.stageNavigation} className={className}>
-        <ol>
-          {copy.stages.map((item, index) => (
+    <nav aria-label={copy.stageNavigation} className={className}>
+      <ol>
+        {copy.stages.map((item, index) => (
           <li key={item.nav}>
             <button aria-current={stage === index ? "step" : undefined} className={stage === index ? styles.demoStageActive : undefined} onClick={() => onSelect(index)} type="button">
               <span aria-hidden="true">0{index + 1}</span>
-              <span className={styles.demoStageText}><strong>{item.nav}</strong><small>{item.body}</small></span>
+              <strong>{item.nav}</strong>
             </button>
           </li>
-          ))}
-        </ol>
-      </nav>
-      <div className={styles.demoMobileStageSummary}>
-        <strong>{copy.stages[stage].nav}</strong>
-        <span>{copy.stages[stage].body}</span>
-      </div>
-      <p className={styles.demoMemoryNote}><CheckCircleIcon /><span>{copy.memoryNote}</span></p>
-    </div>
+        ))}
+      </ol>
+    </nav>
   );
 }
 
