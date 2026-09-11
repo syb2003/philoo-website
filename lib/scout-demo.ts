@@ -86,7 +86,7 @@ export type ScoutDemoCopy = {
 export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
   nl: {
     label: "Interactieve uitleg",
-    disclosure: "Fictieve kandidaatprofielen.",
+    disclosure: "Illustratieve weergave.",
     stageNavigation: "Stappen in de demo",
     play: "Speel uitleg af",
     pause: "Pauzeer uitleg",
@@ -145,11 +145,11 @@ export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
       location: "Regio Utrecht",
       experienceLabel: "Relevante ervaring",
       experience: [
-        "Commerciële ervaring met zakelijke klanten.",
-        "Verantwoordelijk voor groei bij bestaande klanten.",
+        "Zakelijke klanten",
+        "Groei bestaande accounts",
       ],
       gapLabel: "Wat nog niet aansluit",
-      gap: "De recente rol draait vooral om teammanagement en bestaande klanten.",
+      gap: "Nieuwe klanten vinden staat niet duidelijk in het profiel.",
     },
     feedbackLabel: "Feedback",
     feedback: "De commerciële ervaring past. We zoeken iemand die vooral zelf nieuwe klanten vindt, niet iemand die vooral een team aanstuurt.",
@@ -166,8 +166,8 @@ export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
       reason: "De bekende profielinformatie sluit beter aan op wat je zoekt.",
       experienceLabel: "Relevante ervaring",
       experience: [
-        "Vond en benaderde in recente rollen zelf nieuwe zakelijke klanten.",
-        "Voerde zelf de eerste commerciële gesprekken.",
+        "Zelf nieuwe zakelijke klanten gevonden en benaderd.",
+        "Zelf eerste commerciële gesprekken gevoerd.",
       ],
       evidenceLabel: "Relevante ervaring",
       evidence: "De profielinformatie noemt het zelf vinden en benaderen van potentiële klanten.",

@@ -222,7 +222,7 @@ export function ScoutSearchDemo({ lang }: { lang: Language }) {
         <div aria-atomic="true" aria-live="polite" className={styles.demoCanvas} key={stage}>
           <h2 className={styles.srOnly} id="interactive-example-title">{copy.stages[stage].title}</h2>
           {stage === 0 ? <NeedStage copy={copy} /> : null}
-          {stage === 1 ? <ReviewStage copy={copy} /> : null}
+          {stage === 1 ? <ReviewStage copy={copy} lang={lang} /> : null}
           {stage === 2 ? <FeedbackStage copy={copy} /> : null}
           {stage === 3 ? <OutputStage copy={copy} /> : null}
         </div>
@@ -303,14 +303,79 @@ function NeedStage({ copy }: { copy: DemoCopy }) {
   );
 }
 
-function ReviewStage({ copy }: { copy: DemoCopy }) {
+function ReviewStage({ copy, lang }: { copy: DemoCopy; lang: Language }) {
+  const selection = lang === "nl" ? {
+    title: "Eerste selectie",
+    count: "3 kandidaten gevonden",
+    candidates: [
+      ["Kandidaat 01", "Commercieel manager", "Utrecht"],
+      ["Kandidaat 02", "Accountmanager", "Rotterdam"],
+      ["Kandidaat 03", "Commercieel specialist", "Amersfoort"],
+    ],
+    counter: "Kandidaat 1 / 3",
+    relevant: "Waarom relevant",
+    relevantItems: ["Zakelijke klanten", "Groei bestaande accounts"],
+    signal: "Signaal · waar beschikbaar",
+    signalValue: "Open to work",
+    signalNote: "Mogelijk relevant",
+    check: "Nog te checken",
+    checkValue: "Interesse in deze vacature",
+  } as const : {
+    title: "First selection",
+    count: "3 candidates found",
+    candidates: [
+      ["Candidate 01", "Commercial manager", "Utrecht"],
+      ["Candidate 02", "Account manager", "Rotterdam"],
+      ["Candidate 03", "Commercial specialist", "Amersfoort"],
+    ],
+    counter: "Candidate 1 / 3",
+    relevant: "Why relevant",
+    relevantItems: ["Business clients", "Existing-account growth"],
+    signal: "Signal · where available",
+    signalValue: "Open to work",
+    signalNote: "Potentially relevant",
+    check: "Still to check",
+    checkValue: "Interest in this role",
+  } as const;
+
   return (
-    <div className={styles.reviewStage}>
-      <article className={styles.demoCandidateCard}>
-        <CandidateSummary initials="01" location={copy.initialCandidate.location} name={copy.initialCandidate.name} role={copy.initialCandidate.role} />
-        <div className={styles.demoCandidateEvidence}><strong>{copy.initialCandidate.experienceLabel}</strong><ul>{copy.initialCandidate.experience.map((item) => <li key={item}>{item}</li>)}</ul></div>
-        <div className={styles.demoCandidateGap}><strong>{copy.initialCandidate.gapLabel}</strong><p>{copy.initialCandidate.gap}</p></div>
-      </article>
+    <div className={styles.demoSelectionStage}>
+      <header className={styles.demoSelectionHeader}>
+        <strong>{selection.title}</strong>
+        <span>{selection.count}</span>
+      </header>
+      <div className={styles.demoSelectionGrid}>
+        <div aria-label={selection.count} className={styles.demoCandidateList} role="list">
+          {selection.candidates.map(([name, role, location], index) => (
+            <div aria-current={index === 0 ? "true" : undefined} className={`${styles.demoCandidateRow} ${index === 0 ? styles.demoCandidateRowActive : ""}`} key={name} role="listitem">
+              <span aria-hidden="true">0{index + 1}</span>
+              <div><strong>{name}</strong><small>{role}</small></div>
+              <small>{location}</small>
+            </div>
+          ))}
+        </div>
+
+        <article className={styles.demoCandidateDetail}>
+          <header>
+            <div><span>{selection.counter}</span><h3>{copy.initialCandidate.role}</h3><p>{copy.initialCandidate.location}</p></div>
+          </header>
+          <section className={styles.demoRelevantBlock}>
+            <strong>{selection.relevant}</strong>
+            <div>{selection.relevantItems.map((item) => <span key={item}>{item}</span>)}</div>
+          </section>
+          <div className={styles.demoCandidateMetaGrid}>
+            <section className={styles.demoSignalBlock}>
+              <span>{selection.signal}</span>
+              <strong>{selection.signalValue}</strong>
+              <small>{selection.signalNote}</small>
+            </section>
+            <section className={styles.demoCheckBlock}>
+              <span>{selection.check}</span>
+              <strong>{selection.checkValue}</strong>
+            </section>
+          </div>
+        </article>
+      </div>
     </div>
   );
 }
