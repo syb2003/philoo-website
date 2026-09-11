@@ -2519,28 +2519,137 @@
 }
 
 .howHeroSection {
-  padding-block: clamp(2.6rem, 3.4vw, 3.55rem) clamp(3.25rem, 4.2vw, 4.25rem);
-  background:
-    radial-gradient(ellipse 34rem 28rem at 77% 45%, rgba(91, 63, 255, 0.17), transparent 73%),
-    radial-gradient(ellipse 22rem 20rem at 86% 36%, rgba(190, 176, 255, 0.13), transparent 72%),
-    #fff;
+  border-bottom: 1px solid #eceaf7;
+  padding-block: clamp(2.15rem, 3vw, 3rem) clamp(2.5rem, 3.5vw, 3.4rem);
+  background: #fff;
 }
 
-.howHeroSection .heroCopy {
-  max-width: 900px;
+.howHeroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(36rem, 1.12fr);
+  align-items: center;
+  gap: clamp(3rem, 4.5vw, 5rem);
 }
 
-.howHeroSection .pageHeroTitle {
-  max-width: 820px;
-  font-size: clamp(3.35rem, 4.8vw, 4.45rem);
-  line-height: 1.01;
+.howHeroCopy {
+  max-width: 610px;
 }
 
-.howHeroSection .heroLead {
-  max-width: 880px;
-  margin-top: 1.1rem;
-  font-size: clamp(1.06rem, 1.35vw, 1.18rem);
-  line-height: 1.62;
+.howHeroSection .howHeroCopy .pageHeroTitle {
+  max-width: 610px;
+  margin-top: 0.9rem;
+  font-size: clamp(3.55rem, 5.15vw, 5rem);
+  font-weight: 750;
+  line-height: 0.98;
+}
+
+.howHeroSection .howHeroCopy .heroLead {
+  max-width: 585px;
+  margin-top: 1.25rem;
+  font-size: clamp(1.08rem, 1.3vw, 1.2rem);
+  line-height: 1.55;
+}
+
+.howHeroCopy .heroActions {
+  margin-top: 1.55rem;
+}
+
+.howHeroCopy .primaryButton {
+  gap: 0.75rem;
+}
+
+.howHeroDemoWrap {
+  position: relative;
+  min-width: 0;
+  isolation: isolate;
+}
+
+.howHeroDemoWrap::before {
+  position: absolute;
+  z-index: -1;
+  inset: 7% -8% -9% 2%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(92, 61, 255, 0.22), rgba(126, 102, 255, 0.1) 42%, transparent 72%);
+  filter: blur(16px);
+  content: "";
+  pointer-events: none;
+}
+
+.howProcess {
+  margin-top: clamp(1.55rem, 2.6vw, 2.35rem);
+}
+
+.howProcessGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.8rem, 1.3vw, 1.15rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.howProcessCard {
+  min-width: 0;
+  min-height: 164px;
+  border: 1px solid #dcd8f6;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 1.15rem;
+  box-shadow: 0 12px 34px rgba(48, 36, 112, 0.045);
+}
+
+.howProcessCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.howProcessIcon {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border-radius: 0.8rem;
+  background: #efecff;
+  color: var(--scout-purple);
+}
+
+.howProcessCard:nth-child(2) .howProcessIcon {
+  background: #eaf4ff;
+  color: #1768cf;
+}
+
+.howProcessCard:nth-child(3) .howProcessIcon {
+  background: #e9f7f0;
+  color: #159565;
+}
+
+.howProcessIcon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.howProcessNumber {
+  color: #7a6ee5;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.howProcessCard h3 {
+  margin: 0.9rem 0 0;
+  color: var(--scout-navy);
+  font-size: 1.08rem;
+  letter-spacing: -0.025em;
+  line-height: 1.24;
+}
+
+.howProcessCard p {
+  margin: 0.42rem 0 0;
+  color: var(--scout-copy);
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 .demoSectionIntro {
@@ -2553,11 +2662,9 @@
 
 .searchDemo {
   scroll-margin-top: 6rem;
-  display: grid;
-  grid-template-columns: minmax(15rem, 0.28fr) minmax(0, 0.72fr);
-  align-items: stretch;
-  gap: clamp(1.75rem, 3.2vw, 3rem);
-  margin-top: clamp(1.8rem, 2.5vw, 2.35rem);
+  position: relative;
+  min-width: 0;
+  margin: 0;
 }
 
 .demoExplanation {
@@ -2707,6 +2814,62 @@
   padding: 0.8rem 1.15rem;
 }
 
+.demoInlineNavigation {
+  border-bottom: 1px solid #e6e4f2;
+  background: #faf9ff;
+  padding: 0.45rem 0.55rem;
+}
+
+.demoInlineNavigation ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demoInlineNavigation button {
+  display: flex;
+  width: 100%;
+  min-height: 50px;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid transparent;
+  border-radius: 0.72rem;
+  background: transparent;
+  padding: 0.45rem 0.5rem;
+  color: #646c8d;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.demoInlineNavigation button:hover {
+  border-color: #d8d2ff;
+  background: #fff;
+}
+
+.demoInlineNavigation button.demoStageActive {
+  border-color: #9383ff;
+  background: #fff;
+  color: var(--scout-navy);
+  box-shadow: 0 8px 22px rgba(64, 43, 160, 0.07);
+}
+
+.demoInlineNavigation button > span {
+  color: var(--scout-purple);
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.demoInlineNavigation button > strong {
+  min-width: 0;
+  font-size: 0.75rem;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
 .demoPlaybackControl {
   display: inline-flex;
   min-width: 44px;
@@ -2743,13 +2906,35 @@
 
 .demoCanvas {
   display: grid;
+  height: 398px;
   min-width: 0;
-  min-height: 420px;
+  min-height: 338px;
   background:
     radial-gradient(circle at 88% 10%, rgba(105, 75, 255, 0.13), transparent 18rem),
     linear-gradient(145deg, #fbfaff, #f2efff);
   padding: clamp(1.35rem, 2.3vw, 2rem);
   animation: demoReveal 340ms ease both;
+}
+
+@media (max-width: 1120px) {
+  .howHeroGrid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  .howHeroCopy {
+    max-width: 780px;
+  }
+
+  .howHeroSection .howHeroCopy .pageHeroTitle,
+  .howHeroSection .howHeroCopy .heroLead {
+    max-width: 760px;
+  }
+
+  .howHeroDemoWrap {
+    width: min(100%, 840px);
+    margin-inline: auto;
+  }
 }
 
 .demoPaused .demoCanvas {
@@ -4266,69 +4451,39 @@
 
 @media (max-width: 820px) {
   .howHeroSection {
-    padding-block: 2.7rem 3.4rem;
+    padding-block: 2.5rem 3rem;
   }
 
-  .howHeroSection .pageHeroTitle {
-    font-size: clamp(2.7rem, 8vw, 3.55rem);
-  }
-
-  .searchDemo {
+  .howHeroGrid {
     grid-template-columns: 1fr;
-    gap: 1.15rem;
-    margin-top: 1.9rem;
+    gap: 2.2rem;
   }
 
-  .demoStageNavigation ol {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.45rem;
+  .howHeroCopy {
+    max-width: 680px;
   }
 
-  .demoStageNavigation ol::before {
-    display: none;
+  .howHeroSection .howHeroCopy .pageHeroTitle {
+    max-width: 680px;
+    font-size: clamp(3rem, 8.5vw, 4.35rem);
   }
 
-  .demoStageNavigation button {
-    min-height: 52px;
-    grid-template-columns: 1fr;
-    place-items: center;
-    padding: 0.35rem;
+  .howHeroDemoWrap {
+    width: min(100%, 760px);
+    margin-inline: auto;
   }
 
-  .demoStageNavigation button > span:first-child {
-    width: 2.35rem;
-    height: 2.35rem;
-    font-size: 0.76rem;
+  .howProcessGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .demoStageText {
-    display: none;
+  .howProcessCard {
+    min-height: 156px;
   }
 
-  .demoMobileStageSummary {
-    display: grid;
-    min-height: 75px;
-    gap: 0.3rem;
-    margin-top: 0.7rem;
-    border-left: 3px solid var(--scout-purple);
-    padding: 0.15rem 0 0.15rem 0.8rem;
-  }
-
-  .demoMobileStageSummary strong {
-    color: var(--scout-navy);
-    font-size: 1.02rem;
-    letter-spacing: -0.02em;
-  }
-
-  .demoMobileStageSummary span {
-    color: var(--scout-copy);
-    font-size: 0.88rem;
-    line-height: 1.45;
-  }
-
-  .demoMemoryNote {
-    margin-top: 0.85rem;
-    padding-top: 0.85rem;
+  .demoInlineNavigation button {
+    justify-content: center;
+    text-align: center;
   }
 
   .feedbackStage,
@@ -4337,7 +4492,8 @@
   }
 
   .demoCanvas {
-    min-height: 476px;
+    height: auto;
+    min-height: 438px;
   }
 
   .outputGrid section,
@@ -4354,19 +4510,63 @@
 
 @media (max-width: 560px) {
   .howHeroSection {
-    padding-block: 2.35rem 3rem;
+    padding-block: 2rem 2.5rem;
   }
 
-  .howHeroSection .pageHeroTitle {
+  .howHeroSection .howHeroCopy .pageHeroTitle {
     max-width: 100%;
-    font-size: clamp(2.45rem, 11vw, 3rem);
+    font-size: clamp(2.55rem, 12.5vw, 3.35rem);
     line-height: 1.02;
   }
 
-  .howHeroSection .heroLead {
+  .howHeroSection .howHeroCopy .heroLead {
     margin-top: 0.95rem;
     font-size: 1rem;
     line-height: 1.55;
+  }
+
+  .howHeroGrid {
+    gap: 1.8rem;
+  }
+
+  .howHeroCopy .heroActions,
+  .howHeroCopy .primaryButton {
+    width: 100%;
+  }
+
+  .howProcess {
+    margin-top: 1.4rem;
+  }
+
+  .howProcessGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .howProcessCard {
+    min-height: 0;
+  }
+
+  .demoInlineNavigation {
+    padding: 0.4rem;
+  }
+
+  .demoInlineNavigation button {
+    min-height: 44px;
+    padding: 0.35rem;
+  }
+
+  .demoInlineNavigation button > strong {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .demoInlineNavigation button > span {
+    font-size: 0.72rem;
   }
 
   .searchDemoWindow {
@@ -4396,7 +4596,7 @@
   }
 
   .demoCanvas {
-    min-height: 550px;
+    min-height: 420px;
     padding: 1rem;
   }
 

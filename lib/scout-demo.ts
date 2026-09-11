@@ -86,7 +86,7 @@ export type ScoutDemoCopy = {
 export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
   nl: {
     label: "Interactieve uitleg",
-    disclosure: "Demo met fictieve gegevens.",
+    disclosure: "Fictieve kandidaatprofielen.",
     stageNavigation: "Stappen in de demo",
     play: "Speel uitleg af",
     pause: "Pauzeer uitleg",
@@ -101,8 +101,8 @@ export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
     inspectProfile: "Bekijk kandidaat",
     bookDemo: "Plan een demo",
     memoryNote: "Scout neemt je feedback ook mee naar een volgende vacature.",
-    composerPlaceholder: "Bijvoorbeeld: iemand die zelf nieuwe zakelijke klanten vindt…",
-    composerLabel: "Voorbeeld van een niet-bewerkbaar invoerveld",
+    composerPlaceholder: "Iemand die zelf nieuwe zakelijke klanten vindt…",
+    composerLabel: "Niet-bewerkbaar invoerveld",
     stages: [
       {
         nav: "Vertel wie je zoekt",
@@ -117,16 +117,16 @@ export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
         body: "Bekijk hun ervaring en geef aan wie je zou benaderen.",
       },
       {
-        nav: "Geef aan wat niet past",
+        nav: "Geef feedback",
         eyebrow: "03 · Geef gerichte feedback",
-        title: "Geef aan wat niet past.",
+        title: "Geef feedback.",
         body: "Vertel wat ontbreekt of te zwaar meeweegt.",
       },
       {
-        nav: "Bekijk de aangepaste selectie",
-        eyebrow: "04 · Bekijk de nieuwe richting",
-        title: "Bekijk de aangepaste selectie.",
-        body: "Scout zoekt verder met je feedback. Jij kiest wie je benadert.",
+        nav: "Scout zoekt verder",
+        eyebrow: "04 · Scout zoekt verder",
+        title: "Scout zoekt verder.",
+        body: "Scout gebruikt je reacties om verder te zoeken. Jij kiest wie je benadert.",
       },
     ],
     conversation: [
@@ -153,7 +153,7 @@ export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
     },
     feedbackLabel: "Feedback",
     feedback: "De commerciële ervaring past. We zoeken iemand die vooral zelf nieuwe klanten vindt, niet iemand die vooral een team aanstuurt.",
-    updateTitle: "Dit verandert in de zoekrichting",
+    updateTitle: "Scout zoekt verder met je feedback",
     moreLabel: "Meer nadruk op",
     more: "Zelf klanten zoeken en de eerste gesprekken voeren.",
     lessLabel: "Minder nadruk op",
@@ -163,7 +163,7 @@ export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
       role: "Commercieel specialist",
       location: "Regio Rotterdam",
       reasonLabel: "Waarom deze kandidaat in beeld komt",
-      reason: "De bekende profielinformatie sluit beter aan op de aangepaste zoekrichting.",
+      reason: "De bekende profielinformatie sluit beter aan op wat je zoekt.",
       experienceLabel: "Relevante ervaring",
       experience: [
         "Vond en benaderde in recente rollen zelf nieuwe zakelijke klanten.",
@@ -176,7 +176,7 @@ export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
       nextLabel: "Jij beslist",
       next: "Jij bepaalt of deze kandidaat een gesprek waard is en wie je wilt benaderen.",
     },
-    staticFallbackTitle: "Zo werkt de demo zonder animatie",
+    staticFallbackTitle: "Zo werkt Scout zonder animatie",
     home: {
       previewLabel: "Interface-preview",
       messageLabel: "Scout",
