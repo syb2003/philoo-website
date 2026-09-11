@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
-import { HomePage } from "@/components/site/HomePage";
+import { ScoutHomePage } from "@/components/scout/ScoutPages";
 import { isLanguage, languages } from "@/lib/i18n";
-import { socialMetadata } from "@/lib/seo";
+import { scoutMetadata } from "@/lib/scout-metadata";
 
 type LanguagePageProps = {
   params: Promise<{ lang: string }>;
@@ -21,12 +21,7 @@ export async function generateMetadata({ params }: LanguagePageProps): Promise<M
   }
 
   if (lang === "en") {
-    return {
-      title: "Philoo | Software & AI for Recruitment Agencies",
-      description: "Philoo builds software and AI for recruitment agencies that reduce manual work.",
-      alternates: { canonical: "/en", languages: { nl: "/", en: "/en" } },
-      ...socialMetadata("Philoo | Software & AI for Recruitment Agencies", "Philoo builds software and AI for recruitment agencies that reduce manual work.", "/en", "en_GB"),
-    };
+    return scoutMetadata("home", "en");
   }
 
   return { robots: { index: false, follow: false } };
@@ -49,5 +44,5 @@ export default async function LanguagePage({ params, searchParams }: LanguagePag
     redirect(query.size ? `/?${query.toString()}` : "/");
   }
 
-  return <HomePage lang="en" />;
+  return <ScoutHomePage lang="en" />;
 }
