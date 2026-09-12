@@ -140,8 +140,8 @@ export function AgencyVisual({ label, lang }: PreviewProps & { lang: Language })
       <div aria-hidden="true" className={styles.orbit} />
       <div className={styles.briefSignal}><FileCheckIcon /><span>{lang === "nl" ? "Sterke saleservaring. Moet zelf blijven verkopen." : "Strong sales experience. Must keep selling directly."}</span></div>
       <div className={styles.candidateStack}>
-        <CandidateRow initials="AM" name="Alex Morgan" role="Business Development Manager" />
-        <CandidateRow initials="JT" name="Jamie Taylor" role="Account Manager" />
+        <CandidateRow initials="AM" name="Alex Morgan" role="Business Development Manager" status={lang === "nl" ? "Past bij briefing" : "Fits the brief"} />
+        <CandidateRow initials="JT" name="Jamie Taylor" role="Account Manager" status={lang === "nl" ? "Te beoordelen" : "To review"} />
       </div>
       <div className={styles.readySignal}>{lang === "nl" ? "Selectie klaar om te beoordelen" : "Shortlist ready to review"}</div>
       <PreviewLabel>{label}</PreviewLabel>
@@ -176,11 +176,12 @@ export function AboutMarkVisual({ label }: PreviewProps) {
   );
 }
 
-function CandidateRow({ initials, name, role }: { initials: string; name: string; role: string }) {
+function CandidateRow({ initials, name, role, status }: { initials: string; name: string; role: string; status?: string }) {
   return (
     <div className={styles.candidateRow}>
       <span className={styles.avatar}>{initials}</span>
       <span className={styles.candidateText}><strong>{name}</strong><small>{role}</small></span>
+      {status ? <span className={styles.candidateStatusBadge}>{status}</span> : null}
       <span aria-hidden="true" className={styles.rowArrow}>›</span>
     </div>
   );
