@@ -126,7 +126,7 @@ export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
         nav: "Scout zoekt verder",
         eyebrow: "04 · Scout zoekt verder",
         title: "Scout zoekt verder.",
-        body: "Scout gebruikt je reacties om verder te zoeken. Jij kiest wie je benadert.",
+        body: "Scout gebruikt je feedback voor een aangepaste selectie.",
       },
     ],
     conversation: [
@@ -258,7 +258,7 @@ export const scoutDemoCopy: Record<Language, ScoutDemoCopy> = {
         nav: "Review the adjusted shortlist",
         eyebrow: "04 · Review the new direction",
         title: "Review the adjusted shortlist.",
-        body: "Scout shows different candidates. You choose who to contact.",
+        body: "Scout uses your feedback to create an adjusted selection.",
       },
     ],
     conversation: [

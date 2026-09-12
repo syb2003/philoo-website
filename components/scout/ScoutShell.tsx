@@ -34,6 +34,7 @@ function ScoutLogo({ lang }: { lang: Language }) {
 
 function ScoutHeader({ currentPage, lang }: { currentPage: ScoutPageKey; lang: Language }) {
   const copy = scoutUi[lang];
+  const contactHref = currentPage === "home" ? "#contact" : `${scoutPaths.home[lang]}#contact`;
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobilePanelRef = useRef<HTMLDivElement>(null);
@@ -147,8 +148,8 @@ function ScoutHeader({ currentPage, lang }: { currentPage: ScoutPageKey; lang: L
                 </ScoutTrackedLink>
               </div>
             </details>
-            <Link aria-current={currentPage === "about" ? "page" : undefined} className={styles.navLink} href={scoutPaths.about[lang]}>
-              {copy.about}
+            <Link className={styles.navLink} href={contactHref}>
+              {copy.contact}
             </Link>
           </nav>
 
@@ -194,8 +195,8 @@ function ScoutHeader({ currentPage, lang }: { currentPage: ScoutPageKey; lang: L
             <ScoutTrackedLink aria-current={currentPage === "agencies" ? "page" : undefined} className={styles.mobileNavLink} event="scout_audience_navigation" href={scoutPaths.agencies[lang]} language={lang} onClick={() => setMenuOpen(false)} placement="mobile-agencies">
               {copy.agencies}
             </ScoutTrackedLink>
-            <Link aria-current={currentPage === "about" ? "page" : undefined} className={styles.mobileNavLink} href={scoutPaths.about[lang]} onClick={() => setMenuOpen(false)}>
-              {copy.about}
+            <Link className={styles.mobileNavLink} href={contactHref} onClick={() => setMenuOpen(false)}>
+              {copy.contact}
             </Link>
             <div className={styles.mobileLanguage}>{languageLinks}</div>
             <ScoutTrackedLink className={styles.primaryButton} event="scout_primary_cta_click" href={scoutPaths.demo[lang]} language={lang} onClick={() => setMenuOpen(false)} placement="mobile-menu">
@@ -221,7 +222,7 @@ function ScoutFooter({ lang }: { lang: Language }) {
           <span>{copy.copyright}</span>
         </div>
         <nav aria-label={copy.footerNavigation} className={styles.footerLinks}>
-          <Link href={scoutPaths.about[lang]}>{copy.about}</Link>
+          <a href="mailto:hello@philoo.nl">hello@philoo.nl</a>
           <Link href={privacyHref}>{copy.privacy}</Link>
           <Link href={termsHref}>{copy.terms}</Link>
         </nav>
