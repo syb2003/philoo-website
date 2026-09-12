@@ -131,6 +131,8 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
 
         <FinalCta body={copy.finalBody} lang={lang} note={copy.finalNote} placement="home-final" title={copy.finalTitle} />
 
+        <ContactSection lang={lang} />
+
         {lang === "nl" ? (
           <section aria-labelledby="ontwikkelingen-title" className={`${styles.section} ${styles.updatesSection}`} id="ontwikkelingen">
             <div className={`${styles.container} ${styles.updatesCard}`}>
@@ -436,6 +438,33 @@ function FinalCta({ body, lang, note, placement, title }: { body: string; lang: 
           {scoutUi[lang].demo}
         </ScoutTrackedLink>
         {note ? <small className={styles.finalNote}>{note}</small> : null}
+      </div>
+    </section>
+  );
+}
+
+function ContactSection({ lang }: { lang: Language }) {
+  const copy = lang === "nl" ? {
+    title: "Contact",
+    body: "Heb je een vraag of wil je weten of Scout past bij jouw vacatures?",
+    demo: "Plan een demo",
+  } : {
+    title: "Contact",
+    body: "Have a question, or want to know whether Scout fits your vacancies?",
+    demo: "Book a demo",
+  };
+
+  return (
+    <section aria-labelledby="contact-title" className={`${styles.section} ${styles.contactSection}`} id="contact">
+      <div className={`${styles.container} ${styles.contactCard}`}>
+        <div className={styles.contactCopy}>
+          <h2 id="contact-title">{copy.title}</h2>
+          <p>{copy.body}</p>
+          <a href="mailto:hello@philoo.nl">hello@philoo.nl</a>
+        </div>
+        <ScoutTrackedLink className={styles.primaryButton} event="scout_primary_cta_click" href={scoutPaths.demo[lang]} language={lang} placement="home-contact">
+          {copy.demo}
+        </ScoutTrackedLink>
       </div>
     </section>
   );

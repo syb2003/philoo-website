@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { CheckCircleIcon, ChatIcon, FileCheckIcon, SearchIcon } from "@/components/Icons";
+import { ChatIcon, SearchIcon } from "@/components/Icons";
 import { trackEvent } from "@/components/site/Analytics";
 import { PhilooMark } from "@/components/site/PhilooMark";
 import type { Language } from "@/lib/i18n";
@@ -224,11 +224,8 @@ export function ScoutSearchDemo({ lang }: { lang: Language }) {
           {stage === 0 ? <NeedStage copy={copy} /> : null}
           {stage === 1 ? <ReviewStage copy={copy} lang={lang} /> : null}
           {stage === 2 ? <FeedbackStage copy={copy} /> : null}
-          {stage === 3 ? <OutputStage copy={copy} /> : null}
+          {stage === 3 ? <OutputStage lang={lang} /> : null}
         </div>
-        <footer className={styles.searchDemoFooter}>
-          <span>{copy.disclosure}</span>
-        </footer>
       </div>
 
       <noscript>
@@ -395,19 +392,111 @@ function FeedbackStage({ copy }: { copy: DemoCopy }) {
   );
 }
 
-function OutputStage({ copy }: { copy: DemoCopy }) {
-  return (
-    <article className={styles.outputStage}>
-      <header><CandidateSummary initials="02" location={copy.refinedCandidate.location} name={copy.refinedCandidate.name} role={copy.refinedCandidate.role} /></header>
-      <div className={styles.outputGrid}>
-        <section><h3><FileCheckIcon />{copy.refinedCandidate.evidenceLabel}</h3><ul>{copy.refinedCandidate.experience.map((item) => <li key={item}>{item}</li>)}</ul></section>
-        <section><h3><ChatIcon />{copy.refinedCandidate.unknownsLabel}</h3><ul>{copy.refinedCandidate.unknowns.map((item) => <li key={item}>{item}</li>)}</ul></section>
-      </div>
-      <section className={styles.outputNextStep}><h3><CheckCircleIcon />{copy.refinedCandidate.nextLabel}</h3><p>{copy.refinedCandidate.next}</p></section>
-    </article>
-  );
-}
+function OutputStage({ lang }: { lang: Language }) {
+  const selection = lang === "nl" ? {
+    title: "Aangepaste selectie",
+    count: "3 kandidaten gevonden",
+    summary: "Meer nadruk op zelf verkopen · Minder teammanagement",
+    feedbackLabel: "Op basis van feedback",
+    feedback: ["Meer zelf sales", "Minder teammanagement", "Regio Randstad", "Recente commerciële ervaring"],
+    signalLabel: "Signalen waar beschikbaar",
+    candidates: [
+      {
+        initials: "AM",
+        name: "Alex Morgan",
+        role: "Commercieel specialist",
+        location: "Regio Rotterdam",
+        tags: ["Zelf sales", "B2B-klanten"],
+        signal: "Open to work",
+      },
+      {
+        initials: "RV",
+        name: "Robin de Vries",
+        role: "Accountmanager",
+        location: "Regio Utrecht",
+        tags: ["Nieuwe klanten", "Eerste gesprekken"],
+        signal: "Recent actief",
+      },
+      {
+        initials: "SJ",
+        name: "Samira Jansen",
+        role: "Business developer",
+        location: "Regio Den Haag",
+        tags: ["Zakelijke klanten", "Zelf acquisitie"],
+        signal: "Beschikbaarheidsignaal",
+      },
+    ],
+  } as const : {
+    title: "Adjusted selection",
+    count: "3 candidates found",
+    summary: "More emphasis on direct selling · Less team management",
+    feedbackLabel: "Based on feedback",
+    feedback: ["More direct selling", "Less team management", "Randstad area", "Recent commercial experience"],
+    signalLabel: "Signals where available",
+    candidates: [
+      {
+        initials: "AM",
+        name: "Alex Morgan",
+        role: "Commercial specialist",
+        location: "Rotterdam region",
+        tags: ["Direct selling", "B2B clients"],
+        signal: "Open to work",
+      },
+      {
+        initials: "RV",
+        name: "Robin de Vries",
+        role: "Account manager",
+        location: "Utrecht region",
+        tags: ["New clients", "First conversations"],
+        signal: "Recently active",
+      },
+      {
+        initials: "SJ",
+        name: "Samira Jansen",
+        role: "Business developer",
+        location: "The Hague region",
+        tags: ["Business clients", "Direct outreach"],
+        signal: "Availability signal",
+      },
+    ],
+  } as const;
 
-function CandidateSummary({ initials, location, name, role }: { initials: string; location: string; name: string; role: string }) {
-  return <div className={styles.demoCandidateSummary}><span className={styles.largeAvatar}>{initials}</span><div><h3>{name}</h3><p>{role}<span aria-hidden="true"> · </span>{location}</p></div></div>;
+  return (
+    <div className={styles.adjustedSelectionStage}>
+      <header className={styles.adjustedSelectionHeader}>
+        <div>
+          <h3>{selection.title}</h3>
+          <p>{selection.summary}</p>
+        </div>
+        <span>{selection.count}</span>
+      </header>
+
+      <section className={styles.adjustedFeedbackSummary}>
+        <strong>{selection.feedbackLabel}</strong>
+        <div>
+          {selection.feedback.map((item) => <span key={item}>{item}</span>)}
+        </div>
+      </section>
+
+      <div className={styles.adjustedListHeader}>
+        <span>{selection.signalLabel}</span>
+      </div>
+
+      <div aria-label={selection.count} className={styles.adjustedCandidateList} role="list">
+        {selection.candidates.map((candidate, index) => (
+          <article className={`${styles.adjustedCandidateRow} ${index === 0 ? styles.adjustedCandidateRowActive : ""}`} key={candidate.name} role="listitem">
+            <span aria-hidden="true" className={styles.adjustedCandidateAvatar}>{candidate.initials}</span>
+            <div className={styles.adjustedCandidateIdentity}>
+              <h3>{candidate.name}</h3>
+              <p>{candidate.role}<span aria-hidden="true"> · </span>{candidate.location}</p>
+            </div>
+            <div className={styles.adjustedCandidateTags}>
+              {candidate.tags.map((tag) => <span key={tag}>{tag}</span>)}
+              <span className={styles.adjustedSignal}>{candidate.signal}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
 }
