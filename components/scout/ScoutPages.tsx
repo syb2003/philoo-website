@@ -60,7 +60,17 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
                 </ScoutTrackedAnchor>
               ) : null}
             </div>
-            <ScoutHomeDemoPreview lang={lang} />
+            <div className={styles.homeHeroVisualWrap}>
+              <span className={`${styles.ambientProductCard} ${styles.ambientProductCardTop}`}>
+                <SearchIcon />
+                <span><small>{lang === "nl" ? "Zoekcontext" : "Search context"}</small><strong>{lang === "nl" ? "Rol en team helder" : "Role and team clarified"}</strong></span>
+              </span>
+              <ScoutHomeDemoPreview lang={lang} />
+              <span className={`${styles.ambientProductCard} ${styles.ambientProductCardBottom}`}>
+                <CheckCircleIcon />
+                <span><small>{lang === "nl" ? "Feedback" : "Feedback"}</small><strong>{lang === "nl" ? "Verwerkt in de selectie" : "Applied to the selection"}</strong></span>
+              </span>
+            </div>
           </div>
         </section>
 
@@ -72,7 +82,10 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
                 const Icon = stepIcons[index];
                 return (
                   <article className={styles.homeProcessCard} key={title}>
-                    <span className={styles.iconBubble}><Icon /></span>
+                    <div className={styles.homeProcessCardTop}>
+                      <span className={styles.iconBubble}><Icon /></span>
+                      <span className={styles.homeProcessNumber}>0{index + 1}</span>
+                    </div>
                     <div>
                       <h3>{title}</h3>
                       <p>{body}</p>
@@ -84,7 +97,7 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
           </div>
         </section>
 
-        <section className={`${styles.section} ${styles.tintedSection}`}>
+        <section className={`${styles.section} ${styles.productSurfaceSection}`}>
           <div className={`${styles.container} ${styles.candidateSectionGrid}`}>
             <div className={styles.sectionCopy}>
               <p className={styles.eyebrow}>{copy.candidateLabel}</p>
@@ -96,6 +109,11 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
               <div className={styles.candidateIdentity}>
                 <span className={styles.largeAvatar}>AM</span>
                 <div><h3>{copy.candidateName}</h3><p>{copy.candidateRole} · {copy.candidateLocation}</p></div>
+              </div>
+              <div aria-label={lang === "nl" ? "Profielstatus" : "Profile status"} className={styles.candidateStatusRow}>
+                <span>{lang === "nl" ? "B2B-ervaring" : "B2B experience"}</span>
+                <span>{lang === "nl" ? "Directe acquisitie" : "Direct acquisition"}</span>
+                <span>{lang === "nl" ? "Open punt" : "Open question"}</span>
               </div>
               <dl className={styles.candidateFacts}>
                 <div><dt>{copy.whyLabel}</dt><dd>{copy.why}</dd></div>
@@ -109,7 +127,7 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
           </div>
         </section>
 
-        <section className={`${styles.section} ${styles.compactSection}`}>
+        <section className={`${styles.section} ${styles.compactSection} ${styles.productBandSection}`}>
           <div className={styles.container}>
             <div className={styles.audienceRouteHeader}>
               <h2 className={styles.sectionTitle}>{copy.audienceTitle}</h2>
@@ -262,7 +280,7 @@ export function ScoutCompaniesPage({ lang }: { lang: Language }) {
 
         <AudienceSteps points={copy.points} title={copy.sectionTitle} />
 
-        <section className={`${styles.section} ${styles.tintedSection}`}>
+        <section className={`${styles.section} ${styles.productSurfaceSection}`}>
           <div className={styles.narrowContainer}>
             <h2 className={styles.sectionTitle}>{copy.focusTitle}</h2>
             <div className={styles.focusPanel}>
@@ -295,7 +313,7 @@ export function ScoutAgenciesPage({ lang }: { lang: Language }) {
 
         <AudienceSteps points={copy.points} title={copy.sectionTitle} />
 
-        <section className={`${styles.section} ${styles.tintedSection}`}>
+        <section className={`${styles.section} ${styles.productSurfaceSection}`}>
           <div className={styles.container}>
             <h2 className={styles.sectionTitle}>{copy.previewTitle}</h2>
             <FeedbackPreview feedback={copy.feedback} feedbackLabel={copy.feedbackLabel} label={label} why={copy.why} whyLabel={copy.whyLabel} />
@@ -361,7 +379,7 @@ export function ScoutDemoPage({ lang }: { lang: Language }) {
     <ScoutShell currentPage="demo" lang={lang}>
       <AnalyticsPageView event="site_page_view" language={lang} />
       <main id="main-content">
-        <section className={`${styles.section} ${styles.demoSection}`}>
+        <section className={`${styles.section} ${styles.demoSection} ${styles.productBandSection}`}>
           <div className={`${styles.container} ${styles.demoGrid}`}>
             <div>
               <PageHeroCopy eyebrow={copy.eyebrow} intro={copy.intro} title={copy.title} />
@@ -410,13 +428,21 @@ function PageHeroCopy({ eyebrow, intro, title }: { eyebrow: string; intro: strin
 
 function AudienceSteps({ points, title }: { points: readonly (readonly [string, string])[]; title: string }) {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} ${styles.productBandSection}`}>
       <div className={styles.narrowContainer}>
         <h2 className={styles.sectionTitle}>{title}</h2>
         <div className={styles.stepsGrid}>
           {points.map(([pointTitle, body], index) => {
             const Icon = stepIcons[index];
-            return <article className={styles.stepCard} key={pointTitle}><span className={styles.iconBubble}><Icon /></span><div><span className={styles.stepNumber}>0{index + 1}</span><h3>{pointTitle}</h3><p>{body}</p></div></article>;
+            return (
+              <article className={styles.stepCard} key={pointTitle}>
+                <div className={styles.stepCardTop}>
+                  <span className={styles.iconBubble}><Icon /></span>
+                  <span className={styles.stepNumber}>0{index + 1}</span>
+                </div>
+                <div><h3>{pointTitle}</h3><p>{body}</p></div>
+              </article>
+            );
           })}
         </div>
       </div>
