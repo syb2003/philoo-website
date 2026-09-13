@@ -371,10 +371,9 @@
 }
 
 .homeHeroSection {
-  padding-block: clamp(2.75rem, 3.6vw, 3.25rem) clamp(2.5rem, 3.2vw, 2.9rem);
+  padding-block: clamp(2rem, 2.8vw, 2.55rem) clamp(1.85rem, 2.6vw, 2.35rem);
   background:
-    radial-gradient(ellipse 30rem 27rem at 78% 48%, rgba(99, 73, 255, 0.16), transparent 72%),
-    radial-gradient(ellipse 22rem 20rem at 82% 42%, rgba(186, 173, 255, 0.12), transparent 70%),
+    radial-gradient(ellipse 29rem 25rem at 78% 47%, rgba(99, 73, 255, 0.125), transparent 72%),
     #fff;
 }
 
@@ -394,8 +393,9 @@
 }
 
 .homeHeroSection .heroGrid {
-  grid-template-columns: minmax(0, 1.08fr) minmax(32rem, 0.92fr);
-  gap: clamp(3rem, 4.5vw, 4.5rem);
+  grid-template-columns: minmax(0, 1.06fr) minmax(33rem, 0.94fr);
+  align-items: start;
+  gap: clamp(2.6rem, 4vw, 4rem);
 }
 
 .heroCopy {
@@ -432,6 +432,14 @@
   line-height: 1;
 }
 
+.homeHeroSection .heroTitle > span {
+  display: block;
+}
+
+.heroTitleAccent {
+  color: var(--scout-purple);
+}
+
 .pageHeroTitle {
   max-width: 720px;
   font-size: clamp(2.65rem, 4.3vw, 4.35rem);
@@ -448,17 +456,18 @@
 
 .homeHeroSection .heroLead {
   max-width: 690px;
-  margin-top: 1.35rem;
-  font-size: clamp(1.1rem, 1.4vw, 1.2rem);
-  line-height: 1.6;
+  margin-top: 1.2rem;
+  color: #454d72;
+  font-size: clamp(1.12rem, 1.42vw, 1.23rem);
+  line-height: 1.55;
 }
 
 .homeHeroSection .heroActions {
-  margin-top: 1.6rem;
+  margin-top: 1.45rem;
 }
 
 .homeHeroSection .smallNote {
-  margin-top: 0.9rem;
+  margin-top: 0.8rem;
 }
 
 .heroActions {
@@ -639,12 +648,467 @@
   font-size: 1rem;
 }
 
+.homeHeroDemoWindow {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  width: min(100%, 39rem);
+  border: 1px solid #cec6ff;
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow:
+    0 20px 48px rgba(61, 42, 142, 0.1),
+    0 4px 12px rgba(28, 22, 74, 0.035);
+}
+
+.homeHeroDemoHeader {
+  display: grid;
+  min-height: 58px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid #e7e3f4;
+  background: #fff;
+  padding: 0.6rem 0.75rem;
+}
+
+.homeHeroDemoHeader .demoBrand {
+  justify-self: center;
+}
+
+.homeHeroDemoHeader .demoPlaybackControl {
+  width: 2.45rem;
+  min-width: 2.45rem;
+  min-height: 2.45rem;
+  padding: 0;
+  border-radius: 0.72rem;
+}
+
+.homeHeroDemoHeader .playbackLabel {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.homeHeroDemoCounter {
+  border: 1px solid #ddd7ff;
+  border-radius: 999px;
+  background: #f4f1ff;
+  padding: 0.34rem 0.58rem;
+  color: var(--scout-purple-dark);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.homeHeroDemoNavigation {
+  border-bottom: 1px solid #e4e0f2;
+  background: #f8f7ff;
+  padding: 0.45rem 0.55rem;
+}
+
+.homeHeroDemoNavigation ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.homeHeroDemoNavigation button {
+  display: flex;
+  width: 100%;
+  min-height: 42px;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid transparent;
+  border-radius: 0.66rem;
+  background: transparent;
+  padding: 0.45rem;
+  color: #646c8d;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.homeHeroDemoNavigation button:hover {
+  background: #f0edff;
+  color: var(--scout-navy);
+}
+
+.homeHeroDemoNavigation button[aria-current="step"] {
+  border-color: #c8beff;
+  background: #fff;
+  color: var(--scout-navy);
+  box-shadow: 0 5px 14px rgba(55, 38, 132, 0.07);
+}
+
+.homeHeroDemoNavigation button > span {
+  display: grid;
+  width: 1.55rem;
+  height: 1.55rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #ece8ff;
+  color: var(--scout-purple-dark);
+  font-size: 0.66rem;
+  font-weight: 900;
+}
+
+.homeHeroDemoNavigation button[aria-current="step"] > span {
+  background: var(--scout-purple);
+  color: #fff;
+}
+
+.homeHeroDemoNavigation button strong {
+  min-width: 0;
+  overflow: hidden;
+  color: inherit;
+  font-size: 0.67rem;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.homeHeroDemoViewport {
+  display: grid;
+  height: 284px;
+  min-width: 0;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(103, 75, 255, 0.1), transparent 13rem),
+    linear-gradient(145deg, #fcfbff, #f4f2ff);
+  padding: 0.9rem;
+  animation: demoReveal 320ms ease both;
+}
+
+.demoPaused .homeHeroDemoViewport {
+  animation: none;
+}
+
+.homeHeroNeedStage {
+  display: grid;
+  min-width: 0;
+  min-height: 100%;
+  grid-template-rows: 1fr auto;
+  gap: 0.8rem;
+}
+
+.homeHeroPromptCard {
+  display: grid;
+  width: min(100%, 29rem);
+  grid-template-columns: 2.7rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.8rem;
+  align-self: center;
+  border: 1px solid #d5ceff;
+  border-radius: 0.95rem;
+  background: #fff;
+  padding: 0.85rem 0.95rem;
+  box-shadow: 0 9px 24px rgba(54, 38, 130, 0.055);
+}
+
+.homeHeroPromptCard > span {
+  display: grid;
+  width: 2.7rem;
+  height: 2.7rem;
+  place-items: center;
+  border-radius: 0.78rem;
+  background: #eeeaff;
+}
+
+.homeHeroPromptCard small,
+.homeHeroFeedbackStage small,
+.homeHeroOutputChips small {
+  color: var(--scout-purple-dark);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.homeHeroPromptCard h3,
+.homeHeroFeedbackStage h3 {
+  margin: 0.22rem 0 0;
+  color: var(--scout-navy);
+  font-size: 1.1rem;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.homeHeroPromptCard p {
+  margin: 0.25rem 0 0;
+  color: #555f82;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.homeHeroComposer {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px solid #b9adff;
+  border-radius: 0.85rem;
+  background: #fff;
+  padding: 0.38rem 0.45rem 0.38rem 0.85rem;
+  color: #6c7393;
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.homeHeroComposer > span:last-child {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.68rem;
+  background: #ece8ff;
+  color: var(--scout-purple-dark);
+  font-size: 1rem;
+  font-weight: 850;
+}
+
+.homeHeroSelectionStage,
+.homeHeroOutputStage {
+  display: grid;
+  min-width: 0;
+  min-height: 100%;
+  align-content: start;
+  gap: 0.65rem;
+}
+
+.homeHeroStageHeading {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.homeHeroStageHeading > div {
+  min-width: 0;
+}
+
+.homeHeroStageHeading h3 {
+  margin: 0;
+  color: var(--scout-navy);
+  font-size: 0.94rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.homeHeroStageHeading p {
+  overflow: hidden;
+  margin: 0.14rem 0 0;
+  color: #596284;
+  font-size: 0.69rem;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.homeHeroStageHeading > span {
+  flex: 0 0 auto;
+  border: 1px solid #d4ccff;
+  border-radius: 999px;
+  background: #ece8ff;
+  padding: 0.3rem 0.55rem;
+  color: var(--scout-purple-dark);
+  font-size: 0.68rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.homeHeroCandidateList {
+  display: grid;
+  min-width: 0;
+  gap: 0.45rem;
+}
+
+.homeHeroCandidateList article {
+  display: grid;
+  min-width: 0;
+  min-height: 57px;
+  grid-template-columns: 2.05rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.65rem;
+  border: 1px solid #dcdaeb;
+  border-radius: 0.78rem;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 0.42rem 0.62rem;
+}
+
+.homeHeroCandidateList article > span {
+  display: grid;
+  width: 2.05rem;
+  height: 2.05rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #efecff;
+  color: var(--scout-purple-dark);
+  font-size: 0.67rem;
+  font-weight: 850;
+}
+
+.homeHeroCandidateList article > div {
+  min-width: 0;
+}
+
+.homeHeroCandidateList strong,
+.homeHeroCandidateList small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.homeHeroCandidateList strong {
+  color: var(--scout-navy);
+  font-size: 0.77rem;
+  line-height: 1.2;
+}
+
+.homeHeroCandidateList small {
+  margin-top: 0.14rem;
+  color: #687192;
+  font-size: 0.66rem;
+  line-height: 1.2;
+}
+
+.homeHeroCandidateList em {
+  border: 1px solid #bfe6d7;
+  border-radius: 999px;
+  background: #eaf8f2;
+  padding: 0.28rem 0.48rem;
+  color: #157759;
+  font-size: 0.62rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.homeHeroCandidateList .homeHeroCandidateActive {
+  border-color: #8e7cff;
+  background: #f7f5ff;
+  box-shadow: 0 6px 16px rgba(61, 42, 142, 0.055);
+}
+
+.homeHeroCandidateList .homeHeroCandidateActive > span {
+  background: var(--scout-purple);
+  color: #fff;
+}
+
+.homeHeroFeedbackStage {
+  display: grid;
+  width: min(100%, 28rem);
+  align-content: center;
+  justify-self: center;
+  gap: 0.8rem;
+}
+
+.homeHeroFeedbackStage > article {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid #cdc4ff;
+  border-radius: 0.9rem;
+  background: #fff;
+  padding: 0.85rem;
+  box-shadow: 0 8px 22px rgba(55, 38, 132, 0.055);
+}
+
+.homeHeroFeedbackStage > article > span {
+  display: grid;
+  width: 2.55rem;
+  height: 2.55rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 0.75rem;
+  background: #ece8ff;
+  color: var(--scout-purple);
+}
+
+.homeHeroFeedbackStage svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.homeHeroFeedbackChips,
+.homeHeroOutputChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.homeHeroFeedbackChips > span,
+.homeHeroOutputChips > span {
+  border: 1px solid #d4ccff;
+  border-radius: 999px;
+  background: #f1eeff;
+  padding: 0.34rem 0.55rem;
+  color: #46378d;
+  font-size: 0.7rem;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.homeHeroFeedbackStage > p {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  border: 1px solid #bee6d6;
+  border-radius: 0.78rem;
+  background: #eaf8f2;
+  padding: 0.65rem 0.75rem;
+  color: #157759;
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.homeHeroOutputStage {
+  gap: 0.42rem;
+}
+
+.homeHeroOutputChips {
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.homeHeroOutputChips > span {
+  overflow: hidden;
+  padding-block: 0.27rem;
+  font-size: 0.63rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.homeHeroOutputStage .homeHeroCandidateList {
+  gap: 0.35rem;
+}
+
+.homeHeroOutputStage .homeHeroCandidateList article {
+  min-height: 48px;
+  padding-block: 0.3rem;
+}
+
 .homeProcessSection {
   position: relative;
   border-top: 1px solid #e8e5f4;
   border-bottom: 1px solid #e8e5f4;
   background: #faf9ff;
-  padding-block: clamp(2.05rem, 2.7vw, 2.45rem) clamp(2.6rem, 3.5vw, 3.2rem);
+  padding-block: clamp(1.4rem, 2vw, 1.75rem) clamp(2.35rem, 3.2vw, 2.9rem);
 }
 
 .homeProcessHeading {
@@ -4085,33 +4549,23 @@
   isolation: isolate;
   justify-self: end;
   width: min(100%, 39rem);
-  padding: 1.35rem 0.85rem 3.6rem;
 }
 
 .homeHeroVisualWrap::before {
   position: absolute;
   z-index: -2;
-  inset: -9% -12% -12% -8%;
+  inset: -12% -11%;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(91, 62, 255, 0.2), rgba(127, 106, 255, 0.08) 45%, transparent 72%);
-  filter: blur(14px);
+  background: radial-gradient(ellipse at center, rgba(91, 62, 255, 0.13), rgba(127, 106, 255, 0.05) 48%, transparent 72%);
+  filter: blur(12px);
   content: "";
 }
 
 .homeHeroVisualWrap::after {
-  position: absolute;
-  z-index: -1;
-  top: 6%;
-  right: -4%;
-  width: 11rem;
-  height: 7rem;
-  border-top: 1px dashed rgba(96, 68, 255, 0.26);
-  border-right: 1px dashed rgba(96, 68, 255, 0.26);
-  border-radius: 0 7rem 0 0;
-  content: "";
+  display: none;
 }
 
-.homeHeroVisualWrap .homeChatWindow {
+.homeHeroVisualWrap .homeHeroDemoWindow {
   position: relative;
   z-index: 1;
   width: 100%;
@@ -5742,6 +6196,112 @@
 }
 
 @media (max-width: 560px) {
+  .homeHeroDemoWindow {
+    border-radius: 1rem;
+  }
+
+  .homeHeroDemoHeader {
+    min-height: 54px;
+    gap: 0.45rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  .homeHeroDemoHeader .demoBrand strong {
+    font-size: 1rem;
+  }
+
+  .homeHeroDemoHeader .demoBrand span {
+    font-size: 0.76rem;
+  }
+
+  .homeHeroDemoHeader .demoBrand img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .homeHeroDemoCounter {
+    padding-inline: 0.46rem;
+    font-size: 0.61rem;
+  }
+
+  .homeHeroDemoNavigation {
+    padding: 0.38rem 0.45rem;
+  }
+
+  .homeHeroDemoNavigation button {
+    min-height: 36px;
+    justify-content: center;
+    padding: 0.3rem;
+  }
+
+  .homeHeroDemoNavigation button strong {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .homeHeroDemoViewport {
+    height: 292px;
+    padding: 0.72rem;
+  }
+
+  .homeHeroPromptCard {
+    grid-template-columns: 2.35rem minmax(0, 1fr);
+    gap: 0.65rem;
+    padding: 0.75rem;
+  }
+
+  .homeHeroPromptCard > span {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+
+  .homeHeroPromptCard h3,
+  .homeHeroFeedbackStage h3 {
+    font-size: 1rem;
+  }
+
+  .homeHeroCandidateList article {
+    min-height: 55px;
+    grid-template-columns: 1.9rem minmax(0, 1fr) auto;
+    gap: 0.48rem;
+    padding-inline: 0.48rem;
+  }
+
+  .homeHeroCandidateList article > span {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  .homeHeroCandidateList em {
+    overflow: hidden;
+    max-width: 5.2rem;
+    padding-inline: 0.38rem;
+    text-overflow: ellipsis;
+  }
+
+  .homeHeroStageHeading p {
+    max-width: 11rem;
+  }
+
+  .homeHeroOutputChips > small {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .homeHeroOutputChips > span {
+    max-width: calc(50% - 0.2rem);
+  }
+
   .homeProcessCardTop {
     width: 100%;
   }
@@ -5757,6 +6317,12 @@
   .demoPoints article {
     align-items: start;
     padding: 0.9rem;
+  }
+}
+
+@media (min-width: 1061px) {
+  .homeHeroSection .heroTitle > span {
+    white-space: nowrap;
   }
 }
 
