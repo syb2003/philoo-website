@@ -373,7 +373,8 @@
 .homeHeroSection {
   padding-block: clamp(2rem, 2.8vw, 2.55rem) clamp(1.85rem, 2.6vw, 2.35rem);
   background:
-    radial-gradient(ellipse 29rem 25rem at 78% 47%, rgba(99, 73, 255, 0.125), transparent 72%),
+    radial-gradient(ellipse 49rem 31rem at 84% 46%, rgba(104, 80, 255, 0.18) 0%, rgba(130, 108, 255, 0.09) 47%, rgba(160, 143, 255, 0.025) 68%, transparent 79%),
+    linear-gradient(90deg, #fff 0%, #fff 39%, #fcfbff 55%, #f3f0ff 100%),
     #fff;
 }
 
@@ -4556,8 +4557,8 @@
   z-index: -2;
   inset: -12% -11%;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(91, 62, 255, 0.13), rgba(127, 106, 255, 0.05) 48%, transparent 72%);
-  filter: blur(12px);
+  background: radial-gradient(ellipse at center, rgba(91, 62, 255, 0.085), rgba(127, 106, 255, 0.035) 48%, transparent 72%);
+  filter: blur(10px);
   content: "";
 }
 
@@ -5223,7 +5224,7 @@
   .section.homeHeroSection {
     padding-block: 2.15rem 2.1rem;
     background:
-      radial-gradient(ellipse 22rem 24rem at 88% 74%, rgba(99, 73, 255, 0.16), transparent 72%),
+      radial-gradient(ellipse 27rem 25rem at 50% 78%, rgba(104, 80, 255, 0.18) 0%, rgba(134, 113, 255, 0.08) 48%, transparent 73%),
       #fff;
   }
 
