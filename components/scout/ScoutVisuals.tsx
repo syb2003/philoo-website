@@ -119,15 +119,15 @@ export function TeamsVisual({ label, lang }: PreviewProps & { lang: Language }) 
       <div aria-hidden="true" className={styles.orbit} />
       <div className={`${styles.personCard} ${styles.managerCard}`}>
         <span className={styles.avatar}>HM</span>
-        <span><strong>{lang === "nl" ? "Leidinggevende" : "Hiring manager"}</strong><small>{lang === "nl" ? "Moet zelf nieuwe klanten winnen." : "Must win new clients."}</small></span>
+        <span><strong>{lang === "nl" ? "Leidinggevende" : "Hiring manager"}</strong><small>{lang === "nl" ? "Zelf nieuwe klanten vinden is belangrijk." : "Must win new clients."}</small></span>
       </div>
       <div className={`${styles.personCard} ${styles.recruiterCard}`}>
         <span className={styles.avatar}>RC</span>
-        <span><strong>Recruiter</strong><small>{lang === "nl" ? "Laten we deze profielen beoordelen." : "Let’s review these profiles."}</small></span>
+        <span><strong>Recruiter</strong><small>{lang === "nl" ? "Laten we de eerste kandidaten beoordelen." : "Let’s review these profiles."}</small></span>
       </div>
       <div className={styles.alignmentCard}>
         <UsersIcon />
-        <span>{lang === "nl" ? "Een selectie waarop we kunnen handelen." : "A shortlist we can act on."}</span>
+        <span>{lang === "nl" ? "Kandidaten om samen te beoordelen." : "A shortlist we can act on."}</span>
       </div>
       <PreviewLabel>{label}</PreviewLabel>
     </figure>
@@ -138,12 +138,12 @@ export function AgencyVisual({ label, lang }: PreviewProps & { lang: Language })
   return (
     <figure aria-label={label} className={`${styles.visual} ${styles.agencyVisual}`}>
       <div aria-hidden="true" className={styles.orbit} />
-      <div className={styles.briefSignal}><FileCheckIcon /><span>{lang === "nl" ? "Sterke saleservaring. Moet zelf blijven verkopen." : "Strong sales experience. Must keep selling directly."}</span></div>
+      <div className={styles.briefSignal}><FileCheckIcon /><span>{lang === "nl" ? "Ervaring met zakelijke verkoop. Zelf nieuwe klanten vinden is belangrijk." : "Strong sales experience. Must keep selling directly."}</span></div>
       <div className={styles.candidateStack}>
-        <CandidateRow initials="AM" name="Alex Morgan" role="Business Development Manager" status={lang === "nl" ? "Past bij briefing" : "Fits the brief"} />
-        <CandidateRow initials="JT" name="Jamie Taylor" role="Account Manager" status={lang === "nl" ? "Te beoordelen" : "To review"} />
+        <CandidateRow initials="AM" name="Alex Morgan" role="Business Development Manager" status={lang === "nl" ? "Sluit aan op de vraag" : "Fits the brief"} />
+        <CandidateRow initials="JT" name="Jamie Taylor" role="Account Manager" status={lang === "nl" ? "Nog te beoordelen" : "To review"} />
       </div>
-      <div className={styles.readySignal}>{lang === "nl" ? "Selectie klaar om te beoordelen" : "Shortlist ready to review"}</div>
+      <div className={styles.readySignal}>{lang === "nl" ? "Klaar voor beoordeling" : "Shortlist ready to review"}</div>
       <PreviewLabel>{label}</PreviewLabel>
     </figure>
   );
