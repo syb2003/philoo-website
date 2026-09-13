@@ -37,7 +37,10 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
           <div className={`${styles.container} ${styles.heroGrid}`}>
             <div className={styles.heroCopy}>
               <p className={styles.eyebrow}>{copy.eyebrow}</p>
-              <h1 className={styles.heroTitle}>{copy.headline}</h1>
+              <h1 className={styles.heroTitle}>
+                <span>{lang === "nl" ? "Vul je vacatures" : "Fill your vacancies"}</span>
+                <span className={styles.heroTitleAccent}>{lang === "nl" ? "sneller in." : "faster."}</span>
+              </h1>
               <p className={styles.heroLead}>{copy.lead}</p>
               <div className={styles.heroActions}>
                 <ScoutTrackedLink className={styles.primaryButton} event="scout_primary_cta_click" href={scoutPaths.demo[lang]} language={lang} placement="home-hero">
@@ -61,15 +64,7 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
               ) : null}
             </div>
             <div className={styles.homeHeroVisualWrap}>
-              <span className={`${styles.ambientProductCard} ${styles.ambientProductCardTop}`}>
-                <SearchIcon />
-                <span><small>{lang === "nl" ? "Zoekcontext" : "Search context"}</small><strong>{lang === "nl" ? "Rol en team helder" : "Role and team clarified"}</strong></span>
-              </span>
               <ScoutHomeDemoPreview lang={lang} />
-              <span className={`${styles.ambientProductCard} ${styles.ambientProductCardBottom}`}>
-                <CheckCircleIcon />
-                <span><small>{lang === "nl" ? "Feedback" : "Feedback"}</small><strong>{lang === "nl" ? "Verwerkt in de selectie" : "Applied to the selection"}</strong></span>
-              </span>
             </div>
           </div>
         </section>

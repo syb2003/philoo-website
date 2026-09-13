@@ -10,8 +10,116 @@ import styles from "@/components/scout/scout.module.css";
 
 const DETAIL_LAST_STAGE = 3;
 const DETAIL_STAGE_DURATION_MS = 5200;
+const HOME_LAST_STAGE = 3;
+const HOME_STAGE_DURATION_MS = 4800;
 
 type DemoCopy = (typeof scoutDemoCopy)[Language];
+
+function getInitialSelection(lang: Language) {
+  return lang === "nl" ? {
+    title: "Eerste selectie",
+    count: "3 kandidaten gevonden",
+    candidates: [
+      ["Kandidaat 01", "Commercieel manager", "Utrecht"],
+      ["Kandidaat 02", "Accountmanager", "Rotterdam"],
+      ["Kandidaat 03", "Commercieel specialist", "Amersfoort"],
+    ],
+    counter: "Kandidaat 1 / 3",
+    relevant: "Waarom relevant",
+    relevantItems: ["Zakelijke klanten", "Groei bestaande accounts"],
+    signal: "Signaal · waar beschikbaar",
+    signalValue: "Open to work",
+    signalNote: "Mogelijk relevant",
+    check: "Nog te checken",
+    checkValue: "Interesse in deze vacature",
+  } as const : {
+    title: "First selection",
+    count: "3 candidates found",
+    candidates: [
+      ["Candidate 01", "Commercial manager", "Utrecht"],
+      ["Candidate 02", "Account manager", "Rotterdam"],
+      ["Candidate 03", "Commercial specialist", "Amersfoort"],
+    ],
+    counter: "Candidate 1 / 3",
+    relevant: "Why relevant",
+    relevantItems: ["Business clients", "Existing-account growth"],
+    signal: "Signal · where available",
+    signalValue: "Open to work",
+    signalNote: "Potentially relevant",
+    check: "Still to check",
+    checkValue: "Interest in this role",
+  } as const;
+}
+
+function getAdjustedSelection(lang: Language) {
+  return lang === "nl" ? {
+    title: "Aangepaste selectie",
+    count: "3 kandidaten gevonden",
+    summary: "Meer nadruk op zelf verkopen · Minder teammanagement",
+    feedbackLabel: "Op basis van feedback",
+    feedback: ["Meer zelf sales", "Minder teammanagement", "Regio Randstad", "Recente commerciële ervaring"],
+    signalLabel: "Signalen waar beschikbaar",
+    candidates: [
+      {
+        initials: "AM",
+        name: "Alex Morgan",
+        role: "Commercieel specialist",
+        location: "Regio Rotterdam",
+        tags: ["Zelf sales", "B2B-klanten"],
+        signal: "Open to work",
+      },
+      {
+        initials: "RV",
+        name: "Robin de Vries",
+        role: "Accountmanager",
+        location: "Regio Utrecht",
+        tags: ["Nieuwe klanten", "Eerste gesprekken"],
+        signal: "Recent actief",
+      },
+      {
+        initials: "SJ",
+        name: "Samira Jansen",
+        role: "Business developer",
+        location: "Regio Den Haag",
+        tags: ["Zakelijke klanten", "Zelf acquisitie"],
+        signal: "Beschikbaarheidsignaal",
+      },
+    ],
+  } as const : {
+    title: "Adjusted selection",
+    count: "3 candidates found",
+    summary: "More emphasis on direct selling · Less team management",
+    feedbackLabel: "Based on feedback",
+    feedback: ["More direct selling", "Less team management", "Randstad area", "Recent commercial experience"],
+    signalLabel: "Signals where available",
+    candidates: [
+      {
+        initials: "AM",
+        name: "Alex Morgan",
+        role: "Commercial specialist",
+        location: "Rotterdam region",
+        tags: ["Direct selling", "B2B clients"],
+        signal: "Open to work",
+      },
+      {
+        initials: "RV",
+        name: "Robin de Vries",
+        role: "Account manager",
+        location: "Utrecht region",
+        tags: ["New clients", "First conversations"],
+        signal: "Recently active",
+      },
+      {
+        initials: "SJ",
+        name: "Samira Jansen",
+        role: "Business developer",
+        location: "The Hague region",
+        tags: ["Business clients", "Direct outreach"],
+        signal: "Availability signal",
+      },
+    ],
+  } as const;
+}
 
 type PlaybackOptions = {
   autoplay: boolean;
@@ -155,38 +263,170 @@ function useDemoPlayback({ autoplay, duration, lang, lastStage, source }: Playba
 
 export function ScoutHomeDemoPreview({ lang }: { lang: Language }) {
   const copy = scoutDemoCopy[lang];
+  const { playing, reducedMotion, rootRef, selectStage, stage, togglePlayback } = useDemoPlayback({
+    autoplay: true,
+    duration: HOME_STAGE_DURATION_MS,
+    lang,
+    lastStage: HOME_LAST_STAGE,
+    source: "scout:home-hero-demo",
+  });
 
   return (
-    <section aria-label={copy.home.previewLabel} className={styles.homeChatWindow}>
-      <header className={styles.homeChatHeader}>
+    <section
+      aria-label={copy.stageNavigation}
+      className={`${styles.homeHeroDemoWindow} ${playing ? styles.demoPlaying : styles.demoPaused}`}
+      ref={rootRef}
+    >
+      <header className={styles.homeHeroDemoHeader}>
+        <DemoPlaybackControls
+          atEnd={stage === HOME_LAST_STAGE}
+          copy={copy}
+          onToggle={togglePlayback}
+          playing={playing}
+          reducedMotion={reducedMotion}
+        />
         <DemoBrand />
+        <span className={styles.homeHeroDemoCounter}>{copy.stepOf(stage + 1, HOME_LAST_STAGE + 1)}</span>
       </header>
 
-      <div className={styles.homeChatCanvas}>
-        <article className={styles.homeChatMessage}>
-          <span aria-hidden="true" className={styles.homeChatAvatar}><PhilooMark sizes="28px" /></span>
-          <div>
-            <span className={styles.homeChatMessageLabel}>{copy.home.messageLabel}</span>
-            <h2>{copy.home.welcome}</h2>
-            <p>{copy.home.welcomeSupport}</p>
-          </div>
-        </article>
+      <HomeDemoStageNavigation copy={copy} onSelect={(index) => selectStage(index, "manual")} stage={stage} />
 
-        <div aria-label={copy.home.composerLabel} className={styles.homeChatComposer}>
-          <span>{copy.home.composer}</span>
-          <span aria-hidden="true" className={styles.homeChatSend}>→</span>
-        </div>
+      <div aria-atomic="true" aria-live="polite" className={styles.homeHeroDemoViewport} key={stage}>
+        <h2 className={styles.srOnly}>{copy.stages[stage].title}</h2>
+        {stage === 0 ? <HomeNeedStage copy={copy} /> : null}
+        {stage === 1 ? <HomeReviewStage lang={lang} /> : null}
+        {stage === 2 ? <HomeFeedbackStage copy={copy} lang={lang} /> : null}
+        {stage === 3 ? <HomeOutputStage lang={lang} /> : null}
       </div>
 
-      <footer aria-label={copy.home.processLabel} className={styles.homeChatProcess}>
-        {copy.home.process.map((item, index) => (
-          <span className={styles.homeChatProcessStep} key={item}>
-            <span>{item}</span>
-            {index < copy.home.process.length - 1 ? <span aria-hidden="true" className={styles.homeChatProcessArrow}>→</span> : null}
-          </span>
-        ))}
-      </footer>
+      <noscript>
+        <div className={styles.demoNoScript}>
+          <h2>{copy.staticFallbackTitle}</h2>
+          <ol>{copy.stages.map((item) => <li key={item.nav}>{item.nav}</li>)}</ol>
+        </div>
+      </noscript>
     </section>
+  );
+}
+
+function HomeDemoStageNavigation({ copy, onSelect, stage }: {
+  copy: DemoCopy;
+  onSelect: (index: number) => void;
+  stage: number;
+}) {
+  return (
+    <nav aria-label={copy.stageNavigation} className={styles.homeHeroDemoNavigation}>
+      <ol>
+        {copy.stages.map((item, index) => (
+          <li key={item.nav}>
+            <button
+              aria-label={item.nav}
+              aria-current={stage === index ? "step" : undefined}
+              onClick={() => onSelect(index)}
+              type="button"
+            >
+              <span aria-hidden="true">0{index + 1}</span>
+              <strong>{item.nav}</strong>
+            </button>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+
+function HomeNeedStage({ copy }: { copy: DemoCopy }) {
+  return (
+    <div className={styles.homeHeroNeedStage}>
+      <article className={styles.homeHeroPromptCard}>
+        <span aria-hidden="true"><PhilooMark sizes="26px" /></span>
+        <div>
+          <small>{copy.home.messageLabel}</small>
+          <h3>{copy.home.welcome}</h3>
+          <p>{copy.home.welcomeSupport}</p>
+        </div>
+      </article>
+      <div aria-label={copy.home.composerLabel} className={styles.homeHeroComposer}>
+        <span>{copy.home.composer}</span>
+        <span aria-hidden="true">→</span>
+      </div>
+    </div>
+  );
+}
+
+function HomeReviewStage({ lang }: { lang: Language }) {
+  const selection = getInitialSelection(lang);
+
+  return (
+    <div className={styles.homeHeroSelectionStage}>
+      <header className={styles.homeHeroStageHeading}>
+        <h3>{selection.title}</h3>
+        <span>{selection.count}</span>
+      </header>
+      <div aria-label={selection.count} className={styles.homeHeroCandidateList} role="list">
+        {selection.candidates.map(([name, role, location], index) => (
+          <article className={index === 0 ? styles.homeHeroCandidateActive : undefined} key={name} role="listitem">
+            <span aria-hidden="true">0{index + 1}</span>
+            <div><strong>{name}</strong><small>{role} · {location}</small></div>
+            {index === 0 ? <em title={selection.signal}>{selection.signalValue}</em> : null}
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function HomeFeedbackStage({ copy, lang }: { copy: DemoCopy; lang: Language }) {
+  const labels = lang === "nl" ? {
+    title: "Feedback ontvangen",
+    more: "Meer zelf verkopen",
+    less: "Minder teammanagement",
+    status: "Verwerkt voor de volgende selectie",
+  } : {
+    title: "Feedback received",
+    more: "More direct selling",
+    less: "Less team management",
+    status: "Applied to the next selection",
+  };
+
+  return (
+    <div className={styles.homeHeroFeedbackStage}>
+      <article>
+        <span aria-hidden="true"><ChatIcon /></span>
+        <div><small>{copy.feedbackLabel}</small><h3>{labels.title}</h3></div>
+      </article>
+      <div className={styles.homeHeroFeedbackChips}>
+        <span>{labels.more}</span>
+        <span>{labels.less}</span>
+      </div>
+      <p><span aria-hidden="true">✓</span>{labels.status}</p>
+    </div>
+  );
+}
+
+function HomeOutputStage({ lang }: { lang: Language }) {
+  const selection = getAdjustedSelection(lang);
+
+  return (
+    <div className={styles.homeHeroOutputStage}>
+      <header className={styles.homeHeroStageHeading}>
+        <div><h3>{selection.title}</h3><p>{selection.summary}</p></div>
+        <span>{selection.count}</span>
+      </header>
+      <div className={styles.homeHeroOutputChips}>
+        <small>{selection.feedbackLabel}</small>
+        {selection.feedback.slice(0, 2).map((item) => <span key={item}>{item}</span>)}
+      </div>
+      <div aria-label={selection.count} className={styles.homeHeroCandidateList} role="list">
+        {selection.candidates.map((candidate, index) => (
+          <article className={index === 0 ? styles.homeHeroCandidateActive : undefined} key={candidate.name} role="listitem">
+            <span aria-hidden="true">{candidate.initials}</span>
+            <div><strong>{candidate.name}</strong><small>{candidate.role} · {candidate.location}</small></div>
+            <em title={selection.signalLabel}>{candidate.signal}</em>
+          </article>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -301,39 +541,7 @@ function NeedStage({ copy }: { copy: DemoCopy }) {
 }
 
 function ReviewStage({ copy, lang }: { copy: DemoCopy; lang: Language }) {
-  const selection = lang === "nl" ? {
-    title: "Eerste selectie",
-    count: "3 kandidaten gevonden",
-    candidates: [
-      ["Kandidaat 01", "Commercieel manager", "Utrecht"],
-      ["Kandidaat 02", "Accountmanager", "Rotterdam"],
-      ["Kandidaat 03", "Commercieel specialist", "Amersfoort"],
-    ],
-    counter: "Kandidaat 1 / 3",
-    relevant: "Waarom relevant",
-    relevantItems: ["Zakelijke klanten", "Groei bestaande accounts"],
-    signal: "Signaal · waar beschikbaar",
-    signalValue: "Open to work",
-    signalNote: "Mogelijk relevant",
-    check: "Nog te checken",
-    checkValue: "Interesse in deze vacature",
-  } as const : {
-    title: "First selection",
-    count: "3 candidates found",
-    candidates: [
-      ["Candidate 01", "Commercial manager", "Utrecht"],
-      ["Candidate 02", "Account manager", "Rotterdam"],
-      ["Candidate 03", "Commercial specialist", "Amersfoort"],
-    ],
-    counter: "Candidate 1 / 3",
-    relevant: "Why relevant",
-    relevantItems: ["Business clients", "Existing-account growth"],
-    signal: "Signal · where available",
-    signalValue: "Open to work",
-    signalNote: "Potentially relevant",
-    check: "Still to check",
-    checkValue: "Interest in this role",
-  } as const;
+  const selection = getInitialSelection(lang);
 
   return (
     <div className={styles.demoSelectionStage}>
@@ -393,73 +601,7 @@ function FeedbackStage({ copy }: { copy: DemoCopy }) {
 }
 
 function OutputStage({ lang }: { lang: Language }) {
-  const selection = lang === "nl" ? {
-    title: "Aangepaste selectie",
-    count: "3 kandidaten gevonden",
-    summary: "Meer nadruk op zelf verkopen · Minder teammanagement",
-    feedbackLabel: "Op basis van feedback",
-    feedback: ["Meer zelf sales", "Minder teammanagement", "Regio Randstad", "Recente commerciële ervaring"],
-    signalLabel: "Signalen waar beschikbaar",
-    candidates: [
-      {
-        initials: "AM",
-        name: "Alex Morgan",
-        role: "Commercieel specialist",
-        location: "Regio Rotterdam",
-        tags: ["Zelf sales", "B2B-klanten"],
-        signal: "Open to work",
-      },
-      {
-        initials: "RV",
-        name: "Robin de Vries",
-        role: "Accountmanager",
-        location: "Regio Utrecht",
-        tags: ["Nieuwe klanten", "Eerste gesprekken"],
-        signal: "Recent actief",
-      },
-      {
-        initials: "SJ",
-        name: "Samira Jansen",
-        role: "Business developer",
-        location: "Regio Den Haag",
-        tags: ["Zakelijke klanten", "Zelf acquisitie"],
-        signal: "Beschikbaarheidsignaal",
-      },
-    ],
-  } as const : {
-    title: "Adjusted selection",
-    count: "3 candidates found",
-    summary: "More emphasis on direct selling · Less team management",
-    feedbackLabel: "Based on feedback",
-    feedback: ["More direct selling", "Less team management", "Randstad area", "Recent commercial experience"],
-    signalLabel: "Signals where available",
-    candidates: [
-      {
-        initials: "AM",
-        name: "Alex Morgan",
-        role: "Commercial specialist",
-        location: "Rotterdam region",
-        tags: ["Direct selling", "B2B clients"],
-        signal: "Open to work",
-      },
-      {
-        initials: "RV",
-        name: "Robin de Vries",
-        role: "Account manager",
-        location: "Utrecht region",
-        tags: ["New clients", "First conversations"],
-        signal: "Recently active",
-      },
-      {
-        initials: "SJ",
-        name: "Samira Jansen",
-        role: "Business developer",
-        location: "The Hague region",
-        tags: ["Business clients", "Direct outreach"],
-        signal: "Availability signal",
-      },
-    ],
-  } as const;
+  const selection = getAdjustedSelection(lang);
 
   return (
     <div className={styles.adjustedSelectionStage}>
