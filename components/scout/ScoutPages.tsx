@@ -50,7 +50,7 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
                   {copy.secondaryCta}
                 </ScoutTrackedLink>
               </div>
-              <p className={styles.smallNote}>{copy.note}</p>
+              {lang === "en" ? <p className={styles.smallNote}>{copy.note}</p> : null}
               {lang === "nl" ? (
                 <ScoutTrackedAnchor
                   className={styles.developmentLink}

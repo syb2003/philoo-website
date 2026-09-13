@@ -357,6 +357,31 @@ function HomeNeedStage({ copy }: { copy: DemoCopy }) {
 function HomeReviewStage({ lang }: { lang: Language }) {
   const selection = getInitialSelection(lang);
 
+  if (lang === "nl") {
+    const experiences = [
+      "Laat bestaande zakelijke accounts groeien.",
+      "Commerciële ervaring als accountmanager.",
+      "Commerciële ervaring als commercieel specialist.",
+    ] as const;
+    const candidates = selection.candidates.map(([label, role, location], index) => ({
+      experience: experiences[index],
+      label,
+      location: `Regio ${location}`,
+      number: `0${index + 1}`,
+      role,
+      signal: index === 0 ? selection.signalValue : undefined,
+      signalTitle: index === 0 ? selection.signal : undefined,
+    }));
+
+    return (
+      <HomeCandidateSelection
+        candidates={candidates}
+        description="Bekijk hun ervaring en geef aan wat wel en niet past."
+        title="De eerste kandidaten"
+      />
+    );
+  }
+
   return (
     <div className={styles.homeHeroSelectionStage}>
       <header className={styles.homeHeroStageHeading}>
@@ -376,36 +401,120 @@ function HomeReviewStage({ lang }: { lang: Language }) {
   );
 }
 
+type HomeCandidateItem = {
+  experience: string;
+  label: string;
+  location: string;
+  number: string;
+  role: string;
+  signal?: string;
+  signalTitle?: string;
+};
+
+function HomeCandidateSelection({ candidates, description, title }: {
+  candidates: readonly HomeCandidateItem[];
+  description: string;
+  title: string;
+}) {
+  return (
+    <div className={styles.homeHeroCandidateStage}>
+      <header>
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </header>
+      <div aria-label={title} className={styles.homeHeroUnifiedCandidateList} role="list">
+        {candidates.map((candidate) => (
+          <article className={styles.homeHeroUnifiedCandidate} key={candidate.label} role="listitem">
+            <span aria-hidden="true">{candidate.number}</span>
+            <div>
+              <div className={styles.homeHeroUnifiedCandidateTopline}>
+                <strong>{candidate.label}</strong>
+                {candidate.signal ? <em title={candidate.signalTitle}>{candidate.signal}</em> : null}
+              </div>
+              <small>{candidate.role} · {candidate.location}</small>
+              <p>{candidate.experience}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HomeFeedbackStage({ copy, lang }: { copy: DemoCopy; lang: Language }) {
-  const labels = lang === "nl" ? {
-    title: "Feedback ontvangen",
-    more: "Meer zelf verkopen",
-    less: "Minder teammanagement",
-    status: "Verwerkt voor de volgende selectie",
-  } : {
-    title: "Feedback received",
-    more: "More direct selling",
-    less: "Less team management",
-    status: "Applied to the next selection",
-  };
+  if (lang === "en") {
+    const labels = {
+      title: "Feedback received",
+      more: "More direct selling",
+      less: "Less team management",
+      status: "Applied to the next selection",
+    };
+
+    return (
+      <div className={styles.homeHeroFeedbackStage}>
+        <article>
+          <span aria-hidden="true"><ChatIcon /></span>
+          <div><small>{copy.feedbackLabel}</small><h3>{labels.title}</h3></div>
+        </article>
+        <div className={styles.homeHeroFeedbackChips}>
+          <span>{labels.more}</span>
+          <span>{labels.less}</span>
+        </div>
+        <p><span aria-hidden="true">✓</span>{labels.status}</p>
+      </div>
+    );
+  }
 
   return (
-    <div className={styles.homeHeroFeedbackStage}>
-      <article>
-        <span aria-hidden="true"><ChatIcon /></span>
-        <div><small>{copy.feedbackLabel}</small><h3>{labels.title}</h3></div>
-      </article>
-      <div className={styles.homeHeroFeedbackChips}>
-        <span>{labels.more}</span>
-        <span>{labels.less}</span>
+    <div className={styles.homeHeroFeedbackConversation}>
+      <header className={styles.homeHeroFeedbackIntro}>
+        <h3>Geef aan wat wel en niet past</h3>
+        <p>Welke ervaring zoek je nog? En wat is minder belangrijk?</p>
+      </header>
+      <div className={styles.homeHeroFeedbackMessages}>
+        <article className={styles.homeHeroUserFeedback}>
+          <small>Jij</small>
+          <p>Ik zoek iemand die zelf nieuwe klanten binnenhaalt. Ervaring met het aansturen van een team is minder belangrijk.</p>
+        </article>
+        <article className={styles.homeHeroScoutFeedback}>
+          <span aria-hidden="true">✓</span>
+          <div>
+            <small>Scout</small>
+            <p>Ik neem dit mee in de volgende selectie.</p>
+          </div>
+        </article>
       </div>
-      <p><span aria-hidden="true">✓</span>{labels.status}</p>
     </div>
   );
 }
 
 function HomeOutputStage({ lang }: { lang: Language }) {
   const selection = getAdjustedSelection(lang);
+
+  if (lang === "nl") {
+    const experiences = [
+      scoutDemoCopy.nl.refinedCandidate.experience[0],
+      "Vindt nieuwe klanten en voert eerste gesprekken.",
+      "Werft zelf zakelijke klanten.",
+    ] as const;
+    const candidates = selection.candidates.map((candidate, index) => ({
+      experience: experiences[index],
+      label: `Kandidaat 0${index + 4}`,
+      location: candidate.location,
+      number: `0${index + 4}`,
+      role: candidate.role,
+      signal: index === 0 ? candidate.signal : undefined,
+      signalTitle: index === 0 ? selection.signalLabel : undefined,
+    }));
+
+    return (
+      <HomeCandidateSelection
+        candidates={candidates}
+        description="Nu met meer nadruk op zelf nieuwe klanten binnenhalen."
+        title="De selectie na je feedback"
+      />
+    );
+  }
 
   return (
     <div className={styles.homeHeroOutputStage}>
