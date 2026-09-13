@@ -17,19 +17,19 @@ type DemoCopy = (typeof scoutDemoCopy)[Language];
 
 function getInitialSelection(lang: Language) {
   return lang === "nl" ? {
-    title: "Eerste selectie",
-    count: "3 kandidaten gevonden",
+    title: "De eerste kandidaten",
+    count: "Drie kandidaten",
     candidates: [
       ["Kandidaat 01", "Commercieel manager", "Utrecht"],
       ["Kandidaat 02", "Accountmanager", "Rotterdam"],
       ["Kandidaat 03", "Commercieel specialist", "Amersfoort"],
     ],
     counter: "Kandidaat 1 / 3",
-    relevant: "Waarom relevant",
+    relevant: "Relevante ervaring",
     relevantItems: ["Zakelijke klanten", "Groei bestaande accounts"],
-    signal: "Signaal · waar beschikbaar",
-    signalValue: "Open to work",
-    signalNote: "Mogelijk relevant",
+    signal: "Signaal in het profiel",
+    signalValue: "Signaal: Open to work",
+    signalNote: "Geen bewijs van interesse",
     check: "Nog te checken",
     checkValue: "Interesse in deze vacature",
   } as const : {
@@ -53,36 +53,36 @@ function getInitialSelection(lang: Language) {
 
 function getAdjustedSelection(lang: Language) {
   return lang === "nl" ? {
-    title: "Aangepaste selectie",
-    count: "3 kandidaten gevonden",
-    summary: "Meer nadruk op zelf verkopen · Minder teammanagement",
-    feedbackLabel: "Op basis van feedback",
-    feedback: ["Meer zelf sales", "Minder teammanagement", "Regio Randstad", "Recente commerciële ervaring"],
-    signalLabel: "Signalen waar beschikbaar",
+    title: "Kandidaten na je feedback",
+    count: "Drie kandidaten",
+    summary: "Scout zoekt verder naar mensen die zelf nieuwe klanten binnenhalen.",
+    feedbackLabel: "Je feedback",
+    feedback: ["Zelf nieuwe klanten binnenhalen", "Een team aansturen is minder belangrijk"],
+    signalLabel: "Signaal in het profiel",
     candidates: [
       {
-        initials: "AM",
-        name: "Alex Morgan",
+        initials: "04",
+        name: "Kandidaat 04",
         role: "Commercieel specialist",
         location: "Regio Rotterdam",
-        tags: ["Zelf sales", "B2B-klanten"],
-        signal: "Open to work",
+        tags: ["Vond en benaderde nieuwe zakelijke klanten"],
+        signal: "Signaal: Open to work",
       },
-      {
-        initials: "RV",
-        name: "Robin de Vries",
+            {
+        initials: "05",
+        name: "Kandidaat 05",
         role: "Accountmanager",
         location: "Regio Utrecht",
-        tags: ["Nieuwe klanten", "Eerste gesprekken"],
-        signal: "Recent actief",
+        tags: ["Vindt nieuwe klanten en voert eerste gesprekken"],
+        signal: "",
       },
       {
-        initials: "SJ",
-        name: "Samira Jansen",
+        initials: "06",
+        name: "Kandidaat 06",
         role: "Business developer",
         location: "Regio Den Haag",
-        tags: ["Zakelijke klanten", "Zelf acquisitie"],
-        signal: "Beschikbaarheidsignaal",
+        tags: ["Werft zelf zakelijke klanten"],
+        signal: "",
       },
     ],
   } as const : {
@@ -358,24 +358,9 @@ function HomeReviewStage({ lang }: { lang: Language }) {
   const selection = getInitialSelection(lang);
 
   if (lang === "nl") {
-    const experiences = [
-      "Laat bestaande zakelijke accounts groeien.",
-      "Commerciële ervaring als accountmanager.",
-      "Commerciële ervaring als commercieel specialist.",
-    ] as const;
-    const candidates = selection.candidates.map(([label, role, location], index) => ({
-      experience: experiences[index],
-      label,
-      location: `Regio ${location}`,
-      number: `0${index + 1}`,
-      role,
-      signal: index === 0 ? selection.signalValue : undefined,
-      signalTitle: index === 0 ? selection.signal : undefined,
-    }));
-
     return (
       <HomeCandidateSelection
-        candidates={candidates}
+        candidates={nlInitialCandidates}
         description="Bekijk hun ervaring en geef aan wat wel en niet past."
         title="De eerste kandidaten"
       />
@@ -410,6 +395,58 @@ type HomeCandidateItem = {
   signal?: string;
   signalTitle?: string;
 };
+
+const nlInitialCandidates = [
+  {
+    experience: "Werkt aan groei bij bestaande zakelijke klanten.",
+    label: "Kandidaat 01",
+    location: "Regio Utrecht",
+    number: "01",
+    role: "Commercieel manager",
+    signal: "Signaal: Open to work",
+    signalTitle: "Signaal in het profiel",
+  },
+  {
+    experience: "Ervaring als accountmanager.",
+    label: "Kandidaat 02",
+    location: "Regio Rotterdam",
+    number: "02",
+    role: "Accountmanager",
+  },
+  {
+    experience: "Ervaring als commercieel specialist.",
+    label: "Kandidaat 03",
+    location: "Regio Amersfoort",
+    number: "03",
+    role: "Commercieel specialist",
+  },
+] as const satisfies readonly HomeCandidateItem[];
+
+const nlAdjustedCandidates = [
+  {
+    experience: "Vond en benaderde zelf nieuwe zakelijke klanten.",
+    label: "Kandidaat 04",
+    location: "Regio Rotterdam",
+    number: "04",
+    role: "Commercieel specialist",
+    signal: "Signaal: Open to work",
+    signalTitle: "Signaal in het profiel",
+  },
+  {
+    experience: "Vindt nieuwe klanten en voert eerste gesprekken.",
+    label: "Kandidaat 05",
+    location: "Regio Utrecht",
+    number: "05",
+    role: "Accountmanager",
+  },
+  {
+    experience: "Werft zelf zakelijke klanten.",
+    label: "Kandidaat 06",
+    location: "Regio Den Haag",
+    number: "06",
+    role: "Business developer",
+  },
+] as const satisfies readonly HomeCandidateItem[];
 
 function HomeCandidateSelection({ candidates, description, title }: {
   candidates: readonly HomeCandidateItem[];
@@ -465,6 +502,10 @@ function HomeFeedbackStage({ copy, lang }: { copy: DemoCopy; lang: Language }) {
     );
   }
 
+  return <NlFeedbackConversation />;
+}
+
+function NlFeedbackConversation() {
   return (
     <div className={styles.homeHeroFeedbackConversation}>
       <header className={styles.homeHeroFeedbackIntro}>
@@ -492,26 +533,11 @@ function HomeOutputStage({ lang }: { lang: Language }) {
   const selection = getAdjustedSelection(lang);
 
   if (lang === "nl") {
-    const experiences = [
-      scoutDemoCopy.nl.refinedCandidate.experience[0],
-      "Vindt nieuwe klanten en voert eerste gesprekken.",
-      "Werft zelf zakelijke klanten.",
-    ] as const;
-    const candidates = selection.candidates.map((candidate, index) => ({
-      experience: experiences[index],
-      label: `Kandidaat 0${index + 4}`,
-      location: candidate.location,
-      number: `0${index + 4}`,
-      role: candidate.role,
-      signal: index === 0 ? candidate.signal : undefined,
-      signalTitle: index === 0 ? selection.signalLabel : undefined,
-    }));
-
     return (
       <HomeCandidateSelection
-        candidates={candidates}
-        description="Nu met meer nadruk op zelf nieuwe klanten binnenhalen."
-        title="De selectie na je feedback"
+        candidates={nlAdjustedCandidates}
+        description="Scout zoekt verder naar mensen die zelf nieuwe klanten binnenhalen."
+        title="Kandidaten na je feedback"
       />
     );
   }
@@ -572,7 +598,7 @@ export function ScoutSearchDemo({ lang }: { lang: Language }) {
           <h2 className={styles.srOnly} id="interactive-example-title">{copy.stages[stage].title}</h2>
           {stage === 0 ? <NeedStage copy={copy} /> : null}
           {stage === 1 ? <ReviewStage copy={copy} lang={lang} /> : null}
-          {stage === 2 ? <FeedbackStage copy={copy} /> : null}
+          {stage === 2 ? <FeedbackStage copy={copy} lang={lang} /> : null}
           {stage === 3 ? <OutputStage lang={lang} /> : null}
         </div>
       </div>
@@ -652,6 +678,16 @@ function NeedStage({ copy }: { copy: DemoCopy }) {
 function ReviewStage({ copy, lang }: { copy: DemoCopy; lang: Language }) {
   const selection = getInitialSelection(lang);
 
+  if (lang === "nl") {
+    return (
+      <HomeCandidateSelection
+        candidates={nlInitialCandidates}
+        description="Bekijk hun ervaring en geef aan wat wel en niet past."
+        title="De eerste kandidaten"
+      />
+    );
+  }
+
   return (
     <div className={styles.demoSelectionStage}>
       <header className={styles.demoSelectionHeader}>
@@ -694,7 +730,9 @@ function ReviewStage({ copy, lang }: { copy: DemoCopy; lang: Language }) {
   );
 }
 
-function FeedbackStage({ copy }: { copy: DemoCopy }) {
+function FeedbackStage({ copy, lang }: { copy: DemoCopy; lang: Language }) {
+  if (lang === "nl") return <NlFeedbackConversation />;
+
   return (
     <div className={styles.feedbackStage}>
       <article className={styles.demoFeedbackPanel}>
@@ -711,6 +749,16 @@ function FeedbackStage({ copy }: { copy: DemoCopy }) {
 
 function OutputStage({ lang }: { lang: Language }) {
   const selection = getAdjustedSelection(lang);
+
+  if (lang === "nl") {
+    return (
+      <HomeCandidateSelection
+        candidates={nlAdjustedCandidates}
+        description="Scout zoekt verder naar mensen die zelf nieuwe klanten binnenhalen."
+        title="Kandidaten na je feedback"
+      />
+    );
+  }
 
   return (
     <div className={styles.adjustedSelectionStage}>

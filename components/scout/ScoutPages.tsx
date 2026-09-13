@@ -107,7 +107,7 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
               </div>
               <div aria-label={lang === "nl" ? "Profielstatus" : "Profile status"} className={styles.candidateStatusRow}>
                 <span>{lang === "nl" ? "B2B-ervaring" : "B2B experience"}</span>
-                <span>{lang === "nl" ? "Directe acquisitie" : "Direct acquisition"}</span>
+                <span>{lang === "nl" ? "Nieuwe klanten" : "Direct acquisition"}</span>
                 <span>{lang === "nl" ? "Open punt" : "Open question"}</span>
               </div>
               <dl className={styles.candidateFacts}>
@@ -150,8 +150,8 @@ export function ScoutHomePage({ lang }: { lang: Language }) {
           <section aria-labelledby="ontwikkelingen-title" className={`${styles.section} ${styles.updatesSection}`} id="ontwikkelingen">
             <div className={`${styles.container} ${styles.updatesCard}`}>
               <div className={styles.updatesIntro}>
-                <h2 id="ontwikkelingen-title">Wil je op de hoogte blijven?</h2>
-                <p>Ontvang updates over Scout en hoor wanneer je het kunt proberen.</p>
+                <h2 id="ontwikkelingen-title">Op de hoogte blijven van Scout?</h2>
+                <p>Ontvang updates over de ontwikkeling van Scout en hoor wanneer je het kunt proberen.</p>
               </div>
               <ScoutUpdatesForm />
             </div>
@@ -166,10 +166,10 @@ export function ScoutHowItWorksPage({ lang }: { lang: Language }) {
   const copy = scoutPageCopy.howItWorks[lang];
   const demoCopy = scoutDemoCopy[lang];
   const heroSteps = lang === "nl" ? [
-    ["Vertel wie je zoekt", "Beschrijf wat iemand moet kunnen en wat belangrijk is voor je team."],
-    ["Bekijk kandidaten", "Bekijk hun ervaring en geef aan wie je zou benaderen."],
-    ["Geef feedback", "Vertel wat ontbreekt of te zwaar meeweegt."],
-    ["Scout zoekt verder", "Scout gebruikt je reacties om verder te zoeken. Jij kiest wie je benadert."],
+    ["Vertel wie je zoekt", "Beschrijf het werk en welke ervaring belangrijk is."],
+    ["Bekijk kandidaten", "Bekijk de profielinformatie en noteer wat nog ontbreekt."],
+    ["Geef feedback", "Vertel wat wel en niet past."],
+    ["Scout zoekt verder", "Scout gebruikt je feedback voor de volgende selectie."],
   ] as const : [
     ["Explain who you need", "Describe the work, the team and what matters most."],
     ["Review candidates", "See relevant experience and decide who you would contact."],
@@ -260,7 +260,7 @@ export function ScoutHowItWorksPage({ lang }: { lang: Language }) {
 
 export function ScoutCompaniesPage({ lang }: { lang: Language }) {
   const copy = scoutPageCopy.companies[lang];
-  const label = lang === "nl" ? "Illustratie" : "Illustration";
+  const label = lang === "nl" ? "Samen kandidaten beoordelen" : "Illustration";
 
   return (
     <ScoutShell currentPage="companies" lang={lang}>
@@ -293,7 +293,7 @@ export function ScoutCompaniesPage({ lang }: { lang: Language }) {
 
 export function ScoutAgenciesPage({ lang }: { lang: Language }) {
   const copy = scoutPageCopy.agencies[lang];
-  const label = lang === "nl" ? "Illustratie" : "Illustration";
+  const label = lang === "nl" ? "Van klantfeedback naar kandidaten" : "Illustration";
 
   return (
     <ScoutShell currentPage="agencies" lang={lang}>
@@ -467,7 +467,7 @@ function FinalCta({ body, lang, note, placement, title }: { body: string; lang: 
 function ContactSection({ lang }: { lang: Language }) {
   const copy = lang === "nl" ? {
     title: "Contact",
-    body: "Heb je een vraag of wil je weten of Scout past bij jouw vacatures?",
+    body: "Heb je een vraag of wil je weten of Scout past bij je vacatures?",
     demo: "Plan een demo",
   } : {
     title: "Contact",

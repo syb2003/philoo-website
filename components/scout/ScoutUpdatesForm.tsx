@@ -55,7 +55,7 @@ export function ScoutUpdatesForm() {
   if (status === "success") {
     return (
       <p aria-live="polite" className={styles.updatesSuccess}>
-        Je bent aangemeld. We houden je op de hoogte van Scout.
+        Je aanmelding is gelukt. Je ontvangt voortaan updates over Scout.
       </p>
     );
   }
@@ -72,17 +72,17 @@ export function ScoutUpdatesForm() {
       </div>
 
       <button disabled={status === "loading"} type="submit">
-        {status === "loading" ? "Bezig…" : "Houd me op de hoogte"}
+        {status === "loading" ? "Aanmelden…" : "Meld me aan voor updates"}
       </button>
 
       <p className={styles.updatesPrivacy}>
-        We gebruiken je gegevens alleen om contact met je op te nemen over dit product.{" "}
+        We gebruiken je gegevens alleen om je updates over Scout te sturen.{" "}
         <Link href="/nl/privacybeleid">Privacybeleid</Link>
       </p>
 
       {status === "error" ? (
         <p aria-live="polite" className={styles.updatesError}>
-          Aanmelden lukt nu niet. Controleer je e-mailadres en probeer het opnieuw.
+          Aanmelden lukt nu niet. Probeer het later opnieuw of mail naar hello@philoo.nl.
         </p>
       ) : null}
     </form>

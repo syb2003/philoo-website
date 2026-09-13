@@ -7,7 +7,7 @@ const metadataCopy: Record<ScoutPageKey, Record<Language, { title: string; descr
   home: {
     nl: {
       title: "Philoo Scout | Vind relevante kandidaten",
-      description: "Vertel Philoo wie je zoekt. Scout gebruikt jouw context en feedback om relevante kandidaten te vinden.",
+      description: "Vertel Scout wie je zoekt, bekijk kandidaten en geef feedback. Scout gebruikt je feedback om verder te zoeken.",
     },
     en: {
       title: "Philoo Scout | Find relevant candidates",
@@ -17,7 +17,7 @@ const metadataCopy: Record<ScoutPageKey, Record<Language, { title: string; descr
   howItWorks: {
     nl: {
       title: "Hoe Philoo Scout werkt | Van zoekvraag naar kandidaten",
-      description: "Leg uit wie je zoekt, beoordeel een eerste selectie en gebruik je feedback om de zoekrichting scherper te maken.",
+      description: "Leg uit wie je zoekt, bekijk de eerste kandidaten en geef feedback. Scout gebruikt die feedback bij het verdere zoeken.",
     },
     en: {
       title: "How Philoo Scout works | From brief to candidates",
@@ -27,7 +27,7 @@ const metadataCopy: Record<ScoutPageKey, Record<Language, { title: string; descr
   companies: {
     nl: {
       title: "Philoo Scout voor bedrijven | Vind de mensen die je nodig hebt",
-      description: "Breng de input van leidinggevenden en recruiters samen in een gerichte zoektocht naar relevante kandidaten.",
+      description: "Combineer de kennis van de leidinggevende en de recruiter. Scout gebruikt hun feedback bij het zoeken en selecteren.",
     },
     en: {
       title: "Philoo Scout for hiring teams | Find the people you need",
@@ -37,7 +37,7 @@ const metadataCopy: Record<ScoutPageKey, Record<Language, { title: string; descr
   agencies: {
     nl: {
       title: "Philoo Scout voor recruitmentbureaus",
-      description: "Maak van een klantintake en feedback een gerichte zoektocht naar kandidaten die het waard zijn om te beoordelen.",
+      description: "Leg vast wie je klant zoekt, bekijk kandidaten en gebruik klantfeedback bij het verdere zoeken.",
     },
     en: {
       title: "Philoo Scout for recruitment agencies",
@@ -57,7 +57,7 @@ const metadataCopy: Record<ScoutPageKey, Record<Language, { title: string; descr
   demo: {
     nl: {
       title: "Plan een Philoo Scout-demo",
-      description: "Bekijk hoe Philoo Scout een zoekvraag, kandidaatfeedback en een gerichte selectie samenbrengt.",
+      description: "Neem een vacature mee en bekijk hoe Scout zoekt, profielinformatie toont en je feedback gebruikt.",
     },
     en: {
       title: "Book a Philoo Scout demo",
@@ -80,4 +80,3 @@ export function scoutMetadata(page: ScoutPageKey, lang: Language): Metadata {
     ...socialMetadata(copy.title, copy.description, canonical, lang === "nl" ? "nl_NL" : "en_GB"),
   };
 }
-
